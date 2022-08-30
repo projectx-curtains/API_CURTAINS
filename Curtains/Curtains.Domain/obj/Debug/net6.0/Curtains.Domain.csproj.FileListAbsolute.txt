@@ -1,0 +1,12 @@
+C:\Users\Asus\Desktop\API_CURTAINS\Curtains\Curtains.Domain\bin\Debug\net6.0\Curtains.Domain.deps.json
+C:\Users\Asus\Desktop\API_CURTAINS\Curtains\Curtains.Domain\bin\Debug\net6.0\Curtains.Domain.dll
+C:\Users\Asus\Desktop\API_CURTAINS\Curtains\Curtains.Domain\bin\Debug\net6.0\Curtains.Domain.pdb
+C:\Users\Asus\Desktop\API_CURTAINS\Curtains\Curtains.Domain\obj\Debug\net6.0\Curtains.Domain.csproj.AssemblyReference.cache
+C:\Users\Asus\Desktop\API_CURTAINS\Curtains\Curtains.Domain\obj\Debug\net6.0\Curtains.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Asus\Desktop\API_CURTAINS\Curtains\Curtains.Domain\obj\Debug\net6.0\Curtains.Domain.AssemblyInfoInputs.cache
+C:\Users\Asus\Desktop\API_CURTAINS\Curtains\Curtains.Domain\obj\Debug\net6.0\Curtains.Domain.AssemblyInfo.cs
+C:\Users\Asus\Desktop\API_CURTAINS\Curtains\Curtains.Domain\obj\Debug\net6.0\Curtains.Domain.csproj.CoreCompileInputs.cache
+C:\Users\Asus\Desktop\API_CURTAINS\Curtains\Curtains.Domain\obj\Debug\net6.0\Curtains.Domain.dll
+C:\Users\Asus\Desktop\API_CURTAINS\Curtains\Curtains.Domain\obj\Debug\net6.0\refint\Curtains.Domain.dll
+C:\Users\Asus\Desktop\API_CURTAINS\Curtains\Curtains.Domain\obj\Debug\net6.0\Curtains.Domain.pdb
+C:\Users\Asus\Desktop\API_CURTAINS\Curtains\Curtains.Domain\obj\Debug\net6.0\ref\Curtains.Domain.dll

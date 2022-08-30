@@ -1,11 +1,48 @@
 {
   "version": 3,
   "targets": {
-    "net6.0": {}
+    "net6.0": {
+      "Curtains.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/Curtains.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Curtains.Domain.dll": {}
+        }
+      },
+      "Curtains.Infrastructure/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Curtains.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Curtains.Infrastructure.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Curtains.Infrastructure.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "Curtains.Domain/1.0.0": {
+      "type": "project",
+      "path": "../Curtains.Domain/Curtains.Domain.csproj",
+      "msbuildProject": "../Curtains.Domain/Curtains.Domain.csproj"
+    },
+    "Curtains.Infrastructure/1.0.0": {
+      "type": "project",
+      "path": "../Curtains.Infrastructure/Curtains.Infrastructure.csproj",
+      "msbuildProject": "../Curtains.Infrastructure/Curtains.Infrastructure.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net6.0": []
+    "net6.0": [
+      "Curtains.Infrastructure >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\Asus\\.nuget\\packages\\": {},
@@ -41,7 +78,11 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\Asus\\Desktop\\API_CURTAINS\\Curtains\\Curtains.Infrastructure\\Curtains.Infrastructure.csproj": {
+              "projectPath": "C:\\Users\\Asus\\Desktop\\API_CURTAINS\\Curtains\\Curtains.Infrastructure\\Curtains.Infrastructure.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

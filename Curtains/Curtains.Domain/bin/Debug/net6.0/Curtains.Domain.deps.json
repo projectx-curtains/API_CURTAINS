@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "Curtains.Domain/1.0.0": {
+        "runtime": {
+          "Curtains.Domain.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Curtains.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

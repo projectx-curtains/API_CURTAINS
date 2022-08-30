@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Curtains.Infrastructure\Curtains.Infrastructure.csproj" />
+  </ItemGroup>
+
 </Project>
