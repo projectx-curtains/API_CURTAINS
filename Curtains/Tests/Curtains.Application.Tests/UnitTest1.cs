@@ -1,4 +1,6 @@
-namespace Curtains.Application_tests
+using NUnit.Framework;
+
+namespace Curtains.Application.Tests
 {
     public class Tests
     {
