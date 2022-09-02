@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata;
+﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 
 namespace Curtains.Infrastructure.Models
@@ -44,7 +41,7 @@ namespace Curtains.Infrastructure.Models
             modelBuilder.UseCollation(_config["DbCollation"]);
 
             modelBuilder.ApplyConfiguration(new BracingMap());
-            modelBuilder.ApplyConfiguration(new colorMap());
+            modelBuilder.ApplyConfiguration(new ColorMap());
             modelBuilder.ApplyConfiguration(new CurtainMap());
             modelBuilder.ApplyConfiguration(new DecorationMap());
             modelBuilder.ApplyConfiguration(new DeliveryTypeMap());

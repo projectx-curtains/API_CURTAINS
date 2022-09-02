@@ -14,4 +14,10 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <None Remove="Data\Maps\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Data\Maps\" />
+  </ItemGroup>
 </Project>
