@@ -1,8 +1,23 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Curtains.Infrastructure.Models
 {
-    internal class BracingMap : IEntityTypeConfiguration<object>
+    internal class BracingMap : IEntityTypeConfiguration<Bracing>
     {
+        public void Configure(EntityTypeBuilder<Bracing> builder)
+        {
+            builder.ToTable(nameof(Bracing));
+
+            builder.Property(e => e.Description)
+                .HasMaxLength(255)
+                .UseCollation("SQL_Latin1_General_CP1_CI_AS");
+
+            builder.Property(e => e.Price).HasColumnType("money");
+
+            builder.Property(e => e.Title)
+                .HasMaxLength(50)
+                .UseCollation("SQL_Latin1_General_CP1_CI_AS");
+        }
     }
 }
