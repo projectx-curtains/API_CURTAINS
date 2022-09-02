@@ -2,13 +2,17 @@
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.Extensions.Configuration;
 
 namespace Curtains.Infrastructure.Models
 {
     public partial class CurtainsContext : DbContext
     {
-        public CurtainsContext()
+        IConfiguration _config;
+
+        public CurtainsContext(IConfiguration config)
         {
+            _config = config;
         }
 
         public CurtainsContext(DbContextOptions<CurtainsContext> options)
@@ -36,14 +40,13 @@ namespace Curtains.Infrastructure.Models
         {
             if (!optionsBuilder.IsConfigured)
             {
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-                optionsBuilder.UseSqlServer("Server=(LocalDB)\\MSSQLLocalDB;Database=Curtains;Trusted_Connection=true;");
+                optionsBuilder.UseSqlServer(_config["connectionstring"]);
             }
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.UseCollation("Cyrillic_General_CI_AS");
+            modelBuilder.UseCollation(_config["DbCollation"]);
 
             modelBuilder.Entity<Bracing>(entity =>
             {
