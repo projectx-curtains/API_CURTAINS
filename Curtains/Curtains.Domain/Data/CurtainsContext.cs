@@ -40,7 +40,7 @@ namespace Curtains.Infrastructure.Models
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer(_config["connectionstring"]);
+                optionsBuilder.UseSqlServer(_config.GetConnectionString("DefaultConnection"));
             }
         }
 
