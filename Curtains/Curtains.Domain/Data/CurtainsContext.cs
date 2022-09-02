@@ -15,11 +15,6 @@ namespace Curtains.Infrastructure.Models
             _config = config;
         }
 
-        public CurtainsContext(DbContextOptions<CurtainsContext> options)
-            : base(options)
-        {
-        }
-
         public virtual DbSet<Bracing> Bracings { get; set; } = null!;
         public virtual DbSet<Color> Colors { get; set; } = null!;
         public virtual DbSet<Curtain> Curtains { get; set; } = null!;
