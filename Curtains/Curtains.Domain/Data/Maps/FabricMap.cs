@@ -3,11 +3,11 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Curtains.Infrastructure.Models
 {
-    internal class FabricMap : IEntityTypeConfiguration<Fabric>
+    internal class FabricMap : IEntityTypeConfiguration<FabricModel>
     {
-        public void Configure(EntityTypeBuilder<Fabric> builder)
+        public void Configure(EntityTypeBuilder<FabricModel> builder)
         {
-            builder.ToTable(nameof(Fabric));
+            builder.ToTable(nameof(FabricModel));
 
             builder.Property(e => e.Description)
                 .HasMaxLength(255)

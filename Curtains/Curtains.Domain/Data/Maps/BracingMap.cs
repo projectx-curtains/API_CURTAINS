@@ -3,11 +3,11 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Curtains.Infrastructure.Models
 {
-    internal class BracingMap : IEntityTypeConfiguration<Bracing>
+    internal class BracingMap : IEntityTypeConfiguration<BracingModel>
     {
-        public void Configure(EntityTypeBuilder<Bracing> builder)
+        public void Configure(EntityTypeBuilder<BracingModel> builder)
         {
-            builder.ToTable(nameof(Bracing));
+            builder.ToTable(nameof(BracingModel));
 
             builder.Property(e => e.Description)
                 .HasMaxLength(255)

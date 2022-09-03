@@ -3,9 +3,9 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Curtains.Infrastructure.Models
 {
-    internal class CurtainMap : IEntityTypeConfiguration<Curtain>
+    internal class CurtainMap : IEntityTypeConfiguration<CurtainModel>
     {
-        public void Configure(EntityTypeBuilder<Curtain> builder)
+        public void Configure(EntityTypeBuilder<CurtainModel> builder)
         {
             builder.Property(e => e.Description)
                 .HasMaxLength(255)

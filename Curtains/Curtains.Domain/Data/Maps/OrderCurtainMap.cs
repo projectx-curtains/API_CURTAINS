@@ -3,9 +3,9 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Curtains.Infrastructure.Models
 {
-    internal class OrderCurtainMap : IEntityTypeConfiguration<OrderCurtain>
+    internal class OrderCurtainMap : IEntityTypeConfiguration<OrderCurtainModel>
     {
-        public void Configure(EntityTypeBuilder<OrderCurtain> builder)
+        public void Configure(EntityTypeBuilder<OrderCurtainModel> builder)
         {
             builder.HasOne(d => d.Curtains)
                  .WithMany(p => p.OrderCurtains)

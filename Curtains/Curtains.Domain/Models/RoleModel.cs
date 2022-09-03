@@ -3,16 +3,16 @@ using System.Collections.Generic;
 
 namespace Curtains.Infrastructure.Models
 {
-    public partial class Role
+    public partial class RoleModel
     {
-        public Role()
+        public RoleModel()
         {
-            Users = new HashSet<User>();
+            Users = new HashSet<UserModel>();
         }
 
         public int Id { get; set; }
         public string Title { get; set; } = null!;
 
-        public virtual ICollection<User> Users { get; set; }
+        public virtual ICollection<UserModel> Users { get; set; }
     }
 }

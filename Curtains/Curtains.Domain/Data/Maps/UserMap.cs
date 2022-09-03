@@ -3,11 +3,11 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Curtains.Infrastructure.Models
 {
-    internal class UserMap : IEntityTypeConfiguration<User>
+    internal class UserMap : IEntityTypeConfiguration<UserModel>
     {
-        public void Configure(EntityTypeBuilder<User> builder)
+        public void Configure(EntityTypeBuilder<UserModel> builder)
         {
-            builder.ToTable(nameof(User));
+            builder.ToTable(nameof(UserModel));
 
             builder.Property(e => e.Id).ValueGeneratedOnAdd();
 
@@ -33,7 +33,7 @@ namespace Curtains.Infrastructure.Models
 
             builder.HasOne(d => d.IdNavigation)
                 .WithOne(p => p.User)
-                .HasForeignKey<User>(d => d.Id)
+                .HasForeignKey<UserModel>(d => d.Id)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_User_UserOrder");
 

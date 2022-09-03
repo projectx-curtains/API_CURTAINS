@@ -3,11 +3,11 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Curtains.Infrastructure.Models
 {
-    internal class DecorationMap : IEntityTypeConfiguration<Decoration>
+    internal class DecorationMap : IEntityTypeConfiguration<DecorationModel>
     {
-        public void Configure(EntityTypeBuilder<Decoration> builder)
+        public void Configure(EntityTypeBuilder<DecorationModel> builder)
         {
-            builder.ToTable(nameof(Decoration));
+            builder.ToTable(nameof(DecorationModel));
 
             builder.Property(e => e.Description)
                 .HasMaxLength(255)

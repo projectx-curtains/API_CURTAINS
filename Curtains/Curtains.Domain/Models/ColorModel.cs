@@ -3,11 +3,11 @@ using System.Collections.Generic;
 
 namespace Curtains.Infrastructure.Models
 {
-    public partial class Color
+    public partial class ColorModel
     {
-        public Color()
+        public ColorModel()
         {
-            Fabrics = new HashSet<Fabric>();
+            Fabrics = new HashSet<FabricModel>();
         }
 
         public int Id { get; set; }
@@ -16,6 +16,6 @@ namespace Curtains.Infrastructure.Models
         public string? Code { get; set; }
         public decimal Price { get; set; }
 
-        public virtual ICollection<Fabric> Fabrics { get; set; }
+        public virtual ICollection<FabricModel> Fabrics { get; set; }
     }
 }

@@ -12,21 +12,21 @@ namespace Curtains.Infrastructure.Models
             _config = config;
         }
 
-        public virtual DbSet<Bracing> Bracings { get; set; } = null!;
-        public virtual DbSet<Color> Colors { get; set; } = null!;
-        public virtual DbSet<Curtain> Curtains { get; set; } = null!;
-        public virtual DbSet<Decoration> Decorations { get; set; } = null!;
-        public virtual DbSet<DeliveryType> DeliveryTypes { get; set; } = null!;
-        public virtual DbSet<Fabric> Fabrics { get; set; } = null!;
-        public virtual DbSet<Manufacturer> Manufacturers { get; set; } = null!;
-        public virtual DbSet<MarketingInfo> MarketingInfos { get; set; } = null!;
-        public virtual DbSet<Material> Materials { get; set; } = null!;
-        public virtual DbSet<Model> Models { get; set; } = null!;
-        public virtual DbSet<Order> Orders { get; set; } = null!;
-        public virtual DbSet<OrderCurtain> OrderCurtains { get; set; } = null!;
-        public virtual DbSet<Role> Roles { get; set; } = null!;
-        public virtual DbSet<User> Users { get; set; } = null!;
-        public virtual DbSet<UserOrder> UserOrders { get; set; } = null!;
+        public virtual DbSet<BracingModel> Bracings { get; set; } = null!;
+        public virtual DbSet<ColorModel> Colors { get; set; } = null!;
+        public virtual DbSet<CurtainModel> Curtains { get; set; } = null!;
+        public virtual DbSet<DecorationModel> Decorations { get; set; } = null!;
+        public virtual DbSet<DeliveryTypeModel> DeliveryTypes { get; set; } = null!;
+        public virtual DbSet<FabricModel> Fabrics { get; set; } = null!;
+        public virtual DbSet<ManufacturerModel> Manufacturers { get; set; } = null!;
+        public virtual DbSet<MarketingInfoModel> MarketingInfos { get; set; } = null!;
+        public virtual DbSet<MaterialModel> Materials { get; set; } = null!;
+        public virtual DbSet<ModelModel> Models { get; set; } = null!;
+        public virtual DbSet<OrderModel> Orders { get; set; } = null!;
+        public virtual DbSet<OrderCurtainModel> OrderCurtains { get; set; } = null!;
+        public virtual DbSet<RoleModel> Roles { get; set; } = null!;
+        public virtual DbSet<UserModel> Users { get; set; } = null!;
+        public virtual DbSet<UserOrderModel> UserOrders { get; set; } = null!;
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

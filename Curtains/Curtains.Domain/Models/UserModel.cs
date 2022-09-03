@@ -3,11 +3,11 @@ using System.Collections.Generic;
 
 namespace Curtains.Infrastructure.Models
 {
-    public partial class User
+    public partial class UserModel
     {
-        public User()
+        public UserModel()
         {
-            Orders = new HashSet<Order>();
+            Orders = new HashSet<OrderModel>();
         }
 
         public int Id { get; set; }
@@ -18,8 +18,8 @@ namespace Curtains.Infrastructure.Models
         public string Address { get; set; } = null!;
         public string PhoneNumber { get; set; } = null!;
 
-        public virtual UserOrder IdNavigation { get; set; } = null!;
-        public virtual Role Role { get; set; } = null!;
-        public virtual ICollection<Order> Orders { get; set; }
+        public virtual UserOrderModel IdNavigation { get; set; } = null!;
+        public virtual RoleModel Role { get; set; } = null!;
+        public virtual ICollection<OrderModel> Orders { get; set; }
     }
 }

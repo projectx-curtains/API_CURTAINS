@@ -3,11 +3,11 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Curtains.Infrastructure.Models
 {
-    internal class ManufacturerMap : IEntityTypeConfiguration<Manufacturer>
+    internal class ManufacturerMap : IEntityTypeConfiguration<ManufacturerModel>
     {
-        public void Configure(EntityTypeBuilder<Manufacturer> builder)
+        public void Configure(EntityTypeBuilder<ManufacturerModel> builder)
         {
-            builder.ToTable(nameof(Manufacturer));
+            builder.ToTable(nameof(ManufacturerModel));
 
             builder.Property(e => e.Description)
                 .HasMaxLength(50)

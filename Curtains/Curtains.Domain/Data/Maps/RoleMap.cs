@@ -3,11 +3,11 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Curtains.Infrastructure.Models
 {
-    internal class RoleMap : IEntityTypeConfiguration<Role>
+    internal class RoleMap : IEntityTypeConfiguration<RoleModel>
     {
-        public void Configure(EntityTypeBuilder<Role> builder)
+        public void Configure(EntityTypeBuilder<RoleModel> builder)
         {
-            builder.ToTable(nameof(Role));
+            builder.ToTable(nameof(RoleModel));
 
             builder.Property(e => e.Title)
                 .HasMaxLength(50)

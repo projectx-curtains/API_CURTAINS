@@ -3,11 +3,11 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Curtains.Infrastructure.Models
 {
-    internal class DeliveryTypeMap : IEntityTypeConfiguration<DeliveryType>
+    internal class DeliveryTypeMap : IEntityTypeConfiguration<DeliveryTypeModel>
     {
-        public void Configure(EntityTypeBuilder<DeliveryType> builder)
+        public void Configure(EntityTypeBuilder<DeliveryTypeModel> builder)
         {
-            builder.ToTable(nameof(DeliveryType));
+            builder.ToTable(nameof(DeliveryTypeModel));
 
             builder.Property(e => e.Price).HasColumnType("money");
 

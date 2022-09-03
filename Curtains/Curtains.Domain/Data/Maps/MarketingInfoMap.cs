@@ -3,11 +3,11 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Curtains.Infrastructure.Models
 {
-    internal class MarketingInfoMap : IEntityTypeConfiguration<MarketingInfo>
+    internal class MarketingInfoMap : IEntityTypeConfiguration<MarketingInfoModel>
     {
-        public void Configure(EntityTypeBuilder<MarketingInfo> builder)
+        public void Configure(EntityTypeBuilder<MarketingInfoModel> builder)
         {
-            builder.ToTable(nameof(MarketingInfo));
+            builder.ToTable(nameof(MarketingInfoModel));
 
             builder.Property(e => e.Id).ValueGeneratedOnAdd();
 
@@ -17,7 +17,7 @@ namespace Curtains.Infrastructure.Models
 
             builder.HasOne(d => d.IdNavigation)
                 .WithOne(p => p.MarketingInfo)
-                .HasForeignKey<MarketingInfo>(d => d.Id)
+                .HasForeignKey<MarketingInfoModel>(d => d.Id)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_MarketingInfo_Curtains1");
         }

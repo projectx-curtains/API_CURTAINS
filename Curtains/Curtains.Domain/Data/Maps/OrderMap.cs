@@ -3,11 +3,11 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Curtains.Infrastructure.Models
 {
-    internal class OrderMap : IEntityTypeConfiguration<Order>
+    internal class OrderMap : IEntityTypeConfiguration<OrderModel>
     {
-        public void Configure(EntityTypeBuilder<Order> builder)
+        public void Configure(EntityTypeBuilder<OrderModel> builder)
         {
-            builder.ToTable(nameof(Order));
+            builder.ToTable(nameof(OrderModel));
 
             builder.Property(e => e.Comment)
                 .HasMaxLength(255)

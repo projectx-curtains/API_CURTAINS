@@ -3,11 +3,11 @@ using System.Collections.Generic;
 
 namespace Curtains.Infrastructure.Models
 {
-    public partial class Curtain
+    public partial class CurtainModel
     {
-        public Curtain()
+        public CurtainModel()
         {
-            OrderCurtains = new HashSet<OrderCurtain>();
+            OrderCurtains = new HashSet<OrderCurtainModel>();
         }
 
         public int Id { get; set; }
@@ -21,11 +21,11 @@ namespace Curtains.Infrastructure.Models
         public int? ManufacturerId { get; set; }
         public decimal Price { get; set; }
 
-        public virtual Bracing? Bracing { get; set; }
-        public virtual Fabric? Fabric { get; set; }
-        public virtual Manufacturer? Manufacturer { get; set; }
-        public virtual Model? Model { get; set; }
-        public virtual MarketingInfo MarketingInfo { get; set; } = null!;
-        public virtual ICollection<OrderCurtain> OrderCurtains { get; set; }
+        public virtual BracingModel? Bracing { get; set; }
+        public virtual FabricModel? Fabric { get; set; }
+        public virtual ManufacturerModel? Manufacturer { get; set; }
+        public virtual ModelModel? Model { get; set; }
+        public virtual MarketingInfoModel MarketingInfo { get; set; } = null!;
+        public virtual ICollection<OrderCurtainModel> OrderCurtains { get; set; }
     }
 }

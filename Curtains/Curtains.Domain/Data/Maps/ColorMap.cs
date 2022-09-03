@@ -3,11 +3,11 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Curtains.Infrastructure.Models
 {
-    internal class ColorMap : IEntityTypeConfiguration<Color>
+    internal class ColorMap : IEntityTypeConfiguration<ColorModel>
     {
-        public void Configure(EntityTypeBuilder<Color> builder)
+        public void Configure(EntityTypeBuilder<ColorModel> builder)
         {
-            builder.ToTable(nameof(Color));
+            builder.ToTable(nameof(ColorModel));
 
             builder.Property(e => e.Code)
                 .HasMaxLength(50)
