@@ -3,11 +3,11 @@ using System.Collections.Generic;
 
 namespace Curtains.Infrastructure.Models
 {
-    public partial class Bracing
+    public partial class BracingModel
     {
-        public Bracing()
+        public BracingModel()
         {
-            Curtains = new HashSet<Curtain>();
+            Curtains = new HashSet<CurtainModel>();
         }
 
         public int Id { get; set; }
@@ -15,6 +15,6 @@ namespace Curtains.Infrastructure.Models
         public string? Description { get; set; }
         public decimal Price { get; set; }
 
-        public virtual ICollection<Curtain> Curtains { get; set; }
+        public virtual ICollection<CurtainModel> Curtains { get; set; }
     }
 }
