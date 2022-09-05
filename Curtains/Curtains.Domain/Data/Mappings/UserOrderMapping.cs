@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Curtains.Domain.Models
 {
-    internal class UserOrderMap : IEntityTypeConfiguration<UserOrderModel>
+    internal class UserOrderMapping : IEntityTypeConfiguration<UserOrderModel>
     {
         public void Configure(EntityTypeBuilder<UserOrderModel> builder)
         {

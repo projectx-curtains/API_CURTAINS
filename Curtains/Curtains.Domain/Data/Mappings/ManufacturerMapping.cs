@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Curtains.Domain.Models
 {
-    internal class ManufacturerMap : IEntityTypeConfiguration<ManufacturerModel>
+    internal class ManufacturerMapping : IEntityTypeConfiguration<ManufacturerModel>
     {
         public void Configure(EntityTypeBuilder<ManufacturerModel> builder)
         {

@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Curtains.Domain.Models
 {
-    internal class DecorationMap : IEntityTypeConfiguration<DecorationModel>
+    internal class DecorationMapping : IEntityTypeConfiguration<DecorationModel>
     {
         public void Configure(EntityTypeBuilder<DecorationModel> builder)
         {

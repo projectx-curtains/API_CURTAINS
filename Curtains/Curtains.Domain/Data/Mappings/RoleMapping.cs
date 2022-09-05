@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Curtains.Domain.Models
 {
-    internal class RoleMap : IEntityTypeConfiguration<RoleModel>
+    internal class RoleMapping : IEntityTypeConfiguration<RoleModel>
     {
         public void Configure(EntityTypeBuilder<RoleModel> builder)
         {

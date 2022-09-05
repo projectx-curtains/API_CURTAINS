@@ -40,21 +40,21 @@ namespace Curtains.Domain.Models
         {
             modelBuilder.UseCollation(_config["DbCollation"]);
 
-            modelBuilder.ApplyConfiguration(new BracingMap());
-            modelBuilder.ApplyConfiguration(new ColorMap());
-            modelBuilder.ApplyConfiguration(new CurtainMap());
-            modelBuilder.ApplyConfiguration(new DecorationMap());
-            modelBuilder.ApplyConfiguration(new DeliveryTypeMap());
-            modelBuilder.ApplyConfiguration(new FabricMap());
-            modelBuilder.ApplyConfiguration(new ManufacturerMap());
-            modelBuilder.ApplyConfiguration(new MarketingInfoMap());
-            modelBuilder.ApplyConfiguration(new MaterialMap());
-            modelBuilder.ApplyConfiguration(new ModelMap());
-            modelBuilder.ApplyConfiguration(new OrderMap());
-            modelBuilder.ApplyConfiguration(new OrderCurtainMap());
-            modelBuilder.ApplyConfiguration(new RoleMap());
-            modelBuilder.ApplyConfiguration(new UserMap());
-            modelBuilder.ApplyConfiguration(new UserOrderMap());
+            modelBuilder.ApplyConfiguration(new BracingMapping());
+            modelBuilder.ApplyConfiguration(new ColorMapping());
+            modelBuilder.ApplyConfiguration(new CurtainMapping());
+            modelBuilder.ApplyConfiguration(new DecorationMapping());
+            modelBuilder.ApplyConfiguration(new DeliveryTypeMapping());
+            modelBuilder.ApplyConfiguration(new FabricMapping());
+            modelBuilder.ApplyConfiguration(new ManufacturerMapping());
+            modelBuilder.ApplyConfiguration(new MarketingInfoMapping());
+            modelBuilder.ApplyConfiguration(new MaterialMapping());
+            modelBuilder.ApplyConfiguration(new ModelMapping());
+            modelBuilder.ApplyConfiguration(new OrderMapping());
+            modelBuilder.ApplyConfiguration(new OrderCurtainMapping());
+            modelBuilder.ApplyConfiguration(new RoleMapping());
+            modelBuilder.ApplyConfiguration(new UserMapping());
+            modelBuilder.ApplyConfiguration(new UserOrderMapping());
 
             OnModelCreatingPartial(modelBuilder);
         }

@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Curtains.Domain.Models
 {
-    internal class MarketingInfoMap : IEntityTypeConfiguration<MarketingInfoModel>
+    internal class MarketingInfoMapping : IEntityTypeConfiguration<MarketingInfoModel>
     {
         public void Configure(EntityTypeBuilder<MarketingInfoModel> builder)
         {

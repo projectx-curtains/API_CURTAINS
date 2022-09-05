@@ -3,11 +3,15 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Curtains.Domain.Models
 {
-    internal class DeliveryTypeMap : IEntityTypeConfiguration<DeliveryTypeModel>
+    internal class ModelMapping : IEntityTypeConfiguration<ModelModel>
     {
-        public void Configure(EntityTypeBuilder<DeliveryTypeModel> builder)
+        public void Configure(EntityTypeBuilder<ModelModel> builder)
         {
-            builder.ToTable(nameof(DeliveryTypeModel));
+            builder.ToTable(nameof(ModelModel));
+
+            builder.Property(e => e.Description)
+                .HasMaxLength(255)
+                .UseCollation("SQL_Latin1_General_CP1_CI_AS");
 
             builder.Property(e => e.Price).HasColumnType("money");
 

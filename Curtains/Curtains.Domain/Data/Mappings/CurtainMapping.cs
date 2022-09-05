@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Curtains.Domain.Models
 {
-    internal class CurtainMap : IEntityTypeConfiguration<CurtainModel>
+    internal class CurtainMapping : IEntityTypeConfiguration<CurtainModel>
     {
         public void Configure(EntityTypeBuilder<CurtainModel> builder)
         {

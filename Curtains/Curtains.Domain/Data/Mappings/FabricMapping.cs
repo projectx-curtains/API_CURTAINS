@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Curtains.Domain.Models
 {
-    internal class FabricMap : IEntityTypeConfiguration<FabricModel>
+    internal class FabricMapping : IEntityTypeConfiguration<FabricModel>
     {
         public void Configure(EntityTypeBuilder<FabricModel> builder)
         {

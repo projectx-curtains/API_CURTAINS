@@ -3,15 +3,11 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Curtains.Domain.Models
 {
-    internal class ColorMap : IEntityTypeConfiguration<ColorModel>
+    internal class MaterialMapping : IEntityTypeConfiguration<MaterialModel>
     {
-        public void Configure(EntityTypeBuilder<ColorModel> builder)
+        public void Configure(EntityTypeBuilder<MaterialModel> builder)
         {
-            builder.ToTable(nameof(ColorModel));
-
-            builder.Property(e => e.Code)
-                .HasMaxLength(50)
-                .UseCollation("SQL_Latin1_General_CP1_CI_AS");
+            builder.ToTable(nameof(MaterialModel));
 
             builder.Property(e => e.Description)
                 .HasMaxLength(255)
