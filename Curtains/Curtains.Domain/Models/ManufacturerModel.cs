@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Curtains.Infrastructure.Models
+namespace Curtains.Domain.Models
 {
     public partial class ManufacturerModel
     {

@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 
-namespace Curtains.Infrastructure.Models
+namespace Curtains.Domain.Models
 {
     public partial class CurtainsContext : DbContext
     {
