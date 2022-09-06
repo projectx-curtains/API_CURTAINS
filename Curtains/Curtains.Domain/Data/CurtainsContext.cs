@@ -27,6 +27,7 @@ namespace Curtains.Domain.Models
         public virtual DbSet<RoleModel> Roles { get; set; } = null!;
         public virtual DbSet<UserModel> Users { get; set; } = null!;
         public virtual DbSet<UserOrderModel> UserOrders { get; set; } = null!;
+        public virtual DbSet<ReviewModel> ReviewModels { get; set; } = null!;
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -55,6 +56,7 @@ namespace Curtains.Domain.Models
             modelBuilder.ApplyConfiguration(new RoleMapping());
             modelBuilder.ApplyConfiguration(new UserMapping());
             modelBuilder.ApplyConfiguration(new UserOrderMapping());
+            modelBuilder.ApplyConfiguration(new ReviewMapping());
 
             OnModelCreatingPartial(modelBuilder);
         }
