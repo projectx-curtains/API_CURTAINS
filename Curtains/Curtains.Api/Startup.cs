@@ -1,5 +1,8 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using Curtains.Domain.Models;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.EntityFrameworkCore;
 
 public class Startup
 {

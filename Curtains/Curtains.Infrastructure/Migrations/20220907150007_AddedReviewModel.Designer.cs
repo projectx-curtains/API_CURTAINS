@@ -4,6 +4,7 @@ using Curtains.Domain.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Curtains.Domain.Migrations
 {
     [DbContext(typeof(CurtainsContext))]
-    partial class CurtainsContextModelSnapshot : ModelSnapshot
+    [Migration("20220907150007_AddedReviewModel")]
+    partial class AddedReviewModel
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
