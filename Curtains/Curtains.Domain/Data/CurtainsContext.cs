@@ -40,6 +40,7 @@ namespace Curtains.Domain.Models
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.UseCollation(_config["DbCollation"]);
+            modelBuilder.UseCollation(_config["DbCollationLatin"]);
 
             modelBuilder.ApplyConfiguration(new BracingMapping());
             modelBuilder.ApplyConfiguration(new ColorMapping());

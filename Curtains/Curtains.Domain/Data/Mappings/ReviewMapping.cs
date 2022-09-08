@@ -10,20 +10,16 @@ namespace Curtains.Domain.Models
             builder.ToTable(nameof(ReviewModel));
 
             builder.Property(r => r.PersonName)
-                .HasMaxLength(10)
-                .UseCollation("SQL_Latin1_General_CP1_CI_AS");
+                .HasMaxLength(10);
 
             builder.Property(r => r.Country)
-                .HasMaxLength(10)
-                .UseCollation("SQL_Latin1_General_CP1_CI_AS");
+                .HasMaxLength(10);
 
             builder.Property(r => r.City)
-                .HasMaxLength(10)
-                .UseCollation("SQL_Latin1_General_CP1_CI_AS");
+                .HasMaxLength(10);
 
             builder.Property(r => r.Review)
-                .HasMaxLength(260)
-                .UseCollation("SQL_Latin1_General_CP1_CI_AS");
+                .HasMaxLength(260);
         }
     }
 }
