@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace Curtains.Domain.Migrations
+namespace Curtains.Infrastructure.Migrations
 {
     public partial class AddedReviewModel : Migration
     {

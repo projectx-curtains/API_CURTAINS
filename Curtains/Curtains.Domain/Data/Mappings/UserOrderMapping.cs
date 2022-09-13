@@ -1,7 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using Curtains.Domain.Models;
 
-namespace Curtains.Domain.Models
+namespace Curtains.Domain.Data
 {
     internal class UserOrderMapping : IEntityTypeConfiguration<UserOrderModel>
     {

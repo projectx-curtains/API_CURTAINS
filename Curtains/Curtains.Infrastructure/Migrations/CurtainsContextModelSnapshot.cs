@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
 
-namespace Curtains.Domain.Migrations
+namespace Curtains.Infrastructure.Migrations
 {
     [DbContext(typeof(CurtainsContext))]
     partial class CurtainsContextModelSnapshot : ModelSnapshot
