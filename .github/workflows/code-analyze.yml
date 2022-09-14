@@ -58,9 +58,9 @@ jobs:
       with:
         dotnet-version: ${{ matrix.dotnet-version }}
     - name: Install dependencies
-      run: dotnet restore
+      run: dotnet restore Curtains.Api/Curtains.Api.csproj
     - name: Build
-      run: dotnet build
+      run: dotnet build Curtains.Api/Curtains.Api.csproj
 
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v2
