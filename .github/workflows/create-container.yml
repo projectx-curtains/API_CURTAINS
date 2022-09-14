@@ -11,6 +11,13 @@ jobs:
 
     - name: Check out the repo
       uses: actions/checkout@v3
+    - name: code analyze
+      uses: microsoft/ApplicationInspector-Action@v1
+    - name: Upload artifacts
+      uses: actions/upload-artifact@v2
+      with:
+          name: AppInspectorResults
+          path: AppInspectorResults.json
 
     # - name: Log into registry
     #   uses: docker/login-action@v1
