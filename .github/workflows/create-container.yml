@@ -1,4 +1,4 @@
-name: Create docker container and push it to AWS
+name: Create docker image and push
 
 on:
   push:
@@ -39,7 +39,7 @@ jobs:
       uses: alexjurkiewicz/ecr-scan-image@v1.7.0
       with:
         repository: myorg/myimage
-        tag: ${{ steps.build-image.outputs.name }}
+        tag: ${{ steps.build-image.outputs.tag }}
         # fail_threshold: medium
         # ignore_list: |
         #   CVE-2014-7654321
