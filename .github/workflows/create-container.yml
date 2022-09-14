@@ -1,9 +1,10 @@
 name: Create docker image and push
 
 on:
-  push:
-    branches: [ "main", "develop", "initial-ci" ]
-
+  workflow_run:
+    workflows: ["Code analyze with CodeQL"]
+    types:
+      - completed
 jobs:
   build-docker-image:
     runs-on: ubuntu-latest
@@ -40,7 +41,7 @@ jobs:
       with:
         repository: ${{ secrets.REPOSITORY_NAME }}
         tag:  ${{ github.ref_name }}
-        # fail_threshold: medium
+        fail_threshold: critical
         # ignore_list: |
         #   CVE-2014-7654321
         #   CVE-2014-456132
