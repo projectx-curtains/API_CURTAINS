@@ -57,8 +57,6 @@ jobs:
       uses: actions/setup-dotnet@v2
       with:
         dotnet-version: ${{ matrix.dotnet-version }}
-    - name: Check files in dir
-      run: ls -l ./
     - name: Install dependencies
       run: dotnet restore Curtains/Curtains.Api/Curtains.Api.csproj
     - name: Build
