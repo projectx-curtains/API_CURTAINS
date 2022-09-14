@@ -2,11 +2,9 @@ name: Create docker image and push
 
 on:
   workflow_run:
-    workflows: ["Code analyze with CodeQL"]
+    workflows: ["Code-analyze"]
     types:
       - completed
-  workflow_dispatch:
-
 jobs:
   build-docker-image:
     runs-on: ubuntu-latest
