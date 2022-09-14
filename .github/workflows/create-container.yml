@@ -2,7 +2,7 @@ name: Create docker container
 
 on:
   push:
-    branches: [ "main", "develop" ]
+    branches: [ "main", "develop", "initial-ci" ]
 
 jobs:
   build-docker-image:
