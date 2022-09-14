@@ -57,10 +57,12 @@ jobs:
       uses: actions/setup-dotnet@v2
       with:
         dotnet-version: ${{ matrix.dotnet-version }}
+    - name: Check files in dir
+      run: ls -l ./
     - name: Install dependencies
-      run: dotnet restore Curtains.Api/Curtains.Api.csproj
+      run: dotnet restore Curtains/Curtains.Api/Curtains.Api.csproj
     - name: Build
-      run: dotnet build Curtains.Api/Curtains.Api.csproj
+      run: dotnet build Curtains/Curtains.Api/Curtains.Api.csproj
 
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v2
