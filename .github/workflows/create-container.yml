@@ -2,7 +2,7 @@ name: Create docker image and push
 
 on:
   workflow_run:
-    workflows: ["Code analyze with CodeQL"]
+    workflows: [Code analyze with CodeQL]
     types:
       - completed
 jobs:
