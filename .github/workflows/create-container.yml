@@ -33,6 +33,19 @@ jobs:
         docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG -f ./Dockerfile . 
         docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
         echo "::set-output name=image::$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG"
+    
+    - name: Scan Docker image
+      id: docker-scan
+      uses: alexjurkiewicz/ecr-scan-image@v1.7.0
+      with:
+        repository: myorg/myimage
+        tag: ${{ steps.build-image.outputs.name }}
+        # fail_threshold: medium
+        # ignore_list: |
+        #   CVE-2014-7654321
+        #   CVE-2014-456132
+    # Access scan results in later steps
+    - run: echo "${{ steps.docker-scan.outputs.total }} total vulnerabilities."
 
     # - name: Fill in the new image ID in the Amazon ECS task definition
     #   id: task-def
