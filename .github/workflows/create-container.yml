@@ -1,10 +1,10 @@
 name: Create docker image and push
 
 on:
-  workflow_run:
-    workflows: ["Code-analyze"]
-    types:
-      - completed
+  push:
+    branches: [ "master", "develop", "initial-ci" ]
+
+
 jobs:
   build-docker-image:
     runs-on: ubuntu-latest

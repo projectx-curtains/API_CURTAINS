@@ -62,7 +62,4 @@ jobs:
       run: dotnet build Curtains/Curtains.Api/Curtains.Api.csproj
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v2
-    - name: Publish dll
-      run: dotnet publish Curtains/Curtains.Api/Curtains.Api.csproj
-    - name: Cache workflow output 
-      run: 
+
