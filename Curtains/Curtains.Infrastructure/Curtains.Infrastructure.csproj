@@ -1,0 +1,38 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>disable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="AutoMapper" Version="11.0.1" />
+      <PackageReference Include="Bogus" Version="34.0.2" />
+      <PackageReference Include="FluentValidation" Version="11.2.2" />
+      <PackageReference Include="MediatR" Version="10.0.1" />
+      <PackageReference Include="Microsoft.AspNetCore.App" Version="2.2.8" />
+      <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
+      <PackageReference Include="Microsoft.AspNetCore.Mvc.Abstractions" Version="2.2.0" />
+      <PackageReference Include="Microsoft.AspNetCore.Routing" Version="2.2.2" />
+      <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="6.0.9" />
+      <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.9" />
+      <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.9">
+        <PrivateAssets>all</PrivateAssets>
+        <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      </PackageReference>
+      <PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="6.0.0" />
+      <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="6.0.0" />
+      <PackageReference Include="Microsoft.OpenApi" Version="1.4.2" />
+      <PackageReference Include="NEST" Version="7.17.4" />
+      <PackageReference Include="NEST.JsonNetSerializer" Version="7.17.4" />
+      <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="6.4.0" />
+      <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="6.4.0" />
+      <PackageReference Include="System.Text.Json" Version="6.0.6" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Curtains.Domain\Curtains.Domain.csproj" />
+    </ItemGroup>
+
+</Project>
