@@ -18,11 +18,10 @@ jobs:
         uses: actions/setup-dotnet@v2
         with:
           dotnet-version: '6.0.x'
-      - name: debug 
-        run: ls -l ./
+
       - name: Install dependencies
-        run: dotnet restore Curtains.Api/Curtains.Api.csproj
+        run: dotnet restore Curtains/Curtains.Api/Curtains.Api.csproj
       - name: Build
-        run: dotnet build --configuration Release --no-restore "Curtains.Api/Curtains.Api.csproj"
+        run: dotnet build --configuration Release --no-restore "Curtains/Curtains.Api/Curtains.Api.csproj"
       - name: Test
         run: dotnet test --logger trx --results-directory "TestResults-6.0.x"
