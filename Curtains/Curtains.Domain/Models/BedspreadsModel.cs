@@ -15,6 +15,7 @@ namespace Curtains.Domain.Models
         }
         public int Id { get; set; }
         public string Title { get; set; } = null!;
+        public string Decription { get; set; }
         public string Size { get; set; } = null!;
         public string Purpose { get; set; }
         public decimal Price { get; set; }

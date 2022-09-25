@@ -22,8 +22,8 @@ namespace Curtains.Domain.Models
         public string City { get; set; }
         public string Street { get; set; }
         public string House { get; set; }
-        public int Flat { get; set; }
-        public int PostOffice { get; set; }
+        public int? Flat { get; set; }
+        public int? PostOffice { get; set; }
 
         public virtual ICollection<UserOrderModel> UserOrders { get; set; } = null!;
         public virtual ICollection<OrderModel> Orders { get; set; }

@@ -10,7 +10,7 @@ namespace Curtains.Domain.Models
     {
         public int Id { get; set; }
         public string Description { get; set; } = null!;
-        public string Image { get; set; } = null!;
+        public string ImagePath { get; set; } = null!;
 
     }
 }
