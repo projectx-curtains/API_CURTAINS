@@ -18,6 +18,8 @@ jobs:
         uses: actions/setup-dotnet@v2
         with:
           dotnet-version: '6.0.x'
+      - name: debug 
+        run: ls -l ./
       - name: Install dependencies
         run: dotnet restore Curtains.Api/Curtains.Api.csproj
       - name: Build
