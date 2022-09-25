@@ -24,4 +24,4 @@ jobs:
       - name: Build
         run: dotnet build --configuration Release --no-restore "Curtains/Curtains.Api/Curtains.Api.csproj"
       - name: Test
-        run: dotnet test --logger trx --results-directory "TestResults-6.0.x"
+        run: dotnet test --logger trx --results-directory "TestResults-6.0.x" "Curtains/Curtains.Api/Curtains.Api.csproj"
