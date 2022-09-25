@@ -18,7 +18,7 @@ namespace Curtains.Domain.Models
         public int? PillowsId { get; set; }
         public int? BedspreadsId { get; set; }
         public int? SetId { get; set; }
-        public int? LambrequinsIdModel { get; set; }
+        public int? LambrequinsId { get; set; }
 
         public virtual UserModel User { get; set; } = null!;
         public virtual OrderModel Order { get; set; } = null!;
