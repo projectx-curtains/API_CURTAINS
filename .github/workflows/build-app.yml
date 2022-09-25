@@ -25,3 +25,10 @@ jobs:
         run: dotnet build --configuration Release --no-restore "Curtains/Curtains.Api/Curtains.Api.csproj"
       - name: Test
         run: dotnet test --logger trx --results-directory "TestResults-6.0.x" "Curtains/Curtains.Api/Curtains.Api.csproj"
+      - name: Upload dotnet test results
+        uses: actions/upload-artifact@v3
+        with:
+          name: dotnet-results-6.0.x
+          path: TestResults-6.0.x
+        # Use always() to always run this step to publish test results when there are test failures
+        if: ${{ always() }}
