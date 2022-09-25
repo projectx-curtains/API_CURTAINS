@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Curtains.Domain.Models
 {
-    internal class CurtainsModel
+    public class CurtainsModel
     {
         public CurtainsModel()
         {

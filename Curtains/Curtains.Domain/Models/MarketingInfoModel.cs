@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Curtains.Domain.Models
 {
-    internal class MarketingInfoModel
+    public class MarketingInfoModel
     {
         public int Id { get; set; }
         public bool IsNew { get; set; }

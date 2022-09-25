@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Curtains.Domain.Models
 {
-    internal class UserOrderModel
+    public class UserOrderModel
     {
         public int Id { get; set; }
         public DateTime Date { get; set; }

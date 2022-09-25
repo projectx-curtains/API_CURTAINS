@@ -3,6 +3,8 @@ using System.Reflection;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage;
 
+using Curtains.Domain.Models;
+
 namespace Curtains.Infrastructure.Database
 {
     public class CurtainsDbContext : DbContext
@@ -10,11 +12,30 @@ namespace Curtains.Infrastructure.Database
         private IDbContextTransaction _currentTransaction;
 
         #region DbSetsRegion
-
-        
-
+        public virtual DbSet<AccessoriesModel> Accessories { get; set; } = null!;
+        public virtual DbSet<ColorModel> Colors { get; set; } = null!;
+        public virtual DbSet<CurtainsModel> Curtains { get; set; } = null!;
+        public virtual DbSet<FabricModel> Fabrics { get; set; } = null!;
+        public virtual DbSet<DecorationsModel> Decorations { get; set; } = null!;
+        public virtual DbSet<UserOrderModel> UserOrders { get; set; } = null!;
+        public virtual DbSet<LambrequinsModel> Lambrequins { get; set; } = null!;
+        public virtual DbSet<ConsistencyModel> Consistencies { get; set; } = null!;
+        public virtual DbSet<ManufacturerModel> Manufacturers { get; set; } = null!;
+        public virtual DbSet<BedspreadsModel> Bedspreads { get; set; } = null!;
+        public virtual DbSet<PillowsModel> Pillows { get; set; } = null!;
+        public virtual DbSet<MarketingInfoModel> MarketingInfos { get; set; } = null!;
+        public virtual DbSet<SetModel> Sets { get; set; } = null!;
+        public virtual DbSet<MaterialModel> Materials { get; set; } = null!;
+        public virtual DbSet<CurtainsTypeModel> CurtainsTypes { get; set; } = null!;
+        public virtual DbSet<CurtainsKindModel> CurtainsKinds { get; set; } = null!;
+        public virtual DbSet<UserModel> Users { get; set; } = null!;
+        public virtual DbSet<OrderModel> Orders { get; set; } = null!;
+        public virtual DbSet<DeliveryTypeModel> DeliveryTypes { get; set; } = null!;
+        public virtual DbSet<PaymentTypeModel> PaymentTypes { get; set; } = null!;
+        public virtual DbSet<OurWorksModel> OurWorks { get; set; } = null!;
+        public virtual DbSet<ReviewModel> Reviews { get; set; } = null!;
         #endregion
-        
+
         public CurtainsDbContext(DbContextOptions<CurtainsDbContext> options) : base(options) {}
 
         protected override void OnModelCreating(ModelBuilder builder)

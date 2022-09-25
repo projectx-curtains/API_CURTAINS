@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Curtains.Domain.Models
 {
-    internal class ReviewModel
+    public class ReviewModel
     {
         public int Id { get; set; }
         public string PersonName { get; set; } = null!;
