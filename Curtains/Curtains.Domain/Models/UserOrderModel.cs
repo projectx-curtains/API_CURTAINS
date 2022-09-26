@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace Curtains.Domain.Models
 {
-    public class UserOrderModel
+    public class UserOrderModel : BaseEntity
     {
-        public int Id { get; set; }
         public DateTime Date { get; set; }
         public decimal Cost { get; set; }
         public int UserId { get; set; }

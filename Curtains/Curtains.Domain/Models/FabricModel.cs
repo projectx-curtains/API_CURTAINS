@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Curtains.Domain.Models
 {
-    public class FabricModel
+    public class FabricModel : BaseEntity
     {
         public FabricModel()
         {
@@ -15,7 +15,6 @@ namespace Curtains.Domain.Models
             Pillows = new HashSet<PillowsModel>();
         }
 
-        public int Id { get; set; }
         public string Title { get; set; } = null!;
         public bool Density { get; set; }
         public string Description { get; set; }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Curtains.Domain.Models
 {
-    public class UserModel
+    public class UserModel : BaseEntity
     {
         public UserModel()
         {
@@ -14,7 +14,6 @@ namespace Curtains.Domain.Models
             UserOrders = new HashSet<UserOrderModel>();
         }
 
-        public int Id { get; set; }
         public string Name { get; set; } = null!;
         public string Email { get; set; } = null!;
         public string PhoneNumber { get; set; } = null!;

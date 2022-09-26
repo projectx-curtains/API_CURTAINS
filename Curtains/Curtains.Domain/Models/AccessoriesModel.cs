@@ -6,14 +6,13 @@ using System.Threading.Tasks;
 
 namespace Curtains.Domain.Models
 {
-    public class AccessoriesModel
+    public class AccessoriesModel : BaseEntity
     {
         public AccessoriesModel()
         {
             Curtains = new HashSet<CurtainsModel>();
             UserOrders = new HashSet<UserOrderModel>();
         }
-        public int Id { get; set; }
         public string Title { get; set; } = null!;
         public string Description { get; set; }
         public int ColorId { get; set; }

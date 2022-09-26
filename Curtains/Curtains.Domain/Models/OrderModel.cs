@@ -6,13 +6,12 @@ using System.Threading.Tasks;
 
 namespace Curtains.Domain.Models
 {
-    public class OrderModel
+    public class OrderModel : BaseEntity
     {
         public OrderModel()
         {
         }
 
-        public int Id { get; set; }
         public int UserId { get; set; }
         public int PaymentTypeId { get; set; }
         public int DeliveryTypeId { get; set; }

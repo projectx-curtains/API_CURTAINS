@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace Curtains.Domain.Models
 {
-    public class MarketingInfoModel
+    public class MarketingInfoModel : BaseEntity
     {
-        public int Id { get; set; }
         public bool IsNew { get; set; }
         public bool IsOnSale { get; set; }
         public virtual CurtainsModel Curtains { get; set; } = null!;

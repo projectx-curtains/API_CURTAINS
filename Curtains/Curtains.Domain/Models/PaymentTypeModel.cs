@@ -6,13 +6,12 @@ using System.Threading.Tasks;
 
 namespace Curtains.Domain.Models
 {
-    public class PaymentTypeModel
+    public class PaymentTypeModel : BaseEntity
     {
         public PaymentTypeModel()
         {
             Orders = new HashSet<OrderModel>();
         }
-        public int Id { get; set; }
         public string Title { get; set; } = null!;
         public virtual ICollection<OrderModel> Orders { get; set; }
     }

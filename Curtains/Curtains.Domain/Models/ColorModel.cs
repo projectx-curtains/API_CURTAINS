@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Curtains.Domain.Models
 {
-    public class ColorModel
+    public class ColorModel : BaseEntity
     {
         public ColorModel()
         {
@@ -15,7 +15,6 @@ namespace Curtains.Domain.Models
             Lambrequins = new HashSet<LambrequinsModel>();
         }
 
-        public int Id { get; set; }
         public string Title { get; set; } = null!;
         public string Description { get; set; }
         public string Code { get; set; }

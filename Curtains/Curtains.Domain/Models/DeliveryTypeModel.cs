@@ -6,14 +6,13 @@ using System.Threading.Tasks;
 
 namespace Curtains.Domain.Models
 {
-    public class DeliveryTypeModel
+    public class DeliveryTypeModel : BaseEntity
     {
         public DeliveryTypeModel()
         {
             Orders = new HashSet<OrderModel>();
         }
 
-        public int Id { get; set; }
         public string Title { get; set; } = null!;
         public decimal Price { get; set; }
 

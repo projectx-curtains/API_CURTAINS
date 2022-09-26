@@ -6,13 +6,12 @@ using System.Threading.Tasks;
 
 namespace Curtains.Domain.Models
 {
-    public class LambrequinsModel
+    public class LambrequinsModel : BaseEntity
     {
         public LambrequinsModel()
         {
             UserOrders = new HashSet<UserOrderModel>();
         }
-        public int Id { get; set; }
         public string Title { get; set; } = null!;
         public string Description { get; set; }
         public int ColorId { get; set; }

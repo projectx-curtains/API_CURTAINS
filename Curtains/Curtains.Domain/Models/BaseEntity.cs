@@ -6,11 +6,8 @@ using System.Threading.Tasks;
 
 namespace Curtains.Domain.Models
 {
-    public class OurWorksModel : BaseEntity
+    public class BaseEntity
     {
         public int Id { get; set; }
-        public string Description { get; set; } = null!;
-        public string ImagePath { get; set; } = null!;
-
     }
 }

@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace Curtains.Domain.Models
 {
-    public class ReviewModel
+    public class ReviewModel : BaseEntity
     {
-        public int Id { get; set; }
         public string PersonName { get; set; } = null!;
         public string Country { get; set; } = null!;
         public string City { get; set; } = null!;

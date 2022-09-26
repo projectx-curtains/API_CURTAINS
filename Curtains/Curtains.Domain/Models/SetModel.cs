@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace Curtains.Domain.Models
 {
-    public class SetModel
+    public class SetModel : BaseEntity
     {
-        public int Id { get; set; }
         public string Title { get; set; } = null!;
         public string Description { get; set; }
         public int? CurtainsId { get; set; }
