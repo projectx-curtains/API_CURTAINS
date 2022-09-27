@@ -10,14 +10,12 @@ namespace Curtains.Domain.Models
     {
         public CurtainsModel()
         {
-            Sets = new HashSet<SetModel>();
+            Sets = new HashSet<ProductSetModel>();
             UserOrders = new HashSet<UserOrderModel>();
         }
-
+        #region PropertiesRegion
         public bool Density { get; set; }
         public bool SunProtection { get; set; }
-        public string Title { get; set; } = null!;
-        public string Description { get; set; }
         public int Height { get; set; }
         public int Width { get; set; }
         public int FabricId { get; set; }
@@ -33,7 +31,8 @@ namespace Curtains.Domain.Models
         public virtual CurtainsTypeModel CurtainsType { get; set; } = null!;
         public virtual CurtainsKindModel CurtainsKind { get; set; } = null!;
         public virtual MarketingInfoModel MarketingInfo { get; set; } = null!;
-        public virtual ICollection<SetModel> Sets { get; set; }
+        public virtual ICollection<ProductSetModel> Sets { get; set; }
         public virtual ICollection<UserOrderModel> UserOrders { get; set; }
+        #endregion
     }
 }

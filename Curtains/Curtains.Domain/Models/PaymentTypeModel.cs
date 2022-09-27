@@ -12,7 +12,9 @@ namespace Curtains.Domain.Models
         {
             Orders = new HashSet<OrderModel>();
         }
-        public string Title { get; set; } = null!;
+        #region PropertiesRegion
+
         public virtual ICollection<OrderModel> Orders { get; set; }
+        #endregion
     }
 }

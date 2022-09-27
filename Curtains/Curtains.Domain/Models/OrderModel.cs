@@ -11,6 +11,7 @@ namespace Curtains.Domain.Models
         public OrderModel()
         {
         }
+        #region PropertiesRegion
 
         public int UserId { get; set; }
         public int PaymentTypeId { get; set; }
@@ -22,5 +23,6 @@ namespace Curtains.Domain.Models
         public virtual PaymentTypeModel PaymentType { get; set; } = null!;
 
         public virtual UserOrderModel UserOrder { get; set; } = null!;
+        #endregion
     }
 }

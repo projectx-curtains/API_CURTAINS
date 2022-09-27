@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace Curtains.Domain.Models
 {
-    public class SetModel : BaseEntity
+    public class ProductSetModel : BaseEntity
     {
-        public string Title { get; set; } = null!;
-        public string Description { get; set; }
+        #region PropertiesRegion
+
         public int? CurtainsId { get; set; }
         public int? PillowsId { get; set; }
         public int? BedspreadsId { get; set; }
@@ -17,5 +17,6 @@ namespace Curtains.Domain.Models
         public virtual CurtainsModel Curtains { get; set; }
         public virtual PillowsModel Pillows { get; set; }
         public virtual BedspreadsModel Bedspreads { get; set; }
+        #endregion
     }
 }

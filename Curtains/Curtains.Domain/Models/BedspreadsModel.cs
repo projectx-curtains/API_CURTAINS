@@ -10,11 +10,10 @@ namespace Curtains.Domain.Models
     {
         public BedspreadsModel()
         {
-            Sets = new HashSet<SetModel>();
+            Sets = new HashSet<ProductSetModel>();
             UserOrders = new HashSet<UserOrderModel>();
         }
-        public string Title { get; set; } = null!;
-        public string Decription { get; set; }
+        #region PropertiesRegion
         public string Size { get; set; } = null!;
         public string Purpose { get; set; }
         public decimal Price { get; set; }
@@ -24,7 +23,8 @@ namespace Curtains.Domain.Models
         public int FabricId { get; set; }
         public MarketingInfoModel MarketingInfo { get; set; }
         public virtual FabricModel Fabric { get; set; } = null!;
-        public virtual ICollection<SetModel> Sets { get; set; }
+        public virtual ICollection<ProductSetModel> Sets { get; set; }
         public virtual ICollection<UserOrderModel> UserOrders { get; set; }
+        #endregion
     }
 }

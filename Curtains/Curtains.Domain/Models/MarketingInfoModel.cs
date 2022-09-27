@@ -8,12 +8,15 @@ namespace Curtains.Domain.Models
 {
     public class MarketingInfoModel : BaseEntity
     {
+        #region PropertiesRegion
+
         public bool IsNew { get; set; }
         public bool IsOnSale { get; set; }
-        public virtual CurtainsModel Curtains { get; set; } = null!;
-        public virtual PillowsModel Pillows { get; set; } = null!;
-        public virtual BedspreadsModel Bedspreads { get; set; } = null!;
-        public virtual SetModel Sets { get; set; } = null!;
+        public virtual CurtainsModel Curtains { get; set; } 
+        public virtual PillowsModel Pillows { get; set; } 
+        public virtual BedspreadsModel Bedspreads { get; set; }
+        public virtual ProductSetModel Sets { get; set; }
+        #endregion
 
     }
 }

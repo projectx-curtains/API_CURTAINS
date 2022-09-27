@@ -8,6 +8,8 @@ namespace Curtains.Domain.Models
 {
     public class UserOrderModel : BaseEntity
     {
+        #region PropertiesRegion
+
         public DateTime Date { get; set; }
         public decimal Cost { get; set; }
         public int UserId { get; set; }
@@ -25,7 +27,8 @@ namespace Curtains.Domain.Models
         public virtual CurtainsModel Curtains { get; set; }
         public virtual PillowsModel Pillows { get; set; }
         public virtual BedspreadsModel Bedspreads { get; set; }
-        public virtual SetModel Set { get; set; }
+        public virtual ProductSetModel Set { get; set; }
         public virtual LambrequinsModel Lambrequins { get; set; }
+        #endregion
     }
 }

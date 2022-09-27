@@ -13,12 +13,12 @@ namespace Curtains.Domain.Models
             Curtains = new HashSet<CurtainsModel>();
             UserOrders = new HashSet<UserOrderModel>();
         }
-        public string Title { get; set; } = null!;
-        public string Description { get; set; }
+        #region PropertiesRegion
         public int ColorId { get; set; }
         public decimal Price { get; set; }
         public virtual ColorModel Color { get; set; } = null!;
         public virtual ICollection<UserOrderModel> UserOrders { get; set; }
         public virtual ICollection<CurtainsModel> Curtains { get; set; }
+        #endregion
     }
 }

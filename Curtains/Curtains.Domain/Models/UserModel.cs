@@ -13,6 +13,7 @@ namespace Curtains.Domain.Models
             Orders = new HashSet<OrderModel>();
             UserOrders = new HashSet<UserOrderModel>();
         }
+        #region PropertiesRegion
 
         public string Name { get; set; } = null!;
         public string Email { get; set; } = null!;
@@ -26,5 +27,6 @@ namespace Curtains.Domain.Models
 
         public virtual ICollection<UserOrderModel> UserOrders { get; set; } = null!;
         public virtual ICollection<OrderModel> Orders { get; set; }
+        #endregion
     }
 }
