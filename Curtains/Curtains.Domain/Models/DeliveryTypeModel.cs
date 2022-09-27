@@ -12,10 +12,12 @@ namespace Curtains.Domain.Models
         {
             Orders = new HashSet<OrderModel>();
         }
+
         #region PropertiesRegion
-
         public decimal Price { get; set; }
+        #endregion
 
+        #region NavigationProperties
         public virtual ICollection<OrderModel> Orders { get; set; }
         #endregion
     }

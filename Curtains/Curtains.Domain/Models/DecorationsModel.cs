@@ -12,9 +12,12 @@ namespace Curtains.Domain.Models
         {
             Fabrics = new HashSet<FabricModel>();
         }
-        #region PropertiesRegion
 
+        #region PropertiesRegion
         public bool Presence { get; set; }
+        #endregion
+
+        #region NavigationProperties
         public virtual ICollection<FabricModel> Fabrics { get; set; }
         #endregion
     }

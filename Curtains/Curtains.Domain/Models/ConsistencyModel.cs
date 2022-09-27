@@ -12,8 +12,8 @@ namespace Curtains.Domain.Models
         {
             Fabrics = new HashSet<FabricModel>();
         }
-        #region PropertiesRegion
 
+        #region NavigationPropertiesRegion
         public virtual ICollection<FabricModel> Fabrics { get; set; }
         #endregion
 

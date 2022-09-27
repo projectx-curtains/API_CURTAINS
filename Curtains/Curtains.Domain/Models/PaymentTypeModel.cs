@@ -12,8 +12,8 @@ namespace Curtains.Domain.Models
         {
             Orders = new HashSet<OrderModel>();
         }
-        #region PropertiesRegion
 
+        #region NavigationPropertiesRegion
         public virtual ICollection<OrderModel> Orders { get; set; }
         #endregion
     }

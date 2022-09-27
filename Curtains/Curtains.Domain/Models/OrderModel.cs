@@ -11,18 +11,19 @@ namespace Curtains.Domain.Models
         public OrderModel()
         {
         }
-        #region PropertiesRegion
 
+        #region PropertiesRegion
         public int UserId { get; set; }
         public int PaymentTypeId { get; set; }
         public int DeliveryTypeId { get; set; }
-        public string Comment { get; set; } = null!;
+        public string Comment { get; set; }
+        #endregion
 
-        public virtual DeliveryTypeModel DeliveryType { get; set; } = null!;
-        public virtual UserModel User { get; set; } = null!;
-        public virtual PaymentTypeModel PaymentType { get; set; } = null!;
-
-        public virtual UserOrderModel UserOrder { get; set; } = null!;
+        #region NavigationProperties
+        public virtual DeliveryTypeModel DeliveryType { get; set; }  
+        public virtual UserModel User { get; set; }  
+        public virtual PaymentTypeModel PaymentType { get; set; }  
+        public virtual UserOrderModel UserOrder { get; set; }  
         #endregion
     }
 }

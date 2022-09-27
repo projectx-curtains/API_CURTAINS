@@ -14,8 +14,8 @@ namespace Curtains.Domain.Models
             Bedspreads = new HashSet<BedspreadsModel>();
             Pillows = new HashSet<PillowsModel>();
         }
-        #region PropertiesRegion
 
+        #region PropertiesRegion
         public bool Density { get; set; }
         public int ConsistencyId { get; set; }
         public int ColorId { get; set; }
@@ -25,11 +25,13 @@ namespace Curtains.Domain.Models
         public int Length { get; set; }
         public int Width { get; set; }
         public bool Design { get; set; }
+        #endregion
 
-        public virtual ConsistencyModel Consistency { get; set; } = null!;
-        public virtual ColorModel Color { get; set; } = null!;
-        public virtual DecorationsModel Decoration { get; set; } = null!; 
-        public virtual ManufacturerModel Manufacturer { get; set; } = null!;
+        #region NavigationProperties
+        public virtual ConsistencyModel Consistency { get; set; }  
+        public virtual ColorModel Color { get; set; }  
+        public virtual DecorationsModel Decoration { get; set; }   
+        public virtual ManufacturerModel Manufacturer { get; set; }  
         public virtual ICollection<CurtainsModel> Curtains { get; set; }
         public virtual ICollection<BedspreadsModel> Bedspreads { get; set; }
         public virtual ICollection<PillowsModel> Pillows { get; set; }

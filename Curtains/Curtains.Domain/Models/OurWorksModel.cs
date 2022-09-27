@@ -9,8 +9,7 @@ namespace Curtains.Domain.Models
     public class OurWorksModel : BaseEntity
     {
         #region PropertiesRegion
-
-        public string ImagePath { get; set; } = null!;
+        public string ImagePath { get; set; }  
         #endregion  
 
     }

@@ -14,10 +14,12 @@ namespace Curtains.Domain.Models
             Accessories = new HashSet<AccessoriesModel>();
             Lambrequins = new HashSet<LambrequinsModel>();
         }
+
         #region PropertiesRegion
-
         public string Code { get; set; }
+        #endregion
 
+        #region NavigationProperties
         public virtual ICollection<FabricModel> Fabrics { get; set; }
         public virtual ICollection<AccessoriesModel> Accessories { get; set; }
         public virtual ICollection<LambrequinsModel> Lambrequins { get; set; }
