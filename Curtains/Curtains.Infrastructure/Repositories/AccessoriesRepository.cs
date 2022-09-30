@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Curtains.Infrastructure.Repositories
 {
-    public class AccessoriesRepository
+    public class AccessoriesRepository : IRepository<AccessoriesModel>
     {
         private readonly ILogger _logger;
         private readonly CurtainsDbContext _curtainsContext;
@@ -28,7 +28,12 @@ namespace Curtains.Infrastructure.Repositories
 
         public async Task<AccessoriesModel> GetById(int Id)
         {
-            return await _curtainsContext.Accessories.SingleAsync(c => c.Id == Id);
+            var result = await _curtainsContext.Accessories.FirstOrDefaultAsync(c => c.Id == Id);
+
+            if (result != null)
+                return result;
+
+            return null;
         }
 
         public async void Insert(AccessoriesModel entity)
