@@ -14,23 +14,21 @@ namespace Curtains.Infrastructure.Repositories
     {
         private readonly ILogger _logger;
         private readonly CurtainsDbContext _curtainsContext;
-        private DbSet<AccessoriesModel> accessories;
 
         public AccessoriesRepository(CurtainsDbContext curtainsContext, ILogger logger)
         {
             _curtainsContext = curtainsContext;
             _logger = logger;
-            accessories = _curtainsContext.Accessories;
         }
 
         public IEnumerable<AccessoriesModel> GetAll()
         {
-            return accessories.AsEnumerable();
+            return _curtainsContext.Accessories.AsEnumerable();
         }
 
         public async Task<AccessoriesModel> GetById(int Id)
         {
-            return await accessories.SingleAsync(c => c.Id == Id);
+            return await _curtainsContext.Accessories.SingleAsync(c => c.Id == Id);
         }
 
         public async void Insert(AccessoriesModel entity)
@@ -41,7 +39,7 @@ namespace Curtains.Infrastructure.Repositories
                 throw new ArgumentNullException("Accessories model is null");
             }
 
-            await accessories.AddAsync(entity);
+            await _curtainsContext.Accessories.AddAsync(entity);
 
             await _curtainsContext.SaveChangesAsync();
         }
@@ -54,7 +52,7 @@ namespace Curtains.Infrastructure.Repositories
                 throw new ArgumentNullException("Accessories model is null");
             }
 
-            accessories.Update(entity);
+            _curtainsContext.Accessories.Update(entity);
 
             await _curtainsContext.SaveChangesAsync();
         }
@@ -67,7 +65,7 @@ namespace Curtains.Infrastructure.Repositories
                 throw new ArgumentNullException("Accessories model is null");
             }
 
-            accessories.Remove(entity);
+            _curtainsContext.Accessories.Remove(entity);
             await _curtainsContext.SaveChangesAsync();
         }
 
