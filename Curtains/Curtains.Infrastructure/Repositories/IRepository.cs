@@ -11,10 +11,10 @@ namespace Curtains.Infrastructure.Repositories
     public interface IRepository<T> where T : BaseEntity
     {
         IEnumerable<T> GetAll();
-        Task<T> GetById(int Id);
-        Task<EntityEntry<T>> Insert(T entity);
-        void Update(T entity);
-        void Remove(T entity);
-        void SaveChanges();
+        Task<T> GetByIdAsync(int Id);
+        Task<EntityEntry<T>> InsertAsync(T entity);
+        void UpdateAsync(T entity);
+        void RemoveAsync(T entity);
+        void SaveChangesAsync();
     }
 }

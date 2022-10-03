@@ -29,7 +29,7 @@ namespace Curtains.Infrastructure.Repositories
             return _curtainsContext.Accessories.AsNoTracking().AsEnumerable();
         }
 
-        public async Task<AccessoriesModel> GetById(int Id)
+        public async Task<AccessoriesModel> GetByIdAsync(int Id)
         {
             var result = await Query.AsNoTracking().SingleOrDefaultAsync(a => a.Id == Id);
 
@@ -42,7 +42,7 @@ namespace Curtains.Infrastructure.Repositories
             return result;
         }
 
-        public async Task<EntityEntry<AccessoriesModel>> Insert(AccessoriesModel entity)
+        public async Task<EntityEntry<AccessoriesModel>> InsertAsync(AccessoriesModel entity)
         {
             if (entity == null)
             {
@@ -57,7 +57,7 @@ namespace Curtains.Infrastructure.Repositories
             return result;
         }
 
-        public async void Update(AccessoriesModel entity)
+        public async void UpdateAsync(AccessoriesModel entity)
         {
             foreach (var entry in _curtainsContext.ChangeTracker.Entries()) 
             { 
@@ -73,7 +73,7 @@ namespace Curtains.Infrastructure.Repositories
             await _curtainsContext.SaveChangesAsync();
         }
 
-        public async void Remove(AccessoriesModel entity)
+        public async void RemoveAsync(AccessoriesModel entity)
         {
             if (entity == null)
             {
@@ -85,7 +85,7 @@ namespace Curtains.Infrastructure.Repositories
             await _curtainsContext.SaveChangesAsync();
         }
 
-        public async void SaveChanges()
+        public async void SaveChangesAsync()
         {
             await _curtainsContext.SaveChangesAsync();
         }
