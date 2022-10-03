@@ -32,10 +32,13 @@ namespace Curtains.Infrastructure.Repositories
         {
             var result = await Query.AsNoTracking().SingleOrDefaultAsync(a => a.Id == Id);
 
-            if (result != null)
-                return result;
+            if (result == null)
+            {
+                _logger.LogError("Accessories model is null");
+                throw new ArgumentNullException("Accessories model is null");
+            }
 
-            return null;
+            return result;
         }
 
         public async void Insert(AccessoriesModel entity)
