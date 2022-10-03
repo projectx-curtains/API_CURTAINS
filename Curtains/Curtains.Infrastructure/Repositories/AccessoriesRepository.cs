@@ -15,6 +15,7 @@ namespace Curtains.Infrastructure.Repositories
     {
         private readonly ILogger _logger;
         private readonly CurtainsDbContext _curtainsContext;
+        private IQueryable<AccessoriesModel> Query => _curtainsContext.Accessories.Include(x => x.Curtains).Include(x => x.UserOrders);
 
         public AccessoriesRepository(CurtainsDbContext curtainsContext, ILogger logger)
         {
@@ -29,7 +30,7 @@ namespace Curtains.Infrastructure.Repositories
 
         public async Task<AccessoriesModel> GetById(int Id)
         {
-            var result = await _curtainsContext.Accessories.FirstOrDefaultAsync(c => c.Id == Id);
+            var result = await Query.SingleOrDefaultAsync(a => a.Id == Id);
 
             if (result != null)
                 return result;
