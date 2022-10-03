@@ -2,6 +2,7 @@
 using Curtains.Infrastructure.Database;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
+using Nest;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -55,6 +56,14 @@ namespace Curtains.Infrastructure.Repositories
             {
                 _logger.LogError("Accessories model is null");
                 throw new ArgumentNullException("Accessories model is null");
+            }
+            foreach (var entry in _curtainsContext.ChangeTracker.Entries()) 
+            { 
+                var entryEntity = (Entity)entry.Entity; 
+                if (entryEntity.IsNew) 
+                {
+                    entryEntity.State = EntityState.Added; 
+                } 
             }
 
             _curtainsContext.Accessories.Update(entity);
