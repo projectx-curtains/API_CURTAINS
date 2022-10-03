@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Curtains.Domain.Models
 {
+    /// <summary>
+    ///  This class describes delivery type model.
+    /// </summary>
     public class DeliveryTypeModel : BaseEntity
     {
         public DeliveryTypeModel()
@@ -13,9 +16,18 @@ namespace Curtains.Domain.Models
             Orders = new HashSet<OrderModel>();
         }
 
-        public string Title { get; set; } = null!;
+        #region PropertiesRegion
+        /// <summary>
+        ///  This property represents price of delivery.
+        /// </summary>
         public decimal Price { get; set; }
+        #endregion
 
+        #region NavigationProperties
+        /// <summary>
+        ///  This property represents list of orders with that type of delivery.
+        /// </summary>
         public virtual ICollection<OrderModel> Orders { get; set; }
+        #endregion
     }
 }

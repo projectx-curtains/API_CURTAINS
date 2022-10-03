@@ -6,12 +6,32 @@ using System.Threading.Tasks;
 
 namespace Curtains.Domain.Models
 {
+    /// <summary>
+    ///  This class describes review model.
+    /// </summary>
     public class ReviewModel : BaseEntity
     {
-        public string PersonName { get; set; } = null!;
-        public string Country { get; set; } = null!;
-        public string City { get; set; } = null!;
-        public string Review { get; set; } = null!;
-        public string Image { get; set; } = null!;
+        #region PropertiesRegion
+        /// <summary>
+        ///  This property represents name of person, who left the review.
+        /// </summary>
+        public string PersonName { get; set; }
+        /// <summary>
+        ///  This property represents country of person, who left the review.
+        /// </summary>
+        public string Country { get; set; }
+        /// <summary>
+        ///  This property represents city of person, who left the review.
+        /// </summary>
+        public string City { get; set; }
+        /// <summary>
+        ///  This property represents review.
+        /// </summary>
+        public string Review { get; set; }
+        /// <summary>
+        ///  This property represents path to image of review.
+        /// </summary>
+        public string Image { get; set; }  
+        #endregion
     }
 }

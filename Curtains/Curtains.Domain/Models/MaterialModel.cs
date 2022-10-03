@@ -6,14 +6,21 @@ using System.Threading.Tasks;
 
 namespace Curtains.Domain.Models
 {
+    /// <summary>
+    ///  This class describes material model.
+    /// </summary>
     public class MaterialModel : BaseEntity
     {
         public MaterialModel()
         {
             Curtains = new HashSet<CurtainsModel>();
         }
-        public string Title { get; set; } = null!;
-        public string Description { get; set; }
+
+        #region NavigationPropertiesRegion
+        /// <summary>
+        ///  This property represents list of curtains with that material.
+        /// </summary>
         public virtual ICollection<CurtainsModel> Curtains { get; set; }
+        #endregion
     }
 }

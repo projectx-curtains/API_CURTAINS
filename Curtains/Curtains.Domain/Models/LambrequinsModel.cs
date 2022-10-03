@@ -6,17 +6,36 @@ using System.Threading.Tasks;
 
 namespace Curtains.Domain.Models
 {
+    /// <summary>
+    ///  This class describes lambrequins model.
+    /// </summary>
     public class LambrequinsModel : BaseEntity
     {
         public LambrequinsModel()
         {
             UserOrders = new HashSet<UserOrderModel>();
         }
-        public string Title { get; set; } = null!;
-        public string Description { get; set; }
+
+        #region PropertiesRegion
+        /// <summary>
+        ///  This property represents ColorId column.
+        /// </summary>
         public int ColorId { get; set; }
+        /// <summary>
+        ///  This property represents price of lambrequins.
+        /// </summary>
         public decimal Price { get; set; }
-        public virtual ColorModel Color { get; set; } = null!;
+        #endregion
+
+        #region NavigationProperties
+        /// <summary>
+        ///  This property represents color of lambrequins.
+        /// </summary>
+        public virtual ColorModel Color { get; set; }
+        /// <summary>
+        ///  This property represents list of UserOrders with that lambrequins.
+        /// </summary>
         public virtual ICollection<UserOrderModel> UserOrders { get; set; }
+        #endregion
     }
 }

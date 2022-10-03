@@ -6,25 +6,65 @@ using System.Threading.Tasks;
 
 namespace Curtains.Domain.Models
 {
+    /// <summary>
+    ///  This class describes bedspreads model.
+    /// </summary>
     public class BedspreadsModel : BaseEntity
     {
         public BedspreadsModel()
         {
-            Sets = new HashSet<SetModel>();
+            Sets = new HashSet<ProductSetModel>();
             UserOrders = new HashSet<UserOrderModel>();
         }
-        public string Title { get; set; } = null!;
-        public string Decription { get; set; }
-        public string Size { get; set; } = null!;
+
+        #region PropertiesRegion
+        /// <summary>
+        ///  This property represents size of bedspreads.
+        /// </summary>
+        public string Size { get; set; }
+        /// <summary>
+        ///  This property represents purpose of bedspreads.
+        /// </summary>
         public string Purpose { get; set; }
+        /// <summary>
+        ///  This property represents price of bedspreads.
+        /// </summary>
         public decimal Price { get; set; }
+        /// <summary>
+        ///  This property represents length of bedspreads.
+        /// </summary>
         public int Length { get; set; }
+        /// <summary>
+        ///  This property represents width of bedspreads.
+        /// </summary>
         public int Width { get; set; }
-        public string Shape { get; set; } = null!;
+        /// <summary>
+        ///  This property represents shape of bedspreads.
+        /// </summary>
+        public string Shape { get; set; }
+        /// <summary>
+        ///  This property represents FabricId column.
+        /// </summary>
         public int FabricId { get; set; }
+        #endregion
+
+        #region NavigationProperties
+        /// <summary>
+        ///  This property represents marketing information of bedspreads.
+        /// </summary>
         public MarketingInfoModel MarketingInfo { get; set; }
-        public virtual FabricModel Fabric { get; set; } = null!;
-        public virtual ICollection<SetModel> Sets { get; set; }
+        /// <summary>
+        ///  This property represents fabric of bedspreads.
+        /// </summary>
+        public virtual FabricModel Fabric { get; set; }
+        /// <summary>
+        ///  This property represents list of product sets, in which there are bedspreads.
+        /// </summary>
+        public virtual ICollection<ProductSetModel> Sets { get; set; }
+        /// <summary>
+        ///  This property represents list of UserOrders, in which there are bedspreads.
+        /// </summary>
         public virtual ICollection<UserOrderModel> UserOrders { get; set; }
+        #endregion
     }
 }

@@ -6,13 +6,21 @@ using System.Threading.Tasks;
 
 namespace Curtains.Domain.Models
 {
+    /// <summary>
+    ///  This class describes payment type model.
+    /// </summary>
     public class PaymentTypeModel : BaseEntity
     {
         public PaymentTypeModel()
         {
             Orders = new HashSet<OrderModel>();
         }
-        public string Title { get; set; } = null!;
+
+        #region NavigationPropertiesRegion
+        /// <summary>
+        ///  This property represents list of orders with that payment type.
+        /// </summary>
         public virtual ICollection<OrderModel> Orders { get; set; }
+        #endregion
     }
 }

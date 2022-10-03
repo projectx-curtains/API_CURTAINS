@@ -12,28 +12,28 @@ namespace Curtains.Infrastructure.Database
         private IDbContextTransaction _currentTransaction;
 
         #region DbSetsRegion
-        public virtual DbSet<AccessoriesModel> Accessories { get; set; } = null!;
-        public virtual DbSet<ColorModel> Colors { get; set; } = null!;
-        public virtual DbSet<CurtainsModel> Curtains { get; set; } = null!;
-        public virtual DbSet<FabricModel> Fabrics { get; set; } = null!;
-        public virtual DbSet<DecorationsModel> Decorations { get; set; } = null!;
-        public virtual DbSet<UserOrderModel> UserOrders { get; set; } = null!;
-        public virtual DbSet<LambrequinsModel> Lambrequins { get; set; } = null!;
-        public virtual DbSet<ConsistencyModel> Consistencies { get; set; } = null!;
-        public virtual DbSet<ManufacturerModel> Manufacturers { get; set; } = null!;
-        public virtual DbSet<BedspreadsModel> Bedspreads { get; set; } = null!;
-        public virtual DbSet<PillowsModel> Pillows { get; set; } = null!;
-        public virtual DbSet<MarketingInfoModel> MarketingInfos { get; set; } = null!;
-        public virtual DbSet<SetModel> Sets { get; set; } = null!;
-        public virtual DbSet<MaterialModel> Materials { get; set; } = null!;
-        public virtual DbSet<CurtainsTypeModel> CurtainsTypes { get; set; } = null!;
-        public virtual DbSet<CurtainsKindModel> CurtainsKinds { get; set; } = null!;
-        public virtual DbSet<UserModel> Users { get; set; } = null!;
-        public virtual DbSet<OrderModel> Orders { get; set; } = null!;
-        public virtual DbSet<DeliveryTypeModel> DeliveryTypes { get; set; } = null!;
-        public virtual DbSet<PaymentTypeModel> PaymentTypes { get; set; } = null!;
-        public virtual DbSet<OurWorksModel> OurWorks { get; set; } = null!;
-        public virtual DbSet<ReviewModel> Reviews { get; set; } = null!;
+        public virtual DbSet<AccessoriesModel> Accessories { get; set; } 
+        public virtual DbSet<ColorModel> Colors { get; set; } 
+        public virtual DbSet<CurtainsModel> Curtains { get; set; } 
+        public virtual DbSet<FabricModel> Fabrics { get; set; }
+        public virtual DbSet<DecorationsModel> Decorations { get; set; } 
+        public virtual DbSet<UserOrderModel> UserOrders { get; set; }
+        public virtual DbSet<LambrequinsModel> Lambrequins { get; set; } 
+        public virtual DbSet<ConsistencyModel> Consistencies { get; set; } 
+        public virtual DbSet<ManufacturerModel> Manufacturers { get; set; }
+        public virtual DbSet<BedspreadsModel> Bedspreads { get; set; } 
+        public virtual DbSet<PillowsModel> Pillows { get; set; } 
+        public virtual DbSet<MarketingInfoModel> MarketingInfos { get; set; } 
+        public virtual DbSet<ProductSetModel> Sets { get; set; } 
+        public virtual DbSet<MaterialModel> Materials { get; set; }
+        public virtual DbSet<CurtainsTypeModel> CurtainsTypes { get; set; }
+        public virtual DbSet<CurtainsKindModel> CurtainsKinds { get; set; } 
+        public virtual DbSet<UserModel> Users { get; set; } 
+        public virtual DbSet<OrderModel> Orders { get; set; } 
+        public virtual DbSet<DeliveryTypeModel> DeliveryTypes { get; set; } 
+        public virtual DbSet<PaymentTypeModel> PaymentTypes { get; set; }
+        public virtual DbSet<OurWorksModel> OurWorks { get; set; }
+        public virtual DbSet<ReviewModel> Reviews { get; set; }
         #endregion
 
         public CurtainsDbContext(DbContextOptions<CurtainsDbContext> options) : base(options) {}

@@ -29,7 +29,6 @@ namespace Curtains.Infrastructure.Shared
             this._logger.LogError(new EventId(context.Exception.HResult), context.Exception, string.Format("Failed api call: {0}.", (object) context.HttpContext.Request.Path));
             context.ExceptionHandled = true;
             Exception exception = context.Exception;
-            if (true);
             Task task;
             switch (exception)
             {
@@ -43,8 +42,7 @@ namespace Curtains.Infrastructure.Shared
                     task = this.HandleError(context);
                     break;
             }
-            if (true)
-                ;
+
             return task;
         }
 
