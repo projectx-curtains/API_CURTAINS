@@ -7,6 +7,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Serilog;
+using Curtains.Application.Services;
+using Curtains.Application.Interfaces;
 
 namespace Curtains.Api
 {
@@ -36,6 +38,9 @@ namespace Curtains.Api
                     opt.Filters.Add<HttpGlobalExceptionFilter>();
                 })
                 .AddJsonSerializer();
+            services
+                .AddScoped(typeof(IReviewService), typeof(ReviewService));
+
         }
 
         public void Configure(IApplicationBuilder app)
