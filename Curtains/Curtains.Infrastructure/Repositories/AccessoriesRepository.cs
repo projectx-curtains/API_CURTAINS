@@ -25,12 +25,12 @@ namespace Curtains.Infrastructure.Repositories
 
         public IEnumerable<AccessoriesModel> GetAll()
         {
-            return _curtainsContext.Accessories.AsEnumerable();
+            return _curtainsContext.Accessories.AsNoTracking().AsEnumerable();
         }
 
         public async Task<AccessoriesModel> GetById(int Id)
         {
-            var result = await Query.SingleOrDefaultAsync(a => a.Id == Id);
+            var result = await Query.AsNoTracking().SingleOrDefaultAsync(a => a.Id == Id);
 
             if (result != null)
                 return result;
