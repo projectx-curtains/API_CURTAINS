@@ -59,11 +59,6 @@ namespace Curtains.Infrastructure.Repositories
 
         public async void Update(AccessoriesModel entity)
         {
-            if (entity == null)
-            {
-                _logger.LogError("Accessories model is null");
-                throw new ArgumentNullException("Accessories model is null");
-            }
             foreach (var entry in _curtainsContext.ChangeTracker.Entries()) 
             { 
                 var entryEntity = (Entity)entry.Entity; 
