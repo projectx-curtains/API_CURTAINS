@@ -12,7 +12,7 @@ namespace Curtains.Infrastructure.Repositories
     {
         IEnumerable<T> GetAll();
         Task<T> GetByIdAsync(int Id);
-        Task<EntityEntry<T>> InsertAsync(T entity);
+        Task<EntityEntry<T>> InsertAsync(T entity, CancellationToken cancellationToken);
         void UpdateAsync(T entity);
         void RemoveAsync(T entity);
         void SaveChangesAsync();

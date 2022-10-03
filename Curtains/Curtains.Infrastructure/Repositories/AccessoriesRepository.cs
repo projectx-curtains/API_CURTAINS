@@ -9,6 +9,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Curtains.Infrastructure.Repositories
@@ -63,7 +64,7 @@ namespace Curtains.Infrastructure.Repositories
         /// </summary>
         /// <param name = "entity" > AccessoriesModel type</param>
         /// <returns>EntityEntry<AccessoriesModel></return>
-        public async Task<EntityEntry<AccessoriesModel>> InsertAsync(AccessoriesModel entity)
+        public async Task<EntityEntry<AccessoriesModel>> InsertAsync(AccessoriesModel entity, CancellationToken cancelationToken)
         {
             if (entity == null)
             {
@@ -71,7 +72,7 @@ namespace Curtains.Infrastructure.Repositories
                 throw new ArgumentNullException("Accessories model is null");
             }
 
-            var result = await _curtainsContext.Accessories.AddAsync(entity);
+            var result = await _curtainsContext.Accessories.AddAsync(entity, cancelationToken);
 
             await _curtainsContext.SaveChangesAsync();
 
