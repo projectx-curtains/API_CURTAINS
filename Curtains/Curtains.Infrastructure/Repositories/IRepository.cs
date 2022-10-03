@@ -1,4 +1,5 @@
 ﻿using Curtains.Domain.Models;
+using Microsoft.EntityFrameworkCore.ChangeTracking;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +12,7 @@ namespace Curtains.Infrastructure.Repositories
     {
         IEnumerable<T> GetAll();
         Task<T> GetById(int Id);
-        void Insert(T entity);
+        Task<EntityEntry<T>> Insert(T entity);
         void Update(T entity);
         void Remove(T entity);
         void SaveChanges();

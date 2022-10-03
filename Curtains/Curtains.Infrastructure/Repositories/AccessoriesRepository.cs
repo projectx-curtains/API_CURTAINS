@@ -1,6 +1,7 @@
 ﻿using Curtains.Domain.Models;
 using Curtains.Infrastructure.Database;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.ChangeTracking;
 using Microsoft.Extensions.Logging;
 using Nest;
 using System;
@@ -41,7 +42,7 @@ namespace Curtains.Infrastructure.Repositories
             return result;
         }
 
-        public async void Insert(AccessoriesModel entity)
+        public async Task<EntityEntry<AccessoriesModel>> Insert(AccessoriesModel entity)
         {
             if (entity == null)
             {
@@ -49,9 +50,11 @@ namespace Curtains.Infrastructure.Repositories
                 throw new ArgumentNullException("Accessories model is null");
             }
 
-            await _curtainsContext.Accessories.AddAsync(entity);
+            var result = await _curtainsContext.Accessories.AddAsync(entity);
 
             await _curtainsContext.SaveChangesAsync();
+
+            return result;
         }
 
         public async void Update(AccessoriesModel entity)
