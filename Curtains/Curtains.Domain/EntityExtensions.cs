@@ -7,10 +7,19 @@ using System.Threading.Tasks;
 
 namespace Curtains.Domain
 {
-    public static class EntityExtencions
+    /// <summary>
+    /// Class<c> EntityExtensions </c> describes extensiomal methods for Entity class
+    /// </summary>
+    public static class EntityExtensions
     {
         private static long counter = DateTime.UtcNow.Ticks;
 
+        #region MethodsRegion
+        /// <summary>
+        /// This method transforms guid for entity
+        /// </summary>
+        /// <param name = "guid" > Guid types entity idetifier</param>
+        /// <returns> Guid </return>
         public static Guid ToSequential(this Guid guid)
         {
             var guidBytes = guid.ToByteArray();
@@ -33,6 +42,11 @@ namespace Curtains.Domain
             return new Guid(guidBytes);
         }
 
+        /// <summary>
+        /// This method change entity properties, when entity is created
+        /// </summary>
+        /// <param name = "entity" > Entity, which is created</param>
+        /// <returns> Entity </return>
         public static T AsCreated<T>(this T entity) where T : Entity
         {
             var createdDate = DateTimeOffset.UtcNow;
@@ -45,6 +59,11 @@ namespace Curtains.Domain
             return entity;
         }
 
+        /// <summary>
+        /// This method change entity properties, when entity is updated
+        /// </summary>
+        /// <param name = "entity" > Entity, which is updated</param>
+        /// <returns> Entity </return>
         public static T AsUpdatedBy<T>(this T entity) where T : Entity
         {
             entity.ModifiedDate = DateTimeOffset.UtcNow;
@@ -52,5 +71,6 @@ namespace Curtains.Domain
 
             return entity;
         }
+        #endregion
     }
 }
