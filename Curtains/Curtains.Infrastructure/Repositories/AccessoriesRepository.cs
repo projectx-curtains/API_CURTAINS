@@ -17,7 +17,7 @@ namespace Curtains.Infrastructure.Repositories
     /// <summary>
     /// Class<c> AccessoriesRepository</c> describes entity interaction model for database
     /// </summary>
-    public class AccessoriesRepository : IRepository<AccessoriesModel>
+    public class AccessoriesRepository : IAccessoriesRepository
     {
         #region FieldsRegion
         private readonly ILogger _logger;
