@@ -1,5 +1,6 @@
 ﻿using Curtains.Domain.Models;
 using Curtains.Infrastructure.Database;
+using Curtains.Infrastructure.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 using Microsoft.Extensions.Logging;
