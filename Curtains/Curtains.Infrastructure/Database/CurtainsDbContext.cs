@@ -34,6 +34,7 @@ namespace Curtains.Infrastructure.Database
         public virtual DbSet<PaymentTypeModel> PaymentTypes { get; set; }
         public virtual DbSet<OurWorksModel> OurWorks { get; set; }
         public virtual DbSet<ReviewModel> Reviews { get; set; }
+        public virtual DbSet<ProductImageModel> ProductImages { get; set; }
         #endregion
 
         public CurtainsDbContext(DbContextOptions<CurtainsDbContext> options) : base(options) {}

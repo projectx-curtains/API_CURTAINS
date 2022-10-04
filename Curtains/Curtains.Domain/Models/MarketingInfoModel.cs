@@ -20,25 +20,10 @@ namespace Curtains.Domain.Models
         ///  This property represents situation, if product is on sale or not.
         /// </summary>
         public bool IsOnSale { get; set; }
-        #endregion
-
-        #region NavigationProperties
         /// <summary>
-        ///  This property represents curtains, which marketing information is described.
+        ///  This property represents situation, if product is popular or not.
         /// </summary>
-        public virtual CurtainsModel Curtains { get; set; }
-        /// <summary>
-        ///  This property represents pillows, which marketing information is described.
-        /// </summary>
-        public virtual PillowsModel Pillows { get; set; }
-        /// <summary>
-        ///  This property represents bedspreads, which marketing information is described.
-        /// </summary>
-        public virtual BedspreadsModel Bedspreads { get; set; }
-        /// <summary>
-        ///  This property represents product sets, which marketing information is described.
-        /// </summary>
-        public virtual ProductSetModel Sets { get; set; }
+        public bool IsPopular { get; set; }
         #endregion
     }
 }
