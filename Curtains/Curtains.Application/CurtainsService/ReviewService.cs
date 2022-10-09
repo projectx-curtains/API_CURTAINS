@@ -9,44 +9,61 @@ using Curtains.Domain.Models;
 using Curtains.Infrastructure.Interfaces;
 using Curtains.Infrastructure.Database;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
+using AutoMapper;
+using Microsoft.EntityFrameworkCore;
 
 namespace Curtains.Application.CurtainsService
 {
-    public class ReviewServicev : IReviewService
+    public class ReviewService : IReviewService
     {
+        #region FieldsRegion
         private readonly IReviewRepository _reviewRepository;
-        private readonly CurtainsDbContext _context;
+        private readonly IMapper _mapper;
+        #endregion
 
-        public ReviewServicev(IReviewRepository reviewRepository, CurtainsDbContext context)
+        public ReviewService(IReviewRepository reviewRepository, IMapper mapper)
         {
             _reviewRepository = reviewRepository;
-            _context = context;
+            _mapper = mapper;
         }
 
+        #region MethodsRegion
         public IEnumerable<ReviewDTO> GetAll()
         {
-
+            var reviews = _mapper.Map<IEnumerable<ReviewDTO>>(_reviewRepository.GetAll());
+            return reviews;
         }
 
         public async Task<ReviewDTO> GetByIdAsync(int Id)
         {
-
+            var review = await _reviewRepository.GetByIdAsync(Id);
+            var reviewDTO = _mapper.Map<ReviewDTO>(review);
+            return reviewDTO;
         }
 
-        public async Task<EntityEntry<ReviewDTO>> InsertAsync(ReviewDTO entity, CancellationToken cancelationToken)
+        public async Task InsertAsync(ReviewDTO entity, CancellationToken cancelationToken)
         {
-
+            var review = MappingToModel(entity);
+            await _reviewRepository.InsertAsync(review, cancelationToken);
         }
 
-        public async void UpdateAsync(ReviewDTO entity)
+        public void UpdateAsync(ReviewDTO entity)
         {
-
+            var review = MappingToModel(entity);
+            _reviewRepository.UpdateAsync(review);
         }
 
-        public async void RemoveAsync(ReviewDTO entity)
+        public void RemoveAsync(ReviewDTO entity)
         {
-
+            var review = MappingToModel(entity);
+            _reviewRepository.RemoveAsync(review);
         }
 
+        public ReviewModel MappingToModel(ReviewDTO entity)
+        {
+            var review = _mapper.Map<ReviewModel>(entity);
+            return review;
+        }
+        #endregion
     }
 }
