@@ -7,6 +7,15 @@ namespace Curtains.Application.DTO
     [AutoMap(typeof(ReviewModel))]
     public class ReviewDTO
     {
+        [SourceMember(nameof(ReviewModel.Id))]
+        public int Id { get; set; }
+
+        [SourceMember(nameof(ReviewModel.Title))]
+        public string Title { get; set; }
+
+        [SourceMember(nameof(ReviewModel.Description))]
+        public string Description { get; set; }
+
         [SourceMember(nameof(ReviewModel.PersonName))]
         public string PersonName { get; set; }
 

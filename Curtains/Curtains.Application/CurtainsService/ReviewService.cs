@@ -59,7 +59,7 @@ namespace Curtains.Application.CurtainsService
             _reviewRepository.RemoveAsync(review);
         }
 
-        public ReviewModel MappingToModel(ReviewDTO entity)
+        private ReviewModel MappingToModel(ReviewDTO entity)
         {
             var review = _mapper.Map<ReviewModel>(entity);
             return review;
