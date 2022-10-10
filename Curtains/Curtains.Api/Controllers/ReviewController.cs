@@ -35,20 +35,20 @@ namespace Curtains.Api.Controllers
         public async Task<ActionResult> Insert(ReviewDTO entity, CancellationToken token)
         {
             await _service.InsertAsync(entity, token);
-            return CreatedAtAction("Review Added", entity);
+            return CreatedAtAction(nameof(Insert), entity);
         }
 
         [HttpPut]
-        public ActionResult Update(ReviewDTO entity)
+        public async Task<ActionResult> Update(ReviewDTO entity)
         {
-            _service.UpdateAsync(entity);
+            await _service.UpdateAsync(entity);
             return NoContent();
         }
 
         [HttpDelete]
-        public ActionResult Remove(ReviewDTO entity)
+        public async Task<ActionResult> Remove(ReviewDTO entity)
         {
-            _service.RemoveAsync(entity);
+            await _service.RemoveAsync(entity);
             return NoContent();
         }
     }

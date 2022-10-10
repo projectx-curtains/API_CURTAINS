@@ -11,8 +11,8 @@ namespace Curtains.Application.Interfaces
 
         public Task InsertAsync(ReviewDTO entity, CancellationToken cancelationToken);
 
-        public void UpdateAsync(ReviewDTO entity);
+        public Task UpdateAsync(ReviewDTO entity);
 
-        public void RemoveAsync(ReviewDTO entity);
+        public Task RemoveAsync(ReviewDTO entity);
     }
 }

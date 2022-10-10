@@ -47,16 +47,16 @@ namespace Curtains.Application.CurtainsService
             await _reviewRepository.InsertAsync(review, cancelationToken);
         }
 
-        public void UpdateAsync(ReviewDTO entity)
+        public async Task UpdateAsync(ReviewDTO entity)
         {
             var review = MappingToModel(entity);
-            _reviewRepository.UpdateAsync(review);
+            await _reviewRepository.UpdateAsync(review);
         }
 
-        public void RemoveAsync(ReviewDTO entity)
+        public async Task RemoveAsync(ReviewDTO entity)
         {
             var review = MappingToModel(entity);
-            _reviewRepository.RemoveAsync(review);
+            await _reviewRepository.RemoveAsync(review);
         }
 
         private ReviewModel MappingToModel(ReviewDTO entity)
