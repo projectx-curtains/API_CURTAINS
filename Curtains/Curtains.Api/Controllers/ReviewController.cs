@@ -6,6 +6,9 @@ using Microsoft.EntityFrameworkCore.ChangeTracking;
 
 namespace Curtains.Api.Controllers
 {
+    /// <summary>
+    /// This controller <c> ReviewController </c> for CRUID operations in database
+    /// </summary>
     [Route("api/[controller]")]
     [ApiController]
     public class ReviewController : ControllerBase
@@ -17,6 +20,10 @@ namespace Curtains.Api.Controllers
             _service = service;
         }
 
+        /// <summary>
+        /// This method handles requests and get all Reviews from database.
+        /// </summary>
+        /// <returns> Http status code 200 </returns>
         [HttpGet]
         public ActionResult<IEnumerable<ReviewDTO>> GetAll()
         {
@@ -24,6 +31,11 @@ namespace Curtains.Api.Controllers
             return Ok(model);
         }
 
+        /// <summary>
+        /// This method handles requests and get Review from database by entity Id.
+        /// </summary>
+        /// <param name="id"> Guid Reviews entity idetifier </param>
+        /// <returns> Http status code 200 </returns>
         [HttpGet("~/Id")]
         public async Task<ActionResult<ReviewDTO>> GetById(int id)
         {
@@ -31,6 +43,11 @@ namespace Curtains.Api.Controllers
             return Ok(model);
         }
 
+        /// <summary>
+        /// This method handles requests and adds Review to database.
+        /// </summary>
+        /// <param name="entity"> ReviewDTO Review </param>
+        /// <returns> Http status code 201 </returns>
         [HttpPost]
         public async Task<ActionResult> Insert(ReviewDTO entity, CancellationToken token)
         {
@@ -38,6 +55,11 @@ namespace Curtains.Api.Controllers
             return CreatedAtAction(nameof(Insert), entity);
         }
 
+        /// <summary>
+        /// This method handles requests and updates the Review in the database.
+        /// </summary>
+        /// <param name="entity"> ReviewDTO Review </param>
+        /// <returns> Http status code 204 </returns>
         [HttpPut]
         public async Task<ActionResult> Update(ReviewDTO entity)
         {
@@ -45,6 +67,11 @@ namespace Curtains.Api.Controllers
             return NoContent();
         }
 
+        /// <summary>
+        /// This method handles requests and remove the Review in the database.
+        /// </summary>
+        /// <param name="entity"> ReviewDTO Review </param>
+        /// <returns> Http status code 204 </returns>
         [HttpDelete]
         public async Task<ActionResult> Remove(ReviewDTO entity)
         {
