@@ -17,31 +17,25 @@ namespace Curtains.Application.DTO
         public int Id { get; set; }
 
         /// <summary>
-        /// This property represents title of data transfer objects.
-        /// </summary>
-        public string Title { get; set; }
-
-        /// <summary>
-        /// This property represents description of data transfer objects.
-        /// </summary>
-        public string Description { get; set; }
-
-        /// <summary>
         ///  This property represents name of person, who left the review.
         /// </summary>
         public string PersonName { get; set; }
+
         /// <summary>
         ///  This property represents country of person, who left the review.
         /// </summary>
         public string Country { get; set; }
+
         /// <summary>
         ///  This property represents city of person, who left the review.
         /// </summary>
         public string City { get; set; }
+
         /// <summary>
         ///  This property represents review.
         /// </summary>
         public string Review { get; set; }
+
         /// <summary>
         ///  This property represents path to image of review.
         /// </summary>
