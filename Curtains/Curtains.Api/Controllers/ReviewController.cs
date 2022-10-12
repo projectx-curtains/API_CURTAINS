@@ -36,7 +36,7 @@ namespace Curtains.Api.Controllers
         /// </summary>
         /// <param name="id"> Guid Reviews entity idetifier </param>
         /// <returns> Http status code 200 </returns>
-        [HttpGet("~/Id")]
+        [HttpGet("{id}")]
         public async Task<ActionResult<ReviewDTO>> GetById(int id)
         {
             var model = await _service.GetByIdAsync(id);

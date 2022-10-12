@@ -13,8 +13,8 @@ namespace Curtains.Infrastructure.Interfaces
         IEnumerable<PaymentTypeModel> GetAll();
         Task<PaymentTypeModel> GetByIdAsync(int Id);
         Task<EntityEntry<PaymentTypeModel>> InsertAsync(PaymentTypeModel entity, CancellationToken cancellationToken);
-        void UpdateAsync(PaymentTypeModel entity);
-        void RemoveAsync(PaymentTypeModel entity);
+        Task UpdateAsync(PaymentTypeModel entity);
+        Task RemoveAsync(PaymentTypeModel entity);
         void SaveChangesAsync();
     }
 }

@@ -62,7 +62,7 @@ namespace Curtains.Application.CurtainsService
         /// <returns> Task </returns>
         public async Task InsertAsync(ReviewDTO entity, CancellationToken cancelationToken)
         {
-            var review = Mapping(entity);
+            var review = MapToModel(entity);
             await _reviewRepository.InsertAsync(review, cancelationToken);
         }
 
@@ -73,7 +73,7 @@ namespace Curtains.Application.CurtainsService
         /// <returns> Task </returns>
         public async Task UpdateAsync(ReviewDTO entity)
         {
-            var review = Mapping(entity);
+            var review = MapToModel(entity);
             await _reviewRepository.UpdateAsync(review);
         }
 
@@ -84,7 +84,7 @@ namespace Curtains.Application.CurtainsService
         /// <returns> Task </returns>
         public async Task RemoveAsync(ReviewDTO entity)
         {
-            var review = Mapping(entity);
+            var review = MapToModel(entity);
             await _reviewRepository.RemoveAsync(review);
         }
 
@@ -93,7 +93,7 @@ namespace Curtains.Application.CurtainsService
         /// </summary>
         /// <param name="entity"> ReviewDTO Review </param>
         /// <returns> ReviewModel </returns>
-        private ReviewModel Mapping(ReviewDTO entity)
+        private ReviewModel MapToModel(ReviewDTO entity)
         {
             var review = _mapper.Map<ReviewModel>(entity);
             return review;

@@ -13,8 +13,8 @@ namespace Curtains.Infrastructure.Interfaces
         IEnumerable<ConsistencyModel> GetAll();
         Task<ConsistencyModel> GetByIdAsync(int Id);
         Task<EntityEntry<ConsistencyModel>> InsertAsync(ConsistencyModel entity, CancellationToken cancellationToken);
-        void UpdateAsync(ConsistencyModel entity);
-        void RemoveAsync(ConsistencyModel entity);
+        Task UpdateAsync(ConsistencyModel entity);
+        Task RemoveAsync(ConsistencyModel entity);
         void SaveChangesAsync();
     }
 }

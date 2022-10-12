@@ -1,0 +1,316 @@
+2022-10-12 08:42:57.914 +03:00 [INF] Application Start
+2022-10-12 08:43:01.180 +03:00 [DBG] Hosting starting
+2022-10-12 08:43:01.592 +03:00 [DBG] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider"]
+2022-10-12 08:43:01.892 +03:00 [INF] Now listening on: http://localhost:5010
+2022-10-12 08:43:01.894 +03:00 [DBG] Loaded hosting startup assembly Curtains.Api
+2022-10-12 08:43:01.896 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-10-12 08:43:01.898 +03:00 [INF] Hosting environment: Development
+2022-10-12 08:43:01.901 +03:00 [INF] Content root path: D:\Curtains\API_CURTAINS\Curtains\Curtains.Api
+2022-10-12 08:43:01.904 +03:00 [DBG] Hosting started
+2022-10-12 08:43:07.417 +03:00 [DBG] Connection id "0HMLC2IHT56US" accepted.
+2022-10-12 08:43:07.421 +03:00 [DBG] Connection id "0HMLC2IHT56US" started.
+2022-10-12 08:43:07.421 +03:00 [DBG] Connection id "0HMLC2IHT56UT" accepted.
+2022-10-12 08:43:07.426 +03:00 [DBG] Connection id "0HMLC2IHT56UT" started.
+2022-10-12 08:43:07.490 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5010/index.html - -
+2022-10-12 08:43:07.500 +03:00 [DBG] Wildcard detected, all requests with hosts will be allowed.
+2022-10-12 08:43:07.527 +03:00 [DBG] No candidates found for the request path '/index.html'
+2022-10-12 08:43:07.530 +03:00 [DBG] Request did not match any endpoints
+2022-10-12 08:43:07.699 +03:00 [INF] HTTP GET /index.html responded 200 in 164.7607 ms
+2022-10-12 08:43:07.705 +03:00 [DBG] Connection id "0HMLC2IHT56US" completed keep alive response.
+2022-10-12 08:43:07.710 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5010/index.html - - - 200 - text/html;charset=utf-8 223.5298ms
+2022-10-12 08:43:08.124 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5010/swagger/v1/swagger.json - -
+2022-10-12 08:43:08.128 +03:00 [DBG] No candidates found for the request path '/swagger/v1/swagger.json'
+2022-10-12 08:43:08.129 +03:00 [DBG] Request did not match any endpoints
+2022-10-12 08:43:08.299 +03:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 168.4937 ms
+2022-10-12 08:43:08.303 +03:00 [DBG] Connection id "0HMLC2IHT56US" completed keep alive response.
+2022-10-12 08:43:08.305 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5010/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 181.4322ms
+2022-10-12 08:43:09.121 +03:00 [DBG] Connection id "0HMLC2IHT56US" received FIN.
+2022-10-12 08:43:09.121 +03:00 [DBG] Connection id "0HMLC2IHT56UT" received FIN.
+2022-10-12 08:43:09.136 +03:00 [DBG] Connection id "0HMLC2IHT56US" disconnecting.
+2022-10-12 08:43:09.157 +03:00 [DBG] Connection id "0HMLC2IHT56US" sending FIN because: "The client closed the connection."
+2022-10-12 08:43:09.157 +03:00 [DBG] Connection id "0HMLC2IHT56UT" sending FIN because: "The client closed the connection."
+2022-10-12 08:43:09.164 +03:00 [DBG] Connection id "0HMLC2IHT56UT" disconnecting.
+2022-10-12 08:43:09.165 +03:00 [DBG] Connection id "0HMLC2IHT56UT" stopped.
+2022-10-12 08:43:09.165 +03:00 [DBG] Connection id "0HMLC2IHT56US" stopped.
+2022-10-12 08:46:02.714 +03:00 [DBG] Connection id "0HMLC2IHT56UU" accepted.
+2022-10-12 08:46:02.740 +03:00 [DBG] Connection id "0HMLC2IHT56UU" started.
+2022-10-12 08:46:02.793 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5010/Id?id=12 - -
+2022-10-12 08:46:02.840 +03:00 [DBG] 1 candidate(s) found for the request path '/Id'
+2022-10-12 08:46:02.857 +03:00 [DBG] Endpoint 'Curtains.Api.Controllers.ReviewController.GetById (Curtains.Api)' with route pattern 'Id' is valid for the request path '/Id'
+2022-10-12 08:46:02.872 +03:00 [DBG] Request matched endpoint 'Curtains.Api.Controllers.ReviewController.GetById (Curtains.Api)'
+2022-10-12 08:46:02.922 +03:00 [DBG] Static files was skipped as the request already matched an endpoint.
+2022-10-12 08:46:02.931 +03:00 [INF] Executing endpoint 'Curtains.Api.Controllers.ReviewController.GetById (Curtains.Api)'
+2022-10-12 08:46:03.083 +03:00 [INF] Route matched with {action = "GetById", controller = "Review"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Curtains.Application.DTO.ReviewDTO]] GetById(Int32) on controller Curtains.Api.Controllers.ReviewController (Curtains.Api).
+2022-10-12 08:46:03.087 +03:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2022-10-12 08:46:03.089 +03:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2022-10-12 08:46:03.093 +03:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2022-10-12 08:46:03.096 +03:00 [DBG] Execution plan of exception filters (in the following order): ["Curtains.Infrastructure.Shared.HttpGlobalExceptionFilter"]
+2022-10-12 08:46:03.098 +03:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2022-10-12 08:46:03.102 +03:00 [DBG] Executing controller factory for controller Curtains.Api.Controllers.ReviewController (Curtains.Api)
+2022-10-12 08:46:03.782 +03:00 [DBG] An 'IServiceProvider' was created for internal use by Entity Framework.
+2022-10-12 08:46:03.845 +03:00 [DBG] Executed controller factory for controller Curtains.Api.Controllers.ReviewController (Curtains.Api)
+2022-10-12 08:46:03.875 +03:00 [DBG] Attempting to bind parameter 'id' of type 'System.Int32' ...
+2022-10-12 08:46:03.881 +03:00 [DBG] Attempting to bind parameter 'id' of type 'System.Int32' using the name 'id' in request data ...
+2022-10-12 08:46:03.888 +03:00 [DBG] Done attempting to bind parameter 'id' of type 'System.Int32'.
+2022-10-12 08:46:03.891 +03:00 [DBG] Done attempting to bind parameter 'id' of type 'System.Int32'.
+2022-10-12 08:46:03.895 +03:00 [DBG] Attempting to validate the bound parameter 'id' of type 'System.Int32' ...
+2022-10-12 08:46:03.900 +03:00 [DBG] Done attempting to validate the bound parameter 'id' of type 'System.Int32'.
+2022-10-12 08:46:04.625 +03:00 [DBG] The property 'BedspreadsModel.MarketingInfoId' was created in shadow state because there are no eligible CLR members with a matching name.
+2022-10-12 08:46:04.628 +03:00 [DBG] The property 'CurtainsModel.MarketingInfoId' was created in shadow state because there are no eligible CLR members with a matching name.
+2022-10-12 08:46:04.629 +03:00 [DBG] The property 'FabricModel.DecorationsId' was created in shadow state because there are no eligible CLR members with a matching name.
+2022-10-12 08:46:04.630 +03:00 [DBG] The property 'PillowsModel.MarketingInfoId' was created in shadow state because there are no eligible CLR members with a matching name.
+2022-10-12 08:46:04.633 +03:00 [DBG] The property 'ProductImageModel.BedspreadsId' was created in shadow state because there are no eligible CLR members with a matching name.
+2022-10-12 08:46:04.634 +03:00 [DBG] The property 'ProductImageModel.CurtainsId' was created in shadow state because there are no eligible CLR members with a matching name.
+2022-10-12 08:46:04.635 +03:00 [DBG] The property 'ProductImageModel.FabricsId' was created in shadow state because there are no eligible CLR members with a matching name.
+2022-10-12 08:46:04.636 +03:00 [DBG] The property 'ProductImageModel.PillowsId' was created in shadow state because there are no eligible CLR members with a matching name.
+2022-10-12 08:46:04.637 +03:00 [DBG] The property 'ProductImageModel.SetsId' was created in shadow state because there are no eligible CLR members with a matching name.
+2022-10-12 08:46:04.679 +03:00 [WRN] No store type was specified for the decimal property 'Price' on entity type 'AccessoriesModel'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2022-10-12 08:46:04.682 +03:00 [WRN] No store type was specified for the decimal property 'Price' on entity type 'BedspreadsModel'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2022-10-12 08:46:04.683 +03:00 [WRN] No store type was specified for the decimal property 'Price' on entity type 'CurtainsModel'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2022-10-12 08:46:04.685 +03:00 [WRN] No store type was specified for the decimal property 'Price' on entity type 'DeliveryTypeModel'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2022-10-12 08:46:04.686 +03:00 [WRN] No store type was specified for the decimal property 'Price' on entity type 'FabricModel'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2022-10-12 08:46:04.688 +03:00 [WRN] No store type was specified for the decimal property 'Price' on entity type 'LambrequinsModel'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2022-10-12 08:46:04.689 +03:00 [WRN] No store type was specified for the decimal property 'Price' on entity type 'PillowsModel'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2022-10-12 08:46:04.690 +03:00 [WRN] No store type was specified for the decimal property 'Price' on entity type 'ProductSetModel'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2022-10-12 08:46:04.692 +03:00 [WRN] No store type was specified for the decimal property 'Cost' on entity type 'UserOrderModel'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2022-10-12 08:46:04.861 +03:00 [INF] Entity Framework Core 6.0.9 initialized 'CurtainsDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.9' with options: MigrationsAssembly=Curtains.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null 
+2022-10-12 08:46:05.148 +03:00 [DBG] Compiling query expression: 
+'DbSet<ReviewModel>()
+    .AsNoTracking()
+    .SingleOrDefault(a => a.Id == __Id_0)'
+2022-10-12 08:46:05.332 +03:00 [DBG] Generated query execution expression: 
+'queryContext => ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync<ReviewModel>(
+    asyncEnumerable: new SingleQueryingEnumerable<ReviewModel>(
+        (RelationalQueryContext)queryContext, 
+        RelationalCommandCache.SelectExpression(
+            Projection Mapping:
+                EmptyProjectionMember -> Dictionary<IProperty, int> { [Property: ReviewModel.Id (int) Required PK AfterSave:Throw ValueGenerated.OnAdd, 0], [Property: ReviewModel.City (string), 1], [Property: ReviewModel.Country (string), 2], [Property: ReviewModel.Description (string), 3], [Property: ReviewModel.ImagePath (string), 4], [Property: ReviewModel.PersonName (string), 5], [Property: ReviewModel.Review (string), 6], [Property: ReviewModel.Title (string), 7] }
+            SELECT TOP(2) r.Id, r.City, r.Country, r.Description, r.ImagePath, r.PersonName, r.Review, r.Title
+            FROM Reviews AS r
+            WHERE r.Id == @__Id_0), 
+        Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, ReviewModel>, 
+        Curtains.Infrastructure.Database.CurtainsDbContext, 
+        False, 
+        False, 
+        True
+    ), 
+    cancellationToken: queryContext.CancellationToken)'
+2022-10-12 08:46:05.391 +03:00 [DBG] Creating DbCommand for 'ExecuteReader'.
+2022-10-12 08:46:05.534 +03:00 [DBG] Created DbCommand for 'ExecuteReader' (140ms).
+2022-10-12 08:46:05.787 +03:00 [DBG] Opening connection to database 'Curtains' on server 'localhost,1433'.
+2022-10-12 08:46:06.499 +03:00 [DBG] Opened connection to database 'Curtains' on server 'localhost,1433'.
+2022-10-12 08:46:06.512 +03:00 [DBG] Executing DbCommand [Parameters=[@__Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [r].[Id], [r].[City], [r].[Country], [r].[Description], [r].[ImagePath], [r].[PersonName], [r].[Review], [r].[Title]
+FROM [Reviews] AS [r]
+WHERE [r].[Id] = @__Id_0
+2022-10-12 08:46:06.574 +03:00 [INF] Executed DbCommand (63ms) [Parameters=[@__Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [r].[Id], [r].[City], [r].[Country], [r].[Description], [r].[ImagePath], [r].[PersonName], [r].[Review], [r].[Title]
+FROM [Reviews] AS [r]
+WHERE [r].[Id] = @__Id_0
+2022-10-12 08:46:06.599 +03:00 [DBG] A data reader was disposed.
+2022-10-12 08:46:06.604 +03:00 [DBG] Closing connection to database 'Curtains' on server 'localhost,1433'.
+2022-10-12 08:46:06.613 +03:00 [DBG] Closed connection to database 'Curtains' on server 'localhost,1433'.
+2022-10-12 08:46:06.634 +03:00 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2022-10-12 08:46:06.643 +03:00 [DBG] Attempting to select an output formatter based on Accept header '["text/plain"]'.
+2022-10-12 08:46:06.647 +03:00 [DBG] Could not find an output formatter based on content negotiation. Accepted types were (["text/plain"])
+2022-10-12 08:46:06.649 +03:00 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2022-10-12 08:46:06.650 +03:00 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
+2022-10-12 08:46:06.652 +03:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2022-10-12 08:46:06.654 +03:00 [INF] Executing OkObjectResult, writing value of type 'Curtains.Application.DTO.ReviewDTO'.
+2022-10-12 08:46:06.694 +03:00 [INF] Executed action Curtains.Api.Controllers.ReviewController.GetById (Curtains.Api) in 3588.1892ms
+2022-10-12 08:46:06.699 +03:00 [INF] Executed endpoint 'Curtains.Api.Controllers.ReviewController.GetById (Curtains.Api)'
+2022-10-12 08:46:06.703 +03:00 [INF] HTTP GET /Id responded 200 in 3828.3641 ms
+2022-10-12 08:46:06.707 +03:00 [DBG] Connection id "0HMLC2IHT56UU" completed keep alive response.
+2022-10-12 08:46:06.711 +03:00 [DBG] 'CurtainsDbContext' disposed.
+2022-10-12 08:46:06.715 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5010/Id?id=12 - - - 200 - application/json;+charset=utf-8 3924.6915ms
+2022-10-12 08:46:09.388 +03:00 [DBG] Connection id "0HMLC2IHT56UU" received FIN.
+2022-10-12 08:46:09.400 +03:00 [DBG] Connection id "0HMLC2IHT56UU" disconnecting.
+2022-10-12 08:46:09.406 +03:00 [DBG] Connection id "0HMLC2IHT56UU" sending FIN because: "The client closed the connection."
+2022-10-12 08:46:09.424 +03:00 [DBG] Connection id "0HMLC2IHT56UU" stopped.
+2022-10-12 08:46:32.787 +03:00 [INF] Application is shutting down...
+2022-10-12 08:46:32.788 +03:00 [DBG] Hosting stopping
+2022-10-12 08:46:32.811 +03:00 [DBG] Hosting stopped
+2022-10-12 08:48:27.942 +03:00 [INF] Application Start
+2022-10-12 08:48:28.457 +03:00 [DBG] Hosting starting
+2022-10-12 08:48:28.570 +03:00 [DBG] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider"]
+2022-10-12 08:48:28.721 +03:00 [INF] Now listening on: http://localhost:5010
+2022-10-12 08:48:28.723 +03:00 [DBG] Loaded hosting startup assembly Curtains.Api
+2022-10-12 08:48:28.726 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-10-12 08:48:28.728 +03:00 [INF] Hosting environment: Development
+2022-10-12 08:48:28.731 +03:00 [INF] Content root path: D:\Curtains\API_CURTAINS\Curtains\Curtains.Api
+2022-10-12 08:48:28.733 +03:00 [DBG] Hosting started
+2022-10-12 08:48:37.048 +03:00 [DBG] Connection id "0HMLC2LK4OG8V" accepted.
+2022-10-12 08:48:37.053 +03:00 [DBG] Connection id "0HMLC2LK4OG90" accepted.
+2022-10-12 08:48:37.053 +03:00 [DBG] Connection id "0HMLC2LK4OG8V" started.
+2022-10-12 08:48:37.055 +03:00 [DBG] Connection id "0HMLC2LK4OG90" started.
+2022-10-12 08:48:37.107 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5010/index.html - -
+2022-10-12 08:48:37.113 +03:00 [DBG] Wildcard detected, all requests with hosts will be allowed.
+2022-10-12 08:48:37.145 +03:00 [DBG] No candidates found for the request path '/index.html'
+2022-10-12 08:48:37.148 +03:00 [DBG] Request did not match any endpoints
+2022-10-12 08:48:37.301 +03:00 [INF] HTTP GET /index.html responded 200 in 148.3225 ms
+2022-10-12 08:48:37.309 +03:00 [DBG] Connection id "0HMLC2LK4OG8V" completed keep alive response.
+2022-10-12 08:48:37.315 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5010/index.html - - - 200 - text/html;charset=utf-8 210.3335ms
+2022-10-12 08:48:38.115 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5010/swagger/v1/swagger.json - -
+2022-10-12 08:48:38.119 +03:00 [DBG] No candidates found for the request path '/swagger/v1/swagger.json'
+2022-10-12 08:48:38.122 +03:00 [DBG] Request did not match any endpoints
+2022-10-12 08:48:38.273 +03:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 148.4998 ms
+2022-10-12 08:48:38.277 +03:00 [DBG] Connection id "0HMLC2LK4OG8V" completed keep alive response.
+2022-10-12 08:48:38.280 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5010/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 164.6818ms
+2022-10-12 08:48:39.626 +03:00 [DBG] Connection id "0HMLC2LK4OG90" received FIN.
+2022-10-12 08:48:39.626 +03:00 [DBG] Connection id "0HMLC2LK4OG8V" received FIN.
+2022-10-12 08:48:39.632 +03:00 [DBG] Connection id "0HMLC2LK4OG90" disconnecting.
+2022-10-12 08:48:39.638 +03:00 [DBG] Connection id "0HMLC2LK4OG90" sending FIN because: "The client closed the connection."
+2022-10-12 08:48:39.638 +03:00 [DBG] Connection id "0HMLC2LK4OG8V" sending FIN because: "The client closed the connection."
+2022-10-12 08:48:39.645 +03:00 [DBG] Connection id "0HMLC2LK4OG8V" disconnecting.
+2022-10-12 08:48:39.649 +03:00 [DBG] Connection id "0HMLC2LK4OG8V" stopped.
+2022-10-12 08:48:39.655 +03:00 [DBG] Connection id "0HMLC2LK4OG90" stopped.
+2022-10-12 08:48:49.393 +03:00 [DBG] Connection id "0HMLC2LK4OG91" accepted.
+2022-10-12 08:48:49.395 +03:00 [DBG] Connection id "0HMLC2LK4OG91" started.
+2022-10-12 08:48:49.396 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5010/api/Review/12 - -
+2022-10-12 08:48:49.401 +03:00 [DBG] 1 candidate(s) found for the request path '/api/Review/12'
+2022-10-12 08:48:49.410 +03:00 [DBG] Endpoint 'Curtains.Api.Controllers.ReviewController.GetById (Curtains.Api)' with route pattern 'api/Review/{id}' is valid for the request path '/api/Review/12'
+2022-10-12 08:48:49.413 +03:00 [DBG] Request matched endpoint 'Curtains.Api.Controllers.ReviewController.GetById (Curtains.Api)'
+2022-10-12 08:48:49.416 +03:00 [DBG] Static files was skipped as the request already matched an endpoint.
+2022-10-12 08:48:49.418 +03:00 [INF] Executing endpoint 'Curtains.Api.Controllers.ReviewController.GetById (Curtains.Api)'
+2022-10-12 08:48:49.467 +03:00 [INF] Route matched with {action = "GetById", controller = "Review"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Curtains.Application.DTO.ReviewDTO]] GetById(Int32) on controller Curtains.Api.Controllers.ReviewController (Curtains.Api).
+2022-10-12 08:48:49.473 +03:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2022-10-12 08:48:49.475 +03:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2022-10-12 08:48:49.477 +03:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2022-10-12 08:48:49.479 +03:00 [DBG] Execution plan of exception filters (in the following order): ["Curtains.Infrastructure.Shared.HttpGlobalExceptionFilter"]
+2022-10-12 08:48:49.481 +03:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2022-10-12 08:48:49.485 +03:00 [DBG] Executing controller factory for controller Curtains.Api.Controllers.ReviewController (Curtains.Api)
+2022-10-12 08:48:49.676 +03:00 [DBG] An 'IServiceProvider' was created for internal use by Entity Framework.
+2022-10-12 08:48:49.711 +03:00 [DBG] Executed controller factory for controller Curtains.Api.Controllers.ReviewController (Curtains.Api)
+2022-10-12 08:48:49.718 +03:00 [DBG] Attempting to bind parameter 'id' of type 'System.Int32' ...
+2022-10-12 08:48:49.724 +03:00 [DBG] Attempting to bind parameter 'id' of type 'System.Int32' using the name 'id' in request data ...
+2022-10-12 08:48:49.728 +03:00 [DBG] Done attempting to bind parameter 'id' of type 'System.Int32'.
+2022-10-12 08:48:49.729 +03:00 [DBG] Done attempting to bind parameter 'id' of type 'System.Int32'.
+2022-10-12 08:48:49.730 +03:00 [DBG] Attempting to validate the bound parameter 'id' of type 'System.Int32' ...
+2022-10-12 08:48:49.734 +03:00 [DBG] Done attempting to validate the bound parameter 'id' of type 'System.Int32'.
+2022-10-12 08:48:50.418 +03:00 [DBG] The property 'BedspreadsModel.MarketingInfoId' was created in shadow state because there are no eligible CLR members with a matching name.
+2022-10-12 08:48:50.421 +03:00 [DBG] The property 'CurtainsModel.MarketingInfoId' was created in shadow state because there are no eligible CLR members with a matching name.
+2022-10-12 08:48:50.423 +03:00 [DBG] The property 'FabricModel.DecorationsId' was created in shadow state because there are no eligible CLR members with a matching name.
+2022-10-12 08:48:50.424 +03:00 [DBG] The property 'PillowsModel.MarketingInfoId' was created in shadow state because there are no eligible CLR members with a matching name.
+2022-10-12 08:48:50.426 +03:00 [DBG] The property 'ProductImageModel.BedspreadsId' was created in shadow state because there are no eligible CLR members with a matching name.
+2022-10-12 08:48:50.427 +03:00 [DBG] The property 'ProductImageModel.CurtainsId' was created in shadow state because there are no eligible CLR members with a matching name.
+2022-10-12 08:48:50.428 +03:00 [DBG] The property 'ProductImageModel.FabricsId' was created in shadow state because there are no eligible CLR members with a matching name.
+2022-10-12 08:48:50.430 +03:00 [DBG] The property 'ProductImageModel.PillowsId' was created in shadow state because there are no eligible CLR members with a matching name.
+2022-10-12 08:48:50.431 +03:00 [DBG] The property 'ProductImageModel.SetsId' was created in shadow state because there are no eligible CLR members with a matching name.
+2022-10-12 08:48:50.472 +03:00 [WRN] No store type was specified for the decimal property 'Price' on entity type 'AccessoriesModel'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2022-10-12 08:48:50.475 +03:00 [WRN] No store type was specified for the decimal property 'Price' on entity type 'BedspreadsModel'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2022-10-12 08:48:50.476 +03:00 [WRN] No store type was specified for the decimal property 'Price' on entity type 'CurtainsModel'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2022-10-12 08:48:50.477 +03:00 [WRN] No store type was specified for the decimal property 'Price' on entity type 'DeliveryTypeModel'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2022-10-12 08:48:50.479 +03:00 [WRN] No store type was specified for the decimal property 'Price' on entity type 'FabricModel'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2022-10-12 08:48:50.480 +03:00 [WRN] No store type was specified for the decimal property 'Price' on entity type 'LambrequinsModel'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2022-10-12 08:48:50.481 +03:00 [WRN] No store type was specified for the decimal property 'Price' on entity type 'PillowsModel'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2022-10-12 08:48:50.483 +03:00 [WRN] No store type was specified for the decimal property 'Price' on entity type 'ProductSetModel'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2022-10-12 08:48:50.484 +03:00 [WRN] No store type was specified for the decimal property 'Cost' on entity type 'UserOrderModel'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2022-10-12 08:48:50.648 +03:00 [INF] Entity Framework Core 6.0.9 initialized 'CurtainsDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.9' with options: MigrationsAssembly=Curtains.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null 
+2022-10-12 08:48:50.749 +03:00 [DBG] Compiling query expression: 
+'DbSet<ReviewModel>()
+    .AsNoTracking()
+    .SingleOrDefault(a => a.Id == __Id_0)'
+2022-10-12 08:48:50.934 +03:00 [DBG] Generated query execution expression: 
+'queryContext => ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync<ReviewModel>(
+    asyncEnumerable: new SingleQueryingEnumerable<ReviewModel>(
+        (RelationalQueryContext)queryContext, 
+        RelationalCommandCache.SelectExpression(
+            Projection Mapping:
+                EmptyProjectionMember -> Dictionary<IProperty, int> { [Property: ReviewModel.Id (int) Required PK AfterSave:Throw ValueGenerated.OnAdd, 0], [Property: ReviewModel.City (string), 1], [Property: ReviewModel.Country (string), 2], [Property: ReviewModel.Description (string), 3], [Property: ReviewModel.ImagePath (string), 4], [Property: ReviewModel.PersonName (string), 5], [Property: ReviewModel.Review (string), 6], [Property: ReviewModel.Title (string), 7] }
+            SELECT TOP(2) r.Id, r.City, r.Country, r.Description, r.ImagePath, r.PersonName, r.Review, r.Title
+            FROM Reviews AS r
+            WHERE r.Id == @__Id_0), 
+        Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, ReviewModel>, 
+        Curtains.Infrastructure.Database.CurtainsDbContext, 
+        False, 
+        False, 
+        True
+    ), 
+    cancellationToken: queryContext.CancellationToken)'
+2022-10-12 08:48:50.981 +03:00 [DBG] Creating DbCommand for 'ExecuteReader'.
+2022-10-12 08:48:51.019 +03:00 [DBG] Created DbCommand for 'ExecuteReader' (35ms).
+2022-10-12 08:48:51.037 +03:00 [DBG] Opening connection to database 'Curtains' on server 'localhost,1433'.
+2022-10-12 08:48:51.299 +03:00 [DBG] Opened connection to database 'Curtains' on server 'localhost,1433'.
+2022-10-12 08:48:51.313 +03:00 [DBG] Executing DbCommand [Parameters=[@__Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [r].[Id], [r].[City], [r].[Country], [r].[Description], [r].[ImagePath], [r].[PersonName], [r].[Review], [r].[Title]
+FROM [Reviews] AS [r]
+WHERE [r].[Id] = @__Id_0
+2022-10-12 08:48:51.373 +03:00 [INF] Executed DbCommand (62ms) [Parameters=[@__Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [r].[Id], [r].[City], [r].[Country], [r].[Description], [r].[ImagePath], [r].[PersonName], [r].[Review], [r].[Title]
+FROM [Reviews] AS [r]
+WHERE [r].[Id] = @__Id_0
+2022-10-12 08:48:51.402 +03:00 [DBG] A data reader was disposed.
+2022-10-12 08:48:51.408 +03:00 [DBG] Closing connection to database 'Curtains' on server 'localhost,1433'.
+2022-10-12 08:48:51.417 +03:00 [DBG] Closed connection to database 'Curtains' on server 'localhost,1433'.
+2022-10-12 08:48:51.432 +03:00 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2022-10-12 08:48:51.440 +03:00 [DBG] Attempting to select an output formatter based on Accept header '["text/plain"]'.
+2022-10-12 08:48:51.442 +03:00 [DBG] Could not find an output formatter based on content negotiation. Accepted types were (["text/plain"])
+2022-10-12 08:48:51.443 +03:00 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2022-10-12 08:48:51.444 +03:00 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
+2022-10-12 08:48:51.445 +03:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2022-10-12 08:48:51.446 +03:00 [INF] Executing OkObjectResult, writing value of type 'Curtains.Application.DTO.ReviewDTO'.
+2022-10-12 08:48:51.470 +03:00 [INF] Executed action Curtains.Api.Controllers.ReviewController.GetById (Curtains.Api) in 1978.8672ms
+2022-10-12 08:48:51.473 +03:00 [INF] Executed endpoint 'Curtains.Api.Controllers.ReviewController.GetById (Curtains.Api)'
+2022-10-12 08:48:51.476 +03:00 [INF] HTTP GET /api/Review/12 responded 200 in 2062.0572 ms
+2022-10-12 08:48:51.478 +03:00 [DBG] Connection id "0HMLC2LK4OG91" completed keep alive response.
+2022-10-12 08:48:51.483 +03:00 [DBG] 'CurtainsDbContext' disposed.
+2022-10-12 08:48:51.488 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5010/api/Review/12 - - - 200 - application/json;+charset=utf-8 2091.8606ms
+2022-10-12 08:48:59.644 +03:00 [DBG] Connection id "0HMLC2LK4OG91" received FIN.
+2022-10-12 08:48:59.649 +03:00 [DBG] Connection id "0HMLC2LK4OG91" sending FIN because: "The client closed the connection."
+2022-10-12 08:48:59.651 +03:00 [DBG] Connection id "0HMLC2LK4OG91" disconnecting.
+2022-10-12 08:48:59.656 +03:00 [DBG] Connection id "0HMLC2LK4OG91" stopped.
+2022-10-12 08:49:16.155 +03:00 [DBG] Connection id "0HMLC2LK4OG92" accepted.
+2022-10-12 08:49:16.159 +03:00 [DBG] Connection id "0HMLC2LK4OG92" started.
+2022-10-12 08:49:16.161 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5010/api/Review/12 - -
+2022-10-12 08:49:16.163 +03:00 [DBG] 1 candidate(s) found for the request path '/api/Review/12'
+2022-10-12 08:49:16.166 +03:00 [DBG] Endpoint 'Curtains.Api.Controllers.ReviewController.GetById (Curtains.Api)' with route pattern 'api/Review/{id}' is valid for the request path '/api/Review/12'
+2022-10-12 08:49:16.168 +03:00 [DBG] Request matched endpoint 'Curtains.Api.Controllers.ReviewController.GetById (Curtains.Api)'
+2022-10-12 08:49:16.169 +03:00 [DBG] Static files was skipped as the request already matched an endpoint.
+2022-10-12 08:49:16.170 +03:00 [INF] Executing endpoint 'Curtains.Api.Controllers.ReviewController.GetById (Curtains.Api)'
+2022-10-12 08:49:16.172 +03:00 [INF] Route matched with {action = "GetById", controller = "Review"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Curtains.Application.DTO.ReviewDTO]] GetById(Int32) on controller Curtains.Api.Controllers.ReviewController (Curtains.Api).
+2022-10-12 08:49:16.173 +03:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2022-10-12 08:49:16.175 +03:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2022-10-12 08:49:16.176 +03:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2022-10-12 08:49:16.180 +03:00 [DBG] Execution plan of exception filters (in the following order): ["Curtains.Infrastructure.Shared.HttpGlobalExceptionFilter"]
+2022-10-12 08:49:16.184 +03:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2022-10-12 08:49:16.186 +03:00 [DBG] Executing controller factory for controller Curtains.Api.Controllers.ReviewController (Curtains.Api)
+2022-10-12 08:49:16.188 +03:00 [DBG] Executed controller factory for controller Curtains.Api.Controllers.ReviewController (Curtains.Api)
+2022-10-12 08:49:16.189 +03:00 [DBG] Attempting to bind parameter 'id' of type 'System.Int32' ...
+2022-10-12 08:49:16.191 +03:00 [DBG] Attempting to bind parameter 'id' of type 'System.Int32' using the name 'id' in request data ...
+2022-10-12 08:49:16.192 +03:00 [DBG] Done attempting to bind parameter 'id' of type 'System.Int32'.
+2022-10-12 08:49:16.193 +03:00 [DBG] Done attempting to bind parameter 'id' of type 'System.Int32'.
+2022-10-12 08:49:16.198 +03:00 [DBG] Attempting to validate the bound parameter 'id' of type 'System.Int32' ...
+2022-10-12 08:49:16.200 +03:00 [DBG] Done attempting to validate the bound parameter 'id' of type 'System.Int32'.
+2022-10-12 08:49:16.204 +03:00 [INF] Entity Framework Core 6.0.9 initialized 'CurtainsDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.9' with options: MigrationsAssembly=Curtains.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null 
+2022-10-12 08:49:16.209 +03:00 [DBG] Creating DbCommand for 'ExecuteReader'.
+2022-10-12 08:49:16.212 +03:00 [DBG] Created DbCommand for 'ExecuteReader' (3ms).
+2022-10-12 08:49:16.217 +03:00 [DBG] Opening connection to database 'Curtains' on server 'localhost,1433'.
+2022-10-12 08:49:16.219 +03:00 [DBG] Opened connection to database 'Curtains' on server 'localhost,1433'.
+2022-10-12 08:49:16.220 +03:00 [DBG] Executing DbCommand [Parameters=[@__Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [r].[Id], [r].[City], [r].[Country], [r].[Description], [r].[ImagePath], [r].[PersonName], [r].[Review], [r].[Title]
+FROM [Reviews] AS [r]
+WHERE [r].[Id] = @__Id_0
+2022-10-12 08:49:16.232 +03:00 [INF] Executed DbCommand (12ms) [Parameters=[@__Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [r].[Id], [r].[City], [r].[Country], [r].[Description], [r].[ImagePath], [r].[PersonName], [r].[Review], [r].[Title]
+FROM [Reviews] AS [r]
+WHERE [r].[Id] = @__Id_0
+2022-10-12 08:49:16.236 +03:00 [DBG] A data reader was disposed.
+2022-10-12 08:49:16.236 +03:00 [DBG] Closing connection to database 'Curtains' on server 'localhost,1433'.
+2022-10-12 08:49:16.238 +03:00 [DBG] Closed connection to database 'Curtains' on server 'localhost,1433'.
+2022-10-12 08:49:16.239 +03:00 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2022-10-12 08:49:16.241 +03:00 [DBG] Attempting to select an output formatter based on Accept header '["text/plain"]'.
+2022-10-12 08:49:16.243 +03:00 [DBG] Could not find an output formatter based on content negotiation. Accepted types were (["text/plain"])
+2022-10-12 08:49:16.246 +03:00 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2022-10-12 08:49:16.249 +03:00 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
+2022-10-12 08:49:16.250 +03:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2022-10-12 08:49:16.251 +03:00 [INF] Executing OkObjectResult, writing value of type 'Curtains.Application.DTO.ReviewDTO'.
+2022-10-12 08:49:16.252 +03:00 [INF] Executed action Curtains.Api.Controllers.ReviewController.GetById (Curtains.Api) in 66.1924ms
+2022-10-12 08:49:16.254 +03:00 [INF] Executed endpoint 'Curtains.Api.Controllers.ReviewController.GetById (Curtains.Api)'
+2022-10-12 08:49:16.256 +03:00 [INF] HTTP GET /api/Review/12 responded 200 in 86.3307 ms
+2022-10-12 08:49:16.257 +03:00 [DBG] Connection id "0HMLC2LK4OG92" completed keep alive response.
+2022-10-12 08:49:16.260 +03:00 [DBG] 'CurtainsDbContext' disposed.
+2022-10-12 08:49:16.262 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5010/api/Review/12 - - - 200 - application/json;+charset=utf-8 100.9573ms
+2022-10-12 08:49:19.673 +03:00 [DBG] Connection id "0HMLC2LK4OG92" received FIN.
+2022-10-12 08:49:19.678 +03:00 [DBG] Connection id "0HMLC2LK4OG92" sending FIN because: "The client closed the connection."
+2022-10-12 08:49:19.680 +03:00 [DBG] Connection id "0HMLC2LK4OG92" disconnecting.
+2022-10-12 08:49:19.687 +03:00 [DBG] Connection id "0HMLC2LK4OG92" stopped.
