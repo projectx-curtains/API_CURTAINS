@@ -15,7 +15,7 @@ using Microsoft.EntityFrameworkCore;
 namespace Curtains.Application.CurtainsService
 {
     /// <summary>
-    /// Class <c> ReviewService </c> describes the interaction model of the data transfer object to the database.
+    /// Class <c> ReviewService </c> a default implementetion of <c> IReviewService </c>
     /// </summary>
     public class ReviewService : IReviewService
     {
@@ -33,7 +33,8 @@ namespace Curtains.Application.CurtainsService
         #region MethodsRegion
 
         /// <summary>
-        /// This method get all<c> ReviewModel <c> entities from database and mapping to <c> ReviewDTO </c>
+        /// This method get all<c> ReviewModel <c> entities 
+        /// from database and mapping to <c> ReviewDTO </c>
         /// </summary>
         /// <returns>Collection of ReviewDTO entities in list Review</returns>
         public IEnumerable<ReviewDTO> GetAll()
@@ -43,7 +44,8 @@ namespace Curtains.Application.CurtainsService
         }
 
         /// <summary>
-        /// This method get <c> ReviewModel <c> entity from database by entity Id and mapping to <c> ReviewDTO </c>
+        /// This method get <c> ReviewModel <c> entity 
+        /// from database by entity Id and mapping to <c> ReviewDTO </c>
         /// </summary>
         /// <param name="Id"> Guid Reviews entity idetifier </param>
         /// <returns> ReviewDTO </returns>
@@ -55,7 +57,8 @@ namespace Curtains.Application.CurtainsService
         }
 
         /// <summary>
-        /// This method accepts <c> ReviewDTO </c> entity and mapping to <c> ReviewModel </c> then pushed to Review repository for add to database
+        /// This method accepts <c> ReviewDTO </c> entity and mapping to 
+        /// <c> ReviewModel </c> then pushed to Review repository for add to database
         /// </summary>
         /// <param name="entity"> ReviewDTO Review </param>
         /// <param name="cancelationToken"></param>
@@ -67,7 +70,8 @@ namespace Curtains.Application.CurtainsService
         }
 
         /// <summary>
-        /// This method accepts <c> ReviewDTO </c> entity and mapping to <c> ReviewModel </c> then pushed to Review repository for update to database
+        /// This method accepts <c> ReviewDTO </c> entity and mapping 
+        /// to <c> ReviewModel </c> then pushed to Review repository for update to database
         /// </summary>
         /// <param name="entity"> ReviewDTO Review </param>
         /// <returns> Task </returns>
@@ -78,7 +82,8 @@ namespace Curtains.Application.CurtainsService
         }
 
         /// <summary>
-        /// This method accepts <c> ReviewDTO </c> entity and mapping to <c> ReviewModel </c> then pushed to Review repository for remove entity to database
+        /// This method accepts <c> ReviewDTO </c> entity and mapping 
+        /// to <c> ReviewModel </c> then pushed to Review repository for remove entity to database
         /// </summary>
         /// <param name="entity"> ReviewDTO Review </param>
         /// <returns> Task </returns>
