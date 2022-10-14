@@ -18,7 +18,7 @@ namespace Curtains.Application
         {
             var types = AppDomain.CurrentDomain
                 .GetAssemblies()
-                .Where(x => x.FullName.StartsWith("CurtainsService"))
+                .Where(x => x.FullName.StartsWith("Curtains.Application"))
                 .SelectMany(x => x.GetTypes()
                     .Where(type => type.IsClass
                                    && !type.IsAbstract
