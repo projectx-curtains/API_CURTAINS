@@ -4,14 +4,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Curtains.Domain.Models
+namespace Curtains.Application.DTO
 {
     /// <summary>
-    ///  This class describes marketing information model.
+    /// Class <c> MarketingInfoDTO </c> describes interaction model for NewItemsController and database.
     /// </summary>
-    public class MarketingInfoModel : BaseEntity
+    public class MarketingInfoDTO
     {
         #region PropertiesRegion
+        /// <summary>
+        /// This property represents unique identifier for data tranfer objects.
+        /// </summary>
+        public int Id { get; set; }
         /// <summary>
         ///  This property represents situation, if product is new or not.
         /// </summary>
@@ -19,18 +23,11 @@ namespace Curtains.Domain.Models
         /// <summary>
         ///  This property represents situation, if product is on sale or not.
         /// </summary>
-        public bool IsOnSale { get; set; }
+        public bool IsOnSale { get; set; } 
         /// <summary>
         ///  This property represents situation, if product is popular or not.
         /// </summary>
         public bool IsPopular { get; set; }
-        #endregion
-
-        #region NavigationProperties
-        /// <summary>
-        ///  This property represents products, which marketing information is presented.
-        /// </summary>
-        public virtual ProductImageModel ProductImage { get; set; }
         #endregion
     }
 }

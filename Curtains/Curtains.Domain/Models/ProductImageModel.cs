@@ -39,6 +39,10 @@ namespace Curtains.Domain.Models
         ///  This property represents fabrics, which image is presented.
         /// </summary>
         public virtual FabricModel Fabrics { get; set; }
+        /// <summary>
+        ///  This property represents marketing info about products.
+        /// </summary>
+        public virtual MarketingInfoModel MarketingInfoModel { get; set; }
         #endregion
     }
 }
