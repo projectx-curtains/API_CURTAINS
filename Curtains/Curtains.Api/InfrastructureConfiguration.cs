@@ -1,4 +1,6 @@
-﻿using Curtains.Domain.Search;
+﻿using Curtains.Application.CurtainsServices;
+using Curtains.Application.CurtainsServices.Interfaces;
+using Curtains.Domain.Search;
 using Curtains.Infrastructure.Correlation;
 using Curtains.Infrastructure.Database;
 using Curtains.Infrastructure.Interfaces;
@@ -50,7 +52,9 @@ namespace Curtains.Api
                 .AddScoped<IPillowsRepository, PillowsRepository>()
                 .AddScoped<IProductSetRepository, ProductSetRepository>()
                 .AddScoped<IProductImageRepository, ProductImageRepository>()
-                .AddScoped<IMarketingInfoRepository, MarketingInfoRepository>();
+                .AddScoped<IMarketingInfoRepository, MarketingInfoRepository>()
+                
+                .AddScoped<IProductImageService, ProductImageService>();
 
             var serviceProvider = services.BuildServiceProvider();
             var logger = serviceProvider.GetService<ILogger<CurtainsDbContext>>();
