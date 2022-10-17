@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage;
 
 using Curtains.Domain.Models;
+using System.Reflection.Emit;
 
 namespace Curtains.Infrastructure.Database
 {
@@ -42,6 +43,12 @@ namespace Curtains.Infrastructure.Database
         protected override void OnModelCreating(ModelBuilder builder)
         {
             builder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
+
+            builder
+            .Entity<ProductImageModel>()
+            .HasOne(u => u.MarketingInfoModel)
+            .WithOne(p => p.ProductImage)
+            .HasForeignKey<MarketingInfoModel>(p => p.Id);
         }
 
         public bool HasActiveTransaction => _currentTransaction != null;
