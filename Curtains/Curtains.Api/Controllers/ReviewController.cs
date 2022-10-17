@@ -7,17 +7,18 @@ using Microsoft.EntityFrameworkCore.ChangeTracking;
 namespace Curtains.Api.Controllers
 {
     /// <summary>
-    /// This controller <c> ReviewController </c> for CRUID operations in database
+    /// This controller <c> ReviewController </c> handles requests and
+    /// changes, deletes, sends, gets feedback data.
     /// </summary>
     [Route("api/[controller]")]
     [ApiController]
     public class ReviewController : ControllerBase
     {
-        private readonly IReviewService _service;
+        private readonly IReviewService _reviewService;
 
-        public ReviewController(IReviewService service)
+        public ReviewController(IReviewService reviewService)
         {
-            _service = service;
+            _reviewService = reviewService;
         }
 
         /// <summary>
@@ -27,7 +28,7 @@ namespace Curtains.Api.Controllers
         [HttpGet]
         public ActionResult<IEnumerable<ReviewDTO>> GetAll()
         {
-            var model = _service.GetAll();
+            var model = _reviewService.GetAll();
 
             if (model != null)
             {
@@ -44,7 +45,7 @@ namespace Curtains.Api.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<ReviewDTO>> GetById(int id)
         {
-            var model = await _service.GetByIdAsync(id);
+            var model = await _reviewService.GetByIdAsync(id);
 
             if (model != null)
             {
@@ -64,7 +65,7 @@ namespace Curtains.Api.Controllers
         {
             if (entity != null)
             {
-                await _service.InsertAsync(entity, token);
+                await _reviewService.InsertAsync(entity, token);
                 return CreatedAtAction(nameof(Insert), entity);
             }
 
@@ -81,7 +82,7 @@ namespace Curtains.Api.Controllers
         {
             if (entity != null)
             {
-                await _service.UpdateAsync(entity);
+                await _reviewService.UpdateAsync(entity);
                 return NoContent();
             }
 
@@ -98,7 +99,7 @@ namespace Curtains.Api.Controllers
         {
             if (entity != null)
             {
-                await _service.RemoveAsync(entity);
+                await _reviewService.RemoveAsync(entity);
                 return NoContent();
             }
 
