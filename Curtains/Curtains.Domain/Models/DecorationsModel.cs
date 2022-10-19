@@ -18,6 +18,10 @@ namespace Curtains.Domain.Models
 
         #region PropertiesRegion
         /// <summary>
+        ///  This property represents title of entities.
+        /// </summary>
+        public string Title { get; set; } = string.Empty;
+        /// <summary>
         ///  This property represents situation, if there are decorations on fabric or not.
         /// </summary>
         public bool Presence { get; set; }

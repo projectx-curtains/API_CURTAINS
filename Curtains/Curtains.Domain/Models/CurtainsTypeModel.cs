@@ -16,6 +16,10 @@ namespace Curtains.Domain.Models
             Curtains = new HashSet<CurtainsModel>();
         }
 
+        /// <summary>
+        ///  This property represents title of entities.
+        /// </summary>
+        public string Title { get; set; } = string.Empty;
         #region NavigationPropertiesRegion
         /// <summary>
         ///  This property represents list of curtains of that type.

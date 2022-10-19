@@ -16,12 +16,8 @@ namespace Curtains.Domain.Models
         /// </summary>
         public int Id { get; set; }
         /// <summary>
-        ///  This property represents title of entities.
-        /// </summary>
-        public string Title { get; set; } = "";
-        /// <summary>
         ///  This property represents description of entities.
         /// </summary>
-        public string Description { get; set; } = "";
+        public string Description { get; set; } = string.Empty;
     }
 }

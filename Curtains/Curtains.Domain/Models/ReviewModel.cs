@@ -31,7 +31,7 @@ namespace Curtains.Domain.Models
         /// <summary>
         ///  This property represents path to image of review.
         /// </summary>
-        public string Image { get; set; }  
+        public string ImagePath { get; set; }  
         #endregion
     }
 }

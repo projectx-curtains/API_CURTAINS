@@ -13,6 +13,10 @@ namespace Curtains.Domain.Models
     {
         #region PropertiesRegion
         /// <summary>
+        ///  This property represents title of entities.
+        /// </summary>
+        public string Title { get; set; } = string.Empty;
+        /// <summary>
         ///  This property represents CurtainsId column.
         /// </summary>
         public int? CurtainsId { get; set; }

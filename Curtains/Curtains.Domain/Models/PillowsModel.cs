@@ -19,6 +19,10 @@ namespace Curtains.Domain.Models
 
         #region PropertiesRegion
         /// <summary>
+        ///  This property represents title of entities.
+        /// </summary>
+        public string Title { get; set; } = string.Empty;
+        /// <summary>
         ///  This property represents FabricId column.
         /// </summary>
         public int FabricId { get; set; }
@@ -61,6 +65,6 @@ namespace Curtains.Domain.Models
         ///  This property represents list of UserOrders with that pillows.
         /// </summary>
         public virtual ICollection<UserOrderModel> UserOrders { get; set; }
-        #endregion 
+        #endregion
     }
 }

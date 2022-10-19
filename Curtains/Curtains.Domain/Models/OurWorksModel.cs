@@ -15,8 +15,8 @@ namespace Curtains.Domain.Models
         /// <summary>
         ///  This property represents path to image of our works.
         /// </summary>
-        public string ImagePath { get; set; }  
-        #endregion  
+        public string ImagePath { get; set; }
+        #endregion
 
     }
 }

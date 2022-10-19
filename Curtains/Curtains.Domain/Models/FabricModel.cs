@@ -20,6 +20,10 @@ namespace Curtains.Domain.Models
 
         #region PropertiesRegion
         /// <summary>
+        ///  This property represents title of entities.
+        /// </summary>
+        public string Title { get; set; } = string.Empty;
+        /// <summary>
         ///  This property represents situation, if fabric is dense or not.
         /// </summary>
         public bool Density { get; set; }
@@ -65,7 +69,7 @@ namespace Curtains.Domain.Models
         /// <summary>
         ///  This property represents color of fabric.
         /// </summary>
-        public virtual ColorModel Color { get; set; }  
+        public virtual ColorModel Color { get; set; }
         public virtual DecorationsModel Decorations { get; set; }
         /// <summary>
         ///  This property represents decorations of fabric.

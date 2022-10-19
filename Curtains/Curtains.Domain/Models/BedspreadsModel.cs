@@ -19,6 +19,10 @@ namespace Curtains.Domain.Models
 
         #region PropertiesRegion
         /// <summary>
+        ///  This property represents title of entities.
+        /// </summary>
+        public string Title { get; set; } = string.Empty;
+        /// <summary>
         ///  This property represents size of bedspreads.
         /// </summary>
         public string Size { get; set; }

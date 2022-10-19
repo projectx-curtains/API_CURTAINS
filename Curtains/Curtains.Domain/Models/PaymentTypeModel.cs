@@ -18,6 +18,10 @@ namespace Curtains.Domain.Models
 
         #region NavigationPropertiesRegion
         /// <summary>
+        ///  This property represents title of entities.
+        /// </summary>
+        public string Title { get; set; } = string.Empty;
+        /// <summary>
         ///  This property represents list of orders with that payment type.
         /// </summary>
         public virtual ICollection<OrderModel> Orders { get; set; }

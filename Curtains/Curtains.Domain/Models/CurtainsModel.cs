@@ -19,6 +19,10 @@ namespace Curtains.Domain.Models
 
         #region PropertiesRegion
         /// <summary>
+        ///  This property represents title of entities.
+        /// </summary>
+        public string Title { get; set; } = string.Empty;
+        /// <summary>
         ///  This property represents situation, if curtains are dense or not.
         /// </summary>
         public bool Density { get; set; }
