@@ -55,16 +55,16 @@ namespace Curtains.Infrastructure
                             && type.Namespace == typeof(ICurtainsRepository).Namespace)
             .ToArray();
 
-        foreach (var interfaceType in interfaceTypes)
-        {
-            var implementation = types
-                .FirstOrDefault(type => type.GetInterface(interfaceType.Name) == interfaceType);
+            foreach (var interfaceType in interfaceTypes)
+            {
+                var implementation = types
+                    .FirstOrDefault(type => type.GetInterface(interfaceType.Name) == interfaceType);
 
-            services
-                .AddScoped(interfaceType, implementation);
-        }
+                services
+                    .AddScoped(interfaceType, implementation);
+            }
 
-        return services;
+            return services;
          }
     }
 }
