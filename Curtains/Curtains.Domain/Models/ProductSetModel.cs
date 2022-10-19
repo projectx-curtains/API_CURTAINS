@@ -9,13 +9,9 @@ namespace Curtains.Domain.Models
     /// <summary>
     ///  This class describes model of set of products.
     /// </summary>
-    public class ProductSetModel : BaseEntity
+    public class ProductSetModel : ExtendedBaseEntity
     {
         #region PropertiesRegion
-        /// <summary>
-        ///  This property represents title of entities.
-        /// </summary>
-        public string Title { get; set; } = string.Empty;
         /// <summary>
         ///  This property represents CurtainsId column.
         /// </summary>

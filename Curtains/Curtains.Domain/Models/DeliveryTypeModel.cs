@@ -18,10 +18,6 @@ namespace Curtains.Domain.Models
 
         #region PropertiesRegion
         /// <summary>
-        ///  This property represents title of entities.
-        /// </summary>
-        public string Title { get; set; } = string.Empty;
-        /// <summary>
         ///  This property represents price of delivery.
         /// </summary>
         public decimal Price { get; set; }

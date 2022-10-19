@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Curtains.Domain.Models
 {
-    public class ConsistencyModel : BaseEntity
+    public class ConsistencyModel : ExtendedBaseEntity
     {
         /// <summary>
         ///  This class describes consistency model.
@@ -16,10 +16,6 @@ namespace Curtains.Domain.Models
             Fabrics = new HashSet<FabricModel>();
         }
 
-        /// <summary>
-        ///  This property represents title of entities.
-        /// </summary>
-        public string Title { get; set; } = string.Empty;
         #region NavigationPropertiesRegion
         /// <summary>
         ///  This property represents list of fabrics with that consistency.

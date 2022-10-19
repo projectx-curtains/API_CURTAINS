@@ -9,7 +9,7 @@ namespace Curtains.Domain.Models
     /// <summary>
     ///  This class describes decorations model.
     /// </summary>
-    public class DecorationsModel : BaseEntity
+    public class DecorationsModel : ExtendedBaseEntity
     {
         public DecorationsModel()
         {
@@ -17,10 +17,6 @@ namespace Curtains.Domain.Models
         }
 
         #region PropertiesRegion
-        /// <summary>
-        ///  This property represents title of entities.
-        /// </summary>
-        public string Title { get; set; } = string.Empty;
         /// <summary>
         ///  This property represents situation, if there are decorations on fabric or not.
         /// </summary>

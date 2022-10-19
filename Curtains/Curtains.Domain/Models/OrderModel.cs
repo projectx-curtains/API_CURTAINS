@@ -11,10 +11,6 @@ namespace Curtains.Domain.Models
     /// </summary>
     public class OrderModel : BaseEntity
     {
-        public OrderModel()
-        {
-        }
-
         #region PropertiesRegion
         /// <summary>
         ///  This property represents UserId column.
@@ -50,7 +46,7 @@ namespace Curtains.Domain.Models
         /// <summary>
         ///  This property represents UserOrder.
         /// </summary>
-        public virtual UserOrderModel UserOrder { get; set; }  
+        public virtual UserOrderModel UserOrder { get; set; }
         #endregion
     }
 }

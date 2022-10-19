@@ -9,17 +9,13 @@ namespace Curtains.Domain.Models
     /// <summary>
     ///  This class describes material model.
     /// </summary>
-    public class MaterialModel : BaseEntity
+    public class MaterialModel : ExtendedBaseEntity
     {
         public MaterialModel()
         {
             Curtains = new HashSet<CurtainsModel>();
         }
 
-        /// <summary>
-        ///  This property represents title of entities.
-        /// </summary>
-        public string Title { get; set; } = string.Empty;
         #region NavigationPropertiesRegion
         /// <summary>
         ///  This property represents list of curtains with that material.

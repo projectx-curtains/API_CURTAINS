@@ -9,7 +9,7 @@ namespace Curtains.Domain.Models
     /// <summary>
     ///  This class describes lambrequins model.
     /// </summary>
-    public class LambrequinsModel : BaseEntity
+    public class LambrequinsModel : ExtendedBaseEntity
     {
         public LambrequinsModel()
         {
@@ -17,10 +17,6 @@ namespace Curtains.Domain.Models
         }
 
         #region PropertiesRegion
-        /// <summary>
-        ///  This property represents title of entities.
-        /// </summary>
-        public string Title { get; set; } = string.Empty;
         /// <summary>
         ///  This property represents ColorId column.
         /// </summary>

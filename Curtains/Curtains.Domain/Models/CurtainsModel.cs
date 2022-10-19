@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Curtains.Domain.Models
 {
-    public class CurtainsModel : BaseEntity
+    public class CurtainsModel : ExtendedBaseEntity
     {
         /// <summary>
         ///  This class describes curtains model.
@@ -18,10 +18,6 @@ namespace Curtains.Domain.Models
         }
 
         #region PropertiesRegion
-        /// <summary>
-        ///  This property represents title of entities.
-        /// </summary>
-        public string Title { get; set; } = string.Empty;
         /// <summary>
         ///  This property represents situation, if curtains are dense or not.
         /// </summary>

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Curtains.Domain.Models
 {
-    public class ColorModel : BaseEntity
+    public class ColorModel : ExtendedBaseEntity
     {
         /// <summary>
         ///  This class describes color of products like fabrics, accessories and lambrequins.
@@ -19,10 +19,6 @@ namespace Curtains.Domain.Models
         }
 
         #region PropertiesRegion
-        /// <summary>
-        ///  This property represents title of entities.
-        /// </summary>
-        public string Title { get; set; } = string.Empty;
         /// <summary>
         ///  This property represents code of color.
         /// </summary>

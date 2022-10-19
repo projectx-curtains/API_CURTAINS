@@ -9,7 +9,7 @@ namespace Curtains.Domain.Models
     /// <summary>
     ///  This class describes payment type model.
     /// </summary>
-    public class PaymentTypeModel : BaseEntity
+    public class PaymentTypeModel : ExtendedBaseEntity
     {
         public PaymentTypeModel()
         {
@@ -17,10 +17,6 @@ namespace Curtains.Domain.Models
         }
 
         #region NavigationPropertiesRegion
-        /// <summary>
-        ///  This property represents title of entities.
-        /// </summary>
-        public string Title { get; set; } = string.Empty;
         /// <summary>
         ///  This property represents list of orders with that payment type.
         /// </summary>

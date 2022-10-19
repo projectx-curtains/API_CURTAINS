@@ -9,7 +9,7 @@ namespace Curtains.Domain.Models
     /// <summary>
     ///  This class describes fabric model.
     /// </summary>
-    public class FabricModel : BaseEntity
+    public class FabricModel : ExtendedBaseEntity
     {
         public FabricModel()
         {
@@ -19,10 +19,6 @@ namespace Curtains.Domain.Models
         }
 
         #region PropertiesRegion
-        /// <summary>
-        ///  This property represents title of entities.
-        /// </summary>
-        public string Title { get; set; } = string.Empty;
         /// <summary>
         ///  This property represents situation, if fabric is dense or not.
         /// </summary>

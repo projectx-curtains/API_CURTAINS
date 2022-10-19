@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Curtains.Domain.Models
+﻿namespace Curtains.Domain.Models
 {
-    public class CurtainsKindModel : BaseEntity
+    public class CurtainsKindModel : ExtendedBaseEntity
     {
         /// <summary>
         ///  This class describes curtains kind model.
@@ -16,10 +10,6 @@ namespace Curtains.Domain.Models
             Curtains = new HashSet<CurtainsModel>();
         }
 
-        /// <summary>
-        ///  This property represents title of entities.
-        /// </summary>
-        public string Title { get; set; } = string.Empty;
         #region NavigationPropertiesRegion
         /// <summary>
         ///  This property represents list of curtains with that kind.

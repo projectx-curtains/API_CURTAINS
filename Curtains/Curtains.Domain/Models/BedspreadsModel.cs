@@ -9,7 +9,7 @@ namespace Curtains.Domain.Models
     /// <summary>
     ///  This class describes bedspreads model.
     /// </summary>
-    public class BedspreadsModel : BaseEntity
+    public class BedspreadsModel : ExtendedBaseEntity
     {
         public BedspreadsModel()
         {
@@ -18,10 +18,6 @@ namespace Curtains.Domain.Models
         }
 
         #region PropertiesRegion
-        /// <summary>
-        ///  This property represents title of entities.
-        /// </summary>
-        public string Title { get; set; } = string.Empty;
         /// <summary>
         ///  This property represents size of bedspreads.
         /// </summary>
