@@ -2,6 +2,7 @@
 using AutoMapper;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
+using Curtains.Application.Interfaces;
 
 namespace Curtains.Application
 {
@@ -11,14 +12,15 @@ namespace Curtains.Application
         {
             return services
                 .AddMediatR(Assembly.GetExecutingAssembly())
-                .AddAutoMapper();
+                .AddAutoMapper()
+                .AddServices();
         }
 
         public static IServiceCollection AddAutoMapper(this IServiceCollection services)
         {
             var types = AppDomain.CurrentDomain
                 .GetAssemblies()
-                .Where(x => x.FullName.StartsWith("CurtainsService"))
+                .Where(x => x.FullName.StartsWith("Curtains.Application"))
                 .SelectMany(x => x.GetTypes()
                     .Where(type => type.IsClass
                                    && !type.IsAbstract
@@ -35,5 +37,29 @@ namespace Curtains.Application
 
             return services;
         }
-    }    
+
+        private static IServiceCollection AddServices(this IServiceCollection services)
+        {
+            var types = Assembly
+
+                .GetExecutingAssembly()
+                .GetTypes();
+
+            var interfaceTypes = types
+                .Where(type => type.IsInterface
+                            && type.Namespace == typeof(IOurWorksService).Namespace)
+            .ToArray();
+
+            foreach (var interfaceType in interfaceTypes)
+            {
+                var implementation = types
+                    .FirstOrDefault(type => type.GetInterface(interfaceType.Name) == interfaceType);
+
+                services
+                    .AddScoped(interfaceType, implementation);
+            }
+
+            return services;
+        }
+    }
 }
