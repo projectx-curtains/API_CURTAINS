@@ -13,7 +13,22 @@ namespace Curtains.Application.AutoMapping
     {
         public AutoMap()
         {
-            CreateMap<ReviewModel, ReviewDTO>().ReverseMap();       
+            CreateMap<ReviewModel, ReviewDTO>().ReverseMap();
+            CreateMap<ColorModel, ColorDTO>().ReverseMap();
+            CreateMap<ConsistencyModel, ConsistencyDTO>().ReverseMap();
+            CreateMap<CurtainsKindModel, CurtainsKindDTO>().ReverseMap();
+            CreateMap<CurtainsTypeModel, CurtainsTypeDTO>().ReverseMap();
+            CreateMap<DecorationsModel, DecorationsDTO>().ReverseMap();
+            CreateMap<ManufacturerModel, ManufacturerDTO>().ReverseMap();
+            CreateMap<MaterialModel, MaterialDTO>().ReverseMap();
+            CreateMap<AccessoriesModel, AccessoriesDTO>().ReverseMap();
+            CreateMap<FabricModel, FabricDTO>().ReverseMap();
+            CreateMap<BedspreadsModel, BedspreadsDTO>().ReverseMap();
+            CreateMap<CurtainsModel, CurtainsDTO>().ReverseMap();
+            CreateMap<PillowsModel, PillowsDTO>().ReverseMap();
+            CreateMap<ProductSetModel, ProductSetDTO>().ReverseMap();
+            CreateMap<ProductImageModel, ProductImageDTO>().ReverseMap();
+            CreateMap<MarketingInfoModel, MarketingInfoDTO>().ReverseMap();
         }
     }
 }
