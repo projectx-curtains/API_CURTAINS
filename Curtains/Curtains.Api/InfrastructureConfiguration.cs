@@ -10,6 +10,8 @@ using Curtains.Application.Interfaces;
 using Curtains.Infrastructure.Repositories;
 using Curtains.Infrastructure.Interfaces;
 using Microsoft.Extensions.Logging;
+using Curtains.Application.CurtainsServices.Interfaces;
+using Curtains.Application.CurtainsServices;
 
 namespace Curtains.Api
 {
@@ -38,8 +40,6 @@ namespace Curtains.Api
 
             services
                 .AddScoped<IReviewRepository, ReviewRepository>()
-                .AddScoped<IReviewService, ReviewService>()
-                .AddScoped<IReviewRepository, ReviewRepository>()
                 .AddScoped<IColorRepository, ColorRepository>()
                 .AddScoped<IConsistencyRepository, ConsistencyRepository>()
                 .AddScoped<ICurtainsKindRepository, CurtainsKindRepository>()
@@ -54,7 +54,11 @@ namespace Curtains.Api
                 .AddScoped<IPillowsRepository, PillowsRepository>()
                 .AddScoped<IProductSetRepository, ProductSetRepository>()
                 .AddScoped<IProductImageRepository, ProductImageRepository>()
-                .AddScoped<IMarketingInfoRepository, MarketingInfoRepository>(); 
+                .AddScoped<IMarketingInfoRepository, MarketingInfoRepository>()
+
+                .AddScoped<IReviewService, ReviewService>()
+                .AddScoped<IProductImageService, ProductImageService>();
+
 
             var serviceProvider = services.BuildServiceProvider();
             var logger = serviceProvider.GetService<ILogger<CurtainsDbContext>>();
