@@ -9,7 +9,7 @@ namespace Curtains.Domain.Models
     /// <summary>
     ///  This class describes accessories model.
     /// </summary>
-    public class AccessoriesModel : BaseEntity
+    public class AccessoriesModel : ExtendedBaseEntity
     {
         public AccessoriesModel()
         {

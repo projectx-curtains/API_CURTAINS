@@ -9,7 +9,7 @@ namespace Curtains.Domain.Models
     /// <summary>
     ///  This class describes pillows model.
     /// </summary>
-    public class PillowsModel : BaseEntity
+    public class PillowsModel : ExtendedBaseEntity
     {
         public PillowsModel()
         {
@@ -49,10 +49,6 @@ namespace Curtains.Domain.Models
         ///  This property represents fabric of pillows.
         /// </summary>
         public virtual FabricModel Fabric { get; set; }
-        /// <summary>
-        ///  This property represents marketing information about pillows.
-        /// </summary>
-        public virtual MarketingInfoModel MarketingInfo { get; set; }
         /// <summary>
         ///  This property represents list of product sets with that pillows.
         /// </summary>
