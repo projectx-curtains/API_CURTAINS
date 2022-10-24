@@ -9,7 +9,7 @@ namespace Curtains.Domain.Models
     /// <summary>
     ///  This class describes payment type model.
     /// </summary>
-    public class PaymentTypeModel : BaseEntity
+    public class PaymentTypeModel : ExtendedBaseEntity
     {
         public PaymentTypeModel()
         {

@@ -50,10 +50,6 @@ namespace Curtains.Domain.Models
         /// </summary>
         public virtual FabricModel Fabric { get; set; }
         /// <summary>
-        ///  This property represents marketing information about pillows.
-        /// </summary>
-        public virtual MarketingInfoModel MarketingInfo { get; set; }
-        /// <summary>
         ///  This property represents list of product sets with that pillows.
         /// </summary>
         public virtual ICollection<ProductSetModel> Sets { get; set; }

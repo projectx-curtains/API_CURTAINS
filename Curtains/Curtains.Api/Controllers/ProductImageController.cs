@@ -10,7 +10,8 @@ using System.Threading.Tasks;
 namespace Curtains.Api.Controllers
 {
     /// <summary>
-    /// This controller <c> ProductImageController </c> for CRUID operations in database
+    /// This controller <c> ProductImageController </c> handles requests and
+    /// changes, deletes, sends, gets feedback data.
     /// </summary>
     [Route("api/[controller]")]
     [ApiController]
@@ -24,16 +25,14 @@ namespace Curtains.Api.Controllers
         }
 
         /// <summary>
-        /// This method handles requests and get all new ProductImages from database.
+        /// This method handles requests and get all ProductImages from database.
         /// </summary>
-        /// <returns> Http status code 200 </returns>
+        /// <returns> Http status code </returns>
         [HttpGet]
         public ActionResult<IEnumerable<ProductImageDTO>> GetNewItems()
         {
             var model = _service.GetAll().Where(n => n.MarketingInfo.IsNew);
             return Ok(model);
         }
-
-
     }
 }

@@ -19,11 +19,15 @@ namespace Curtains.Domain.Models
         /// <summary>
         ///  This property represents situation, if product is on sale or not.
         /// </summary>
-        public bool IsOnSale { get; set; }
+        public bool IsSale { get; set; }
         /// <summary>
         ///  This property represents situation, if product is popular or not.
         /// </summary>
         public bool IsPopular { get; set; }
+        /// <summary>
+        ///  This property represents Id field for ProductImage.
+        /// </summary>
+        public int ProductImageId { get; set; }
         #endregion
 
         #region NavigationProperties

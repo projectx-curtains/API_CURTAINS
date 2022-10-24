@@ -46,9 +46,8 @@ namespace Curtains.Infrastructure.Database
 
             builder
             .Entity<ProductImageModel>()
-            .HasOne(u => u.MarketingInfoModel)
-            .WithOne(p => p.ProductImage)
-            .HasForeignKey<MarketingInfoModel>(p => p.Id);
+            .HasOne(u => u.MarketingInfo)
+            .WithOne(p => p.ProductImage);
         }
 
         public bool HasActiveTransaction => _currentTransaction != null;

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -38,11 +39,11 @@ namespace Curtains.Domain.Models
         /// <summary>
         ///  This property represents fabrics, which image is presented.
         /// </summary>
-        public virtual FabricModel Fabrics { get; set; }
+        public virtual FabricModel Fabric { get; set; }
         /// <summary>
         ///  This property represents marketing info about products.
         /// </summary>
-        public virtual MarketingInfoModel MarketingInfoModel { get; set; }
+        public virtual MarketingInfoModel MarketingInfo { get; set; }
         #endregion
     }
 }
