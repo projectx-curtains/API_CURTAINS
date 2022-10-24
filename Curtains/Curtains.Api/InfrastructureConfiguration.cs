@@ -38,7 +38,23 @@ namespace Curtains.Api
 
             services
                 .AddScoped<IReviewRepository, ReviewRepository>()
-                .AddScoped<IReviewService, ReviewService>();
+                .AddScoped<IReviewService, ReviewService>()
+                .AddScoped<IReviewRepository, ReviewRepository>()
+                .AddScoped<IColorRepository, ColorRepository>()
+                .AddScoped<IConsistencyRepository, ConsistencyRepository>()
+                .AddScoped<ICurtainsKindRepository, CurtainsKindRepository>()
+                .AddScoped<ICurtainsTypeRepository, CurtainsTypeRepository>()
+                .AddScoped<IDecorationsRepository, DecorationsRepository>()
+                .AddScoped<IManufacturerRepository, ManufacturerRepository>()
+                .AddScoped<IMaterialRepository, MaterialRepository>()
+                .AddScoped<IAccessoriesRepository, AccessoriesRepository>()
+                .AddScoped<IFabricRepository, FabricRepository>()
+                .AddScoped<IBedspreadsRepository, BedspreadsRepository>()
+                .AddScoped<ICurtainsRepository, CurtainsRepository>()
+                .AddScoped<IPillowsRepository, PillowsRepository>()
+                .AddScoped<IProductSetRepository, ProductSetRepository>()
+                .AddScoped<IProductImageRepository, ProductImageRepository>()
+                .AddScoped<IMarketingInfoRepository, MarketingInfoRepository>(); 
 
             var serviceProvider = services.BuildServiceProvider();
             var logger = serviceProvider.GetService<ILogger<CurtainsDbContext>>();
