@@ -31,7 +31,7 @@ namespace Curtains.Api.Controllers
         [HttpGet]
         public ActionResult<IEnumerable<ProductImageDTO>> GetNewItems()
         {
-            var model = _service.GetAll().Where(n => n.MarketingInfo.IsNew);
+            var model = _service.GetNewItems();
             return Ok(model);
         }
     }
