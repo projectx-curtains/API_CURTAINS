@@ -18,6 +18,6 @@ namespace Curtains.Domain.Models
         /// <summary>
         ///  This property represents description of entities.
         /// </summary>
-        public string Description { get; set; } = "";
+        public string Description { get; set; } = string.Empty;
     }
 }
