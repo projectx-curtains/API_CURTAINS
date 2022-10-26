@@ -1,7 +1,9 @@
-﻿namespace Curtains.Domain.Search
-{
-    public class ICurtainsSearchRepository
-    {
+﻿
+namespace Curtains.Domain.Search
     
+{
+    public interface ICurtainsSearchRepository
+    {
+
     }
 }
