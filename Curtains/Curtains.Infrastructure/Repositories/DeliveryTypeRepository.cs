@@ -81,7 +81,7 @@ namespace Curtains.Infrastructure.Repositories
         /// This method update <c> DeliveryTypeModel <c> entity in database 
         /// </summary>
         /// <param name = "entity" > DeliveryTypeModel DeliveryType</param>
-        public async void UpdateAsync(DeliveryTypeModel entity)
+        public async Task UpdateAsync(DeliveryTypeModel entity)
         {
             foreach (var entry in _curtainsContext.ChangeTracker.Entries())
             {
@@ -101,7 +101,7 @@ namespace Curtains.Infrastructure.Repositories
         /// This method remove <c> DeliveryTypeModel <c> entity from database 
         /// </summary>
         /// <param name = "entity" > DeliveryTypeModel DeliveryType</param>
-        public async void RemoveAsync(DeliveryTypeModel entity)
+        public async Task RemoveAsync(DeliveryTypeModel entity)
         {
             if (entity == null)
             {

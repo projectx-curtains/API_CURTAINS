@@ -81,7 +81,7 @@ namespace Curtains.Infrastructure.Repositories
         /// This method update <c> ConsistencyModel <c> entity in database 
         /// </summary>
         /// <param name = "entity" > ConsistencyModel type</param>
-        public async void UpdateAsync(ConsistencyModel entity)
+        public async Task UpdateAsync(ConsistencyModel entity)
         {
             foreach (var entry in _curtainsContext.ChangeTracker.Entries())
             {
@@ -101,7 +101,7 @@ namespace Curtains.Infrastructure.Repositories
         /// This method remove <c> ConsistencyModel <c> entity from database 
         /// </summary>
         /// <param name = "entity" > ConsistencyModel type</param>
-        public async void RemoveAsync(ConsistencyModel entity)
+        public async Task RemoveAsync(ConsistencyModel entity)
         {
             if (entity == null)
             {

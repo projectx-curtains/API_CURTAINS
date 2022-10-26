@@ -81,7 +81,7 @@ namespace Curtains.Infrastructure.Repositories
         /// This method update <c> PaymentTypeModel <c> entity in database 
         /// </summary>
         /// <param name = "entity" > PaymentTypeModel PaymentType</param>
-        public async void UpdateAsync(PaymentTypeModel entity)
+        public async Task UpdateAsync(PaymentTypeModel entity)
         {
             foreach (var entry in _curtainsContext.ChangeTracker.Entries())
             {
@@ -101,7 +101,7 @@ namespace Curtains.Infrastructure.Repositories
         /// This method remove <c> PaymentTypeModel <c> entity from database 
         /// </summary>
         /// <param name = "entity" > PaymentTypeModel PaymentType</param>
-        public async void RemoveAsync(PaymentTypeModel entity)
+        public async Task RemoveAsync(PaymentTypeModel entity)
         {
             if (entity == null)
             {

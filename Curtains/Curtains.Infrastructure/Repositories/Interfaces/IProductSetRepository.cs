@@ -13,8 +13,8 @@ namespace Curtains.Infrastructure.Interfaces
         IEnumerable<ProductSetModel> GetAll();
         Task<ProductSetModel> GetByIdAsync(int Id);
         Task<EntityEntry<ProductSetModel>> InsertAsync(ProductSetModel entity, CancellationToken cancellationToken);
-        void UpdateAsync(ProductSetModel entity);
-        void RemoveAsync(ProductSetModel entity);
+        Task UpdateAsync(ProductSetModel entity);
+        Task RemoveAsync(ProductSetModel entity);
         void SaveChangesAsync();
     }
 }

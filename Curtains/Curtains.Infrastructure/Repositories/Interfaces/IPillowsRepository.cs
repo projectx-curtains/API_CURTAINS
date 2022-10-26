@@ -13,8 +13,8 @@ namespace Curtains.Infrastructure.Interfaces
         IEnumerable<PillowsModel> GetAll();
         Task<PillowsModel> GetByIdAsync(int Id);
         Task<EntityEntry<PillowsModel>> InsertAsync(PillowsModel entity, CancellationToken cancellationToken);
-        void UpdateAsync(PillowsModel entity);
-        void RemoveAsync(PillowsModel entity);
+        Task UpdateAsync(PillowsModel entity);
+        Task RemoveAsync(PillowsModel entity);
         void SaveChangesAsync();
     }
 }

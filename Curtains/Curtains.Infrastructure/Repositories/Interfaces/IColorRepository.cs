@@ -13,8 +13,8 @@ namespace Curtains.Infrastructure.Interfaces
         IEnumerable<ColorModel> GetAll();
         Task<ColorModel> GetByIdAsync(int Id);
         Task<EntityEntry<ColorModel>> InsertAsync(ColorModel entity, CancellationToken cancellationToken);
-        void UpdateAsync(ColorModel entity);
-        void RemoveAsync(ColorModel entity);
+        Task UpdateAsync(ColorModel entity);
+        Task RemoveAsync(ColorModel entity);
         void SaveChangesAsync();
     }
 }
