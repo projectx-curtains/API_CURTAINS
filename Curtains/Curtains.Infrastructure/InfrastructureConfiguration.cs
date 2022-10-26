@@ -5,13 +5,11 @@ using Curtains.Infrastructure.SearchEngine;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Curtains.Application.CurtainsService;
-using Curtains.Application.Interfaces;
-using Curtains.Infrastructure.Repositories;
 using Curtains.Infrastructure.Interfaces;
 using Microsoft.Extensions.Logging;
+using System.Reflection;
 
-namespace Curtains.Api
+namespace Curtains.Infrastructure
 {
     public static class InfrastructureConfiguration
     {
@@ -37,14 +35,36 @@ namespace Curtains.Api
                 .AddSingleton<CorrelationMiddleware>();
 
             services
-                .AddScoped<IReviewRepository, ReviewRepository>()
-                .AddScoped<IReviewService, ReviewService>();
+                .AddRepositories();
 
             var serviceProvider = services.BuildServiceProvider();
             var logger = serviceProvider.GetService<ILogger<CurtainsDbContext>>();
             services.AddSingleton(typeof(ILogger), logger);
-                
+
             return services;
         }
-    }    
+
+         private static IServiceCollection AddRepositories(this IServiceCollection services)
+         {
+            var types = Assembly
+                .GetExecutingAssembly()
+                .GetTypes();
+
+            var interfaceTypes = types
+                .Where(type => type.IsInterface
+                            && type.Namespace == typeof(ICurtainsRepository).Namespace)
+            .ToArray();
+
+            foreach (var interfaceType in interfaceTypes)
+            {
+                var implementation = types
+                    .FirstOrDefault(type => type.GetInterface(interfaceType.Name) == interfaceType);
+
+                services
+                    .AddScoped(interfaceType, implementation);
+            }
+
+            return services;
+         }
+    }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Curtains.Domain.Models
 {
-    public class ConsistencyModel : BaseEntity
+    public class ConsistencyModel : ExtendedBaseEntity
     {
         /// <summary>
         ///  This class describes consistency model.

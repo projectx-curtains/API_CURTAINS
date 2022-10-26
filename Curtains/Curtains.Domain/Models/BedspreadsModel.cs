@@ -9,7 +9,7 @@ namespace Curtains.Domain.Models
     /// <summary>
     ///  This class describes bedspreads model.
     /// </summary>
-    public class BedspreadsModel : BaseEntity
+    public class BedspreadsModel : ExtendedBaseEntity
     {
         public BedspreadsModel()
         {

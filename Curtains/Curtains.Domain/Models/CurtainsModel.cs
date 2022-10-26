@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Curtains.Domain.Models
 {
-    public class CurtainsModel : BaseEntity
+    public class CurtainsModel : ExtendedBaseEntity
     {
         /// <summary>
         ///  This class describes curtains model.

@@ -61,6 +61,6 @@ namespace Curtains.Domain.Models
         ///  This property represents list of UserOrders with that pillows.
         /// </summary>
         public virtual ICollection<UserOrderModel> UserOrders { get; set; }
-        #endregion 
+        #endregion
     }
 }

@@ -9,7 +9,7 @@ namespace Curtains.Domain.Models
     /// <summary>
     ///  This class describes material model.
     /// </summary>
-    public class MaterialModel : BaseEntity
+    public class MaterialModel : ExtendedBaseEntity
     {
         public MaterialModel()
         {

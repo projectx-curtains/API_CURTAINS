@@ -9,7 +9,7 @@ namespace Curtains.Domain.Models
     /// <summary>
     ///  This class describes fabric model.
     /// </summary>
-    public class FabricModel : BaseEntity
+    public class FabricModel : ExtendedBaseEntity
     {
         public FabricModel()
         {
@@ -65,7 +65,7 @@ namespace Curtains.Domain.Models
         /// <summary>
         ///  This property represents color of fabric.
         /// </summary>
-        public virtual ColorModel Color { get; set; }  
+        public virtual ColorModel Color { get; set; }
         public virtual DecorationsModel Decorations { get; set; }
         /// <summary>
         ///  This property represents decorations of fabric.
