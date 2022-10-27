@@ -3,6 +3,7 @@ using Curtains.Application.CurtainsServices.Interfaces;
 using Curtains.Application.DTO;
 using Curtains.Domain.Models;
 using Curtains.Infrastructure.Interfaces;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,14 +18,16 @@ namespace Curtains.Application.CurtainsServices
     public class ProductImageService : IProductImageService
     {
         #region FieldsRegion
+        private readonly ILogger _logger;
         private readonly IProductImageRepository _productImageRepository;
         private readonly IMapper _mapper;
         #endregion
 
-        public ProductImageService(IProductImageRepository productImageRepository, IMapper mapper)
+        public ProductImageService(IProductImageRepository productImageRepository, IMapper mapper, ILogger logger)
         {
             _productImageRepository = productImageRepository;
             _mapper = mapper;
+            _logger = logger;
         }
 
         #region MethodsRegion
@@ -66,6 +69,11 @@ namespace Curtains.Application.CurtainsServices
         public async Task<ProductImageDTO> GetByIdAsync(int Id)
         {
             var productImage = await _productImageRepository.GetByIdAsync(Id);
+            if (productImage == null)
+            {
+                _logger.LogError("ProductImage model is null");
+                throw new ArgumentNullException("ProductImage model is null");
+            }
             var productImageDTO = _mapper.Map<ProductImageDTO>(productImage);
             return productImageDTO;
         }
