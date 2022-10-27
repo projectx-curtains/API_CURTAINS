@@ -9,13 +9,9 @@ namespace Curtains.Application.DTO
     /// <summary>
     /// Class <c> ProductImageDTO </c> describes interaction model for NewItemsController and database.
     /// </summary>
-    public class ProductImageDTO
+    public class ProductImageDTO : BaseDTO
     {
         #region PropertiesRegion
-        /// <summary>
-        /// This property represents unique identifier for data tranfer objects.
-        /// </summary>
-        public int Id { get; set; }
         /// <summary>
         ///  This property represents path to image of product.
         /// </summary>

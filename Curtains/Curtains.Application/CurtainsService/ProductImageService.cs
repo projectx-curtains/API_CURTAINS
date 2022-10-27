@@ -28,7 +28,6 @@ namespace Curtains.Application.CurtainsServices
         }
 
         #region MethodsRegion
-
         /// <summary>
         /// This method get all<c> ProductImageModel <c> entities from database and mapping to <c> ProductImageDTO </c>
         /// </summary>
@@ -36,6 +35,11 @@ namespace Curtains.Application.CurtainsServices
         public IEnumerable<ProductImageDTO> GetAll()
         {
             var productImages = _mapper.Map<IEnumerable<ProductImageDTO>>(_productImageRepository.GetAll());
+
+            if (productImages == null)
+            {
+                return new List<ProductImageDTO>();
+            }
             return productImages;
         }
 
@@ -46,6 +50,11 @@ namespace Curtains.Application.CurtainsServices
         public IEnumerable<ProductImageDTO> GetNewItems()
         {
             var newProductImages = _mapper.Map<IEnumerable<ProductImageDTO>>(_productImageRepository.GetAll()).Where(p => p.MarketingInfo.IsNew);
+
+            if (newProductImages == null)
+            {
+                return new List<ProductImageDTO>();
+            }
             return newProductImages;
         }
 

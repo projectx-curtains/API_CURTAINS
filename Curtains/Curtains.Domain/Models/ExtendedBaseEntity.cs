@@ -14,10 +14,10 @@ namespace Curtains.Domain.Models
         /// <summary>
         ///  This property represents title of entities.
         /// </summary>
-        public string Title { get; set; } = string.Empty;
+        public string Title { get; set; }
         /// <summary>
         ///  This property represents description of entities.
         /// </summary>
-        public string Description { get; set; } = string.Empty;
+        public string Description { get; set; }
     }
 }

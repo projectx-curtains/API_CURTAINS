@@ -32,7 +32,12 @@ namespace Curtains.Api.Controllers
         public ActionResult<IEnumerable<ProductImageDTO>> GetNewItems()
         {
             var model = _service.GetNewItems();
-            return Ok(model);
+
+            if (model != null)
+            {
+                return Ok(model);
+            }
+            return BadRequest(nameof(GetNewItems));
         }
     }
 }

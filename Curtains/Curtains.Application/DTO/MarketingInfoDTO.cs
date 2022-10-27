@@ -9,13 +9,9 @@ namespace Curtains.Application.DTO
     /// <summary>
     /// Class <c> MarketingInfoDTO </c> describes interaction model for NewItemsController and database.
     /// </summary>
-    public class MarketingInfoDTO
+    public class MarketingInfoDTO : BaseDTO
     {
         #region PropertiesRegion
-        /// <summary>
-        /// This property represents unique identifier for data tranfer objects.
-        /// </summary>
-        public int Id { get; set; }
         /// <summary>
         ///  This property represents situation, if product is new or not.
         /// </summary>

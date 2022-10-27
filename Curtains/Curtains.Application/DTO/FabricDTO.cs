@@ -9,21 +9,9 @@ namespace Curtains.Application.DTO
     /// <summary>
     /// Class <c> FabricDTO </c> describes interaction model for NewItemsController and database.
     /// </summary>
-    public class FabricDTO
+    public class FabricDTO : BaseExtendedDTO
     {
         #region PropertiesRegion
-        /// <summary>
-        /// This property represents unique identifier for data tranfer objects.
-        /// </summary>
-        public int Id { get; set; }
-        /// <summary>
-        /// This property represents title for data tranfer objects.
-        /// </summary>
-        public string Title { get; set; }
-        /// <summary>
-        /// This property represents description for data tranfer objects.
-        /// </summary>
-        public string Description { get; set; }
         /// <summary>
         ///  This property represents situation, if fabric is dense or not.
         /// </summary>

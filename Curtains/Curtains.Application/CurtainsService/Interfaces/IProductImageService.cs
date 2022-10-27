@@ -10,6 +10,7 @@ namespace Curtains.Application.CurtainsServices.Interfaces
     public interface IProductImageService
     {
         public IEnumerable<ProductImageDTO> GetAll();
+
         public IEnumerable<ProductImageDTO> GetNewItems();
 
         public Task<ProductImageDTO> GetByIdAsync(int Id);
