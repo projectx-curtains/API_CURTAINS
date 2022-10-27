@@ -9,7 +9,7 @@ namespace Curtains.Domain.Models
     /// <summary>
     ///  This class describes lambrequins model.
     /// </summary>
-    public class LambrequinsModel : BaseEntity
+    public class LambrequinsModel : ExtendedBaseEntity
     {
         public LambrequinsModel()
         {
