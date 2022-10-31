@@ -62,6 +62,21 @@ namespace Curtains.Application.CurtainsServices
         }
 
         /// <summary>
+        /// This method get all popular <c> ProductImageModel <c> entities from database and mapping to <c> ProductImageDTO </c>
+        /// </summary>
+        /// <returns>Collection of ProductImageDTO entities in list Review</returns>
+        public IEnumerable<ProductImageDTO> GetPopularItems()
+        {
+            var popularProductImages = _mapper.Map<IEnumerable<ProductImageDTO>>(_productImageRepository.GetAll()).Where(p => p.MarketingInfo.IsPopular);
+
+            if (popularProductImages == null)
+            {
+                return new List<ProductImageDTO>();
+            }
+            return popularProductImages;
+        }
+
+        /// <summary>
         /// This method get <c> ProductImageModel <c> entity from database by entity Id and mapping to <c> ProductImageDTO </c>
         /// </summary>
         /// <param name="Id"> Guid ProductImage entity idetifier </param>

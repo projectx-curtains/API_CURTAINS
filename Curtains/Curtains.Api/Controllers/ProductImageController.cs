@@ -25,7 +25,7 @@ namespace Curtains.Api.Controllers
         }
 
         /// <summary>
-        /// This method handles requests and get all ProductImages from database.        
+        /// This method handles requests and get all new ProductImages from database.        
         /// </summary>
         /// <returns> Http status code </returns>
         [HttpGet]
@@ -38,6 +38,22 @@ namespace Curtains.Api.Controllers
                 return Ok(model);
             }
             return BadRequest(nameof(GetNewItems));
+        }
+
+        /// <summary>
+        /// This method handles requests and get all popular ProductImages from database.        
+        /// </summary>
+        /// <returns> Http status code </returns>
+        [HttpGet]
+        public ActionResult<IEnumerable<ProductImageDTO>> GetPopularItems()
+        {
+            var model = _service.GetPopularItems();
+
+            if (model != null)
+            {
+                return Ok(model);
+            }
+            return BadRequest(nameof(GetPopularItems));
         }
     }
 }
