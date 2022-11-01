@@ -102,6 +102,11 @@ namespace Curtains.Application.CurtainsServices
         public async Task InsertAsync(ProductImageDTO entity, CancellationToken cancelationToken)
         {
             var productImage = MapToModel(entity);
+            if (productImage == null)
+            {
+                _logger.LogError("ProductImage model is null");
+                throw new ArgumentNullException("ProductImage model is null");
+            }
             await _productImageRepository.InsertAsync(productImage, cancelationToken);
         }
 
@@ -112,8 +117,13 @@ namespace Curtains.Application.CurtainsServices
         /// <returns> Task </returns>
         public async Task UpdateAsync(ProductImageDTO entity)
         {
-            var review = MapToModel(entity);
-            await _productImageRepository.UpdateAsync(review);
+            var productImage = MapToModel(entity);
+            if (productImage == null)
+            {
+                _logger.LogError("ProductImage model is null");
+                throw new ArgumentNullException("ProductImage model is null");
+            }
+            await _productImageRepository.UpdateAsync(productImage);
         }
 
         /// <summary>
@@ -123,8 +133,13 @@ namespace Curtains.Application.CurtainsServices
         /// <returns> Task </returns>
         public async Task RemoveAsync(ProductImageDTO entity)
         {
-            var review = MapToModel(entity);
-            await _productImageRepository.RemoveAsync(review);
+            var productImage = MapToModel(entity);
+            if (productImage == null)
+            {
+                _logger.LogError("ProductImage model is null");
+                throw new ArgumentNullException("ProductImage model is null");
+            }
+            await _productImageRepository.RemoveAsync(productImage);
         }
 
         /// <summary>
