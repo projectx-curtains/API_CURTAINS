@@ -38,12 +38,7 @@ namespace Curtains.Application.CurtainsServices
         public IEnumerable<ProductImageDTO> GetAll()
         {
             var productImages = _mapper.Map<IEnumerable<ProductImageDTO>>(_productImageRepository.GetAll());
-
-            if (productImages == null)
-            {
-                return new List<ProductImageDTO>();
-            }
-            return productImages;
+            return productImages ?? new List<ProductImageDTO>();
         }
 
         /// <summary>
@@ -53,12 +48,7 @@ namespace Curtains.Application.CurtainsServices
         public IEnumerable<ProductImageDTO> GetNewItems()
         {
             var newProductImages = _mapper.Map<IEnumerable<ProductImageDTO>>(_productImageRepository.GetAll()).Where(p => p.MarketingInfo.IsNew);
-
-            if (newProductImages == null)
-            {
-                return new List<ProductImageDTO>();
-            }
-            return newProductImages;
+            return newProductImages ?? new List<ProductImageDTO>();
         }
 
         /// <summary>
@@ -68,12 +58,7 @@ namespace Curtains.Application.CurtainsServices
         public IEnumerable<ProductImageDTO> GetPopularItems()
         {
             var popularProductImages = _mapper.Map<IEnumerable<ProductImageDTO>>(_productImageRepository.GetAll()).Where(p => p.MarketingInfo.IsPopular);
-
-            if (popularProductImages == null)
-            {
-                return new List<ProductImageDTO>();
-            }
-            return popularProductImages;
+            return popularProductImages ?? new List<ProductImageDTO>();
         }
 
         /// <summary>
