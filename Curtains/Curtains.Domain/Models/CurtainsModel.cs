@@ -86,10 +86,6 @@ namespace Curtains.Domain.Models
         /// </summary>
         public virtual CurtainsKindModel CurtainsKind { get; set; }
         /// <summary>
-        ///  This property represents marketing information for curtains.
-        /// </summary>
-        public virtual MarketingInfoModel MarketingInfo { get; set; }
-        /// <summary>
         ///  This property represents sets with that curtains curtains.
         /// </summary>
         public virtual ICollection<ProductSetModel> Sets { get; set; }

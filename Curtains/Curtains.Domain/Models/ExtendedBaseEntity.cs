@@ -1,3 +1,9 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
 namespace Curtains.Domain.Models
 {
     /// <summary>
@@ -8,6 +14,10 @@ namespace Curtains.Domain.Models
         /// <summary>
         ///  This property represents title of entities.
         /// </summary>
-        public string Title { get; set; } = string.Empty;
+        public string Title { get; set; }
+        /// <summary>
+        ///  This property represents description of entities.
+        /// </summary>
+        public string Description { get; set; }
     }
 }
