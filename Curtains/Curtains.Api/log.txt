@@ -1,0 +1,344 @@
+2022-11-03 21:33:54.086 +03:00 [INF] Application Start
+2022-11-03 21:33:57.149 +03:00 [FTL] Host terminated unexpectedly
+System.ArgumentNullException: Value cannot be null. (Parameter 'implementationType')
+   at Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddScoped(IServiceCollection services, Type serviceType, Type implementationType)
+   at Curtains.Application.ApplicationConfigExtensions.AddServices(IServiceCollection services) in /Users/egor/Applications/API_CURTAINS/Curtains/Curtains.Application/ApplicationConfigExtensions.cs:line 58
+   at Curtains.Application.ApplicationConfigExtensions.AddApplication(IServiceCollection services) in /Users/egor/Applications/API_CURTAINS/Curtains/Curtains.Application/ApplicationConfigExtensions.cs:line 13
+   at Curtains.Api.Startup.ConfigureServices(IServiceCollection services) in /Users/egor/Applications/API_CURTAINS/Curtains/Curtains.Api/Startup.cs:line 29
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Span`1& arguments, Signature sig, Boolean constructor, Boolean wrapExceptions)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at Microsoft.AspNetCore.Hosting.ConfigureServicesBuilder.InvokeCore(Object instance, IServiceCollection services)
+   at Microsoft.AspNetCore.Hosting.ConfigureServicesBuilder.<>c__DisplayClass9_0.<Invoke>g__Startup|0(IServiceCollection serviceCollection)
+   at Microsoft.AspNetCore.Hosting.ConfigureServicesBuilder.Invoke(Object instance, IServiceCollection services)
+   at Microsoft.AspNetCore.Hosting.ConfigureServicesBuilder.<>c__DisplayClass8_0.<Build>b__0(IServiceCollection services)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostBuilder.UseStartup(Type startupType, HostBuilderContext context, IServiceCollection services, Object instance)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostBuilder.<>c__DisplayClass13_0.<UseStartup>b__0(HostBuilderContext context, IServiceCollection services)
+   at Microsoft.Extensions.Hosting.HostBuilder.CreateServiceProvider()
+   at Microsoft.Extensions.Hosting.HostBuilder.Build()
+   at Curtains.Api.Program.Main(String[] args) in /Users/egor/Applications/API_CURTAINS/Curtains/Curtains.Api/Program.cs:line 22
+2022-11-03 21:34:42.150 +03:00 [INF] Application Start
+2022-11-03 21:34:44.858 +03:00 [FTL] Host terminated unexpectedly
+System.ArgumentNullException: Value cannot be null. (Parameter 'implementationType')
+   at Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddScoped(IServiceCollection services, Type serviceType, Type implementationType)
+   at Curtains.Application.ApplicationConfigExtensions.AddServices(IServiceCollection services) in /Users/egor/Applications/API_CURTAINS/Curtains/Curtains.Application/ApplicationConfigExtensions.cs:line 58
+   at Curtains.Application.ApplicationConfigExtensions.AddApplication(IServiceCollection services) in /Users/egor/Applications/API_CURTAINS/Curtains/Curtains.Application/ApplicationConfigExtensions.cs:line 13
+   at Curtains.Api.Startup.ConfigureServices(IServiceCollection services) in /Users/egor/Applications/API_CURTAINS/Curtains/Curtains.Api/Startup.cs:line 29
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Span`1& arguments, Signature sig, Boolean constructor, Boolean wrapExceptions)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at Microsoft.AspNetCore.Hosting.ConfigureServicesBuilder.InvokeCore(Object instance, IServiceCollection services)
+   at Microsoft.AspNetCore.Hosting.ConfigureServicesBuilder.<>c__DisplayClass9_0.<Invoke>g__Startup|0(IServiceCollection serviceCollection)
+   at Microsoft.AspNetCore.Hosting.ConfigureServicesBuilder.Invoke(Object instance, IServiceCollection services)
+   at Microsoft.AspNetCore.Hosting.ConfigureServicesBuilder.<>c__DisplayClass8_0.<Build>b__0(IServiceCollection services)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostBuilder.UseStartup(Type startupType, HostBuilderContext context, IServiceCollection services, Object instance)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostBuilder.<>c__DisplayClass13_0.<UseStartup>b__0(HostBuilderContext context, IServiceCollection services)
+   at Microsoft.Extensions.Hosting.HostBuilder.CreateServiceProvider()
+   at Microsoft.Extensions.Hosting.HostBuilder.Build()
+   at Curtains.Api.Program.Main(String[] args) in /Users/egor/Applications/API_CURTAINS/Curtains/Curtains.Api/Program.cs:line 22
+2022-11-03 21:36:44.766 +03:00 [INF] Application Start
+2022-11-03 21:37:13.057 +03:00 [FTL] Host terminated unexpectedly
+System.ArgumentNullException: Value cannot be null. (Parameter 'implementationType')
+   at Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddScoped(IServiceCollection services, Type serviceType, Type implementationType)
+   at Curtains.Application.ApplicationConfigExtensions.AddServices(IServiceCollection services) in /Users/egor/Applications/API_CURTAINS/Curtains/Curtains.Application/ApplicationConfigExtensions.cs:line 58
+   at Curtains.Application.ApplicationConfigExtensions.AddApplication(IServiceCollection services) in /Users/egor/Applications/API_CURTAINS/Curtains/Curtains.Application/ApplicationConfigExtensions.cs:line 13
+   at Curtains.Api.Startup.ConfigureServices(IServiceCollection services) in /Users/egor/Applications/API_CURTAINS/Curtains/Curtains.Api/Startup.cs:line 29
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Span`1& arguments, Signature sig, Boolean constructor, Boolean wrapExceptions)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at Microsoft.AspNetCore.Hosting.ConfigureServicesBuilder.InvokeCore(Object instance, IServiceCollection services)
+   at Microsoft.AspNetCore.Hosting.ConfigureServicesBuilder.<>c__DisplayClass9_0.<Invoke>g__Startup|0(IServiceCollection serviceCollection)
+   at Microsoft.AspNetCore.Hosting.ConfigureServicesBuilder.Invoke(Object instance, IServiceCollection services)
+   at Microsoft.AspNetCore.Hosting.ConfigureServicesBuilder.<>c__DisplayClass8_0.<Build>b__0(IServiceCollection services)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostBuilder.UseStartup(Type startupType, HostBuilderContext context, IServiceCollection services, Object instance)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostBuilder.<>c__DisplayClass13_0.<UseStartup>b__0(HostBuilderContext context, IServiceCollection services)
+   at Microsoft.Extensions.Hosting.HostBuilder.CreateServiceProvider()
+   at Microsoft.Extensions.Hosting.HostBuilder.Build()
+   at Curtains.Api.Program.Main(String[] args) in /Users/egor/Applications/API_CURTAINS/Curtains/Curtains.Api/Program.cs:line 22
+2022-11-03 21:37:53.780 +03:00 [INF] Application Start
+2022-11-03 21:41:04.632 +03:00 [INF] Application Start
+2022-11-03 21:41:35.579 +03:00 [DBG] Hosting starting
+2022-11-03 21:41:36.152 +03:00 [DBG] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider"]
+2022-11-03 21:41:36.561 +03:00 [INF] Now listening on: http://localhost:5010
+2022-11-03 21:41:36.562 +03:00 [DBG] Loaded hosting startup assembly Curtains.Api
+2022-11-03 21:41:36.563 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-11-03 21:41:36.565 +03:00 [INF] Hosting environment: Development
+2022-11-03 21:41:36.565 +03:00 [INF] Content root path: /Users/egor/Applications/API_CURTAINS/Curtains/Curtains.Api
+2022-11-03 21:41:36.580 +03:00 [DBG] Hosting started
+2022-11-03 21:41:51.960 +03:00 [DBG] Connection id "0HMLTPC9E7BQ9" accepted.
+2022-11-03 21:41:51.969 +03:00 [DBG] Connection id "0HMLTPC9E7BQ9" started.
+2022-11-03 21:41:51.969 +03:00 [DBG] Connection id "0HMLTPC9E7BQA" accepted.
+2022-11-03 21:41:51.977 +03:00 [DBG] Connection id "0HMLTPC9E7BQA" started.
+2022-11-03 21:41:52.118 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5010/ - -
+2022-11-03 21:41:52.138 +03:00 [DBG] Wildcard detected, all requests with hosts will be allowed.
+2022-11-03 21:41:52.204 +03:00 [DBG] No candidates found for the request path '/'
+2022-11-03 21:41:52.205 +03:00 [DBG] Request did not match any endpoints
+2022-11-03 21:41:52.287 +03:00 [INF] HTTP GET / responded 301 in 70.7580 ms
+2022-11-03 21:41:52.324 +03:00 [DBG] Connection id "0HMLTPC9E7BQ9" completed keep alive response.
+2022-11-03 21:41:52.340 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5010/ - - - 301 0 - 240.1356ms
+2022-11-03 21:41:52.446 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5010/index.html - -
+2022-11-03 21:41:52.446 +03:00 [DBG] No candidates found for the request path '/index.html'
+2022-11-03 21:41:52.446 +03:00 [DBG] Request did not match any endpoints
+2022-11-03 21:41:52.799 +03:00 [INF] HTTP GET /index.html responded 200 in 351.9278 ms
+2022-11-03 21:41:52.799 +03:00 [DBG] Connection id "0HMLTPC9E7BQ9" completed keep alive response.
+2022-11-03 21:41:52.800 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5010/index.html - - - 200 - text/html;charset=utf-8 354.8720ms
+2022-11-03 21:41:53.174 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5010/swagger-ui.css - -
+2022-11-03 21:41:53.174 +03:00 [DBG] No candidates found for the request path '/swagger-ui.css'
+2022-11-03 21:41:53.174 +03:00 [DBG] Request did not match any endpoints
+2022-11-03 21:41:53.197 +03:00 [DBG] Connection id "0HMLTPC9E7BQB" accepted.
+2022-11-03 21:41:53.245 +03:00 [DBG] Connection id "0HMLTPC9E7BQB" started.
+2022-11-03 21:41:53.245 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5010/swagger-ui-bundle.js - -
+2022-11-03 21:41:53.245 +03:00 [DBG] No candidates found for the request path '/swagger-ui-bundle.js'
+2022-11-03 21:41:53.246 +03:00 [DBG] Request did not match any endpoints
+2022-11-03 21:41:53.246 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5010/swagger-ui-standalone-preset.js - -
+2022-11-03 21:41:53.246 +03:00 [DBG] No candidates found for the request path '/swagger-ui-standalone-preset.js'
+2022-11-03 21:41:53.246 +03:00 [DBG] Request did not match any endpoints
+2022-11-03 21:41:53.562 +03:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2022-11-03 21:41:53.440 +03:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2022-11-03 21:41:53.676 +03:00 [INF] HTTP GET /swagger-ui-standalone-preset.js responded 200 in 431.2888 ms
+2022-11-03 21:41:53.679 +03:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2022-11-03 21:41:53.680 +03:00 [INF] HTTP GET /swagger-ui-bundle.js responded 200 in 435.0018 ms
+2022-11-03 21:41:53.681 +03:00 [INF] HTTP GET /swagger-ui.css responded 200 in 507.7434 ms
+2022-11-03 21:41:53.683 +03:00 [DBG] Connection id "0HMLTPC9E7BQB" completed keep alive response.
+2022-11-03 21:41:53.684 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5010/swagger-ui-standalone-preset.js - - - 200 339486 application/javascript 439.0510ms
+2022-11-03 21:41:53.684 +03:00 [DBG] Connection id "0HMLTPC9E7BQA" completed keep alive response.
+2022-11-03 21:41:53.687 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5010/swagger-ui-bundle.js - - - 200 1096145 application/javascript 442.6611ms
+2022-11-03 21:41:53.689 +03:00 [DBG] Connection id "0HMLTPC9E7BQ9" completed keep alive response.
+2022-11-03 21:41:53.690 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5010/swagger-ui.css - - - 200 143943 text/css 516.9660ms
+2022-11-03 21:41:54.194 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5010/swagger/v1/swagger.json - -
+2022-11-03 21:41:54.195 +03:00 [DBG] No candidates found for the request path '/swagger/v1/swagger.json'
+2022-11-03 21:41:54.195 +03:00 [DBG] Request did not match any endpoints
+2022-11-03 21:41:54.393 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5010/favicon-32x32.png - -
+2022-11-03 21:41:54.394 +03:00 [DBG] No candidates found for the request path '/favicon-32x32.png'
+2022-11-03 21:41:54.394 +03:00 [DBG] Request did not match any endpoints
+2022-11-03 21:41:54.394 +03:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2022-11-03 21:41:54.395 +03:00 [INF] HTTP GET /favicon-32x32.png responded 200 in 0.9233 ms
+2022-11-03 21:41:54.395 +03:00 [DBG] Connection id "0HMLTPC9E7BQ9" completed keep alive response.
+2022-11-03 21:41:54.395 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5010/favicon-32x32.png - - - 200 628 image/png 1.7544ms
+2022-11-03 21:41:54.718 +03:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 524.6366 ms
+2022-11-03 21:41:54.719 +03:00 [DBG] Connection id "0HMLTPC9E7BQA" completed keep alive response.
+2022-11-03 21:41:54.719 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5010/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 525.6677ms
+2022-11-03 21:42:08.974 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5010/api/Order - -
+2022-11-03 21:42:09.008 +03:00 [DBG] 1 candidate(s) found for the request path '/api/Order'
+2022-11-03 21:42:09.023 +03:00 [DBG] Endpoint 'Curtains.Api.Controllers.OrderController.GetAllAsync (Curtains.Api)' with route pattern 'api/Order' is valid for the request path '/api/Order'
+2022-11-03 21:42:09.023 +03:00 [DBG] Request matched endpoint 'Curtains.Api.Controllers.OrderController.GetAllAsync (Curtains.Api)'
+2022-11-03 21:42:09.026 +03:00 [DBG] Static files was skipped as the request already matched an endpoint.
+2022-11-03 21:42:09.029 +03:00 [INF] Executing endpoint 'Curtains.Api.Controllers.OrderController.GetAllAsync (Curtains.Api)'
+2022-11-03 21:42:09.076 +03:00 [INF] Route matched with {action = "GetAll", controller = "Order"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Curtains.Application.DTO.OurWorksDTO]]] GetAllAsync() on controller Curtains.Api.Controllers.OrderController (Curtains.Api).
+2022-11-03 21:42:09.078 +03:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2022-11-03 21:42:09.078 +03:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2022-11-03 21:42:09.083 +03:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2022-11-03 21:42:09.086 +03:00 [DBG] Execution plan of exception filters (in the following order): ["Curtains.Infrastructure.Shared.HttpGlobalExceptionFilter"]
+2022-11-03 21:42:09.086 +03:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2022-11-03 21:42:09.089 +03:00 [DBG] Executing controller factory for controller Curtains.Api.Controllers.OrderController (Curtains.Api)
+2022-11-03 21:42:09.093 +03:00 [DBG] Executed controller factory for controller Curtains.Api.Controllers.OrderController (Curtains.Api)
+2022-11-03 21:42:20.747 +03:00 [ERR] Failed api call: /api/Order.
+System.Net.Mail.SmtpException: The SMTP server requires a secure connection or the client was not authenticated. The server response was: 5.7.0 Authentication Required. Learn more at
+   at System.Net.Mail.MailCommand.CheckResponse(SmtpStatusCode statusCode, String response)
+   at System.Net.Mail.MailCommand.EndSend(IAsyncResult result)
+   at System.Net.Mail.SendMailAsyncResult.SendMailFromCompleted(IAsyncResult result)
+--- End of stack trace from previous location ---
+   at System.Net.Mail.SendMailAsyncResult.End(IAsyncResult result)
+   at System.Net.Mail.SmtpClient.SendMailCallback(IAsyncResult result)
+--- End of stack trace from previous location ---
+   at Curtains.Application.CurtainsService.EmailSender.SendAsync(String subject, String body) in /Users/egor/Applications/API_CURTAINS/Curtains/Curtains.Application/CurtainsService/EmailSender.cs:line 26
+   at Curtains.Application.CurtainsService.NotifyService.NotifyAsync() in /Users/egor/Applications/API_CURTAINS/Curtains/Curtains.Application/CurtainsService/NotifyService.cs:line 19
+   at Curtains.Api.Controllers.OrderController.GetAllAsync() in /Users/egor/Applications/API_CURTAINS/Curtains/Curtains.Api/Controllers/OrderController.cs:line 25
+   at lambda_method6(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextExceptionFilterAsync>g__Awaited|26_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+2022-11-03 21:42:20.876 +03:00 [DBG] Request was short circuited at exception filter 'Curtains.Infrastructure.Shared.HttpGlobalExceptionFilter'.
+2022-11-03 21:42:20.892 +03:00 [INF] Executed action Curtains.Api.Controllers.OrderController.GetAllAsync (Curtains.Api) in 11799.0711ms
+2022-11-03 21:42:20.912 +03:00 [INF] Executed endpoint 'Curtains.Api.Controllers.OrderController.GetAllAsync (Curtains.Api)'
+2022-11-03 21:42:20.913 +03:00 [ERR] HTTP GET /api/Order responded 500 in 11895.1740 ms
+2022-11-03 21:42:20.920 +03:00 [DBG] Connection id "0HMLTPC9E7BQA" completed keep alive response.
+2022-11-03 21:42:20.922 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5010/api/Order - - - 500 - application/json 11954.3650ms
+2022-11-03 21:46:57.588 +03:00 [DBG] Connection id "0HMLTPC9E7BQ9" received FIN.
+2022-11-03 21:46:57.588 +03:00 [DBG] Connection id "0HMLTPC9E7BQB" received FIN.
+2022-11-03 21:46:57.594 +03:00 [DBG] Connection id "0HMLTPC9E7BQ9" disconnecting.
+2022-11-03 21:46:57.594 +03:00 [DBG] Connection id "0HMLTPC9E7BQB" disconnecting.
+2022-11-03 21:46:57.600 +03:00 [DBG] Connection id "0HMLTPC9E7BQB" stopped.
+2022-11-03 21:46:57.600 +03:00 [DBG] Connection id "0HMLTPC9E7BQ9" stopped.
+2022-11-03 21:46:57.606 +03:00 [DBG] Connection id "0HMLTPC9E7BQ9" sending FIN because: "The Socket transport's send loop completed gracefully."
+2022-11-03 21:46:57.606 +03:00 [DBG] Connection id "0HMLTPC9E7BQB" sending FIN because: "The Socket transport's send loop completed gracefully."
+2022-11-03 21:47:25.009 +03:00 [DBG] Connection id "0HMLTPC9E7BQA" received FIN.
+2022-11-03 21:47:25.045 +03:00 [DBG] Connection id "0HMLTPC9E7BQA" disconnecting.
+2022-11-03 21:47:25.052 +03:00 [DBG] Connection id "0HMLTPC9E7BQA" sending FIN because: "The client closed the connection."
+2022-11-03 21:47:25.053 +03:00 [DBG] Connection id "0HMLTPC9E7BQA" stopped.
+2022-11-03 21:52:48.148 +03:00 [DBG] Connection id "0HMLTPC9E7BQC" accepted.
+2022-11-03 21:52:48.149 +03:00 [DBG] Connection id "0HMLTPC9E7BQC" started.
+2022-11-03 21:52:48.174 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5010/api/Order - -
+2022-11-03 21:52:48.176 +03:00 [DBG] 1 candidate(s) found for the request path '/api/Order'
+2022-11-03 21:52:48.176 +03:00 [DBG] Endpoint 'Curtains.Api.Controllers.OrderController.GetAllAsync (Curtains.Api)' with route pattern 'api/Order' is valid for the request path '/api/Order'
+2022-11-03 21:52:48.177 +03:00 [DBG] Request matched endpoint 'Curtains.Api.Controllers.OrderController.GetAllAsync (Curtains.Api)'
+2022-11-03 21:52:48.177 +03:00 [DBG] Static files was skipped as the request already matched an endpoint.
+2022-11-03 21:52:48.177 +03:00 [INF] Executing endpoint 'Curtains.Api.Controllers.OrderController.GetAllAsync (Curtains.Api)'
+2022-11-03 21:52:48.179 +03:00 [INF] Route matched with {action = "GetAll", controller = "Order"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Curtains.Application.DTO.OurWorksDTO]]] GetAllAsync() on controller Curtains.Api.Controllers.OrderController (Curtains.Api).
+2022-11-03 21:52:48.179 +03:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2022-11-03 21:52:48.179 +03:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2022-11-03 21:52:48.180 +03:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2022-11-03 21:52:48.180 +03:00 [DBG] Execution plan of exception filters (in the following order): ["Curtains.Infrastructure.Shared.HttpGlobalExceptionFilter"]
+2022-11-03 21:52:48.180 +03:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2022-11-03 21:52:48.180 +03:00 [DBG] Executing controller factory for controller Curtains.Api.Controllers.OrderController (Curtains.Api)
+2022-11-03 21:52:48.180 +03:00 [DBG] Executed controller factory for controller Curtains.Api.Controllers.OrderController (Curtains.Api)
+2022-11-03 21:53:51.426 +03:00 [ERR] Failed api call: /api/Order.
+System.Net.Mail.SmtpException: The SMTP server requires a secure connection or the client was not authenticated. The server response was: 5.7.0 Authentication Required. Learn more at
+   at System.Net.Mail.MailCommand.CheckResponse(SmtpStatusCode statusCode, String response)
+   at System.Net.Mail.MailCommand.EndSend(IAsyncResult result)
+   at System.Net.Mail.SendMailAsyncResult.SendMailFromCompleted(IAsyncResult result)
+--- End of stack trace from previous location ---
+   at System.Net.Mail.SendMailAsyncResult.End(IAsyncResult result)
+   at System.Net.Mail.SmtpClient.SendMailCallback(IAsyncResult result)
+--- End of stack trace from previous location ---
+   at Curtains.Application.CurtainsService.EmailSender.SendAsync(String subject, String body) in /Users/egor/Applications/API_CURTAINS/Curtains/Curtains.Application/CurtainsService/EmailSender.cs:line 26
+   at Curtains.Application.CurtainsService.NotifyService.NotifyAsync() in /Users/egor/Applications/API_CURTAINS/Curtains/Curtains.Application/CurtainsService/NotifyService.cs:line 19
+   at Curtains.Api.Controllers.OrderController.GetAllAsync() in /Users/egor/Applications/API_CURTAINS/Curtains/Curtains.Api/Controllers/OrderController.cs:line 25
+   at lambda_method6(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextExceptionFilterAsync>g__Awaited|26_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+2022-11-03 21:53:51.438 +03:00 [DBG] Request was short circuited at exception filter 'Curtains.Infrastructure.Shared.HttpGlobalExceptionFilter'.
+2022-11-03 21:53:51.439 +03:00 [INF] Executed action Curtains.Api.Controllers.OrderController.GetAllAsync (Curtains.Api) in 63258.7282ms
+2022-11-03 21:53:51.439 +03:00 [INF] Executed endpoint 'Curtains.Api.Controllers.OrderController.GetAllAsync (Curtains.Api)'
+2022-11-03 21:53:51.439 +03:00 [ERR] HTTP GET /api/Order responded 500 in 63261.9432 ms
+2022-11-03 21:53:51.439 +03:00 [DBG] Connection id "0HMLTPC9E7BQC" completed keep alive response.
+2022-11-03 21:53:51.439 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5010/api/Order - - - 500 - application/json 63265.5950ms
+2022-11-03 21:54:17.529 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5010/api/Order - -
+2022-11-03 21:54:17.543 +03:00 [DBG] 1 candidate(s) found for the request path '/api/Order'
+2022-11-03 21:54:17.543 +03:00 [DBG] Endpoint 'Curtains.Api.Controllers.OrderController.GetAllAsync (Curtains.Api)' with route pattern 'api/Order' is valid for the request path '/api/Order'
+2022-11-03 21:54:17.564 +03:00 [DBG] Request matched endpoint 'Curtains.Api.Controllers.OrderController.GetAllAsync (Curtains.Api)'
+2022-11-03 21:54:17.576 +03:00 [DBG] Static files was skipped as the request already matched an endpoint.
+2022-11-03 21:54:17.576 +03:00 [INF] Executing endpoint 'Curtains.Api.Controllers.OrderController.GetAllAsync (Curtains.Api)'
+2022-11-03 21:54:17.576 +03:00 [INF] Route matched with {action = "GetAll", controller = "Order"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Curtains.Application.DTO.OurWorksDTO]]] GetAllAsync() on controller Curtains.Api.Controllers.OrderController (Curtains.Api).
+2022-11-03 21:54:17.576 +03:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2022-11-03 21:54:17.576 +03:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2022-11-03 21:54:17.577 +03:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2022-11-03 21:54:17.577 +03:00 [DBG] Execution plan of exception filters (in the following order): ["Curtains.Infrastructure.Shared.HttpGlobalExceptionFilter"]
+2022-11-03 21:54:17.577 +03:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2022-11-03 21:54:17.577 +03:00 [DBG] Executing controller factory for controller Curtains.Api.Controllers.OrderController (Curtains.Api)
+2022-11-03 21:54:17.580 +03:00 [DBG] Executed controller factory for controller Curtains.Api.Controllers.OrderController (Curtains.Api)
+2022-11-03 21:55:08.151 +03:00 [INF] Application Start
+2022-11-03 21:55:12.050 +03:00 [DBG] Hosting starting
+2022-11-03 21:55:12.603 +03:00 [DBG] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider"]
+2022-11-03 21:55:13.236 +03:00 [INF] Now listening on: http://localhost:5010
+2022-11-03 21:55:13.237 +03:00 [DBG] Loaded hosting startup assembly Curtains.Api
+2022-11-03 21:55:13.242 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-11-03 21:55:13.272 +03:00 [INF] Hosting environment: Development
+2022-11-03 21:55:13.274 +03:00 [INF] Content root path: /Users/egor/Applications/API_CURTAINS/Curtains/Curtains.Api
+2022-11-03 21:55:13.279 +03:00 [DBG] Hosting started
+2022-11-03 22:04:29.478 +03:00 [INF] Application Start
+2022-11-03 22:04:33.664 +03:00 [DBG] Hosting starting
+2022-11-03 22:04:34.229 +03:00 [DBG] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider"]
+2022-11-03 22:04:34.688 +03:00 [INF] Now listening on: http://localhost:5010
+2022-11-03 22:04:34.688 +03:00 [DBG] Loaded hosting startup assembly Curtains.Api
+2022-11-03 22:04:34.689 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-11-03 22:04:34.710 +03:00 [INF] Hosting environment: Development
+2022-11-03 22:04:34.711 +03:00 [INF] Content root path: /Users/egor/Applications/API_CURTAINS/Curtains/Curtains.Api
+2022-11-03 22:04:34.713 +03:00 [DBG] Hosting started
+2022-11-03 22:04:38.886 +03:00 [DBG] Connection id "0HMLTPP0QFUGD" accepted.
+2022-11-03 22:04:38.887 +03:00 [DBG] Connection id "0HMLTPP0QFUGE" accepted.
+2022-11-03 22:04:38.889 +03:00 [DBG] Connection id "0HMLTPP0QFUGE" started.
+2022-11-03 22:04:38.889 +03:00 [DBG] Connection id "0HMLTPP0QFUGD" started.
+2022-11-03 22:04:38.994 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5010/index.html - -
+2022-11-03 22:04:39.012 +03:00 [DBG] Wildcard detected, all requests with hosts will be allowed.
+2022-11-03 22:04:39.065 +03:00 [DBG] No candidates found for the request path '/index.html'
+2022-11-03 22:04:39.067 +03:00 [DBG] Request did not match any endpoints
+2022-11-03 22:04:39.596 +03:00 [INF] HTTP GET /index.html responded 200 in 510.3922 ms
+2022-11-03 22:04:39.605 +03:00 [DBG] Connection id "0HMLTPP0QFUGD" completed keep alive response.
+2022-11-03 22:04:39.610 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5010/index.html - - - 200 - text/html;charset=utf-8 621.2825ms
+2022-11-03 22:04:40.477 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5010/swagger/v1/swagger.json - -
+2022-11-03 22:04:40.479 +03:00 [DBG] No candidates found for the request path '/swagger/v1/swagger.json'
+2022-11-03 22:04:40.480 +03:00 [DBG] Request did not match any endpoints
+2022-11-03 22:04:40.985 +03:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 505.3468 ms
+2022-11-03 22:04:40.986 +03:00 [DBG] Connection id "0HMLTPP0QFUGD" completed keep alive response.
+2022-11-03 22:04:40.986 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5010/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 509.1909ms
+2022-11-03 22:04:45.253 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5010/api/Order - -
+2022-11-03 22:04:45.284 +03:00 [DBG] 1 candidate(s) found for the request path '/api/Order'
+2022-11-03 22:04:45.294 +03:00 [DBG] Endpoint 'Curtains.Api.Controllers.OrderController.GetAllAsync (Curtains.Api)' with route pattern 'api/Order' is valid for the request path '/api/Order'
+2022-11-03 22:04:45.296 +03:00 [DBG] Request matched endpoint 'Curtains.Api.Controllers.OrderController.GetAllAsync (Curtains.Api)'
+2022-11-03 22:04:45.301 +03:00 [DBG] Static files was skipped as the request already matched an endpoint.
+2022-11-03 22:04:45.303 +03:00 [INF] Executing endpoint 'Curtains.Api.Controllers.OrderController.GetAllAsync (Curtains.Api)'
+2022-11-03 22:04:45.363 +03:00 [INF] Route matched with {action = "GetAll", controller = "Order"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Curtains.Application.DTO.OurWorksDTO]]] GetAllAsync() on controller Curtains.Api.Controllers.OrderController (Curtains.Api).
+2022-11-03 22:04:45.377 +03:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2022-11-03 22:04:45.377 +03:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2022-11-03 22:04:45.382 +03:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2022-11-03 22:04:45.382 +03:00 [DBG] Execution plan of exception filters (in the following order): ["Curtains.Infrastructure.Shared.HttpGlobalExceptionFilter"]
+2022-11-03 22:04:45.383 +03:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2022-11-03 22:04:45.386 +03:00 [DBG] Executing controller factory for controller Curtains.Api.Controllers.OrderController (Curtains.Api)
+2022-11-03 22:04:45.391 +03:00 [DBG] Executed controller factory for controller Curtains.Api.Controllers.OrderController (Curtains.Api)
+2022-11-03 22:05:02.143 +03:00 [ERR] Failed api call: /api/Order.
+System.Net.Mail.SmtpException: The SMTP server requires a secure connection or the client was not authenticated. The server response was: 5.7.0 Must issue a STARTTLS command first. j14-20020a1709062a0e00b007415f8ffcbbsm827307eje.98 - gsmtp
+   at System.Net.Mail.MailCommand.CheckResponse(SmtpStatusCode statusCode, String response)
+   at System.Net.Mail.MailCommand.EndSend(IAsyncResult result)
+   at System.Net.Mail.SendMailAsyncResult.SendMailFromCompleted(IAsyncResult result)
+--- End of stack trace from previous location ---
+   at System.Net.Mail.SendMailAsyncResult.End(IAsyncResult result)
+   at System.Net.Mail.SmtpClient.SendMailCallback(IAsyncResult result)
+--- End of stack trace from previous location ---
+   at Curtains.Application.CurtainsService.EmailSender.SendAsync(String subject, String body) in /Users/egor/Applications/API_CURTAINS/Curtains/Curtains.Application/CurtainsService/EmailSender.cs:line 26
+   at Curtains.Application.CurtainsService.NotifyService.NotifyAsync() in /Users/egor/Applications/API_CURTAINS/Curtains/Curtains.Application/CurtainsService/NotifyService.cs:line 19
+   at Curtains.Api.Controllers.OrderController.GetAllAsync() in /Users/egor/Applications/API_CURTAINS/Curtains/Curtains.Api/Controllers/OrderController.cs:line 25
+   at lambda_method6(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextExceptionFilterAsync>g__Awaited|26_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+2022-11-03 22:05:02.282 +03:00 [DBG] Request was short circuited at exception filter 'Curtains.Infrastructure.Shared.HttpGlobalExceptionFilter'.
+2022-11-03 22:05:02.298 +03:00 [INF] Executed action Curtains.Api.Controllers.OrderController.GetAllAsync (Curtains.Api) in 16904.6096ms
+2022-11-03 22:05:02.304 +03:00 [INF] Executed endpoint 'Curtains.Api.Controllers.OrderController.GetAllAsync (Curtains.Api)'
+2022-11-03 22:05:02.312 +03:00 [ERR] HTTP GET /api/Order responded 500 in 17015.9573 ms
+2022-11-03 22:05:02.315 +03:00 [DBG] Connection id "0HMLTPP0QFUGD" completed keep alive response.
+2022-11-03 22:05:02.331 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5010/api/Order - - - 500 - application/json 17077.0337ms
+2022-11-03 22:05:41.923 +03:00 [DBG] Connection id "0HMLTPP0QFUGE" received FIN.
+2022-11-03 22:05:41.935 +03:00 [DBG] Connection id "0HMLTPP0QFUGE" sending FIN because: "The client closed the connection."
+2022-11-03 22:05:41.936 +03:00 [DBG] Connection id "0HMLTPP0QFUGE" disconnecting.
+2022-11-03 22:05:41.943 +03:00 [DBG] Connection id "0HMLTPP0QFUGE" stopped.
+2022-11-03 22:06:27.313 +03:00 [INF] Application Start
+2022-11-03 22:06:30.740 +03:00 [DBG] Hosting starting
+2022-11-03 22:06:31.224 +03:00 [DBG] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider"]
+2022-11-03 22:06:31.564 +03:00 [INF] Now listening on: http://localhost:5010
+2022-11-03 22:06:31.565 +03:00 [DBG] Loaded hosting startup assembly Curtains.Api
+2022-11-03 22:06:31.566 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-11-03 22:06:31.567 +03:00 [INF] Hosting environment: Development
+2022-11-03 22:06:31.569 +03:00 [INF] Content root path: /Users/egor/Applications/API_CURTAINS/Curtains/Curtains.Api
+2022-11-03 22:06:31.569 +03:00 [DBG] Hosting started
+2022-11-03 22:06:34.934 +03:00 [DBG] Connection id "0HMLTPQ3D5R4R" accepted.
+2022-11-03 22:06:34.953 +03:00 [DBG] Connection id "0HMLTPQ3D5R4S" accepted.
+2022-11-03 22:06:34.970 +03:00 [DBG] Connection id "0HMLTPQ3D5R4R" started.
+2022-11-03 22:06:34.972 +03:00 [DBG] Connection id "0HMLTPQ3D5R4S" started.
+2022-11-03 22:06:35.093 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5010/index.html - -
+2022-11-03 22:06:35.111 +03:00 [DBG] Wildcard detected, all requests with hosts will be allowed.
+2022-11-03 22:06:35.173 +03:00 [DBG] No candidates found for the request path '/index.html'
+2022-11-03 22:06:35.174 +03:00 [DBG] Request did not match any endpoints
+2022-11-03 22:06:35.876 +03:00 [INF] HTTP GET /index.html responded 200 in 687.9312 ms
+2022-11-03 22:06:35.883 +03:00 [DBG] Connection id "0HMLTPQ3D5R4R" completed keep alive response.
+2022-11-03 22:06:35.888 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5010/index.html - - - 200 - text/html;charset=utf-8 800.6015ms
+2022-11-03 22:06:37.214 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5010/swagger/v1/swagger.json - -
+2022-11-03 22:06:37.214 +03:00 [DBG] No candidates found for the request path '/swagger/v1/swagger.json'
+2022-11-03 22:06:37.217 +03:00 [DBG] Request did not match any endpoints
+2022-11-03 22:06:38.000 +03:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 783.0673 ms
+2022-11-03 22:06:38.001 +03:00 [DBG] Connection id "0HMLTPQ3D5R4R" completed keep alive response.
+2022-11-03 22:06:38.001 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5010/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 787.8144ms
+2022-11-03 22:06:42.784 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5010/api/Order - -
+2022-11-03 22:06:42.809 +03:00 [DBG] 1 candidate(s) found for the request path '/api/Order'
+2022-11-03 22:06:42.821 +03:00 [DBG] Endpoint 'Curtains.Api.Controllers.OrderController.GetAllAsync (Curtains.Api)' with route pattern 'api/Order' is valid for the request path '/api/Order'
+2022-11-03 22:06:42.822 +03:00 [DBG] Request matched endpoint 'Curtains.Api.Controllers.OrderController.GetAllAsync (Curtains.Api)'
+2022-11-03 22:06:42.827 +03:00 [DBG] Static files was skipped as the request already matched an endpoint.
+2022-11-03 22:06:42.829 +03:00 [INF] Executing endpoint 'Curtains.Api.Controllers.OrderController.GetAllAsync (Curtains.Api)'
+2022-11-03 22:06:42.877 +03:00 [INF] Route matched with {action = "GetAll", controller = "Order"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Curtains.Application.DTO.OurWorksDTO]]] GetAllAsync() on controller Curtains.Api.Controllers.OrderController (Curtains.Api).
+2022-11-03 22:06:42.887 +03:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2022-11-03 22:06:42.888 +03:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2022-11-03 22:06:42.889 +03:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2022-11-03 22:06:42.889 +03:00 [DBG] Execution plan of exception filters (in the following order): ["Curtains.Infrastructure.Shared.HttpGlobalExceptionFilter"]
+2022-11-03 22:06:42.890 +03:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2022-11-03 22:06:42.892 +03:00 [DBG] Executing controller factory for controller Curtains.Api.Controllers.OrderController (Curtains.Api)
+2022-11-03 22:06:42.896 +03:00 [DBG] Executed controller factory for controller Curtains.Api.Controllers.OrderController (Curtains.Api)
