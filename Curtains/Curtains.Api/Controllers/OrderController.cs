@@ -1,6 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
 using Curtains.Application.Interfaces;
 using Curtains.Application.DTO;
+using Curtains.Application.CurtainsService.Interfaces;
+using Curtains.Application.CurtainsService;
 
 namespace Curtains.Api.Controllers
 {
@@ -9,10 +11,12 @@ namespace Curtains.Api.Controllers
     public class OrderController : ControllerBase
     {
         private readonly INotifyService _notifyService;
+        private readonly IOrderService _orderService;
 
-        public OrderController(INotifyService notifyService)
+        public OrderController(INotifyService notifyService, IOrderService orderService)
         {
             _notifyService = notifyService;
+            _orderService = orderService;
         }
 
         /// <summary>
@@ -20,10 +24,22 @@ namespace Curtains.Api.Controllers
         /// </summary>
         /// <returns> Http status code 200 </returns>
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<OurWorksDTO>>> GetAllAsync()
+        public ActionResult<IEnumerable<OrderDTO>> GetAll()
         {
-            await _notifyService.NotifyAsync();
+            var orders = _orderService.GetAll();
             return Ok("Chekay pochty");
+        }
+
+        [HttpPost]
+        public async Task<ActionResult> Insert(OrderDTO entity, CancellationToken token)
+        {
+            if (entity != null)
+            {
+                await _orderService.InsertAsync(entity, token);
+                return CreatedAtAction(nameof(Insert), entity);
+            }
+
+            return BadRequest(nameof(Insert));
         }
     }
 }

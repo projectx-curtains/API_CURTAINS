@@ -5,8 +5,9 @@ namespace Curtains.Application.CurtainsService
     class NotifyService : INotifyService
     {
         private readonly IMessageSender _messageSender;
-        private readonly IMessageBuilder _messageBuilder;
-        public NotifyService(IMessageSender messageSender, IMessageBuilder messageBuilder)
+        private readonly IMessageConstructor _messageBuilder;
+
+        public NotifyService(IMessageSender messageSender, IMessageConstructor messageBuilder)
         {
             _messageSender = messageSender;
             _messageBuilder = messageBuilder;
@@ -16,7 +17,7 @@ namespace Curtains.Application.CurtainsService
         {
             //TODO придумать че с объектом делать
             string message = string.Empty;
-            await _messageSender.SendAsync("hahahahhihihihih","jfsaign ijdsfjidjgids gijfnsif fjfnndkgm gdkfndjntjew");
+            await _messageSender.SendAsync();
         }
     }
 }
