@@ -1,8 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Curtains.Application.Interfaces;
 using Curtains.Application.DTO;
-using Curtains.Application.CurtainsService.Interfaces;
-using Curtains.Application.CurtainsService;
 
 namespace Curtains.Api.Controllers
 {
@@ -11,35 +9,24 @@ namespace Curtains.Api.Controllers
     public class OrderController : ControllerBase
     {
         private readonly INotifyService _notifyService;
-        private readonly IOrderService _orderService;
 
-        public OrderController(INotifyService notifyService, IOrderService orderService)
+        public OrderController(INotifyService notifyService)
         {
             _notifyService = notifyService;
-            _orderService = orderService;
         }
 
-        /// <summary>
-        /// This method handles requests and get all our works from database.
-        /// </summary>
-        /// <returns> Http status code 200 </returns>
-        [HttpGet]
-        public ActionResult<IEnumerable<OrderDTO>> GetAll()
+        [HttpPost("catalog")]
+        public async Task<ActionResult> Notify(OrderDTO entity)
         {
-            var orders = _orderService.GetAll();
-            return Ok("Chekay pochty");
+            await _notifyService.NotifyAsync(entity);
+            return Ok();
         }
 
-        [HttpPost]
-        public async Task<ActionResult> Insert(OrderDTO entity, CancellationToken token)
+        [HttpPost("order")]
+        public async Task<ActionResult> Notify(ConstructorDTO entity)
         {
-            if (entity != null)
-            {
-                await _orderService.InsertAsync(entity, token);
-                return CreatedAtAction(nameof(Insert), entity);
-            }
-
-            return BadRequest(nameof(Insert));
+            await _notifyService.NotifyAsync(entity);
+            return Ok();
         }
     }
 }

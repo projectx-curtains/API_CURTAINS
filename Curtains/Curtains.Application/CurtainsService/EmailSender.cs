@@ -17,17 +17,18 @@ namespace Curtains.Application.CurtainsService
         {
             var from = new MailAddress(_config["EmailSettings:SystemEmail"], _config["EmailSettings:SystemName"]);
             var to = new MailAddress(customerEmail);
-            using var message = new MailMessage(from, to)   
+            using var message = new MailMessage(from, to)
             {
                 Subject = subject,
-                Body = body
+                Body = body,
+                IsBodyHtml = true
             };
 
             using var smtp = new SmtpClient(_config["EmailSettings:SmtpClient"], 587)
             {
                 EnableSsl = true,
                 Credentials = new NetworkCredential(_config["EmailSettings:SystemEmail"], _config["EmailSettings:SystemPassword"])
-            };  
+            };
 
             await smtp.SendMailAsync(message);
         }

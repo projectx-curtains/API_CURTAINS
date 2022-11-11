@@ -10,6 +10,6 @@
         public string PhoneNumber { get; set; }
         #endregion
 
-        ICollection<int> MarketingInfosId { get; set; } = new List<int>();
+        int[] MarketingInfosId { get; set; }
     }
 }
