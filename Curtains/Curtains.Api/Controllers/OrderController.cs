@@ -4,6 +4,9 @@ using Curtains.Application.DTO;
 
 namespace Curtains.Api.Controllers
 {
+    /// <summary>
+    /// Controller notifying the customer about the receipt of the order
+    /// </summary>
     [Route("api/[controller]")]
     [ApiController]
     public class OrderController : ControllerBase
