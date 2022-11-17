@@ -6,6 +6,7 @@ namespace Curtains.Application.CurtainsService
 {
     class MessageConstructor : IMessageConstructor
     {
+        private const string customerName = "Раиса Леонидовна";
         public string Construct(OrderDTO order)
         {
             //TODO Сделать сообщение для каталога когда предоставят пример
@@ -38,7 +39,7 @@ namespace Curtains.Application.CurtainsService
 
         private StringBuilder BeginConstruct()
         {
-            return new StringBuilder().Append("Добрый день, Раиса Леонидовна.<br>К вам поступил заказ: ");
+            return new StringBuilder().Append("Добрый день, ").Append(customerName).Append("<br>К вам поступил заказ: ");
         }
 
         private string Build(StringBuilder sb, string phoneNumber, string comment)

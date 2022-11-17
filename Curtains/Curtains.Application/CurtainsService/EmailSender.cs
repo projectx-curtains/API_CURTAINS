@@ -15,9 +15,9 @@ namespace Curtains.Application.CurtainsService
 
         public async Task SendAsync(string subject, string body, string customerEmail)
         {
-            var from = new MailAddress(_config["EmailSettings:SystemEmail"], _config["EmailSettings:SystemName"]);
-            var to = new MailAddress(customerEmail);
-            using var message = new MailMessage(from, to)
+            var systemAddress = new MailAddress(_config["EmailSettings:SystemEmail"], _config["EmailSettings:SystemName"]);
+            var customerAddress = new MailAddress(customerEmail);
+            using var message = new MailMessage(systemAddress, customerAddress)
             {
                 Subject = subject,
                 Body = body,
