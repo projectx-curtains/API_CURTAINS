@@ -13,6 +13,10 @@ namespace Curtains.Application.CurtainsService
             _config = config;
         }
 
+        /// <summary>
+        /// Sends a message to a specific address to an email address
+        /// </summary>
+        /// <param name="customerEmail">The mail to which the message is sent</param>
         public async Task SendAsync(string subject, string body, string customerEmail)
         {
             var systemAddress = new MailAddress(_config["EmailSettings:SystemEmail"], _config["EmailSettings:SystemName"]);

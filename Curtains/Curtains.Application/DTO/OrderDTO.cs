@@ -7,9 +7,14 @@
         ///  This property represents comment to order.
         /// </summary>
         public string Comment { get; set; }
+        /// <summary>
+        /// User phone number
+        /// </summary>
         public string PhoneNumber { get; set; }
-        #endregion
-
+        /// <summary>
+        /// Numbers of existing products ordered by the user
+        /// </summary>
         int[] MarketingInfosId { get; set; }
+        #endregion
     }
 }

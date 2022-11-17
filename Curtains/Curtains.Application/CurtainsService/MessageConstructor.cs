@@ -4,15 +4,30 @@ using System.Text;
 
 namespace Curtains.Application.CurtainsService
 {
+    /// <summary>
+    /// Constructs order messages
+    /// </summary>
     class MessageConstructor : IMessageConstructor
     {
         private const string customerName = "Раиса Леонидовна";
+
+        /// <summary>
+        /// Constructs order message based on existing products
+        /// </summary>
+        /// <param name="order">Order information and item numbers</param>
+        /// <returns>A message that describes the user's order</returns>
         public string Construct(OrderDTO order)
         {
             //TODO Сделать сообщение для каталога когда предоставят пример
             return "";
         }
 
+        /// <summary>
+        /// Constructs order messages based on the order
+        /// </summary>
+        /// <param name="order">Information about order</param>
+        /// <returns>A message that describes the user's order</returns>
+        /// <exception cref="ArgumentNullException">Throws an error if the object does not contain information about curtains</exception>
         public string Construct(ConstructorDTO order)
         {
             if(!order.Curtains.Any())
