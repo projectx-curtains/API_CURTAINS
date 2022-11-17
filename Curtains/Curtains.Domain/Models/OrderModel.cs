@@ -18,9 +18,12 @@ namespace Curtains.Domain.Models
 
         #region PropertiesRegion
         /// <summary>
-        ///  This property represents comment to order.
+        /// This property represents comment to order.
         /// </summary>
         public string Comment { get; set; }
+        /// <summary>
+        /// Phone number of user.
+        /// </summary>
         public string PhoneNumber { get; set; }
         #endregion
 
