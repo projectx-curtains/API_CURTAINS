@@ -10,7 +10,7 @@ using Curtains.Application.Interfaces;
 using Curtains.Infrastructure.Repositories;
 using Curtains.Infrastructure.Interfaces;
 using Microsoft.Extensions.Logging;
-
+        
 namespace Curtains.Api
 {
     public static class InfrastructureConfiguration
@@ -33,7 +33,7 @@ namespace Curtains.Api
 
             services
                 .AddSingleton(provider => ElasticSearchClientFactory.Create(elasticSearchOptions))
-                .AddSingleton<ICurtainsSearchRepository, CurtainsSearchRepository>()
+               // .AddSingleton<ICurtainsSearchRepository, CurtainsSearchRepository>()
                 .AddSingleton<CorrelationMiddleware>();
 
             services
