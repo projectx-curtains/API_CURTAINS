@@ -2,7 +2,7 @@
 using Nest;
 using Curtains.Domain.Projections;
 
-namespace Curtains.Infrastructure.SearchEngine.Repositories;
+namespace Curtains.Infrastructure.SearchEngine;
 
 public class CurtainsSearchRepository : ICurtainsSearchRepository
 {
