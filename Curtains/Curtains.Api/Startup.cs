@@ -1,4 +1,5 @@
 ﻿using Curtains.Application;
+using Curtains.Infrastructure;
 using Curtains.Infrastructure.Correlation;
 using Curtains.Infrastructure.Shared;
 using Microsoft.AspNetCore.Builder;
@@ -52,6 +53,6 @@ namespace Curtains.Api
                 .UseOpenApi(_environment.ApplicationName)
                 .UseEndpoints(endpoints => endpoints.MapControllers());
         }
-    
+
     }
 }

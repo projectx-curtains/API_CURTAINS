@@ -9,7 +9,7 @@ namespace Curtains.Domain.Models
     /// <summary>
     ///  This class describes bedspreads model.
     /// </summary>
-    public class BedspreadsModel : BaseEntity
+    public class BedspreadsModel : ExtendedBaseEntity
     {
         public BedspreadsModel()
         {
@@ -49,10 +49,6 @@ namespace Curtains.Domain.Models
         #endregion
 
         #region NavigationProperties
-        /// <summary>
-        ///  This property represents marketing information of bedspreads.
-        /// </summary>
-        public MarketingInfoModel MarketingInfo { get; set; }
         /// <summary>
         ///  This property represents fabric of bedspreads.
         /// </summary>

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Curtains.Domain.Models
 {
-    public class CurtainsModel : BaseEntity
+    public class CurtainsModel : ExtendedBaseEntity
     {
         /// <summary>
         ///  This class describes curtains model.
@@ -85,10 +85,6 @@ namespace Curtains.Domain.Models
         ///  This property represents kind of curtains.
         /// </summary>
         public virtual CurtainsKindModel CurtainsKind { get; set; }
-        /// <summary>
-        ///  This property represents marketing information for curtains.
-        /// </summary>
-        public virtual MarketingInfoModel MarketingInfo { get; set; }
         /// <summary>
         ///  This property represents sets with that curtains curtains.
         /// </summary>

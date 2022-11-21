@@ -9,7 +9,7 @@ namespace Curtains.Domain.Models
     /// <summary>
     ///  This class describes curtains type model.
     /// </summary>
-    public class CurtainsTypeModel : BaseEntity
+    public class CurtainsTypeModel : ExtendedBaseEntity
     {
         public CurtainsTypeModel()
         {
