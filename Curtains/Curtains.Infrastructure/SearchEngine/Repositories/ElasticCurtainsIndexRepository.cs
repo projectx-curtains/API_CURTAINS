@@ -1,14 +1,15 @@
 ﻿using Nest;
 using Elasticsearch.Net;
 using Curtains.Domain.Models;
+using Curtains.Infrastructure.Interfaces;
 
-namespace Curtains.Infrastructure.Repositories
+namespace Curtains.Infrastructure.SearchEngine
 {
-    public class ElasticCurtainsIndexRepository //: IElasticCurtainsIndexRepository
+    public class ElasticCurtainsIndexRepository : IElasticCurtainsIndexRepository
     {
-        private readonly ElasticClient _elasticClient;
+        private readonly IElasticClient _elasticClient;
 
-        public ElasticCurtainsIndexRepository(ElasticClient elasticClient)
+        public ElasticCurtainsIndexRepository(IElasticClient elasticClient)
         {
             _elasticClient = elasticClient;
         }

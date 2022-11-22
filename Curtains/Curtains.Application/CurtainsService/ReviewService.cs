@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Curtains.Application.Interfaces;
 using Curtains.Application.DTO;
 using Curtains.Domain.Models;
 using Curtains.Infrastructure.Interfaces;
@@ -11,6 +10,7 @@ using Curtains.Infrastructure.Database;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 using AutoMapper;
 using Microsoft.EntityFrameworkCore;
+using Curtains.Application.CurtainsServices.Interfaces;
 
 namespace Curtains.Application.CurtainsService
 {
@@ -33,7 +33,7 @@ namespace Curtains.Application.CurtainsService
         #region MethodsRegion
 
         /// <summary>
-        /// This method get all<c> ReviewModel <c> entities 
+        /// This method get all<c> ReviewModel <c> entities
         /// from database and mapping to <c> ReviewDTO </c>
         /// </summary>
         /// <returns>Collection of ReviewDTO entities in list Review</returns>
@@ -44,7 +44,7 @@ namespace Curtains.Application.CurtainsService
         }
 
         /// <summary>
-        /// This method get <c> ReviewModel <c> entity 
+        /// This method get <c> ReviewModel <c> entity
         /// from database by entity Id and mapping to <c> ReviewDTO </c>
         /// </summary>
         /// <param name="Id"> Guid Reviews entity idetifier </param>
@@ -57,7 +57,7 @@ namespace Curtains.Application.CurtainsService
         }
 
         /// <summary>
-        /// This method accepts <c> ReviewDTO </c> entity and mapping to 
+        /// This method accepts <c> ReviewDTO </c> entity and mapping to
         /// <c> ReviewModel </c> then pushed to Review repository for add to database
         /// </summary>
         /// <param name="entity"> ReviewDTO Review </param>
@@ -70,7 +70,7 @@ namespace Curtains.Application.CurtainsService
         }
 
         /// <summary>
-        /// This method accepts <c> ReviewDTO </c> entity and mapping 
+        /// This method accepts <c> ReviewDTO </c> entity and mapping
         /// to <c> ReviewModel </c> then pushed to Review repository for update to database
         /// </summary>
         /// <param name="entity"> ReviewDTO Review </param>
@@ -82,7 +82,7 @@ namespace Curtains.Application.CurtainsService
         }
 
         /// <summary>
-        /// This method accepts <c> ReviewDTO </c> entity and mapping 
+        /// This method accepts <c> ReviewDTO </c> entity and mapping
         /// to <c> ReviewModel </c> then pushed to Review repository for remove entity to database
         /// </summary>
         /// <param name="entity"> ReviewDTO Review </param>
