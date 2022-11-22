@@ -4,24 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Curtains.Domain.Models
+namespace Curtains.Application.DTO
 {
     /// <summary>
-    ///  This class describes pillows model.
+    /// Class <c> PillowsDTO </c> describes interaction model for NewItemsController and database.
     /// </summary>
-    public class PillowsModel : ExtendedBaseEntity
+    public class PillowsDTO : BaseExtendedDTO
     {
-        public PillowsModel()
-        {
-            Sets = new HashSet<ProductSetModel>();
-            UserOrders = new HashSet<UserOrderModel>();
-        }
-
         #region PropertiesRegion
-        /// <summary>
-        ///  This property represents FabricId column.
-        /// </summary>
-        public int FabricId { get; set; }
         /// <summary>
         ///  This property represents size of pillows.
         /// </summary>
@@ -42,21 +32,10 @@ namespace Curtains.Domain.Models
         ///  This property represents shape of pillows.
         /// </summary>
         public string Shape { get; set; }
-        #endregion
-
-        #region NavigationProperties
         /// <summary>
         ///  This property represents fabric of pillows.
         /// </summary>
-        public virtual FabricModel Fabric { get; set; }
-        /// <summary>
-        ///  This property represents list of product sets with that pillows.
-        /// </summary>
-        public virtual ICollection<ProductSetModel> Sets { get; set; }
-        /// <summary>
-        ///  This property represents list of UserOrders with that pillows.
-        /// </summary>
-        public virtual ICollection<UserOrderModel> UserOrders { get; set; }
+        public FabricDTO Fabric { get; set; }
         #endregion
     }
 }

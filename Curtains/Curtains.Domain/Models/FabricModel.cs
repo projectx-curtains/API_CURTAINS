@@ -34,7 +34,7 @@ namespace Curtains.Domain.Models
         /// <summary>
         ///  This property represents DecorationId column.
         /// </summary>
-        public int DecorationId { get; set; }
+        public int DecorationsId { get; set; }        
         /// <summary>
         ///  This property represents ManufacturerId column.
         /// </summary>
@@ -66,9 +66,12 @@ namespace Curtains.Domain.Models
         ///  This property represents color of fabric.
         /// </summary>
         public virtual ColorModel Color { get; set; }
-        public virtual DecorationsModel Decorations { get; set; }
         /// <summary>
         ///  This property represents decorations of fabric.
+        /// </summary>
+        public virtual DecorationsModel Decorations { get; set; }
+        /// <summary>
+        ///  This property represents manufacturer of fabric.
         /// </summary>
         public virtual ManufacturerModel Manufacturer { get; set; }
         /// <summary>

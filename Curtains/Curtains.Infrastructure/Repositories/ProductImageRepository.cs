@@ -20,7 +20,8 @@ namespace Curtains.Infrastructure.Repositories
         #region FieldsRegion
         private readonly ILogger _logger;
         private readonly CurtainsDbContext _curtainsContext;
-        private IQueryable<ProductImageModel> Query => _curtainsContext.ProductImages.Include(x => x.Curtains);
+        private IQueryable<ProductImageModel> Query => _curtainsContext.ProductImages.Include(x => x.Curtains).Include(x => x.Pillows)
+                    .Include(x => x.Bedspreads).Include(x => x.Sets).Include(x => x.Fabric).Include(x => x.MarketingInfo);
         #endregion
 
         public ProductImageRepository(CurtainsDbContext curtainsContext, ILogger logger)
@@ -36,7 +37,7 @@ namespace Curtains.Infrastructure.Repositories
         /// <returns>Collection of ProductImageModel entities in List ProductImage</return>
         public IEnumerable<ProductImageModel> GetAll()
         {
-            return _curtainsContext.ProductImages.AsNoTracking().AsEnumerable();
+            return Query.AsNoTracking().AsEnumerable();
         }
 
         /// <summary>

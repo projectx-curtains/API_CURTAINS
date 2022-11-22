@@ -52,7 +52,18 @@ namespace Curtains.Infrastructure
 
             var interfaceTypes = types
                 .Where(type => type.IsInterface
-                            && type.Namespace == typeof(ICurtainsRepository).Namespace)
+                            && (type.Namespace == typeof(ICurtainsRepository).Namespace || type.Namespace == typeof(IBedspreadsRepository).Namespace) || 
+                            type.Namespace == typeof(IAccessoriesRepository).Namespace || type.Namespace == typeof(IColorRepository).Namespace ||
+                            type.Namespace == typeof(IConsistencyRepository).Namespace || type.Namespace == typeof(ICurtainsKindRepository).Namespace ||
+                            type.Namespace == typeof(ICurtainsTypeRepository).Namespace || type.Namespace == typeof(IDecorationsRepository).Namespace ||
+                            type.Namespace == typeof(IDeliveryTypeRepository).Namespace || type.Namespace == typeof(IFabricRepository).Namespace ||
+                            type.Namespace == typeof(ILambrequinsRepository).Namespace || type.Namespace == typeof(IManufacturerRepository).Namespace ||
+                            type.Namespace == typeof(IMarketingInfoRepository).Namespace || type.Namespace == typeof(IMaterialRepository).Namespace ||
+                            type.Namespace == typeof(IOrderRepository).Namespace || type.Namespace == typeof(IOurWorksRepository).Namespace ||
+                            type.Namespace == typeof(IPaymentTypeRepository).Namespace || type.Namespace == typeof(IPillowsRepository).Namespace ||
+                            type.Namespace == typeof(IProductImageRepository).Namespace || type.Namespace == typeof(IProductSetRepository).Namespace ||
+                            type.Namespace == typeof(IReviewRepository).Namespace || type.Namespace == typeof(IUserOrderRepository).Namespace ||
+                            type.Namespace == typeof(IUserRepository).Namespace)
             .ToArray();
 
             foreach (var interfaceType in interfaceTypes)
