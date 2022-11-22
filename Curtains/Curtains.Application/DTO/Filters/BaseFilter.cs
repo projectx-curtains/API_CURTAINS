@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Curtains.Domain.Models.Filters
+namespace Curtains.Application.DTO.Filters
 {
     /// <summary>
     ///  This class describes base filter.
