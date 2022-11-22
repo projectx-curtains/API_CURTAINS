@@ -44,6 +44,7 @@ namespace Curtains.Api.Controllers
         /// This method handles requests and get all popular ProductImages from database.        
         /// </summary>
         /// <returns> Http status code </returns>
+        [Route("popular")]
         [HttpGet]
         public ActionResult<IEnumerable<ProductImageDTO>> GetPopularItems()
         {

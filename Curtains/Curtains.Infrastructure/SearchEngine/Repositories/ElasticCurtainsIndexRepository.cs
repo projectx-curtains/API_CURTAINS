@@ -2,13 +2,13 @@
 using Elasticsearch.Net;
 using Curtains.Domain.Models;
 
-namespace Curtains.Infrastructure.SearchEngine
+namespace Curtains.Infrastructure.Repositories
 {
-    public class ElasticSearchCurtainsCRUD
+    public class ElasticCurtainsIndexRepository //: IElasticCurtainsIndexRepository
     {
         private readonly ElasticClient _elasticClient;
 
-        public ElasticSearchCurtainsCRUD(ElasticClient elasticClient)
+        public ElasticCurtainsIndexRepository(ElasticClient elasticClient)
         {
             _elasticClient = elasticClient;
         }

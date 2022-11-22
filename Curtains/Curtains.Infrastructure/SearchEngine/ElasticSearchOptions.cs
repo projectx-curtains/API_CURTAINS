@@ -4,7 +4,7 @@ public class ElasticSearchOptions
 {
     public const string Name = "ElasticSearch";
 
-    public string Url { get; set; }
+    public string Url = "http://localhost:9200";
 
     public string DefaultIndex { get; set; }
 
