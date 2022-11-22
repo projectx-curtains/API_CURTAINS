@@ -6,7 +6,31 @@ using System.Threading.Tasks;
 
 namespace Curtains.Domain.Models.Filters
 {
-    public class FabricFilter : BaseFIlter
+    /// <summary>
+    ///  This class describes fabric filter.
+    /// </summary>
+    public class FabricFilter : BaseFilter
     {
+        #region PropertiesRegion
+        /// <summary>
+        ///  This property represents fabric types filters.
+        /// </summary>
+        public Dictionary<int, string> FabricTypes { get; set; }
+        /// <summary>
+        ///  This property represents fabric kinds filters.
+        /// </summary>
+        public Dictionary<int, string> FabricKinds { get; set; }
+        /// <summary>
+        ///  This property represents fabric materials filters.
+        /// </summary>
+        public Dictionary<int, string> FabricMaterials { get; set; }
+
+        //TODO density, sun protection
+
+        /// <summary>
+        ///  This property represents designs filters.
+        /// </summary>
+        public Dictionary<int, string> Designs { get; set; }
+        #endregion
     }
 }

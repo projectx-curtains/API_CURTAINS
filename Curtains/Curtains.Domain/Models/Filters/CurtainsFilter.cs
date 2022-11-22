@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Curtains.Domain.Models.Filters
 {
+    /// <summary>
+    ///  This class describes curtains filter.
+    /// </summary>
     public class CurtainsFilter : BaseFilter
     {
         #region PropertiesRegion
