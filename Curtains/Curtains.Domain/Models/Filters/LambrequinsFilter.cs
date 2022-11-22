@@ -6,8 +6,7 @@ using System.Threading.Tasks;
 
 namespace Curtains.Domain.Models.Filters
 {
-    public class AccessoriesFilter : BaseFIlter
+    public class LambrequinsFilter : BaseFIlter
     {
-        
     }
 }

@@ -7,19 +7,17 @@ using System.Threading.Tasks;
 namespace Curtains.Domain.Models.Filters
 {
     /// <summary>
-    ///  This class describes color filter.
+    ///  This class describes base filter.
     /// </summary>
-    public class ColorFilter
+    public class BaseFilter
     {
         #region PropertiesRegion
+        //TODO marketingInfo
+         
         /// <summary>
-        ///  This property represents color Id.
+        ///  This property represents colors filters.
         /// </summary>
-        public int Id { get; set; }
-        /// <summary>
-        ///  This property represents color title.
-        /// </summary>
-        public string Title { get; set; }
+        public Dictionary<int, string> Colors { get; set; }
         #endregion
     }
 }
