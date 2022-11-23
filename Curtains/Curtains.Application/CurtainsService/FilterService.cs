@@ -21,6 +21,8 @@ namespace Curtains.Application.CurtainsService
         private readonly ILogger _logger;
         private readonly IColorRepository _colorRepository;
         private readonly ICurtainsRepository _curtainsRepository;
+
+        private List<string> marketingInfo = new List<string> { "Новинки", "Популярное", "Распродажа" };
         #endregion
 
         public FilterService(ILogger logger, IColorRepository colorRepository, ICurtainsRepository curtainsRepository)
@@ -37,7 +39,11 @@ namespace Curtains.Application.CurtainsService
         /// <returns> BaseFilter </returns>
         public BaseFilter GetAllCategoriesFilters()
         {
-            return new BaseFilter { Colors = _colorRepository.GetAll().ToDictionary(c => c.Id, c => c.Title) };
+            return new BaseFilter
+            {
+                MarketingInfo = marketingInfo,
+                Colors = _colorRepository.GetAll().ToDictionary(c => c.Id, c => c.Title) 
+            };
         }
         /// <summary>
         /// This method get <c> CurtainsFilter <c> 
@@ -46,7 +52,10 @@ namespace Curtains.Application.CurtainsService
         public CurtainsFilter GetCurtainsFilters()
         {
             return new CurtainsFilter 
-            { 
+            {
+                MarketingInfo = marketingInfo,
+                MinPrice = _curtainsRepository.GetAll().GroupBy(c => c.Price).Min(c => c.Key),
+                MaxPrice = _curtainsRepository.GetAll().GroupBy(c => c.Price).Max(c => c.Key),
                 Colors = _curtainsRepository.GetAll().GroupBy(c => c.Fabric.Color.Id, c => c.Fabric.Color.Title)
                 .ToDictionary(c => c.Key, c => c.First()),
                 CurtainsTypes = _curtainsRepository.GetAll().GroupBy(c => c.CurtainsType.Id, c => c.CurtainsType.Title)
@@ -58,7 +67,6 @@ namespace Curtains.Application.CurtainsService
                 .ToDictionary(c => c.Key, c => c.First()),
                 Height = _curtainsRepository.GetAll().GroupBy(c => c.Height).Select(c => c.Key).ToList(),
                 Width = _curtainsRepository.GetAll().GroupBy(c => c.Width).Select(c => c.Key).ToList(),
-
             };
         }
 

@@ -12,8 +12,21 @@ namespace Curtains.Application.DTO.Filters
     public class BaseFilter
     {
         #region PropertiesRegion
-        //TODO marketingInfo
-         
+        /// <summary>
+        ///  This property represents marketing info filters.
+        /// </summary>
+        public List<string> MarketingInfo { get; set; }
+
+        /// <summary>
+        ///  This property represents minimum price.
+        /// </summary>
+        public decimal MinPrice { get; set; }
+
+        /// <summary>
+        ///  This property represents maximum price.
+        /// </summary>
+        public decimal MaxPrice { get; set; }
+
         /// <summary>
         ///  This property represents colors filters.
         /// </summary>
