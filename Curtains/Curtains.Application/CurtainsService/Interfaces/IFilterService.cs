@@ -12,7 +12,7 @@ namespace Curtains.Application.CurtainsService.Interfaces
         public CurtainsFilter GetCurtainsFilters();
         public FabricFilter GetFabricFilters();
         public LambrequinsFilter GetLambrequinsFilters();
-        public PillowsFilter GetPillowsFilter();
+        public PillowsFilter GetPillowsFilters();
         public BedspreadsFilter GetBedspreadsFilter();
         public AccessoriesFilter GetAccessoriesFilters();
         public BaseFilter GetAllCategoriesFilters();

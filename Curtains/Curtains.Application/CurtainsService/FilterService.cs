@@ -22,17 +22,19 @@ namespace Curtains.Application.CurtainsService
         private readonly IColorRepository _colorRepository;
         private readonly ICurtainsRepository _curtainsRepository;
         private readonly IFabricRepository _fabricRepository;
+        private readonly IPillowsRepository _pillowsRepository;
 
         private List<string> marketingInfo = new List<string> { "Новинки", "Популярное", "Распродажа" };
         #endregion
 
         public FilterService(ILogger logger, IColorRepository colorRepository, ICurtainsRepository curtainsRepository, 
-            IFabricRepository fabricRepository)
+            IFabricRepository fabricRepository, IPillowsRepository pillowsRepository)
         {
             _logger = logger;
             _colorRepository = colorRepository;
             _curtainsRepository = curtainsRepository;
             _fabricRepository = fabricRepository;
+            _pillowsRepository = pillowsRepository;
         }
 
         #region MethodsRegion
@@ -95,9 +97,20 @@ namespace Curtains.Application.CurtainsService
             throw new NotImplementedException();
         }
 
-        public PillowsFilter GetPillowsFilter()
+        /// <summary>
+        /// This method get <c> PillowsFilter <c> 
+        /// </summary>
+        /// <returns> PillowsFilter </returns>
+        public PillowsFilter GetPillowsFilters()
         {
-            throw new NotImplementedException();
+            return new PillowsFilter
+            {
+                MarketingInfo = marketingInfo,
+                MinPrice = _pillowsRepository.GetAll().GroupBy(c => c.Price).Min(c => c.Key),
+                MaxPrice = _pillowsRepository.GetAll().GroupBy(c => c.Price).Max(c => c.Key),
+                Colors = _pillowsRepository.GetAll().GroupBy(c => c.Fabric.Color.Id, c => c.Fabric.Color.Title)
+                .ToDictionary(c => c.Key, c => c.First()),
+            };
         }
 
         public BedspreadsFilter GetBedspreadsFilter()

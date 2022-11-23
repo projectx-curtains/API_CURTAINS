@@ -55,7 +55,7 @@ namespace Curtains.Api.Controllers
             return BadRequest(nameof(GetCurtainsFilters));
         }
 
-        /// This method handles requests and get filters for pillows.        
+        /// This method handles requests and get filters for fabric.        
         /// </summary>
         /// <returns> Http status code </returns>
         [HttpGet(nameof(GetFabricFilters))]
@@ -67,6 +67,20 @@ namespace Curtains.Api.Controllers
                 return Ok(model);
             }
             return BadRequest(nameof(GetFabricFilters));
+        }
+
+        /// This method handles requests and get filters for pillows.        
+        /// </summary>
+        /// <returns> Http status code </returns>
+        [HttpGet(nameof(GetPillowsFilters))]
+        public ActionResult<PillowsFilter> GetPillowsFilters()
+        {
+            var model = _service.GetPillowsFilters();
+            if (model != null)
+            {
+                return Ok(model);
+            }
+            return BadRequest(nameof(GetPillowsFilters));
         }
         #endregion
     }

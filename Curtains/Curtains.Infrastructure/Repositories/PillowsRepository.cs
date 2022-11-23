@@ -20,7 +20,7 @@ namespace Curtains.Infrastructure.Repositories
         #region FieldsRegion
         private readonly ILogger _logger;
         private readonly CurtainsDbContext _curtainsContext;
-        private IQueryable<PillowsModel> Query => _curtainsContext.Pillows.Include(x => x.Sets).Include(x => x.UserOrders);
+        private IQueryable<PillowsModel> Query => _curtainsContext.Pillows.Include(x => x.Fabric).Include(x => x.Fabric.Color);
         #endregion
 
         public PillowsRepository(CurtainsDbContext curtainsContext, ILogger logger)
@@ -36,7 +36,7 @@ namespace Curtains.Infrastructure.Repositories
         /// <returns>Collection of PillowsModel entities in List Pillows</return>
         public IEnumerable<PillowsModel> GetAll()
         {
-            return _curtainsContext.Pillows.AsNoTracking().AsEnumerable();
+            return Query.AsNoTracking().AsEnumerable();
         }
 
         /// <summary>
