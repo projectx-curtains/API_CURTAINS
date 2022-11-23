@@ -15,6 +15,6 @@ namespace Curtains.Application.CurtainsService.Interfaces
         public Task<PillowsFilter> GetPillowsFilter();
         public Task<BedspreadsFilter> GetBedspreadsFilter();
         public Task<AccessoriesFilter> GetAccessoriesFilters();
-        public Task<BaseFilter> GetAllCategoriesFilters();
+        public BaseFilter GetAllCategoriesFilters();
     }
 }

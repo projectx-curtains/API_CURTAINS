@@ -19,11 +19,13 @@ namespace Curtains.Application.CurtainsService
     {
         #region FieldsRegion
         private readonly ILogger _logger;
+        private readonly IColorRepository _colorRepository;
         #endregion
 
-        public FilterService(IMapper mapper, ILogger logger)
+        public FilterService(ILogger logger, IColorRepository colorRepository)
         {
             _logger = logger;
+            _colorRepository = colorRepository;
         }
 
         #region MethodsRegion
@@ -32,9 +34,13 @@ namespace Curtains.Application.CurtainsService
             throw new NotImplementedException();
         }
 
-        Task<BaseFilter> IFilterService.GetAllCategoriesFilters()
+        /// <summary>
+        /// This method get <c> BaseFilter <c> 
+        /// </summary>
+        /// <returns> BaseFilter </returns>
+        public BaseFilter GetAllCategoriesFilters()
         {
-            throw new NotImplementedException();
+            return new BaseFilter { Colors = _colorRepository.GetAll().ToDictionary(c => c.Id, c => c.Title)};
         }
 
         Task<BedspreadsFilter> IFilterService.GetBedspreadsFilter()
