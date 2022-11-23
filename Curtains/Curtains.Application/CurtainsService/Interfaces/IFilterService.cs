@@ -9,7 +9,7 @@ namespace Curtains.Application.CurtainsService.Interfaces
 {
     public interface IFilterService
     {
-        public Task<CurtainsFilter> GetCurtainsFilters();
+        public CurtainsFilter GetCurtainsFilters();
         public Task<FabricFilter> GetFabricFilters();
         public Task<LambrequinsFilter> GetLambrequinsFilters();
         public Task<PillowsFilter> GetPillowsFilter();

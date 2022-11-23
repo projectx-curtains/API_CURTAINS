@@ -27,7 +27,7 @@ namespace Curtains.Application.DTO.Filters
         /// <summary>
         ///  This property represents curtains purposes filters.
         /// </summary>
-        public Dictionary<int, string> Purposes { get; set; }
+        public List<string> Purposes { get; set; }
         /// <summary>
         ///  This property represents fabric kinds filters.
         /// </summary>
@@ -42,11 +42,11 @@ namespace Curtains.Application.DTO.Filters
         /// <summary>
         ///  This property represents curtains height filters.
         /// </summary>
-        public Dictionary<int, int> Height { get; set; }
+        public List<int> Height { get; set; }
         /// <summary>
         ///  This property represents curtains width filters.
         /// </summary>
-        public Dictionary<int, string> Width { get; set; }
+        public List<int> Width { get; set; }
         /// <summary>
         ///  This property represents designs filters.
         /// </summary>

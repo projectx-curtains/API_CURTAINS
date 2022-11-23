@@ -40,6 +40,19 @@ namespace Curtains.Api.Controllers
             }
             return BadRequest(nameof(GetAllCategoriesFilters));
         }
+        /// This method handles requests and get filters for curtains.        
+        /// </summary>
+        /// <returns> Http status code </returns>
+        [HttpGet(nameof(GetCurtainsFilters))]
+        public ActionResult<CurtainsFilter> GetCurtainsFilters()
+        {
+            var model = _service.GetCurtainsFilters();
+            if (model != null)
+            {
+                return Ok(model);
+            }
+            return BadRequest(nameof(GetCurtainsFilters));
+        }
         #endregion
     }
 }
