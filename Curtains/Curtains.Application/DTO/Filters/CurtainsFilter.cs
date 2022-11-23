@@ -16,22 +16,27 @@ namespace Curtains.Application.DTO.Filters
         ///  This property represents fabric types filters.
         /// </summary>
         public Dictionary<int, string> FabricTypes { get; set; }
+
         /// <summary>
         ///  This property represents curtains types filters.
         /// </summary>
         public Dictionary<int, string> CurtainsTypes { get; set; }
+
         /// <summary>
         ///  This property represents curtains kinds filters.
         /// </summary>
         public Dictionary<int, string> CurtainsKinds { get; set; }
+
         /// <summary>
         ///  This property represents curtains purposes filters.
         /// </summary>
         public List<string> Purposes { get; set; }
+
         /// <summary>
         ///  This property represents fabric kinds filters.
         /// </summary>
         public Dictionary<int, string> FabricKinds { get; set; }
+
         /// <summary>
         ///  This property represents fabric materials filters.
         /// </summary>
@@ -43,14 +48,17 @@ namespace Curtains.Application.DTO.Filters
         ///  This property represents curtains height filters.
         /// </summary>
         public List<int> Height { get; set; }
+
         /// <summary>
         ///  This property represents curtains width filters.
         /// </summary>
         public List<int> Width { get; set; }
+
         /// <summary>
         ///  This property represents designs filters.
         /// </summary>
         public Dictionary<int, string> Designs { get; set; }
+
         /// <summary>
         ///  This property represents bracings filters.
         /// </summary>

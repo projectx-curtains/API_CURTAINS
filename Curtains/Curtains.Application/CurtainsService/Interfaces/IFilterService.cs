@@ -10,11 +10,11 @@ namespace Curtains.Application.CurtainsService.Interfaces
     public interface IFilterService
     {
         public CurtainsFilter GetCurtainsFilters();
-        public Task<FabricFilter> GetFabricFilters();
-        public Task<LambrequinsFilter> GetLambrequinsFilters();
-        public Task<PillowsFilter> GetPillowsFilter();
-        public Task<BedspreadsFilter> GetBedspreadsFilter();
-        public Task<AccessoriesFilter> GetAccessoriesFilters();
+        public FabricFilter GetFabricFilters();
+        public LambrequinsFilter GetLambrequinsFilters();
+        public PillowsFilter GetPillowsFilter();
+        public BedspreadsFilter GetBedspreadsFilter();
+        public AccessoriesFilter GetAccessoriesFilters();
         public BaseFilter GetAllCategoriesFilters();
     }
 }

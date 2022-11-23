@@ -70,27 +70,27 @@ namespace Curtains.Application.CurtainsService
             };
         }
 
-        Task<AccessoriesFilter> IFilterService.GetAccessoriesFilters()
+        public FabricFilter GetFabricFilters()
         {
             throw new NotImplementedException();
         }
 
-        Task<BedspreadsFilter> IFilterService.GetBedspreadsFilter()
+        public LambrequinsFilter GetLambrequinsFilters()
         {
             throw new NotImplementedException();
         }
 
-        Task<FabricFilter> IFilterService.GetFabricFilters()
+        public PillowsFilter GetPillowsFilter()
         {
             throw new NotImplementedException();
         }
 
-        Task<LambrequinsFilter> IFilterService.GetLambrequinsFilters()
+        public BedspreadsFilter GetBedspreadsFilter()
         {
             throw new NotImplementedException();
         }
 
-        Task<PillowsFilter> IFilterService.GetPillowsFilter()
+        public AccessoriesFilter GetAccessoriesFilters()
         {
             throw new NotImplementedException();
         }
