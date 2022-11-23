@@ -21,15 +21,18 @@ namespace Curtains.Application.CurtainsService
         private readonly ILogger _logger;
         private readonly IColorRepository _colorRepository;
         private readonly ICurtainsRepository _curtainsRepository;
+        private readonly IFabricRepository _fabricRepository;
 
         private List<string> marketingInfo = new List<string> { "Новинки", "Популярное", "Распродажа" };
         #endregion
 
-        public FilterService(ILogger logger, IColorRepository colorRepository, ICurtainsRepository curtainsRepository)
+        public FilterService(ILogger logger, IColorRepository colorRepository, ICurtainsRepository curtainsRepository, 
+            IFabricRepository fabricRepository)
         {
             _logger = logger;
             _colorRepository = colorRepository;
             _curtainsRepository = curtainsRepository;
+            _fabricRepository = fabricRepository;
         }
 
         #region MethodsRegion
@@ -45,6 +48,7 @@ namespace Curtains.Application.CurtainsService
                 Colors = _colorRepository.GetAll().ToDictionary(c => c.Id, c => c.Title) 
             };
         }
+
         /// <summary>
         /// This method get <c> CurtainsFilter <c> 
         /// </summary>
@@ -70,9 +74,20 @@ namespace Curtains.Application.CurtainsService
             };
         }
 
+        /// <summary>
+        /// This method get <c> FabricFilter <c> 
+        /// </summary>
+        /// <returns> FabricFilter </returns>
         public FabricFilter GetFabricFilters()
         {
-            throw new NotImplementedException();
+            return new FabricFilter
+            {
+                MarketingInfo = marketingInfo,
+                MinPrice = _fabricRepository.GetAll().GroupBy(c => c.Price).Min(c => c.Key),
+                MaxPrice = _fabricRepository.GetAll().GroupBy(c => c.Price).Max(c => c.Key),
+                Colors = _fabricRepository.GetAll().GroupBy(c => c.Color.Id, c => c.Color.Title)
+                .ToDictionary(c => c.Key, c => c.First()),
+            };
         }
 
         public LambrequinsFilter GetLambrequinsFilters()

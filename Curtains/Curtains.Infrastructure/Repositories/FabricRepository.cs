@@ -20,7 +20,7 @@ namespace Curtains.Infrastructure.Repositories
         #region FieldsRegion
         private readonly ILogger _logger;
         private readonly CurtainsDbContext _curtainsContext;
-        private IQueryable<FabricModel> Query => _curtainsContext.Fabrics.Include(x => x.Curtains).Include(x => x.Bedspreads).Include(x => x.Pillows);
+        private IQueryable<FabricModel> Query => _curtainsContext.Fabrics.Include(x => x.Color);
         #endregion
 
         public FabricRepository(CurtainsDbContext curtainsContext, ILogger logger)
@@ -36,7 +36,7 @@ namespace Curtains.Infrastructure.Repositories
         /// <returns>Collection of FabricModel entities in List Fabric</return>
         public IEnumerable<FabricModel> GetAll()
         {
-            return _curtainsContext.Fabrics.AsNoTracking().AsEnumerable();
+            return Query.AsNoTracking().AsEnumerable();
         }
 
         /// <summary>
