@@ -24,12 +24,14 @@ namespace Curtains.Application.CurtainsService
         private readonly IFabricRepository _fabricRepository;
         private readonly IPillowsRepository _pillowsRepository;
         private readonly IBedspreadsRepository _bedspreadsRepository;
+        private readonly IAccessoriesRepository _accessoriesRepository;
 
         private List<string> marketingInfo = new List<string> { "Новинки", "Популярное", "Распродажа" };
         #endregion
 
         public FilterService(ILogger logger, IColorRepository colorRepository, ICurtainsRepository curtainsRepository, 
-            IFabricRepository fabricRepository, IPillowsRepository pillowsRepository, IBedspreadsRepository bedspreadsRepository)
+            IFabricRepository fabricRepository, IPillowsRepository pillowsRepository, IBedspreadsRepository bedspreadsRepository,
+            IAccessoriesRepository accessoriesRepository)
         {
             _logger = logger;
             _colorRepository = colorRepository;
@@ -37,6 +39,7 @@ namespace Curtains.Application.CurtainsService
             _fabricRepository = fabricRepository;
             _pillowsRepository = pillowsRepository;
             _bedspreadsRepository = bedspreadsRepository;
+            _accessoriesRepository = accessoriesRepository;
         }
 
         #region MethodsRegion
@@ -132,9 +135,20 @@ namespace Curtains.Application.CurtainsService
             };
         }
 
+        /// <summary>
+        /// This method get <c> AccessoriesFilter <c> 
+        /// </summary>
+        /// <returns> AccessoriesFilter </returns>
         public AccessoriesFilter GetAccessoriesFilters()
         {
-            throw new NotImplementedException();
+            return new AccessoriesFilter
+            {
+                MarketingInfo = marketingInfo,
+                MinPrice = _accessoriesRepository.GetAll().GroupBy(c => c.Price).Min(c => c.Key),
+                MaxPrice = _accessoriesRepository.GetAll().GroupBy(c => c.Price).Max(c => c.Key),
+                Colors = _accessoriesRepository.GetAll().GroupBy(c => c.Color.Id, c => c.Color.Title)
+                .ToDictionary(c => c.Key, c => c.First()),
+            };
         }
         #endregion
     }

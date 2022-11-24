@@ -23,7 +23,7 @@ namespace Curtains.Infrastructure.Repositories
         #region FieldsRegion
         private readonly ILogger _logger;
         private readonly CurtainsDbContext _curtainsContext;
-        private IQueryable<AccessoriesModel> Query => _curtainsContext.Accessories.Include(x => x.Curtains).Include(x => x.UserOrders);
+        private IQueryable<AccessoriesModel> Query => _curtainsContext.Accessories.Include(x => x.Color);
         #endregion
 
         public AccessoriesRepository(CurtainsDbContext curtainsContext, ILogger logger)
@@ -39,7 +39,7 @@ namespace Curtains.Infrastructure.Repositories
         /// <returns>Collection of AccessoriesModel entities in List type</return>
         public IEnumerable<AccessoriesModel> GetAll()
         {
-            return _curtainsContext.Accessories.AsNoTracking().AsEnumerable();
+            return Query.AsNoTracking().AsEnumerable();
         }
 
         /// <summary>

@@ -96,6 +96,20 @@ namespace Curtains.Api.Controllers
             }
             return BadRequest(nameof(GetBedspreadsFilters));
         }
+
+        /// This method handles requests and get filters for accessories.        
+        /// </summary>
+        /// <returns> Http status code </returns>
+        [HttpGet(nameof(GetAccessoriesFilters))]
+        public ActionResult<BedspreadsFilter> GetAccessoriesFilters()
+        {
+            var model = _service.GetAccessoriesFilters();
+            if (model != null)
+            {
+                return Ok(model);
+            }
+            return BadRequest(nameof(GetAccessoriesFilters));
+        }
         #endregion
     }
 }
