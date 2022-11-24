@@ -23,18 +23,20 @@ namespace Curtains.Application.CurtainsService
         private readonly ICurtainsRepository _curtainsRepository;
         private readonly IFabricRepository _fabricRepository;
         private readonly IPillowsRepository _pillowsRepository;
+        private readonly IBedspreadsRepository _bedspreadsRepository;
 
         private List<string> marketingInfo = new List<string> { "Новинки", "Популярное", "Распродажа" };
         #endregion
 
         public FilterService(ILogger logger, IColorRepository colorRepository, ICurtainsRepository curtainsRepository, 
-            IFabricRepository fabricRepository, IPillowsRepository pillowsRepository)
+            IFabricRepository fabricRepository, IPillowsRepository pillowsRepository, IBedspreadsRepository bedspreadsRepository)
         {
             _logger = logger;
             _colorRepository = colorRepository;
             _curtainsRepository = curtainsRepository;
             _fabricRepository = fabricRepository;
             _pillowsRepository = pillowsRepository;
+            _bedspreadsRepository = bedspreadsRepository;
         }
 
         #region MethodsRegion
@@ -113,9 +115,21 @@ namespace Curtains.Application.CurtainsService
             };
         }
 
-        public BedspreadsFilter GetBedspreadsFilter()
+        /// <summary>
+        /// This method get <c> BedspreadsFilter <c> 
+        /// </summary>
+        /// <returns> BedspreadsFilter </returns>
+        public BedspreadsFilter GetBedspreadsFilters()
         {
-            throw new NotImplementedException();
+            return new BedspreadsFilter
+            {
+                MarketingInfo = marketingInfo,
+                MinPrice = _bedspreadsRepository.GetAll().GroupBy(c => c.Price).Min(c => c.Key),
+                MaxPrice = _bedspreadsRepository.GetAll().GroupBy(c => c.Price).Max(c => c.Key),
+                Colors = _bedspreadsRepository.GetAll().GroupBy(c => c.Fabric.Color.Id, c => c.Fabric.Color.Title)
+                .ToDictionary(c => c.Key, c => c.First()),
+                Sizes = _bedspreadsRepository.GetAll().GroupBy(c => c.Size).Select(c => c.Key).ToList()
+            };
         }
 
         public AccessoriesFilter GetAccessoriesFilters()

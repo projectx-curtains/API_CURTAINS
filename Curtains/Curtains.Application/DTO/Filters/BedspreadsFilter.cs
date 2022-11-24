@@ -26,7 +26,7 @@ namespace Curtains.Application.DTO.Filters
         /// <summary>
         ///  This property represents sizes filters.
         /// </summary>
-        public Dictionary<int, string> Sizes { get; set; }
+        public List<string> Sizes { get; set; }
         /// <summary>
         ///  This property represents designs filters.
         /// </summary>
