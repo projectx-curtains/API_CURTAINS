@@ -1,11 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Curtains.Domain.Models;
 using Curtains.Infrastructure.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Curtains.Domain.Projections;
 
 namespace Curtains.Api.Controllers
 {
@@ -21,10 +17,17 @@ namespace Curtains.Api.Controllers
         }
 
         [HttpPost]
-        public ActionResult<IEnumerable<CurtainsModel>> Post(CurtainsModel model, string indexName)
+        public ActionResult<IEnumerable<CurtainsModel>> AddIndex(CurtainsProjection model, string indexName)
         {
             var response = _elastic.Index(model, indexName);
-            return Ok(response);
+            return Ok();
+        }
+
+        [HttpDelete]
+        public ActionResult DeleteIndex(CurtainsProjection model, string indexName)
+        {
+            var response = _elastic.Delete(model, indexName);
+            return Ok();
         }
     }
 }

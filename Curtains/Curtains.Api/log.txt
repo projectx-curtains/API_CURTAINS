@@ -1,0 +1,103 @@
+2022-11-25 20:12:03.211 +03:00 [INF] Application Start
+2022-11-25 20:12:06.035 +03:00 [DBG] Hosting starting
+2022-11-25 20:12:06.195 +03:00 [DBG] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider"]
+2022-11-25 20:12:06.298 +03:00 [INF] Now listening on: http://localhost:5010
+2022-11-25 20:12:06.301 +03:00 [DBG] Loaded hosting startup assembly Curtains.Api
+2022-11-25 20:12:06.302 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-11-25 20:12:06.304 +03:00 [INF] Hosting environment: Development
+2022-11-25 20:12:06.306 +03:00 [INF] Content root path: D:\Curtains\API_CURTAINS\Curtains\Curtains.Api
+2022-11-25 20:12:06.308 +03:00 [DBG] Hosting started
+2022-11-25 20:12:14.230 +03:00 [INF] Application is shutting down...
+2022-11-25 20:12:14.233 +03:00 [DBG] Hosting stopping
+2022-11-25 20:12:14.266 +03:00 [DBG] Hosting stopped
+2022-11-25 20:34:54.648 +03:00 [INF] Application Start
+2022-11-25 20:34:55.276 +03:00 [DBG] Hosting starting
+2022-11-25 20:34:55.339 +03:00 [DBG] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider"]
+2022-11-25 20:34:55.433 +03:00 [INF] Now listening on: http://localhost:5010
+2022-11-25 20:34:55.436 +03:00 [DBG] Loaded hosting startup assembly Curtains.Api
+2022-11-25 20:34:55.439 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-11-25 20:34:55.441 +03:00 [INF] Hosting environment: Development
+2022-11-25 20:34:55.444 +03:00 [INF] Content root path: D:\Curtains\API_CURTAINS\Curtains\Curtains.Api
+2022-11-25 20:34:55.445 +03:00 [DBG] Hosting started
+2022-11-25 20:34:58.115 +03:00 [INF] Application is shutting down...
+2022-11-25 20:34:58.116 +03:00 [DBG] Hosting stopping
+2022-11-25 20:34:58.128 +03:00 [DBG] Hosting stopped
+2022-11-25 22:16:04.126 +03:00 [INF] Application Start
+2022-11-25 22:16:05.023 +03:00 [DBG] Hosting starting
+2022-11-25 22:16:05.136 +03:00 [DBG] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider"]
+2022-11-25 22:16:05.259 +03:00 [INF] Now listening on: http://localhost:5010
+2022-11-25 22:16:05.262 +03:00 [DBG] Loaded hosting startup assembly Curtains.Api
+2022-11-25 22:16:05.265 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-11-25 22:16:05.267 +03:00 [INF] Hosting environment: Development
+2022-11-25 22:16:05.269 +03:00 [INF] Content root path: D:\Curtains\API_CURTAINS\Curtains\Curtains.Api
+2022-11-25 22:16:05.271 +03:00 [DBG] Hosting started
+2022-11-25 22:16:11.012 +03:00 [DBG] Connection id "0HMMF361KIQJI" accepted.
+2022-11-25 22:16:11.015 +03:00 [DBG] Connection id "0HMMF361KIQJI" started.
+2022-11-25 22:16:11.015 +03:00 [DBG] Connection id "0HMMF361KIQJJ" accepted.
+2022-11-25 22:16:11.018 +03:00 [DBG] Connection id "0HMMF361KIQJJ" started.
+2022-11-25 22:16:11.195 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5010/index.html - -
+2022-11-25 22:16:11.203 +03:00 [DBG] Wildcard detected, all requests with hosts will be allowed.
+2022-11-25 22:16:11.238 +03:00 [DBG] No candidates found for the request path '/index.html'
+2022-11-25 22:16:11.242 +03:00 [DBG] Request did not match any endpoints
+2022-11-25 22:16:11.526 +03:00 [INF] HTTP GET /index.html responded 200 in 277.5535 ms
+2022-11-25 22:16:11.532 +03:00 [DBG] Connection id "0HMMF361KIQJI" completed keep alive response.
+2022-11-25 22:16:11.537 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5010/index.html - - - 200 - text/html;charset=utf-8 349.6310ms
+2022-11-25 22:16:12.074 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5010/swagger/v1/swagger.json - -
+2022-11-25 22:16:12.076 +03:00 [DBG] No candidates found for the request path '/swagger/v1/swagger.json'
+2022-11-25 22:16:12.081 +03:00 [DBG] Request did not match any endpoints
+2022-11-25 22:16:12.307 +03:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 223.8123 ms
+2022-11-25 22:16:12.312 +03:00 [DBG] Connection id "0HMMF361KIQJI" completed keep alive response.
+2022-11-25 22:16:12.315 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5010/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 240.4683ms
+2022-11-25 22:16:12.765 +03:00 [DBG] Connection id "0HMMF361KIQJJ" received FIN.
+2022-11-25 22:16:12.765 +03:00 [DBG] Connection id "0HMMF361KIQJI" received FIN.
+2022-11-25 22:16:12.770 +03:00 [DBG] Connection id "0HMMF361KIQJJ" disconnecting.
+2022-11-25 22:16:12.772 +03:00 [DBG] Connection id "0HMMF361KIQJI" disconnecting.
+2022-11-25 22:16:12.779 +03:00 [DBG] Connection id "0HMMF361KIQJJ" sending FIN because: "The client closed the connection."
+2022-11-25 22:16:12.779 +03:00 [DBG] Connection id "0HMMF361KIQJI" sending FIN because: "The client closed the connection."
+2022-11-25 22:16:12.797 +03:00 [DBG] Connection id "0HMMF361KIQJI" stopped.
+2022-11-25 22:16:12.797 +03:00 [DBG] Connection id "0HMMF361KIQJJ" stopped.
+2022-11-25 22:16:37.508 +03:00 [DBG] Connection id "0HMMF361KIQJK" accepted.
+2022-11-25 22:16:37.511 +03:00 [DBG] Connection id "0HMMF361KIQJK" started.
+2022-11-25 22:16:37.513 +03:00 [INF] Request starting HTTP/1.1 DELETE http://localhost:5010/api/FiltersCurtains?indexName=curtains application/json 279
+2022-11-25 22:16:37.524 +03:00 [DBG] 1 candidate(s) found for the request path '/api/FiltersCurtains'
+2022-11-25 22:16:37.533 +03:00 [DBG] Endpoint 'Curtains.Api.Controllers.FiltersCurtainsController.DeleteIndex (Curtains.Api)' with route pattern 'api/FiltersCurtains' is valid for the request path '/api/FiltersCurtains'
+2022-11-25 22:16:37.540 +03:00 [DBG] Request matched endpoint 'Curtains.Api.Controllers.FiltersCurtainsController.DeleteIndex (Curtains.Api)'
+2022-11-25 22:16:37.546 +03:00 [DBG] Static files was skipped as the request already matched an endpoint.
+2022-11-25 22:16:37.549 +03:00 [INF] Executing endpoint 'Curtains.Api.Controllers.FiltersCurtainsController.DeleteIndex (Curtains.Api)'
+2022-11-25 22:16:37.586 +03:00 [INF] Route matched with {action = "DeleteIndex", controller = "FiltersCurtains"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult DeleteIndex(Curtains.Domain.Projections.CurtainsProjection, System.String) on controller Curtains.Api.Controllers.FiltersCurtainsController (Curtains.Api).
+2022-11-25 22:16:37.594 +03:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2022-11-25 22:16:37.597 +03:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2022-11-25 22:16:37.601 +03:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2022-11-25 22:16:37.607 +03:00 [DBG] Execution plan of exception filters (in the following order): ["Curtains.Infrastructure.Shared.HttpGlobalExceptionFilter"]
+2022-11-25 22:16:37.610 +03:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2022-11-25 22:16:37.613 +03:00 [DBG] Executing controller factory for controller Curtains.Api.Controllers.FiltersCurtainsController (Curtains.Api)
+2022-11-25 22:16:38.029 +03:00 [DBG] Executed controller factory for controller Curtains.Api.Controllers.FiltersCurtainsController (Curtains.Api)
+2022-11-25 22:16:38.042 +03:00 [DBG] Attempting to bind parameter 'model' of type 'Curtains.Domain.Projections.CurtainsProjection' ...
+2022-11-25 22:16:38.050 +03:00 [DBG] Attempting to bind parameter 'model' of type 'Curtains.Domain.Projections.CurtainsProjection' using the name '' in request data ...
+2022-11-25 22:16:38.057 +03:00 [DBG] Selected input formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonInputFormatter' for content type 'application/json'.
+2022-11-25 22:16:38.073 +03:00 [DBG] Connection id "0HMMF361KIQJK", Request id "0HMMF361KIQJK:00000002": started reading request body.
+2022-11-25 22:16:38.076 +03:00 [DBG] Connection id "0HMMF361KIQJK", Request id "0HMMF361KIQJK:00000002": done reading request body.
+2022-11-25 22:16:38.108 +03:00 [DBG] JSON input formatter succeeded, deserializing to type 'Curtains.Domain.Projections.CurtainsProjection'
+2022-11-25 22:16:38.113 +03:00 [DBG] Done attempting to bind parameter 'model' of type 'Curtains.Domain.Projections.CurtainsProjection'.
+2022-11-25 22:16:38.115 +03:00 [DBG] Done attempting to bind parameter 'model' of type 'Curtains.Domain.Projections.CurtainsProjection'.
+2022-11-25 22:16:38.118 +03:00 [DBG] Attempting to validate the bound parameter 'model' of type 'Curtains.Domain.Projections.CurtainsProjection' ...
+2022-11-25 22:16:38.125 +03:00 [DBG] Done attempting to validate the bound parameter 'model' of type 'Curtains.Domain.Projections.CurtainsProjection'.
+2022-11-25 22:16:38.128 +03:00 [DBG] Attempting to bind parameter 'indexName' of type 'System.String' ...
+2022-11-25 22:16:38.130 +03:00 [DBG] Attempting to bind parameter 'indexName' of type 'System.String' using the name 'indexName' in request data ...
+2022-11-25 22:16:38.135 +03:00 [DBG] Done attempting to bind parameter 'indexName' of type 'System.String'.
+2022-11-25 22:16:38.140 +03:00 [DBG] Done attempting to bind parameter 'indexName' of type 'System.String'.
+2022-11-25 22:16:38.142 +03:00 [DBG] Attempting to validate the bound parameter 'indexName' of type 'System.String' ...
+2022-11-25 22:16:38.143 +03:00 [DBG] Done attempting to validate the bound parameter 'indexName' of type 'System.String'.
+2022-11-25 22:16:38.339 +03:00 [INF] Executing StatusCodeResult, setting HTTP status code 200
+2022-11-25 22:16:38.356 +03:00 [INF] Executed action Curtains.Api.Controllers.FiltersCurtainsController.DeleteIndex (Curtains.Api) in 731.6599ms
+2022-11-25 22:16:38.361 +03:00 [INF] Executed endpoint 'Curtains.Api.Controllers.FiltersCurtainsController.DeleteIndex (Curtains.Api)'
+2022-11-25 22:16:38.366 +03:00 [INF] HTTP DELETE /api/FiltersCurtains responded 200 in 821.7444 ms
+2022-11-25 22:16:38.373 +03:00 [DBG] Connection id "0HMMF361KIQJK" completed keep alive response.
+2022-11-25 22:16:38.382 +03:00 [INF] Request finished HTTP/1.1 DELETE http://localhost:5010/api/FiltersCurtains?indexName=curtains application/json 279 - 200 0 - 866.1989ms
+2022-11-25 22:16:42.811 +03:00 [DBG] Connection id "0HMMF361KIQJK" received FIN.
+2022-11-25 22:16:42.814 +03:00 [DBG] Connection id "0HMMF361KIQJK" disconnecting.
+2022-11-25 22:16:42.817 +03:00 [DBG] Connection id "0HMMF361KIQJK" sending FIN because: "The client closed the connection."
+2022-11-25 22:16:42.825 +03:00 [DBG] Connection id "0HMMF361KIQJK" stopped.
+2022-11-25 22:18:18.905 +03:00 [INF] Application is shutting down...
+2022-11-25 22:18:18.906 +03:00 [DBG] Hosting stopping
+2022-11-25 22:18:18.917 +03:00 [DBG] Hosting stopped

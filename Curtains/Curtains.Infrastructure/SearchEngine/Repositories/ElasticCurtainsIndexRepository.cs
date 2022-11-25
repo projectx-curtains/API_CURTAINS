@@ -2,6 +2,7 @@
 using Elasticsearch.Net;
 using Curtains.Domain.Models;
 using Curtains.Infrastructure.Interfaces;
+using Curtains.Domain.Projections;
 
 namespace Curtains.Infrastructure.SearchEngine
 {
@@ -14,23 +15,33 @@ namespace Curtains.Infrastructure.SearchEngine
             _elasticClient = elasticClient;
         }
 
-        public bool Index(CurtainsModel model, string indexName)
+        public async Task<bool> Index(CurtainsProjection model, string indexName)
         {
-            var response = _elasticClient.Index(model, i => i
+            var response = await _elasticClient.IndexAsync(model, i => i
                 .Index(indexName)
                 .Id(model.Id)
                 .Refresh(Refresh.True)
             );
 
-            return true;
+            if (!response.IsValid)
+            {             
+                throw new Exception(response.DebugInformation);
+            }
+            else
+                return true;
         }
 
-        public bool Delete(CurtainsModel model, string indexName)
+        public async Task<bool> Delete(CurtainsProjection model, string indexName)
         {
-            var response = _elasticClient.Delete<CurtainsModel>(model.Id, d => d
+            var response = await _elasticClient.DeleteAsync<CurtainsModel>(model.Id, d => d
             .Index(indexName));
-
-            return true;
+           
+            if (!response.IsValid)
+            {
+                throw new Exception(response.DebugInformation);
+            }
+            else
+                return true;
         }
     }
 }

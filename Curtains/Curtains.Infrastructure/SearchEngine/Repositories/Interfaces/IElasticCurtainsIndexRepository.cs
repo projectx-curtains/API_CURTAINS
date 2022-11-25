@@ -1,16 +1,11 @@
-﻿using Curtains.Domain.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Curtains.Domain.Projections;
 
 namespace Curtains.Infrastructure.Interfaces
 {
     public interface IElasticCurtainsIndexRepository
     {
-        public bool Index(CurtainsModel model, string indexName);
-        public bool Delete(CurtainsModel model, string indexName);
+        public Task<bool> Index(CurtainsProjection model, string indexName);
+        public Task<bool> Delete(CurtainsProjection model, string indexName);
     }
 }
 

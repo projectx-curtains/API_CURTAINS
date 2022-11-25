@@ -7,7 +7,6 @@ using Microsoft.Extensions.DependencyInjection;
 using Curtains.Infrastructure.Interfaces;
 using Microsoft.Extensions.Logging;
 using System.Reflection;
-using Curtains.Infrastructure.Repositories;
 
 namespace Curtains.Infrastructure
 {
@@ -18,7 +17,8 @@ namespace Curtains.Infrastructure
             string connectionString,
             IConfiguration configuration)
         {
-            var elasticSearchOptions = configuration.GetSection(ElasticSearchOptions.Name).Get<ElasticSearchOptions>();
+            var elasticSearchOptions = configuration.GetSection("ElasticSearchOptions").Get<ElasticSearchOptions>();
+            Console.WriteLine($"{elasticSearchOptions.DefaultIndex}");
 
             services
                 .AddDbContext<CurtainsDbContext>(opt =>
@@ -31,7 +31,6 @@ namespace Curtains.Infrastructure
 
             services
                 .AddSingleton(provider => ElasticSearchClientFactory.Create(elasticSearchOptions))
-                .AddSingleton<IElasticCurtainsIndexRepository, ElasticCurtainsIndexRepository>()
                 .AddSingleton<CorrelationMiddleware>();
 
             services
@@ -53,7 +52,7 @@ namespace Curtains.Infrastructure
 
             var interfaceTypes = types
                 .Where(type => type.IsInterface
-                            && (type.Namespace == typeof(ICurtainsRepository).Namespace))
+                            && (type.Namespace == typeof(ICurtainsRepository).Namespace) || type.Namespace == typeof(IElasticCurtainsIndexRepository).Namespace)
             .ToArray();
 
             foreach (var interfaceType in interfaceTypes)
