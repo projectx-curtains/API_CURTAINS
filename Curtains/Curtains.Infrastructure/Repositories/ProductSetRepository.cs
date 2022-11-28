@@ -3,11 +3,6 @@ using Curtains.Infrastructure.Database;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Curtains.Infrastructure.Interfaces;
 
 namespace Curtains.Infrastructure.Repositories
@@ -78,7 +73,7 @@ namespace Curtains.Infrastructure.Repositories
         }
 
         /// <summary>
-        /// This method update <c> ProductSetModel <c> entity in database 
+        /// This method update <c> ProductSetModel <c> entity in database
         /// </summary>
         /// <param name = "entity" > ProductSetModel ProductSet</param>
         public async Task UpdateAsync(ProductSetModel entity)
@@ -98,7 +93,7 @@ namespace Curtains.Infrastructure.Repositories
         }
 
         /// <summary>
-        /// This method remove <c> ProductSetModel <c> entity from database 
+        /// This method remove <c> ProductSetModel <c> entity from database
         /// </summary>
         /// <param name = "entity" > ProductSetModel ProductSet</param>
         public async Task RemoveAsync(ProductSetModel entity)
@@ -114,7 +109,7 @@ namespace Curtains.Infrastructure.Repositories
         }
 
         /// <summary>
-        /// This method save changes in database 
+        /// This method save changes in database
         /// </summary>
         public async void SaveChangesAsync()
         {

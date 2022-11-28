@@ -1,21 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Curtains.Domain.Models
+﻿namespace Curtains.Domain.Models
 {
     /// <summary>
     ///  This class describes lambrequins model.
     /// </summary>
     public class LambrequinsModel : ExtendedBaseEntity
     {
-        public LambrequinsModel()
-        {
-            UserOrders = new HashSet<UserOrderModel>();
-        }
-
         #region PropertiesRegion
         /// <summary>
         ///  This property represents ColorId column.
@@ -25,6 +14,22 @@ namespace Curtains.Domain.Models
         ///  This property represents price of lambrequins.
         /// </summary>
         public decimal Price { get; set; }
+        /// <summary>
+        ///  This property represents bracingId of lambrequins.
+        /// </summary>
+        public int BracingId { get; set; }
+        /// <summary>
+        ///  This property represents kind of lambrequins.
+        /// </summary>
+        public int FabricKindId { get; set; }
+        /// <summary>
+        ///  This property represents height of lambrequins.
+        /// </summary>
+        public int Height { get; set; }
+        /// <summary>
+        ///  This property represents width of lambrequins.
+        /// </summary>
+        public int Width { get; set; }
         #endregion
 
         #region NavigationProperties
@@ -33,9 +38,17 @@ namespace Curtains.Domain.Models
         /// </summary>
         public virtual ColorModel Color { get; set; }
         /// <summary>
-        ///  This property represents list of UserOrders with that lambrequins.
+        ///  This property represents bracing of lambrequins.
         /// </summary>
-        public virtual ICollection<UserOrderModel> UserOrders { get; set; }
+        public virtual BracingModel Bracing { get; set; }
+        /// <summary>
+        ///  This property represents fabricKind of lambrequins.
+        /// </summary>
+        public virtual FabricKindModel FabricKind { get; set; }
+        /// <summary>
+        ///  This property represents product sets with this lambrequin.
+        /// </summary>
+        public virtual ICollection<ProductSetModel> ProductSets { get; } = new List<ProductSetModel>();
         #endregion
     }
 }

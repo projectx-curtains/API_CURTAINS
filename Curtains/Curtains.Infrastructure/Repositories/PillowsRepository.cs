@@ -20,7 +20,7 @@ namespace Curtains.Infrastructure.Repositories
         #region FieldsRegion
         private readonly ILogger _logger;
         private readonly CurtainsDbContext _curtainsContext;
-        private IQueryable<PillowsModel> Query => _curtainsContext.Pillows.Include(x => x.Sets).Include(x => x.UserOrders);
+        private IQueryable<PillowsModel> Query => _curtainsContext.Pillows.Include(x => x.ProductSets);
         #endregion
 
         public PillowsRepository(CurtainsDbContext curtainsContext, ILogger logger)
@@ -78,7 +78,7 @@ namespace Curtains.Infrastructure.Repositories
         }
 
         /// <summary>
-        /// This method update <c> PillowsModel <c> entity in database 
+        /// This method update <c> PillowsModel <c> entity in database
         /// </summary>
         /// <param name = "entity" > PillowsModel Pillows</param>
         public async Task UpdateAsync(PillowsModel entity)
@@ -98,7 +98,7 @@ namespace Curtains.Infrastructure.Repositories
         }
 
         /// <summary>
-        /// This method remove <c> PillowsModel <c> entity from database 
+        /// This method remove <c> PillowsModel <c> entity from database
         /// </summary>
         /// <param name = "entity" > PillowsModel Pillows</param>
         public async Task RemoveAsync(PillowsModel entity)
@@ -114,7 +114,7 @@ namespace Curtains.Infrastructure.Repositories
         }
 
         /// <summary>
-        /// This method save changes in database 
+        /// This method save changes in database
         /// </summary>
         public async void SaveChangesAsync()
         {

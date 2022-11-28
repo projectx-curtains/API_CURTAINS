@@ -3,11 +3,7 @@ using Curtains.Infrastructure.Database;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 using Curtains.Infrastructure.Interfaces;
 
 namespace Curtains.Infrastructure.Repositories
@@ -20,7 +16,7 @@ namespace Curtains.Infrastructure.Repositories
         #region FieldsRegion
         private readonly ILogger _logger;
         private readonly CurtainsDbContext _curtainsContext;
-        private IQueryable<BedspreadsModel> Query => _curtainsContext.Bedspreads.Include(x => x.Sets).Include(x => x.UserOrders);
+        private IQueryable<BedspreadsModel> Query => _curtainsContext.Bedspreads;
         #endregion
 
         public BedspreadsRepository(CurtainsDbContext curtainsContext, ILogger logger)
@@ -78,7 +74,7 @@ namespace Curtains.Infrastructure.Repositories
         }
 
         /// <summary>
-        /// This method update <c> BedspreadsModel <c> entity in database 
+        /// This method update <c> BedspreadsModel <c> entity in database
         /// </summary>
         /// <param name = "entity" > BedspreadsModel type</param>
         public async Task UpdateAsync(BedspreadsModel entity)
@@ -98,7 +94,7 @@ namespace Curtains.Infrastructure.Repositories
         }
 
         /// <summary>
-        /// This method remove <c> BedspreadsModel <c> entity from database 
+        /// This method remove <c> BedspreadsModel <c> entity from database
         /// </summary>
         /// <param name = "entity" > BedspreadsModel type</param>
         public async Task RemoveAsync(BedspreadsModel entity)
@@ -114,7 +110,7 @@ namespace Curtains.Infrastructure.Repositories
         }
 
         /// <summary>
-        /// This method save changes in database 
+        /// This method save changes in database
         /// </summary>
         public async void SaveChangesAsync()
         {

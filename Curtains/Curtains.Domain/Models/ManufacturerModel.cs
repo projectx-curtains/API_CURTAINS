@@ -1,21 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Curtains.Domain.Models
+﻿namespace Curtains.Domain.Models
 {
     /// <summary>
     ///  This class describes manufacturer model.
     /// </summary>
     public class ManufacturerModel : BaseEntity
     {
-        public ManufacturerModel()
-        {
-            Fabrics = new HashSet<FabricModel>();
-        }
-
         #region PropertiesRegion
         /// <summary>
         ///  This property represents country of manufacturer.
@@ -27,7 +16,7 @@ namespace Curtains.Domain.Models
         /// <summary>
         ///  This property represents list of fabrics with that manufacturer.
         /// </summary>
-        public virtual ICollection<FabricModel> Fabrics { get; set; }
+        public virtual ICollection<FabricModel> Fabrics { get; set; } = new List<FabricModel>();
         #endregion
     }
 }

@@ -1,23 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Curtains.Domain.Models
+﻿namespace Curtains.Domain.Models
 {
     /// <summary>
     ///  This class describes fabric model.
     /// </summary>
     public class FabricModel : ExtendedBaseEntity
     {
-        public FabricModel()
-        {
-            Curtains = new HashSet<CurtainsModel>();
-            Bedspreads = new HashSet<BedspreadsModel>();
-            Pillows = new HashSet<PillowsModel>();
-        }
-
         #region PropertiesRegion
         /// <summary>
         ///  This property represents situation, if fabric is dense or not.
@@ -52,9 +39,21 @@ namespace Curtains.Domain.Models
         /// </summary>
         public int Width { get; set; }
         /// <summary>
-        ///  This property represents situation, if there is design on fabric or not.
+        ///  This property represents designId of fabric.
         /// </summary>
-        public bool Design { get; set; }
+        public int DesignId { get; set; }
+        /// <summary>
+        ///  This property represents FabricTypeId of fabric.
+        /// </summary>
+        public int FabricTypeId { get; set; }
+        /// <summary>
+        ///  This property represents FabricKindId of fabric.
+        /// </summary>
+        public int FabricKindId { get; set; }
+        /// <summary>
+        ///  This property represents MaterialId of fabric.
+        /// </summary>
+        public int MaterialId { get; set; }
         #endregion
 
         #region NavigationProperties
@@ -66,23 +65,46 @@ namespace Curtains.Domain.Models
         ///  This property represents color of fabric.
         /// </summary>
         public virtual ColorModel Color { get; set; }
+        /// <summary>
+        ///  This property represents decoration of fabric.
+        /// </summary>
         public virtual DecorationsModel Decorations { get; set; }
         /// <summary>
-        ///  This property represents decorations of fabric.
+        ///  This property represents design of fabric.
+        /// </summary>
+        public virtual DesignModel Design { get; set; }
+        /// <summary>
+        ///  This property represents kind of fabric.
+        /// </summary>
+        public virtual FabricKindModel FabricKind { get; set; }
+        /// <summary>
+        ///  This property represents type of fabric.
+        /// </summary>
+        public virtual FabricTypeModel FabricType { get; set; }
+        /// <summary>
+        ///  This property represents material of fabric.
+        /// </summary>
+        public virtual MaterialModel Material { get; set; }
+        /// <summary>
+        ///  This property represents manufacturer of fabric.
         /// </summary>
         public virtual ManufacturerModel Manufacturer { get; set; }
         /// <summary>
         ///  This property represents list of curtains with that fabric.
         /// </summary>
-        public virtual ICollection<CurtainsModel> Curtains { get; set; }
+        public virtual ICollection<CurtainModel> Curtains { get; set; } = new List<CurtainModel>();
         /// <summary>
         ///  This property represents list of bedspreads with that fabric.
         /// </summary>
-        public virtual ICollection<BedspreadsModel> Bedspreads { get; set; }
+        public virtual ICollection<BedspreadsModel> Bedspreads { get; set; } = new List<BedspreadsModel>();
         /// <summary>
         ///  This property represents list of pillows with that fabric.
         /// </summary>
-        public virtual ICollection<PillowsModel> Pillows { get; set; }
+        public virtual ICollection<PillowsModel> Pillows { get; set; } = new List<PillowsModel>();
+        /// <summary>
+        ///  This property represents product images of fabric.
+        /// </summary>
+        public virtual ICollection<ProductImageModel> ProductImages { get; } = new List<ProductImageModel>();
         #endregion
     }
 }

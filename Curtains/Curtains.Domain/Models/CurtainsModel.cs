@@ -1,27 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Curtains.Domain.Models
+﻿namespace Curtains.Domain.Models
 {
-    public class CurtainsModel : ExtendedBaseEntity
+    public class CurtainModel : ExtendedBaseEntity
     {
-        /// <summary>
-        ///  This class describes curtains model.
-        /// </summary>
-        public CurtainsModel()
-        {
-            Sets = new HashSet<ProductSetModel>();
-            UserOrders = new HashSet<UserOrderModel>();
-        }
-
         #region PropertiesRegion
-        /// <summary>
-        ///  This property represents situation, if curtains are dense or not.
-        /// </summary>
-        public bool Density { get; set; }
         /// <summary>
         ///  This property represents situation, if curtains are sun-protected or not.
         /// </summary>
@@ -62,6 +43,14 @@ namespace Curtains.Domain.Models
         ///  This property represents purpose of curtains.
         /// </summary>
         public string Purpose { get; set; }
+        /// <summary>
+        ///  This property represents ColorId column.
+        /// </summary>
+        public int ColorId { get; set; }
+        /// <summary>
+        ///  This property represents BrasingId column.
+        /// </summary>
+        public int BrasingId { get; set; }
         #endregion
 
         #region NavigationProperties
@@ -86,17 +75,29 @@ namespace Curtains.Domain.Models
         /// </summary>
         public virtual CurtainsKindModel CurtainsKind { get; set; }
         /// <summary>
+        ///  This property represents of Bracing.
+        /// </summary>
+        public virtual BracingModel Brasing { get; set; }
+        /// <summary>
+        ///  This property represents of Color.
+        /// </summary>
+        public virtual ColorModel Color { get; set; }
+        /// <summary>
         ///  This property represents marketing information for curtains.
         /// </summary>
         public virtual MarketingInfoModel MarketingInfo { get; set; }
         /// <summary>
-        ///  This property represents sets with that curtains curtains.
+        ///  This property represents sets with that curtains.
         /// </summary>
-        public virtual ICollection<ProductSetModel> Sets { get; set; }
+        public virtual ICollection<ProductSetModel> ProductSets { get; set; } = new List<ProductSetModel>();
         /// <summary>
-        ///  This property represents list of UserOrders with that curtains.
+        ///  This property represents Lambrequins with that curtains.
         /// </summary>
-        public virtual ICollection<UserOrderModel> UserOrders { get; set; }
+        public virtual ICollection<LambrequinsModel> Lambrequins { get; } = new List<LambrequinsModel>();
+        /// <summary>
+        ///  This property represents product images with that curtains.
+        /// </summary>
+        public virtual ICollection<ProductImageModel> ProductImages { get; } = new List<ProductImageModel>();
         #endregion
     }
 }

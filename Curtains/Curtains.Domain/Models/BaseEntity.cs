@@ -9,9 +9,5 @@
         ///  This property represents unique identifier for entities.
         /// </summary>
         public int Id { get; set; }
-        /// <summary>
-        ///  This property represents description of entities.
-        /// </summary>
-        public string Description { get; set; } = string.Empty;
     }
 }
