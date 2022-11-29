@@ -18,7 +18,6 @@ namespace Curtains.Infrastructure
             IConfiguration configuration)
         {
             var elasticSearchOptions = configuration.GetSection("ElasticSearchOptions").Get<ElasticSearchOptions>();
-            Console.WriteLine($"{elasticSearchOptions.DefaultIndex}");
 
             services
                 .AddDbContext<CurtainsDbContext>(opt =>
