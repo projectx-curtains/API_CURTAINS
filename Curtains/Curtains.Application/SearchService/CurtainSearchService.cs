@@ -4,27 +4,27 @@ using Curtains.Infrastructure.Interfaces;
 using Microsoft.Extensions.Logging;
 using Curtains.Domain.Projections;
 using Curtains.Application.DTO;
-using Curtains.Infrastructure.SearchEngine;
-using Curtains.Domain.Models;
+using Nest;
 
 namespace Curtains.Application.SearchService
 {
     public class CurtainSearchService : ICurtainSearchService
     {
-        #region FieldsRegion
-        private readonly ILogger _logger;
+        #region FieldsRegion       
         private readonly ICurtainsRepository _curtainsRepository;
-        private readonly IElasticCurtainsIndexRepository _elasticRepository;
+        private readonly IElasticCurtainsIndexRepository _elasticIndexRepository;
+        private readonly ICurtainsSearchRepository _curtainsSearchRepository;
         private readonly IMapper _mapper;
         #endregion
 
         public CurtainSearchService(ILogger logger, ICurtainsRepository curtainsRepository,
-            IMapper mapper, IElasticCurtainsIndexRepository elasticRepository)
+            IMapper mapper, IElasticCurtainsIndexRepository elasticIndexRepository,
+            ICurtainsSearchRepository curtainsSearchRepository)
         {
-            _logger = logger;
             _curtainsRepository = curtainsRepository;
-            _elasticRepository = elasticRepository;
+            _elasticIndexRepository = elasticIndexRepository;
             _mapper = mapper;
+            _curtainsSearchRepository = curtainsSearchRepository;
         }
 
         #region MethodsRegion
@@ -35,8 +35,15 @@ namespace Curtains.Application.SearchService
             foreach (var modelDTO in ListModelsDTO)
             {
                 var projectionModel = _mapper.Map<CurtainsProjection>(modelDTO);
-                await _elasticRepository.Index(projectionModel, indexName);
+                await _elasticIndexRepository.Index(projectionModel, indexName);
             }
+        }
+
+        public async Task<List<CurtainsProjection>> CurtainsSearch(CurtainsDTO modelDTO, string indexName)
+        {
+            var model = _mapper.Map<CurtainsProjection>(modelDTO);
+            var response = await _curtainsSearchRepository.GetCurtains(model, indexName);
+            return response;
         }
         #endregion
     }

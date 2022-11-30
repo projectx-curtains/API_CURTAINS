@@ -17,8 +17,16 @@ namespace Curtains.Infrastructure
             string connectionString,
             IConfiguration configuration)
         {
-            var elasticSearchOptions = configuration.GetSection("ElasticSearchOptions").Get<ElasticSearchOptions>();
-
+            // var elasticSearchOptions = configuration.GetSection("ElasticSearchOptions").Get<ElasticSearchOptions>();
+            var elasticSearchOptions = new ElasticSearchOptions()
+            {
+                Url = "http://localhost:9200",
+                DefaultIndex = "Curtains",
+                Login = "1234",
+                Password = "qwerty1234",
+                ReservedCharactersPattern = "qwerty"
+            };
+            Console.WriteLine(elasticSearchOptions.DefaultIndex);
             services
                 .AddDbContext<CurtainsDbContext>(opt =>
                 {

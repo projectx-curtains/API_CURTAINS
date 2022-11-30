@@ -35,10 +35,17 @@ namespace Curtains.Api.Controllers
         }
 
         [HttpDelete]
-        public ActionResult DeleteIndex(CurtainsProjection model, string indexName)
+        public ActionResult DeleteIndex(string id, string indexName)
         {
-            var response = _elastic.Delete(model, indexName);
+            var response = _elastic.Deleted(id, indexName);
             return Ok();
+        }
+        [Route("CurtainsSearch")]
+        [HttpPost]
+        public async Task<ActionResult> CurtainSearch([FromQuery] CurtainsDTO modelDTO, string indexName)
+        {
+            var response = await _searchService.CurtainsSearch(modelDTO, indexName);
+            return Ok(response);
         }
     }
 }

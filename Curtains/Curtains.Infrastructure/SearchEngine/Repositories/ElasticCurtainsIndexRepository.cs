@@ -31,11 +31,10 @@ namespace Curtains.Infrastructure.SearchEngine
                 return true;
         }
 
-        public async Task<bool> Delete(CurtainsProjection model, string indexName)
+        public async Task<bool> Deleted(string id, string indexName)
         {
-            var response = await _elasticClient.DeleteAsync<CurtainsModel>(model.Id, d => d
-            .Index(indexName));
-           
+            var response = await _elasticClient.DeleteAsync(new DeleteRequest(indexName, id.Trim()));
+
             if (!response.IsValid)
             {
                 throw new Exception(response.DebugInformation);
