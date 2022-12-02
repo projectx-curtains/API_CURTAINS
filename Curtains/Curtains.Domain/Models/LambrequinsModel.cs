@@ -36,19 +36,19 @@
         /// <summary>
         ///  This property represents color of lambrequins.
         /// </summary>
-        public virtual ColorModel Color { get; set; }
+        public virtual ColorModel Color { get; set; } = null!;
         /// <summary>
         ///  This property represents bracing of lambrequins.
         /// </summary>
-        public virtual BracingModel Bracing { get; set; }
+        public virtual BracingModel Bracing { get; set; } = null!;
         /// <summary>
         ///  This property represents fabricKind of lambrequins.
         /// </summary>
-        public virtual FabricKindModel FabricKind { get; set; }
+        public virtual FabricKindModel FabricKind { get; set; } = null!;
         /// <summary>
         ///  This property represents product sets with this lambrequin.
         /// </summary>
-        public virtual ICollection<ProductSetModel> ProductSets { get; } = new List<ProductSetModel>();
+        public virtual ICollection<ProductSetModel>? ProductSets { get; }
         #endregion
     }
 }

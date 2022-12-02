@@ -9,7 +9,7 @@
         /// <summary>
         ///  This property represents the ColorId column.
         /// </summary>
-        public int ColorId { get; set; }
+        public int? ColorId { get; set; }
         /// <summary>
         ///  This property represents price of accessories.
         /// </summary>
@@ -20,11 +20,11 @@
         /// <summary>
         ///  This property represents color of accessories.
         /// </summary>
-        public virtual ColorModel Color { get; set; }
+        public virtual ColorModel Color { get; set; } = null!;
         /// <summary>
         ///  This property represents list of curtains in which there are accessories.
         /// </summary>
-        public virtual ICollection<CurtainModel> Curtains { get; set; } = new List<CurtainModel>();
+        public virtual ICollection<CurtainModel>? Curtains { get; }
         #endregion
     }
 }

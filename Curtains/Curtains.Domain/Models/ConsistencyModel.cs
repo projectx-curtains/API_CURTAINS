@@ -6,7 +6,7 @@
         /// <summary>
         ///  This property represents list of fabrics with that consistency.
         /// </summary>
-        public virtual ICollection<FabricModel> Fabrics { get; } = new List<FabricModel>();
+        public virtual ICollection<FabricModel>? Fabrics { get; }
         #endregion
 
     }

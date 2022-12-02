@@ -9,27 +9,27 @@
         /// <summary>
         ///  This property represents path to image of product.
         /// </summary>
-        public string ImagePath { get; set; }
+        public string ImagePath { get; set; } = null!;
         /// <summary>
         ///  This property represents CurtainsId.
         /// </summary>
-        public int CurtainsId { get; set; }
+        public int? CurtainsId { get; set; }
         /// <summary>
         ///  This property represents PillowsId.
         /// </summary>
-        public int PillowsId { get; set; }
+        public int? PillowsId { get; set; }
         /// <summary>
         ///  This property represents BedspreadsId.
         /// </summary>
-        public int BedspreadsId { get; set; }
+        public int? BedspreadsId { get; set; }
         /// <summary>
         ///  This property represents SetsId.
         /// </summary>
-        public int SetsId { get; set; }
+        public int? SetsId { get; set; }
         /// <summary>
         ///  This property represents FabricId.
         /// </summary>
-        public int FabricId { get; set; }
+        public int? FabricId { get; set; }
 
         #endregion
 
@@ -37,27 +37,27 @@
         /// <summary>
         ///  This property represents curtains, which image is presented.
         /// </summary>
-        public virtual CurtainModel Curtains { get; set; }
+        public virtual CurtainModel? Curtains { get; set; }
         /// <summary>
         ///  This property represents pillows, which image is presented.
         /// </summary>
-        public virtual PillowsModel Pillows { get; set; }
+        public virtual PillowsModel? Pillows { get; set; }
         /// <summary>
         ///  This property represents bedspreads, which image is presented.
         /// </summary>
-        public virtual BedspreadsModel Bedspreads { get; set; }
+        public virtual BedspreadsModel? Bedspreads { get; set; }
         /// <summary>
         ///  This property represents product sets, which image is presented.
         /// </summary>
-        public virtual ProductSetModel Sets { get; set; }
+        public virtual ProductSetModel? Sets { get; set; }
         /// <summary>
         ///  This property represents fabrics, which image is presented.
         /// </summary>
-        public virtual FabricModel Fabrics { get; set; }
+        public virtual FabricModel? Fabrics { get; set; }
         /// <summary>
         ///  This property represents marketing info of this product.
         /// </summary>
-        public virtual MarketingInfoModel MarketingInfo { get; set; }
+        public virtual MarketingInfoModel MarketingInfo { get; set; } = null!;
         #endregion
     }
 }

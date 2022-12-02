@@ -42,7 +42,7 @@
         /// <summary>
         ///  This property represents purpose of curtains.
         /// </summary>
-        public string Purpose { get; set; }
+        public string Purpose { get; set; } = null!;
         /// <summary>
         ///  This property represents ColorId column.
         /// </summary>
@@ -57,47 +57,43 @@
         /// <summary>
         ///  This property represents fabric of curtains.
         /// </summary>
-        public virtual FabricModel Fabric { get; set; }
+        public virtual FabricModel Fabric { get; set; } = null!;
         /// <summary>
         ///  This property represents material of curtains.
         /// </summary>
-        public virtual MaterialModel Material { get; set; }
+        public virtual MaterialModel Material { get; set; } = null!;
         /// <summary>
         ///  This property represents accessories of curtains.
         /// </summary>
-        public virtual AccessoriesModel Accessories { get; set; }
+        public virtual AccessoriesModel Accessories { get; set; } = null!;
         /// <summary>
         ///  This property represents type of curtains.
         /// </summary>
-        public virtual CurtainsTypeModel CurtainsType { get; set; }
+        public virtual CurtainsTypeModel CurtainsType { get; set; } = null!;
         /// <summary>
         ///  This property represents kind of curtains.
         /// </summary>
-        public virtual CurtainsKindModel CurtainsKind { get; set; }
+        public virtual CurtainsKindModel CurtainsKind { get; set; } = null!;
         /// <summary>
         ///  This property represents of Bracing.
         /// </summary>
-        public virtual BracingModel Braсing { get; set; }
+        public virtual BracingModel Braсing { get; set; } = null!;
         /// <summary>
         ///  This property represents of Color.
         /// </summary>
-        public virtual ColorModel Color { get; set; }
-        /// <summary>
-        ///  This property represents marketing information for curtains.
-        /// </summary>
-        public virtual MarketingInfoModel MarketingInfo { get; set; }
+        public virtual ColorModel Color { get; set; } = null!;
         /// <summary>
         ///  This property represents sets with that curtains.
         /// </summary>
-        public virtual ICollection<ProductSetModel> ProductSets { get; set; } = new List<ProductSetModel>();
+        public virtual ICollection<ProductSetModel>? ProductSets { get; }
         /// <summary>
         ///  This property represents Lambrequins with that curtains.
         /// </summary>
-        public virtual ICollection<LambrequinsModel> Lambrequins { get; } = new List<LambrequinsModel>();
+        public virtual ICollection<LambrequinsModel>? Lambrequins { get; }
         /// <summary>
         ///  This property represents product images with that curtains.
         /// </summary>
-        public virtual ICollection<ProductImageModel> ProductImages { get; } = new List<ProductImageModel>();
+        public virtual ICollection<ProductImageModel>? ProductImages { get; }
         #endregion
     }
 }

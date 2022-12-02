@@ -13,11 +13,11 @@
         /// <summary>
         ///  This property represents size of pillows.
         /// </summary>
-        public string Size { get; set; }
+        public string Size { get; set; } = null!;
         /// <summary>
         ///  This property represents filler of pillows.
         /// </summary>
-        public string Filler { get; set; }
+        public string Filler { get; set; } = null!;
         /// <summary>
         ///  This property represents situation, if cover of pillows is removable.
         /// </summary>
@@ -32,15 +32,15 @@
         /// <summary>
         ///  This property represents fabric of pillows.
         /// </summary>
-        public virtual FabricModel Fabric { get; set; }
+        public virtual FabricModel Fabric { get; set; } = null!;
         /// <summary>
         ///  This property represents product image about pillows.
         /// </summary>
-        public virtual ICollection<ProductImageModel> ProductImages { get; } = new List<ProductImageModel>();
+        public virtual ICollection<ProductImageModel>? ProductImages { get; }
         /// <summary>
         ///  This property represents list of product sets with that pillows.
         /// </summary>
-        public virtual ICollection<ProductSetModel> ProductSets { get; set; } = new List<ProductSetModel>();
+        public virtual ICollection<ProductSetModel>? ProductSets { get; }
         #endregion
     }
 }

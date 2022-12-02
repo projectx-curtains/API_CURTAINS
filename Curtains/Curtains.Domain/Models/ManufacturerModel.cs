@@ -9,14 +9,14 @@
         /// <summary>
         ///  This property represents country of manufacturer.
         /// </summary>
-        public string Country { get; set; }
+        public string Country { get; set; } = null!;
         #endregion
 
         #region NavigationProperties
         /// <summary>
         ///  This property represents list of fabrics with that manufacturer.
         /// </summary>
-        public virtual ICollection<FabricModel> Fabrics { get; set; } = new List<FabricModel>();
+        public virtual ICollection<FabricModel>? Fabrics { get; }
         #endregion
     }
 }

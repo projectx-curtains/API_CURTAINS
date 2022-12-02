@@ -60,51 +60,51 @@
         /// <summary>
         ///  This property represents consistency of fabric.
         /// </summary>
-        public virtual ConsistencyModel Consistency { get; set; }
+        public virtual ConsistencyModel Consistency { get; set; } = null!;
         /// <summary>
         ///  This property represents color of fabric.
         /// </summary>
-        public virtual ColorModel Color { get; set; }
+        public virtual ColorModel Color { get; set; } = null!;
         /// <summary>
         ///  This property represents decoration of fabric.
         /// </summary>
-        public virtual DecorationsModel Decorations { get; set; }
+        public virtual DecorationsModel Decorations { get; set; } = null!;
         /// <summary>
         ///  This property represents design of fabric.
         /// </summary>
-        public virtual DesignModel Design { get; set; }
+        public virtual DesignModel Design { get; set; } = null!;
         /// <summary>
         ///  This property represents kind of fabric.
         /// </summary>
-        public virtual FabricKindModel FabricKind { get; set; }
+        public virtual FabricKindModel FabricKind { get; set; } = null!;
         /// <summary>
         ///  This property represents type of fabric.
         /// </summary>
-        public virtual FabricTypeModel FabricType { get; set; }
+        public virtual FabricTypeModel FabricType { get; set; } = null!;
         /// <summary>
         ///  This property represents material of fabric.
         /// </summary>
-        public virtual MaterialModel Material { get; set; }
+        public virtual MaterialModel Material { get; set; } = null!;
         /// <summary>
         ///  This property represents manufacturer of fabric.
         /// </summary>
-        public virtual ManufacturerModel Manufacturer { get; set; }
+        public virtual ManufacturerModel Manufacturer { get; set; } = null!;
         /// <summary>
         ///  This property represents list of curtains with that fabric.
         /// </summary>
-        public virtual ICollection<CurtainModel> Curtains { get; set; } = new List<CurtainModel>();
+        public virtual ICollection<CurtainModel>? Curtains { get; set; }
         /// <summary>
         ///  This property represents list of bedspreads with that fabric.
         /// </summary>
-        public virtual ICollection<BedspreadsModel> Bedspreads { get; set; } = new List<BedspreadsModel>();
+        public virtual ICollection<BedspreadsModel>? Bedspreads { get; set; }
         /// <summary>
         ///  This property represents list of pillows with that fabric.
         /// </summary>
-        public virtual ICollection<PillowsModel> Pillows { get; set; } = new List<PillowsModel>();
+        public virtual ICollection<PillowsModel>? Pillows { get; set; }
         /// <summary>
         ///  This property represents product images of fabric.
         /// </summary>
-        public virtual ICollection<ProductImageModel> ProductImages { get; } = new List<ProductImageModel>();
+        public virtual ICollection<ProductImageModel>? ProductImages { get; }
         #endregion
     }
 }

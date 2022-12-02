@@ -5,10 +5,10 @@
         /// <summary>
         ///  This property represents Key of meta data.
         /// </summary>
-        public string Key { get; set; }
+        public string Key { get; set; } = null!;
         /// <summary>
         ///  This property represents Canonical info of meta data.
         /// </summary>
-        public string Canonical { get; set; }
+        public string Canonical { get; set; } = null!;
     }
 }

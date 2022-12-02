@@ -8,6 +8,6 @@ namespace Curtains.Domain.Models
         /// <summary>
         ///  This property represents title of entities.
         /// </summary>
-        public string Title { get; set; } = string.Empty;
+        public string Title { get; set; }
     }
 }

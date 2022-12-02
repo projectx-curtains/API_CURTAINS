@@ -9,19 +9,19 @@
         /// <summary>
         ///  This property represents CurtainsId column.
         /// </summary>
-        public int CurtainsId { get; set; }
+        public int? CurtainsId { get; set; }
         /// <summary>
         ///  This property represents PillowsId column.
         /// </summary>
-        public int PillowsId { get; set; }
+        public int? PillowsId { get; set; }
         /// <summary>
         ///  This property represents BedspreadsId column.
         /// </summary>
-        public int BedspreadsId { get; set; }
+        public int? BedspreadsId { get; set; }
         /// <summary>
         ///  This property represents LabmvrequinsId column.
         /// </summary>
-        public int LambrequinsId { get; set; }
+        public int? LambrequinsId { get; set; }
         /// <summary>
         ///  This property represents price of product set.
         /// </summary>
@@ -32,23 +32,23 @@
         /// <summary>
         ///  This property represents curtains in that product set.
         /// </summary>
-        public virtual CurtainModel Curtains { get; set; }
+        public virtual CurtainModel? Curtains { get; set; }
         /// <summary>
         ///  This property represents pillows in that product set.
         /// </summary>
-        public virtual PillowsModel Pillows { get; set; }
+        public virtual PillowsModel? Pillows { get; set; }
         /// <summary>
         ///  This property represents bedspreads in that product set.
         /// </summary>
-        public virtual BedspreadsModel Bedspreads { get; set; }
+        public virtual BedspreadsModel? Bedspreads { get; set; }
         /// <summary>
         ///  This property represents lambrequin in that set.
         /// </summary>
-        public virtual LambrequinsModel Lambrequins { get; set; }
+        public virtual LambrequinsModel? Lambrequins { get; set; }
         /// <summary>
         ///  This property represents product images with this sets.
         /// </summary>
-        public virtual ICollection<ProductImageModel> ProductImages { get; } = new List<ProductImageModel>();
+        public virtual ICollection<ProductImageModel>? ProductImages { get; }
         #endregion
     }
 }

@@ -9,11 +9,11 @@
         /// <summary>
         ///  This property represents size of bedspreads.
         /// </summary>
-        public string Size { get; set; }
+        public string Size { get; set; } = null!;
         /// <summary>
         ///  This property represents purpose of bedspreads.
         /// </summary>
-        public string Purpose { get; set; }
+        public string Purpose { get; set; } = null!;
         /// <summary>
         ///  This property represents price of bedspreads.
         /// </summary>
@@ -28,15 +28,15 @@
         /// <summary>
         ///  This property represents fabric of bedspreads.
         /// </summary>
-        public virtual FabricModel Fabric { get; set; }
+        public virtual FabricModel Fabric { get; set; } = null!;
         /// <summary>
         ///  This property represents ProductImage of bedspreads.
         /// </summary>
-        public virtual ICollection<ProductImageModel> ProductImages { get; } = new List<ProductImageModel>();
+        public virtual ICollection<ProductImageModel>? ProductImages { get; }
         /// <summary>
         ///  This property represents product sets with bedspreads.
         /// </summary>
-        public virtual ICollection<ProductSetModel> ProductSets { get; } = new List<ProductSetModel>();
+        public virtual ICollection<ProductSetModel>? ProductSets { get; }
         #endregion
     }
 }

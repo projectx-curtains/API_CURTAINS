@@ -9,23 +9,23 @@
         /// <summary>
         ///  This property represents name of person, who left the review.
         /// </summary>
-        public string PersonName { get; set; }
+        public string PersonName { get; set; } = null!;
         /// <summary>
         ///  This property represents country of person, who left the review.
         /// </summary>
-        public string Country { get; set; }
+        public string Country { get; set; } = null!;
         /// <summary>
         ///  This property represents city of person, who left the review.
         /// </summary>
-        public string City { get; set; }
+        public string City { get; set; } = null!;
         /// <summary>
         ///  This property represents review.
         /// </summary>
-        public string Review { get; set; }
+        public string Review { get; set; } = null!;
         /// <summary>
         ///  This property represents path to image of review.
         /// </summary>
-        public string ImagePath { get; set; }  
+        public string ImagePath { get; set; } = null!;
         #endregion
     }
 }
