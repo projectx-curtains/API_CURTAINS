@@ -1,6 +1,7 @@
 ﻿using Curtains.Domain.Models;
 using Curtains.Infrastructure.Database;
 using Curtains.Infrastructure.Interfaces;
+using Curtains.Infrastructure.Shared.Exceptions;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 using Microsoft.Extensions.Logging;
@@ -31,6 +32,12 @@ namespace Curtains.Infrastructure.Repositories
         /// <returns>Collection of DesignModel entities in List designs</return>
         public IEnumerable<DesignModel> GetAll()
         {
+            if (!_curtainsContext.Designs.Any())
+            {
+                _logger.LogError("Desings table is empty");
+                throw new ResourceNotFoundException();
+            }
+
             return _curtainsContext.Designs.AsNoTracking().AsEnumerable();
         }
 

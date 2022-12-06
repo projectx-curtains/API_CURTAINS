@@ -5,6 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 
 using Curtains.Infrastructure.Interfaces;
+using Curtains.Infrastructure.Shared.Exceptions;
 
 namespace Curtains.Infrastructure.Repositories
 {
@@ -32,6 +33,12 @@ namespace Curtains.Infrastructure.Repositories
         /// <returns>Collection of BedspreadsModel entities in List type</return>
         public IEnumerable<BedspreadsModel> GetAll()
         {
+            if (!_curtainsContext.Bedspreads.Any())
+            {
+                _logger.LogError("Bedspreads table is empty");
+                throw new ResourceNotFoundException();
+            }
+
             return _curtainsContext.Bedspreads.AsNoTracking().AsEnumerable();
         }
 

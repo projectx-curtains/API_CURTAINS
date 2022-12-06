@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore.ChangeTracking;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using Curtains.Infrastructure.Interfaces;
+using Curtains.Infrastructure.Shared.Exceptions;
 
 namespace Curtains.Infrastructure.Repositories
 {
@@ -31,6 +32,12 @@ namespace Curtains.Infrastructure.Repositories
         /// <returns>Collection of BracingModel entities in List type</return>
         public IEnumerable<BracingModel> GetAll()
         {
+            if (!_curtainsContext.Bracings.Any())
+            {
+                _logger.LogError("Bracings table is empty");
+                throw new ResourceNotFoundException();
+            }
+
             return _curtainsContext.Bracings.AsNoTracking().AsEnumerable();
         }
 

@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore.ChangeTracking;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using Curtains.Infrastructure.Interfaces;
+using Curtains.Infrastructure.Shared.Exceptions;
 
 namespace Curtains.Infrastructure.Repositories
 {
@@ -31,6 +32,12 @@ namespace Curtains.Infrastructure.Repositories
         /// <returns>Collection of OurWorksModel entities in List OurWorks</return>
         public IEnumerable<OurWorksModel> GetAll()
         {
+            if (!_curtainsContext.OurWorks.Any())
+            {
+                _logger.LogError("Our works table is empty");
+                throw new ResourceNotFoundException();
+            }
+
             return _curtainsContext.OurWorks.AsNoTracking().AsEnumerable();
         }
 

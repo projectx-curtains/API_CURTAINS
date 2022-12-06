@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore.ChangeTracking;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using Curtains.Infrastructure.Interfaces;
+using Curtains.Infrastructure.Shared.Exceptions;
 
 namespace Curtains.Infrastructure.Repositories
 {
@@ -31,6 +32,12 @@ namespace Curtains.Infrastructure.Repositories
         /// <returns>Collection of LambrequinsModel entities in List Lambrequins</return>
         public IEnumerable<LambrequinsModel> GetAll()
         {
+            if (!_curtainsContext.Lambrequins.Any())
+            {
+                _logger.LogError("Lambrequins table is empty");
+                throw new ResourceNotFoundException();
+            }
+
             return _curtainsContext.Lambrequins.AsNoTracking().AsEnumerable();
         }
 

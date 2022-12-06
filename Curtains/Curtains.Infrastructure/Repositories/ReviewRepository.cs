@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore.ChangeTracking;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using Curtains.Infrastructure.Interfaces;
+using Curtains.Infrastructure.Shared.Exceptions;
 
 namespace Curtains.Infrastructure.Repositories
 {
@@ -31,6 +32,12 @@ namespace Curtains.Infrastructure.Repositories
         /// <returns>Collection of ReviewModel entities in List Review</return>
         public IEnumerable<ReviewModel> GetAll()
         {
+            if (!_curtainsContext.Reviews.Any())
+            {
+                _logger.LogError("Reviews table is empty");
+                throw new ResourceNotFoundException();
+            }
+
             return _curtainsContext.Reviews.AsNoTracking().AsEnumerable();
         }
 

@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Curtains.Infrastructure.Interfaces;
+using Curtains.Infrastructure.Shared.Exceptions;
 
 namespace Curtains.Infrastructure.Repositories
 {
@@ -36,6 +37,12 @@ namespace Curtains.Infrastructure.Repositories
         /// <returns>Collection of ColorModel entities in List type</return>
         public IEnumerable<ColorModel> GetAll()
         {
+            if (!_curtainsContext.Colors.Any())
+            {
+                _logger.LogError("Colors table is empty");
+                throw new ResourceNotFoundException();
+            }
+
             return _curtainsContext.Colors.AsNoTracking().AsEnumerable();
         }
 

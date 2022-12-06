@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Curtains.Infrastructure.Interfaces;
+using Curtains.Infrastructure.Shared.Exceptions;
 
 namespace Curtains.Infrastructure.Repositories
 {
@@ -36,6 +37,12 @@ namespace Curtains.Infrastructure.Repositories
         /// <returns>Collection of PillowsModel entities in List Pillows</return>
         public IEnumerable<PillowsModel> GetAll()
         {
+            if (!_curtainsContext.Pillows.Any())
+            {
+                _logger.LogError("Pillows table is empty");
+                throw new ResourceNotFoundException();
+            }
+
             return _curtainsContext.Pillows.AsNoTracking().AsEnumerable();
         }
 

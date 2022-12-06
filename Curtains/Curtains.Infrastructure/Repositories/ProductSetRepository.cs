@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore.ChangeTracking;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using Curtains.Infrastructure.Interfaces;
+using Curtains.Infrastructure.Shared.Exceptions;
 
 namespace Curtains.Infrastructure.Repositories
 {
@@ -31,6 +32,12 @@ namespace Curtains.Infrastructure.Repositories
         /// <returns>Collection of ProductSetModel entities in List ProductSet</return>
         public IEnumerable<ProductSetModel> GetAll()
         {
+            if (!_curtainsContext.Sets.Any())
+            {
+                _logger.LogError("Product set table is empty");
+                throw new ResourceNotFoundException();
+            }
+
             return _curtainsContext.Sets.AsNoTracking().AsEnumerable();
         }
 

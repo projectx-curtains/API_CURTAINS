@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore.ChangeTracking;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using Curtains.Infrastructure.Interfaces;
+using Curtains.Infrastructure.Shared.Exceptions;
 
 namespace Curtains.Infrastructure.Repositories
 {
@@ -31,6 +32,12 @@ namespace Curtains.Infrastructure.Repositories
         /// <returns>Collection of CurtainsKindModel entities in List type</return>
         public IEnumerable<CurtainsKindModel> GetAll()
         {
+            if (!_curtainsContext.CurtainsKinds.Any())
+            {
+                _logger.LogError("Curtains kinds table is empty");
+                throw new ResourceNotFoundException();
+            }
+
             return _curtainsContext.CurtainsKinds.AsNoTracking().AsEnumerable();
         }
 
