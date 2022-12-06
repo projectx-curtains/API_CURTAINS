@@ -42,7 +42,7 @@
         /// <summary>
         ///  This property represents purpose of curtains.
         /// </summary>
-        public string Purpose { get; set; } = null!;
+        public string Purpose { get; set; }
         /// <summary>
         ///  This property represents ColorId column.
         /// </summary>
@@ -57,31 +57,31 @@
         /// <summary>
         ///  This property represents fabric of curtains.
         /// </summary>
-        public virtual FabricModel Fabric { get; set; } = null!;
+        public virtual FabricModel Fabric { get; set; }
         /// <summary>
         ///  This property represents material of curtains.
         /// </summary>
-        public virtual MaterialModel Material { get; set; } = null!;
+        public virtual MaterialModel Material { get; set; }
         /// <summary>
         ///  This property represents accessories of curtains.
         /// </summary>
-        public virtual AccessoriesModel Accessories { get; set; } = null!;
+        public virtual AccessoriesModel Accessories { get; set; }
         /// <summary>
         ///  This property represents type of curtains.
         /// </summary>
-        public virtual CurtainsTypeModel CurtainsType { get; set; } = null!;
+        public virtual CurtainsTypeModel CurtainsType { get; set; }
         /// <summary>
         ///  This property represents kind of curtains.
         /// </summary>
-        public virtual CurtainsKindModel CurtainsKind { get; set; } = null!;
+        public virtual CurtainsKindModel CurtainsKind { get; set; }
         /// <summary>
         ///  This property represents of Bracing.
         /// </summary>
-        public virtual BracingModel Braсing { get; set; } = null!;
+        public virtual BracingModel Braсing { get; set; }
         /// <summary>
         ///  This property represents of Color.
         /// </summary>
-        public virtual ColorModel Color { get; set; } = null!;
+        public virtual ColorModel Color { get; set; }
         /// <summary>
         ///  This property represents sets with that curtains.
         /// </summary>

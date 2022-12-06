@@ -9,7 +9,7 @@
         /// <summary>
         ///  This property represents path to image of our works.
         /// </summary>
-        public string ImagePath { get; set; } = null!;
+        public string ImagePath { get; set; }
         #endregion
 
     }

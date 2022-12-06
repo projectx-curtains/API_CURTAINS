@@ -60,35 +60,35 @@
         /// <summary>
         ///  This property represents consistency of fabric.
         /// </summary>
-        public virtual ConsistencyModel Consistency { get; set; } = null!;
+        public virtual ConsistencyModel Consistency { get; set; }
         /// <summary>
         ///  This property represents color of fabric.
         /// </summary>
-        public virtual ColorModel Color { get; set; } = null!;
+        public virtual ColorModel Color { get; set; }
         /// <summary>
         ///  This property represents decoration of fabric.
         /// </summary>
-        public virtual DecorationsModel Decorations { get; set; } = null!;
+        public virtual DecorationsModel Decorations { get; set; }
         /// <summary>
         ///  This property represents design of fabric.
         /// </summary>
-        public virtual DesignModel Design { get; set; } = null!;
+        public virtual DesignModel Design { get; set; }
         /// <summary>
         ///  This property represents kind of fabric.
         /// </summary>
-        public virtual FabricKindModel FabricKind { get; set; } = null!;
+        public virtual FabricKindModel FabricKind { get; set; }
         /// <summary>
         ///  This property represents type of fabric.
         /// </summary>
-        public virtual FabricTypeModel FabricType { get; set; } = null!;
+        public virtual FabricTypeModel FabricType { get; set; }
         /// <summary>
         ///  This property represents material of fabric.
         /// </summary>
-        public virtual MaterialModel Material { get; set; } = null!;
+        public virtual MaterialModel Material { get; set; }
         /// <summary>
         ///  This property represents manufacturer of fabric.
         /// </summary>
-        public virtual ManufacturerModel Manufacturer { get; set; } = null!;
+        public virtual ManufacturerModel Manufacturer { get; set; }
         /// <summary>
         ///  This property represents list of curtains with that fabric.
         /// </summary>

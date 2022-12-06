@@ -20,7 +20,7 @@
         /// <summary>
         ///  This property represents color of accessories.
         /// </summary>
-        public virtual ColorModel Color { get; set; } = null!;
+        public virtual ColorModel Color { get; set; }
         /// <summary>
         ///  This property represents list of curtains in which there are accessories.
         /// </summary>

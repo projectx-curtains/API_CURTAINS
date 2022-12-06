@@ -6,11 +6,11 @@
         /// <summary>
         ///  This property represents code of color.
         /// </summary>
-        public string Code { get; set; } = null!;
+        public string Code { get; set; }
         /// <summary>
         ///  This property represents code of color group.
         /// </summary>
-        public string ColorGroup { get; set; } = null!;
+        public string ColorGroup { get; set; }
         #endregion
 
         #region NavigationProperties

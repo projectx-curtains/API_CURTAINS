@@ -30,7 +30,7 @@ namespace Curtains.Domain.Models
         /// <summary>
         ///  This property represents ProductImage.
         /// </summary>
-        public virtual ProductImageModel ProductImage { get; set; } = null!;
+        public virtual ProductImageModel ProductImage { get; set; }
         #endregion
     }
 }

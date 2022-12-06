@@ -9,7 +9,7 @@
         /// <summary>
         ///  This property represents country of manufacturer.
         /// </summary>
-        public string Country { get; set; } = null!;
+        public string Country { get; set; }
         #endregion
 
         #region NavigationProperties

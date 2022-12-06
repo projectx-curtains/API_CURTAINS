@@ -33,12 +33,12 @@ namespace Curtains.Domain.Models
         /// <summary>
         ///  This property represents, who created entity.
         /// </summary>
-        public string CreatedBy { get; set; } = null!;
+        public string CreatedBy { get; set; }
 
         /// <summary>
         ///  This property represents, who modified entity.
         /// </summary>
-        public string ModifiedBy { get; set; } = null!;
+        public string ModifiedBy { get; set; }
 
         /// <summary>
         ///  This property represents situation, if entity is deleted.

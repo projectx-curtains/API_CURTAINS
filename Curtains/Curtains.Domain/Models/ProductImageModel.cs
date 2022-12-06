@@ -57,7 +57,7 @@
         /// <summary>
         ///  This property represents marketing info of this product.
         /// </summary>
-        public virtual MarketingInfoModel MarketingInfo { get; set; } = null!;
+        public virtual MarketingInfoModel MarketingInfo { get; set; }
         #endregion
     }
 }
