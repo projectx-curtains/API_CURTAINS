@@ -9,7 +9,7 @@
         /// <summary>
         ///  This property represents path to image of product.
         /// </summary>
-        public string ImagePath { get; set; } = null!;
+        public string ImagePath { get; set; }
         /// <summary>
         ///  This property represents CurtainsId.
         /// </summary>
