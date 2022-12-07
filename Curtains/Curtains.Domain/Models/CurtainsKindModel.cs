@@ -6,7 +6,7 @@
         /// <summary>
         ///  This property represents list of curtains with that kind.
         /// </summary>
-        public virtual ICollection<CurtainModel>? Curtains { get; }
+        public virtual ICollection<CurtainModel> Curtains { get; }
         #endregion
     }
 }

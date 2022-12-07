@@ -48,7 +48,7 @@
         /// <summary>
         ///  This property represents product images with this sets.
         /// </summary>
-        public virtual ICollection<ProductImageModel>? ProductImages { get; }
+        public virtual ICollection<ProductImageModel> ProductImages { get; }
         #endregion
     }
 }

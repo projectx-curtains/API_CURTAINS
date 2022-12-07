@@ -92,19 +92,19 @@
         /// <summary>
         ///  This property represents list of curtains with that fabric.
         /// </summary>
-        public virtual ICollection<CurtainModel>? Curtains { get; set; }
+        public virtual ICollection<CurtainModel> Curtains { get; set; }
         /// <summary>
         ///  This property represents list of bedspreads with that fabric.
         /// </summary>
-        public virtual ICollection<BedspreadsModel>? Bedspreads { get; set; }
+        public virtual ICollection<BedspreadsModel> Bedspreads { get; set; }
         /// <summary>
         ///  This property represents list of pillows with that fabric.
         /// </summary>
-        public virtual ICollection<PillowsModel>? Pillows { get; set; }
+        public virtual ICollection<PillowsModel> Pillows { get; set; }
         /// <summary>
         ///  This property represents product images of fabric.
         /// </summary>
-        public virtual ICollection<ProductImageModel>? ProductImages { get; }
+        public virtual ICollection<ProductImageModel> ProductImages { get; }
         #endregion
     }
 }

@@ -48,7 +48,7 @@
         /// <summary>
         ///  This property represents product sets with this lambrequin.
         /// </summary>
-        public virtual ICollection<ProductSetModel>? ProductSets { get; }
+        public virtual ICollection<ProductSetModel> ProductSets { get; }
         #endregion
     }
 }

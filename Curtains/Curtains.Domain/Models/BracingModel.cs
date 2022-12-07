@@ -6,9 +6,9 @@ namespace Curtains.Domain.Models
     public class BracingModel : ExtendedBaseEntity
     {
         #region NavigationProperties
-        public virtual ICollection<CurtainModel>? Curtains { get; }
+        public virtual ICollection<CurtainModel> Curtains { get; }
 
-        public virtual ICollection<LambrequinsModel>? Lambrequins { get; }
+        public virtual ICollection<LambrequinsModel> Lambrequins { get; }
         #endregion
     }
 }

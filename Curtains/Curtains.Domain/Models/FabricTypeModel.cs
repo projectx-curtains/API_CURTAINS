@@ -5,6 +5,6 @@
         /// <summary>
         ///  This property represents list of fabrics with that type.
         /// </summary>
-        public virtual ICollection<FabricModel>? Fabrics { get; }
+        public virtual ICollection<FabricModel> Fabrics { get; }
     }
 }

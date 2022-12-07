@@ -32,11 +32,11 @@
         /// <summary>
         ///  This property represents ProductImage of bedspreads.
         /// </summary>
-        public virtual ICollection<ProductImageModel>? ProductImages { get; }
+        public virtual ICollection<ProductImageModel> ProductImages { get; }
         /// <summary>
         ///  This property represents product sets with bedspreads.
         /// </summary>
-        public virtual ICollection<ProductSetModel>? ProductSets { get; }
+        public virtual ICollection<ProductSetModel> ProductSets { get; }
         #endregion
     }
 }

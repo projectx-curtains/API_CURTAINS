@@ -85,15 +85,15 @@
         /// <summary>
         ///  This property represents sets with that curtains.
         /// </summary>
-        public virtual ICollection<ProductSetModel>? ProductSets { get; }
+        public virtual ICollection<ProductSetModel> ProductSets { get; }
         /// <summary>
         ///  This property represents Lambrequins with that curtains.
         /// </summary>
-        public virtual ICollection<LambrequinsModel>? Lambrequins { get; }
+        public virtual ICollection<LambrequinsModel> Lambrequins { get; }
         /// <summary>
         ///  This property represents product images with that curtains.
         /// </summary>
-        public virtual ICollection<ProductImageModel>? ProductImages { get; }
+        public virtual ICollection<ProductImageModel> ProductImages { get; }
         #endregion
     }
 }

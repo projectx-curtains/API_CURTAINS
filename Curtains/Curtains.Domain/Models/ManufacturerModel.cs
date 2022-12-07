@@ -16,7 +16,7 @@
         /// <summary>
         ///  This property represents list of fabrics with that manufacturer.
         /// </summary>
-        public virtual ICollection<FabricModel>? Fabrics { get; }
+        public virtual ICollection<FabricModel> Fabrics { get; }
         #endregion
     }
 }

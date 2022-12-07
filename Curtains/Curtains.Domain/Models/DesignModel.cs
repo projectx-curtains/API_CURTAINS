@@ -6,7 +6,7 @@
         /// <summary>
         ///  This property represents list of fabrics of that design.
         /// </summary>
-        public virtual ICollection<FabricModel>? Fabrics { get; }
+        public virtual ICollection<FabricModel> Fabrics { get; }
         #endregion
     }
 }

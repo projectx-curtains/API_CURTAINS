@@ -17,15 +17,15 @@
         /// <summary>
         ///  This property represents list of fabrics with that color.
         /// </summary>
-        public virtual ICollection<FabricModel>? Fabrics { get; }
+        public virtual ICollection<FabricModel> Fabrics { get; }
         /// <summary>
         ///  This property represents list of accessories with that color.
         /// </summary>
-        public virtual ICollection<AccessoriesModel>? Accessories { get; }
+        public virtual ICollection<AccessoriesModel> Accessories { get; }
         /// <summary>
         ///  This property represents list of Curtains with that color.
         /// </summary>
-        public virtual ICollection<CurtainModel>? Curtains { get; }
+        public virtual ICollection<CurtainModel> Curtains { get; }
         #endregion
     }
 }
