@@ -8,13 +8,9 @@ namespace Curtains.Application.DTO
     /// <summary>
     /// Class <c> ReviewDTO </c> describes interaction model for ReviewController and database.
     /// </summary>
-    public class ReviewDTO
+    public class ReviewDTO : BaseDTO
     {
         #region PropertiesRegion
-        /// <summary>
-        /// This property represents unique identifier for data tranfer objects.
-        /// </summary>
-        public int Id { get; set; }
 
         /// <summary>
         ///  This property represents name of person, who left the review.

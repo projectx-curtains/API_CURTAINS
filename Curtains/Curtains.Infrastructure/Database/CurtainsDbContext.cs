@@ -42,6 +42,11 @@ namespace Curtains.Infrastructure.Database
         protected override void OnModelCreating(ModelBuilder builder)
         {
             builder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
+
+            builder
+            .Entity<ProductImageModel>()
+            .HasOne(u => u.MarketingInfo)
+            .WithOne(p => p.ProductImage);
         }
 
         public bool HasActiveTransaction => _currentTransaction != null;

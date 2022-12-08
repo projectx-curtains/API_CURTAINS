@@ -21,7 +21,7 @@
         /// <summary>
         ///  This property represents DecorationId column.
         /// </summary>
-        public int DecorationId { get; set; }
+        public int DecorationsId { get; set; }        
         /// <summary>
         ///  This property represents ManufacturerId column.
         /// </summary>
@@ -85,6 +85,10 @@
         ///  This property represents material of fabric.
         /// </summary>
         public virtual MaterialModel Material { get; set; }
+        /// <summary>
+        ///  This property represents manufacturer of fabric.
+        /// </summary>
+        public virtual DecorationsModel Decorations { get; set; }
         /// <summary>
         ///  This property represents manufacturer of fabric.
         /// </summary>
