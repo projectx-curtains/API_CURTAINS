@@ -14,7 +14,7 @@
         /// <summary>
         /// Numbers of existing products ordered by the user
         /// </summary>
-        public int[] MarketingInfosId { get; set; }
+        public int[] ProductIds { get; set; }
         #endregion
     }
 }
