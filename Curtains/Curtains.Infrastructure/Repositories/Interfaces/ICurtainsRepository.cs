@@ -1,20 +1,15 @@
 ﻿using Curtains.Domain.Models;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Curtains.Infrastructure.Interfaces
 {
     public interface ICurtainsRepository
     {
-        IEnumerable<CurtainsModel> GetAll();
-        Task<CurtainsModel> GetByIdAsync(int Id);
-        Task<EntityEntry<CurtainsModel>> InsertAsync(CurtainsModel entity, CancellationToken cancellationToken);
-        Task UpdateAsync(CurtainsModel entity);
-        Task RemoveAsync(CurtainsModel entity);
+        IEnumerable<CurtainModel> GetAll();
+        Task<CurtainModel> GetByIdAsync(int Id);
+        Task<EntityEntry<CurtainModel>> InsertAsync(CurtainModel entity, CancellationToken cancellationToken);
+        Task UpdateAsync(CurtainModel entity);
+        Task RemoveAsync(CurtainModel entity);
         void SaveChangesAsync();
     }
 }

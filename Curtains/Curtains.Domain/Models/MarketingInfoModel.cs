@@ -36,5 +36,12 @@ namespace Curtains.Domain.Models
         /// </summary>
         public virtual ProductImageModel ProductImage { get; set; }
         #endregion
+
+        #region NavigationProperties
+        /// <summary>
+        ///  This property represents ProductImage.
+        /// </summary>
+        public virtual ProductImageModel ProductImage { get; set; }
+        #endregion
     }
 }

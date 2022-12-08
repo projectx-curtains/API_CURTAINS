@@ -1,15 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Curtains.Domain.Models
+﻿namespace Curtains.Domain.Models
 {
     /// <summary>
     ///  This class describes model of works, that are shown to customers on website.
     /// </summary>
-    public class OurWorksModel : BaseEntity
+    public class OurWorksModel : ExtendedByTitleBaseEntity
     {
         #region PropertiesRegion
         /// <summary>

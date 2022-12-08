@@ -3,12 +3,8 @@ using Curtains.Infrastructure.Database;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Curtains.Infrastructure.Interfaces;
+using Curtains.Infrastructure.Shared.Exceptions;
 
 namespace Curtains.Infrastructure.Repositories
 {
@@ -36,6 +32,12 @@ namespace Curtains.Infrastructure.Repositories
         /// <returns>Collection of ManufacturerModel entities in List Manufacturer</return>
         public IEnumerable<ManufacturerModel> GetAll()
         {
+            if (!_curtainsContext.Manufacturers.Any())
+            {
+                _logger.LogError("Manufacturers table is empty");
+                throw new ResourceNotFoundException();
+            }
+
             return _curtainsContext.Manufacturers.AsNoTracking().AsEnumerable();
         }
 
@@ -78,7 +80,7 @@ namespace Curtains.Infrastructure.Repositories
         }
 
         /// <summary>
-        /// This method update <c> ManufacturerModel <c> entity in database 
+        /// This method update <c> ManufacturerModel <c> entity in database
         /// </summary>
         /// <param name = "entity" > ManufacturerModel Manufacturer</param>
         public async Task UpdateAsync(ManufacturerModel entity)
@@ -98,7 +100,7 @@ namespace Curtains.Infrastructure.Repositories
         }
 
         /// <summary>
-        /// This method remove <c> ManufacturerModel <c> entity from database 
+        /// This method remove <c> ManufacturerModel <c> entity from database
         /// </summary>
         /// <param name = "entity" > ManufacturerModel Manufacturer</param>
         public async Task RemoveAsync(ManufacturerModel entity)
@@ -114,7 +116,7 @@ namespace Curtains.Infrastructure.Repositories
         }
 
         /// <summary>
-        /// This method save changes in database 
+        /// This method save changes in database
         /// </summary>
         public async void SaveChangesAsync()
         {

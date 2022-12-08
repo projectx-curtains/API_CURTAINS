@@ -5,12 +5,6 @@
     /// </summary>
     public class AccessoriesModel : ExtendedBaseEntity
     {
-        public AccessoriesModel()
-        {
-            Curtains = new HashSet<CurtainsModel>();
-            UserOrders = new HashSet<UserOrderModel>();
-        }
-
         #region PropertiesRegion
         /// <summary>
         ///  This property represents the ColorId column.
@@ -28,13 +22,9 @@
         /// </summary>
         public virtual ColorModel Color { get; set; }
         /// <summary>
-        ///  This property represents list of UserOrders in which there are accessoreis.
-        /// </summary>
-        public virtual ICollection<UserOrderModel> UserOrders { get; set; }
-        /// <summary>
         ///  This property represents list of curtains in which there are accessories.
         /// </summary>
-        public virtual ICollection<CurtainsModel> Curtains { get; set; }
+        public virtual ICollection<CurtainModel>?   Curtains { get; }
         #endregion
     }
 }
