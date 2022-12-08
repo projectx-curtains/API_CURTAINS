@@ -1,10 +1,9 @@
-using Curtains.Application.DTO;
+using Curtains.Application.ConstructorObjects;
 
-namespace Curtains.Application.Interfaces
+namespace Curtains.Application.CurtainsServices.Interfaces
 {
     public interface IMessageConstructor
     {
-        public string Construct(OrderDTO order);
-        public string Construct(ConstructorDTO curtain);
+        public string Construct(Order order);
     }
 }

@@ -1,4 +1,4 @@
-namespace Curtains.Application.Interfaces
+namespace Curtains.Application.CurtainsServices.Interfaces
 {
     public interface IMessageSender
     {

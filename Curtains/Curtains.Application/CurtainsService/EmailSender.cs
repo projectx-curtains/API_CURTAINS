@@ -1,6 +1,6 @@
 using System.Net;
 using System.Net.Mail;
-using Curtains.Application.Interfaces;
+using Curtains.Application.CurtainsServices.Interfaces;
 using Microsoft.Extensions.Configuration;
 
 namespace Curtains.Application.CurtainsService

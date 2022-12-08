@@ -1,8 +1,9 @@
-﻿namespace Curtains.Application.DTO
+using Curtains.Application.ConstructorObjects.Interfaces;
+
+namespace Curtains.Application.ConstructorObjects
 {
-    public class OrderDTO
+    public class Order
     {
-        #region PropertiesRegion
         /// <summary>
         ///  This property represents comment to order.
         /// </summary>
@@ -14,7 +15,6 @@
         /// <summary>
         /// Numbers of existing products ordered by the user
         /// </summary>
-        public int[] MarketingInfosId { get; set; }
-        #endregion
+        public virtual IEnumerable<IProduct> Products { get; set; }
     }
 }

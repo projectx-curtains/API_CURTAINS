@@ -1,11 +1,7 @@
 ﻿using AutoMapper;
+using Curtains.Application.ConstructorObjects;
 using Curtains.Application.DTO;
 using Curtains.Domain.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Curtains.Application.AutoMapping
 {
@@ -14,6 +10,7 @@ namespace Curtains.Application.AutoMapping
         public BedspreadsProfile()
         {
             CreateMap<BedspreadsModel, BedspreadsDTO>().ReverseMap();
+            CreateMap<BedspreadsDTO, BedspreadsProduct>().ReverseMap();
         }
     }
 }

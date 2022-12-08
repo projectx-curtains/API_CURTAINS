@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Curtains.Application.ConstructorObjects;
 using Curtains.Application.DTO;
 using Curtains.Domain.Models;
 using System;
@@ -14,6 +15,7 @@ namespace Curtains.Application.AutoMapping
         public CurtainsProfile()
         {
             CreateMap<CurtainModel, CurtainsDTO>().ReverseMap();
+            CreateMap<CurtainProduct, CurtainsDTO>().ReverseMap();
         }
     }
 }

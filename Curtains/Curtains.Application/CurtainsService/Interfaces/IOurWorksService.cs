@@ -1,6 +1,6 @@
 using Curtains.Application.DTO;
 
-namespace Curtains.Application.Interfaces
+namespace Curtains.Application.CurtainsServices.Interfaces
 {
     public interface IOurWorksService
     {
