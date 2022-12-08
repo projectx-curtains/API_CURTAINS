@@ -1,12 +1,10 @@
 ﻿using Curtains.Infrastructure.Interfaces;
 using Nest;
-using Nest.JsonNetSerializer;
 using Curtains.Domain.Projections;
-using System;
+using Curtains.Infrastructure.SearchQueries;
 
 namespace Curtains.Infrastructure.SearchEngine
 {
-
     public class CurtainsSearchRepository : ICurtainsSearchRepository
     {
 
@@ -17,29 +15,42 @@ namespace Curtains.Infrastructure.SearchEngine
             _elasticClient = elasticsearchClient;
         }
 
-        public async Task<List<CurtainsProjection>> GetCurtains(CurtainsProjection model, string indexName)
+        public async Task<List<CurtainsProjection>> GetCurtains(ElasticSearchQuery<CurtainsProjection> model)
         {
             var response = await _elasticClient.SearchAsync<CurtainsProjection>(s => s
-                .Index(indexName)
                     .Query(q => q
-                        .Match(m => m
-                            .Field(f => f.Id.ToString())
-                            .Query(model.Id.ToString())
+                        .Terms(t => t
+                            .Field(f => f.Color)
+                            .Terms(model.Filters.Colors)
                         )
                     )
                 );
 
-            var list = response.Hits.Select( x => new CurtainsProjection()
+            if (!response.IsValid)
             {
-                Width = x.Source.Width
+                throw new Exception(response.DebugInformation);
+            }
+            var list = response.Hits.Select(x => new CurtainsProjection()
+            {
+                Id = x.Source.Id,
+                Title = x.Source.Title,
+                Description = x.Source.Description,
+                Purpose = x.Source.Purpose,
+                Price = x.Source.Price,
+                Density = x.Source.Density,
+                SunProtection = x.Source.SunProtection,
+                Height = x.Source.Height,
+                Width = x.Source.Width,
+                Fabric = x.Source.Fabric,
+                Color = x.Source.Color,
+                Material = x.Source.Material,
+                CurtainsType = x.Source.CurtainsType,
+                CurtainsKind = x.Source.CurtainsKind
             }).ToList();
+
             return list;
-        }
 
-        private CurtainsProjection ConvertHitToModel(IHit<CurtainsProjection> hit)
 
-        {
-            return new CurtainsProjection();            
         }
             
         /*public async Task<ISearchResponse<CurtainsProjection>> GetCurtainsByFabric(string indexName, string fabricId)

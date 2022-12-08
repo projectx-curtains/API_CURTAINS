@@ -4,7 +4,7 @@ using Curtains.Infrastructure.Interfaces;
 using Microsoft.Extensions.Logging;
 using Curtains.Domain.Projections;
 using Curtains.Application.DTO;
-using Nest;
+using Curtains.Infrastructure.SearchQueries;
 
 namespace Curtains.Application.SearchService
 {
@@ -17,8 +17,10 @@ namespace Curtains.Application.SearchService
         private readonly IMapper _mapper;
         #endregion
 
-        public CurtainSearchService(ILogger logger, ICurtainsRepository curtainsRepository,
-            IMapper mapper, IElasticCurtainsIndexRepository elasticIndexRepository,
+        public CurtainSearchService(ILogger logger,
+            ICurtainsRepository curtainsRepository,
+            IMapper mapper,
+            IElasticCurtainsIndexRepository elasticIndexRepository,
             ICurtainsSearchRepository curtainsSearchRepository)
         {
             _curtainsRepository = curtainsRepository;
@@ -39,10 +41,10 @@ namespace Curtains.Application.SearchService
             }
         }
 
-        public async Task<List<CurtainsProjection>> CurtainsSearch(CurtainsDTO modelDTO, string indexName)
-        {
-            var model = _mapper.Map<CurtainsProjection>(modelDTO);
-            var response = await _curtainsSearchRepository.GetCurtains(model, indexName);
+        public async Task<List<CurtainsProjection>> CurtainsSearch(ElasticSearchQuery<CurtainSearchDTO> model)
+        {   
+            var modelProjection  = _mapper.Map<ElasticSearchQuery<CurtainsProjection>>(model);
+            var response = await _curtainsSearchRepository.GetCurtains(modelProjection);
             return response;
         }
         #endregion

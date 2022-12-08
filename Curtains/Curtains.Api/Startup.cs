@@ -26,7 +26,6 @@ namespace Curtains.Api
         {
             var connectionString = "Server=localhost,1433;Database=Curtains;User=sa;Password=Password_123";
             // var connectionString = _configuration.GetConnectionString("CurtainsDataBase");
-            Console.WriteLine(connectionString);
             services
                 .AddApplication()
                 .AddInfrastructure(connectionString, _configuration);
@@ -54,6 +53,5 @@ namespace Curtains.Api
                 .UseOpenApi(_environment.ApplicationName)
                 .UseEndpoints(endpoints => endpoints.MapControllers());
         }
-
     }
 }

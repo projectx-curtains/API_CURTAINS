@@ -20,7 +20,12 @@ namespace Curtains.Infrastructure.Repositories
         #region FieldsRegion
         private readonly ILogger _logger;
         private readonly CurtainsDbContext _curtainsContext;
-        private IQueryable<CurtainsModel> Query => _curtainsContext.Curtains.Include(x => x.Sets).Include(x => x.UserOrders);
+        private IQueryable<CurtainsModel> Query => _curtainsContext.Curtains
+            .Include(x => x.Fabric)
+            .Include(x => x.CurtainsKind)
+            .Include(x => x.CurtainsType)
+            .Include(x => x.Fabric.Color)
+            .Include(x => x.Material);
         #endregion
 
         public CurtainsRepository(CurtainsDbContext curtainsContext, ILogger logger)
@@ -36,7 +41,7 @@ namespace Curtains.Infrastructure.Repositories
         /// <returns>Collection of CurtainsModel entities in List type</return>
         public IEnumerable<CurtainsModel> GetAll()
         {
-            return _curtainsContext.Curtains.AsNoTracking().AsEnumerable();
+            return Query.AsNoTracking().AsEnumerable();
         }
 
         /// <summary>

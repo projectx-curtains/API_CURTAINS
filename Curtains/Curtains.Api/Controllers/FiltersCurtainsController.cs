@@ -4,6 +4,7 @@ using Curtains.Infrastructure.Interfaces;
 using Curtains.Domain.Projections;
 using Curtains.Application.DTO;
 using Curtains.Application.SearchService.Interfaces;
+using Curtains.Infrastructure.SearchQueries;
 
 namespace Curtains.Api.Controllers
 {
@@ -30,21 +31,22 @@ namespace Curtains.Api.Controllers
         [HttpPost]
         public ActionResult<IEnumerable<CurtainsModel>> AddIndex(CurtainsProjection model, string indexName)
         {
-            var response = _elastic.Index(model, indexName);
+            _elastic.Index(model, indexName);
             return Ok();
         }
 
         [HttpDelete]
         public ActionResult DeleteIndex(string id, string indexName)
         {
-            var response = _elastic.Deleted(id, indexName);
+            _elastic.Deleted(id, indexName);
             return Ok();
         }
+        
         [Route("CurtainsSearch")]
         [HttpPost]
-        public async Task<ActionResult> CurtainSearch([FromQuery] CurtainsDTO modelDTO, string indexName)
+        public async Task<ActionResult<List<CurtainsProjection>>> CurtainSearch([FromQuery] ElasticSearchQuery<CurtainSearchDTO> request)
         {
-            var response = await _searchService.CurtainsSearch(modelDTO, indexName);
+            var response = await _searchService.CurtainsSearch(request);
             return Ok(response);
         }
     }
