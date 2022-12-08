@@ -18,6 +18,13 @@
 **/.idea/**/contentModel.xml
 **/.idea/**/modules.xml
 
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+!.vscode/*.code-snippets
+
 *.suo
 *.user
 .vs/
@@ -26,7 +33,7 @@
 _UpgradeReport_Files/
 [Pp]ackages/
 
-**/log.txt
+log.txt
 Thumbs.db
 Desktop.ini
 .DS_Store
