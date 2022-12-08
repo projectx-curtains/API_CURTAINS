@@ -88,10 +88,6 @@
         /// <summary>
         ///  This property represents manufacturer of fabric.
         /// </summary>
-        public virtual DecorationsModel Decorations { get; set; }
-        /// <summary>
-        ///  This property represents manufacturer of fabric.
-        /// </summary>
         public virtual ManufacturerModel Manufacturer { get; set; }
         /// <summary>
         ///  This property represents list of curtains with that fabric.
