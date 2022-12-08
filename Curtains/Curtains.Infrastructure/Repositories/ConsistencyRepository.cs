@@ -3,12 +3,8 @@ using Curtains.Infrastructure.Database;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Curtains.Infrastructure.Interfaces;
+using Curtains.Infrastructure.Shared.Exceptions;
 
 namespace Curtains.Infrastructure.Repositories
 {
@@ -36,6 +32,12 @@ namespace Curtains.Infrastructure.Repositories
         /// <returns>Collection of ConsistencyModel entities in List type</return>
         public IEnumerable<ConsistencyModel> GetAll()
         {
+            if (!_curtainsContext.Consistencies.Any())
+            {
+                _logger.LogError("Consistencies table is empty");
+                throw new ResourceNotFoundException();
+            }
+
             return _curtainsContext.Consistencies.AsNoTracking().AsEnumerable();
         }
 
@@ -78,7 +80,7 @@ namespace Curtains.Infrastructure.Repositories
         }
 
         /// <summary>
-        /// This method update <c> ConsistencyModel <c> entity in database 
+        /// This method update <c> ConsistencyModel <c> entity in database
         /// </summary>
         /// <param name = "entity" > ConsistencyModel type</param>
         public async Task UpdateAsync(ConsistencyModel entity)
@@ -98,7 +100,7 @@ namespace Curtains.Infrastructure.Repositories
         }
 
         /// <summary>
-        /// This method remove <c> ConsistencyModel <c> entity from database 
+        /// This method remove <c> ConsistencyModel <c> entity from database
         /// </summary>
         /// <param name = "entity" > ConsistencyModel type</param>
         public async Task RemoveAsync(ConsistencyModel entity)
@@ -114,7 +116,7 @@ namespace Curtains.Infrastructure.Repositories
         }
 
         /// <summary>
-        /// This method save changes in database 
+        /// This method save changes in database
         /// </summary>
         public async void SaveChangesAsync()
         {

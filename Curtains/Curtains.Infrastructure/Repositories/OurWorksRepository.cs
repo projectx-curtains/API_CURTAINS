@@ -3,12 +3,8 @@ using Curtains.Infrastructure.Database;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Curtains.Infrastructure.Interfaces;
+using Curtains.Infrastructure.Shared.Exceptions;
 
 namespace Curtains.Infrastructure.Repositories
 {
@@ -36,6 +32,12 @@ namespace Curtains.Infrastructure.Repositories
         /// <returns>Collection of OurWorksModel entities in List OurWorks</return>
         public IEnumerable<OurWorksModel> GetAll()
         {
+            if (!_curtainsContext.OurWorks.Any())
+            {
+                _logger.LogError("Our works table is empty");
+                throw new ResourceNotFoundException();
+            }
+
             return _curtainsContext.OurWorks.AsNoTracking().AsEnumerable();
         }
 
@@ -78,7 +80,7 @@ namespace Curtains.Infrastructure.Repositories
         }
 
         /// <summary>
-        /// This method update <c> OurWorksModel <c> entity in database 
+        /// This method update <c> OurWorksModel <c> entity in database
         /// </summary>
         /// <param name = "entity" > OurWorksModel OurWorks</param>
         public async Task UpdateAsync(OurWorksModel entity)
@@ -98,7 +100,7 @@ namespace Curtains.Infrastructure.Repositories
         }
 
         /// <summary>
-        /// This method remove <c> OurWorksModel <c> entity from database 
+        /// This method remove <c> OurWorksModel <c> entity from database
         /// </summary>
         /// <param name = "entity" > OurWorksModel OurWorks</param>
         public async Task RemoveAsync(OurWorksModel entity)
@@ -114,7 +116,7 @@ namespace Curtains.Infrastructure.Repositories
         }
 
         /// <summary>
-        /// This method save changes in database 
+        /// This method save changes in database
         /// </summary>
         public async void SaveChangesAsync()
         {

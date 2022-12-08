@@ -52,7 +52,7 @@ namespace Curtains.Infrastructure
 
             var interfaceTypes = types
                 .Where(type => type.IsInterface
-                            && type.Namespace == typeof(ICurtainsRepository).Namespace)
+                            && (type.Namespace == typeof(ICurtainsRepository).Namespace))
             .ToArray();
 
             foreach (var interfaceType in interfaceTypes)

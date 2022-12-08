@@ -3,12 +3,8 @@ using Curtains.Infrastructure.Database;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Curtains.Infrastructure.Interfaces;
+using Curtains.Infrastructure.Shared.Exceptions;
 
 namespace Curtains.Infrastructure.Repositories
 {
@@ -20,7 +16,7 @@ namespace Curtains.Infrastructure.Repositories
         #region FieldsRegion
         private readonly ILogger _logger;
         private readonly CurtainsDbContext _curtainsContext;
-        private IQueryable<CurtainsModel> Query => _curtainsContext.Curtains.Include(x => x.Sets).Include(x => x.UserOrders);
+        private IQueryable<CurtainModel> Query => _curtainsContext.Curtains;
         #endregion
 
         public CurtainsRepository(CurtainsDbContext curtainsContext, ILogger logger)
@@ -34,8 +30,14 @@ namespace Curtains.Infrastructure.Repositories
         /// This method get all<c> CurtainsModel <c> entities from database with includes tabels by entity Id
         /// </summary>
         /// <returns>Collection of CurtainsModel entities in List type</return>
-        public IEnumerable<CurtainsModel> GetAll()
+        public IEnumerable<CurtainModel> GetAll()
         {
+            if (!_curtainsContext.Curtains.Any())
+            {
+                _logger.LogError("Curtains table is empty");
+                throw new ResourceNotFoundException();
+            }
+
             return _curtainsContext.Curtains.AsNoTracking().AsEnumerable();
         }
 
@@ -44,7 +46,7 @@ namespace Curtains.Infrastructure.Repositories
         /// </summary>
         /// <param name = "Id" > Guid types entity idetifier</param>
         /// <returns>Curtains model</return>
-        public async Task<CurtainsModel> GetByIdAsync(int Id)
+        public async Task<CurtainModel> GetByIdAsync(int Id)
         {
             var result = await Query.AsNoTracking().SingleOrDefaultAsync(a => a.Id == Id);
 
@@ -62,7 +64,7 @@ namespace Curtains.Infrastructure.Repositories
         /// </summary>
         /// <param name = "entity" > CurtainsModel type</param>
         /// <returns>EntityEntry<CurtainsModel></return>
-        public async Task<EntityEntry<CurtainsModel>> InsertAsync(CurtainsModel entity, CancellationToken cancelationToken)
+        public async Task<EntityEntry<CurtainModel>> InsertAsync(CurtainModel entity, CancellationToken cancelationToken)
         {
             if (entity == null)
             {
@@ -78,10 +80,10 @@ namespace Curtains.Infrastructure.Repositories
         }
 
         /// <summary>
-        /// This method update <c> CurtainsModel <c> entity in database 
+        /// This method update <c> CurtainsModel <c> entity in database
         /// </summary>
         /// <param name = "entity" > CurtainsModel type</param>
-        public async Task UpdateAsync(CurtainsModel entity)
+        public async Task UpdateAsync(CurtainModel entity)
         {
             foreach (var entry in _curtainsContext.ChangeTracker.Entries())
             {
@@ -98,10 +100,10 @@ namespace Curtains.Infrastructure.Repositories
         }
 
         /// <summary>
-        /// This method remove <c> CurtainsModel <c> entity from database 
+        /// This method remove <c> CurtainsModel <c> entity from database
         /// </summary>
         /// <param name = "entity" > CurtainsModel type</param>
-        public async Task RemoveAsync(CurtainsModel entity)
+        public async Task RemoveAsync(CurtainModel entity)
         {
             if (entity == null)
             {
@@ -114,7 +116,7 @@ namespace Curtains.Infrastructure.Repositories
         }
 
         /// <summary>
-        /// This method save changes in database 
+        /// This method save changes in database
         /// </summary>
         public async void SaveChangesAsync()
         {
