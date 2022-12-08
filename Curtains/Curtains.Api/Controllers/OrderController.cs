@@ -1,5 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
-using Curtains.Application.Interfaces;
+using Curtains.Application.CurtainsServices.Interfaces;
 using Curtains.Application.DTO;
 
 namespace Curtains.Api.Controllers
@@ -18,15 +18,8 @@ namespace Curtains.Api.Controllers
             _notifyService = notifyService;
         }
 
-        [HttpPost("catalog")]
+        [HttpPost]
         public async Task<ActionResult> Notify(OrderDTO entity)
-        {
-            await _notifyService.NotifyAsync(entity);
-            return Ok();
-        }
-
-        [HttpPost("order")]
-        public async Task<ActionResult> Notify(ConstructorDTO entity)
         {
             await _notifyService.NotifyAsync(entity);
             return Ok();
