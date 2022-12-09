@@ -50,7 +50,7 @@
         /// <summary>
         ///  This property represents BrasingId column.
         /// </summary>
-        public int BraсingId { get; set; }
+        public int BracingId { get; set; }
         #endregion
 
         #region NavigationProperties
@@ -77,7 +77,7 @@
         /// <summary>
         ///  This property represents of Bracing.
         /// </summary>
-        public virtual BracingModel Braсing { get; set; }
+        public virtual BracingModel Bracing { get; set; }
         /// <summary>
         ///  This property represents of Color.
         /// </summary>
