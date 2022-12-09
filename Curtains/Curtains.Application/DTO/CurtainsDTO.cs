@@ -3,6 +3,10 @@ namespace Curtains.Application.DTO
     public class CurtainsDTO
     {
         /// <summary>
+        /// Curtain title
+        /// </summary>
+        public string Title { get; set; }
+        /// <summary>
         /// Curtain height
         /// </summary>
         public int Height { get; set; }

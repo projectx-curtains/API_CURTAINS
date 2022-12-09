@@ -5,11 +5,11 @@ namespace Curtains.Infrastructure.Interfaces
 {
     public interface ICurtainsRepository
     {
-        IEnumerable<CurtainModel> GetAll();
-        Task<CurtainModel> GetByIdAsync(int Id);
-        Task<EntityEntry<CurtainModel>> InsertAsync(CurtainModel entity, CancellationToken cancellationToken);
-        Task UpdateAsync(CurtainModel entity);
-        Task RemoveAsync(CurtainModel entity);
+        IEnumerable<CurtainsModel> GetAll();
+        Task<CurtainsModel> GetByIdAsync(int Id);
+        Task<EntityEntry<CurtainsModel>> InsertAsync(CurtainsModel entity, CancellationToken cancellationToken);
+        Task UpdateAsync(CurtainsModel entity);
+        Task RemoveAsync(CurtainsModel entity);
         void SaveChangesAsync();
     }
 }

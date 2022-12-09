@@ -14,7 +14,7 @@ namespace Curtains.Application.CurtainsService
     /// </summary>
     class NotifyService : INotifyService
     {
-        private const string subject = "Вам поступил новый заказ!";
+        private const string _subject = "Вам поступил новый заказ!";
         private readonly IMessageSender _messageSender;
         private readonly IMessageConstructor _messageBuilder;
         private readonly IProductImageService _productImageService;
@@ -23,14 +23,14 @@ namespace Curtains.Application.CurtainsService
         private readonly ILogger _logger;
 
         public NotifyService(IMessageSender messageSender,
-                             IMessageConstructor messageBuilder,
+                             IMessageConstructor messageConstructor,
                              IProductImageService productImageService,
                              IMapper mapper,
                              IConfiguration config,
                              ILogger logger)
         {
             _messageSender = messageSender;
-            _messageBuilder = messageBuilder;
+            _messageBuilder = messageConstructor;
             _productImageService = productImageService;
             _mapper = mapper;
             _config = config;
@@ -53,7 +53,7 @@ namespace Curtains.Application.CurtainsService
                     throw new WrongTypeOfOrderException(nameof(order));
             }
 
-            await _messageSender.SendAsync(subject, message, _config["EmailSettings:CustomerEmail"]);
+            await _messageSender.SendAsync(_subject, message, _config["EmailSettings:CustomerEmail"]);
         }
 
         /// <summary>
@@ -64,7 +64,7 @@ namespace Curtains.Application.CurtainsService
         private async Task<string> GetMessageFromCatalogAsync(OrderDTO order)
         {
             List<IProduct> products = new();
-            foreach (var id in order.MarketingInfosId)
+            foreach (var id in order.ProductIds)
             {
                 var productImage = await _productImageService.GetByIdAsync(id);
 

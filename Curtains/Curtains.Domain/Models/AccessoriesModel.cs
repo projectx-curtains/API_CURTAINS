@@ -24,7 +24,7 @@
         /// <summary>
         ///  This property represents list of curtains in which there are accessories.
         /// </summary>
-        public virtual ICollection<CurtainModel>?   Curtains { get; }
+        public virtual ICollection<CurtainsModel>?   Curtains { get; }
         #endregion
     }
 }

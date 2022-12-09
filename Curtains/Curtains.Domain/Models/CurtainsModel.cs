@@ -1,6 +1,6 @@
 ﻿namespace Curtains.Domain.Models
 {
-    public class CurtainModel : ExtendedBaseEntity
+    public class CurtainsModel : ExtendedBaseEntity
     {
         #region PropertiesRegion
         /// <summary>
@@ -48,9 +48,9 @@
         /// </summary>
         public int ColorId { get; set; }
         /// <summary>
-        ///  This property represents BrasingId column.
+        ///  This property represents BracingId column.
         /// </summary>
-        public int BraсingId { get; set; }
+        public int BracingId { get; set; }
         #endregion
 
         #region NavigationProperties
@@ -77,7 +77,7 @@
         /// <summary>
         ///  This property represents of Bracing.
         /// </summary>
-        public virtual BracingModel Braсing { get; set; }
+        public virtual BracingModel Bracing { get; set; }
         /// <summary>
         ///  This property represents of Color.
         /// </summary>
@@ -86,10 +86,6 @@
         ///  This property represents sets with that curtains.
         /// </summary>
         public virtual ICollection<ProductSetModel> ProductSets { get; }
-        /// <summary>
-        ///  This property represents Lambrequins with that curtains.
-        /// </summary>
-        public virtual ICollection<LambrequinsModel> Lambrequins { get; }
         /// <summary>
         ///  This property represents product images with that curtains.
         /// </summary>
