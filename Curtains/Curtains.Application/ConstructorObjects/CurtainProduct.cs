@@ -5,6 +5,10 @@ namespace Curtains.Application.ConstructorObjects
     public class CurtainProduct : IProduct
     {
         /// <summary>
+        /// Curtain title
+        /// </summary>
+        public string Title { get; set; }
+        /// <summary>
         /// Curtain height
         /// </summary>
         public int Height { get; set; }
@@ -35,7 +39,8 @@ namespace Curtains.Application.ConstructorObjects
 
         public string ToOrderMessage()
         {
-            return "Curtain";
+            return $"<b>Подушка</b><br>Название: {Title}<br>" ??
+            $"<b>Подушка</b><br>Название: {Title}<br>";
         }
     }
 }
