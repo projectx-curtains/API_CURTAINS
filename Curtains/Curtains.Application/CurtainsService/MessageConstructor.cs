@@ -37,7 +37,7 @@ namespace Curtains.Application.CurtainsService
 
         private StringBuilder BeginConstruct()
         {
-            return new StringBuilder().Append($"Добрый день, {customerName}<br>К вам поступил заказ: ");
+            return new StringBuilder().Append($"Добрый день, {customerName}<br><br>К вам поступил заказ:<br>");
         }
 
         private string Build(StringBuilder sb, string phoneNumber, string comment)

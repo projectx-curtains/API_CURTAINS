@@ -39,8 +39,17 @@ namespace Curtains.Application.ConstructorObjects
 
         public string ToOrderMessage()
         {
-            return $"<b>Подушка</b><br>Название: {Title}<br>" ??
-            $"<b>Подушка</b><br>Название: {Title}<br>";
+            return Title switch
+            {
+                null => "<b>Шторы</b><br>" +
+                        $"Размеры - {Height}x{Width}<br>" +
+                        $"Количество - {Count}<br>" +
+                        $"Вид штор - {CurtainsType}<br>" +
+                        $"Вид Ткани - {FabricType}<br>" +
+                        $"Дизайн - {Design}<br>" +
+                        $"Цвет - {Color}<br>",
+                _ => $"<b>Шторы</b><br>Название - {Title}<br>"
+            };
         }
     }
 }

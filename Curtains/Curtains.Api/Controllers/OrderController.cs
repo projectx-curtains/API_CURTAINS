@@ -19,7 +19,7 @@ namespace Curtains.Api.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult> Notify(object entity)
+        public async Task<ActionResult> Notify(ConstructorDTO entity)
         {
             await _notifyService.NotifyAsync(entity);
             return Ok();
