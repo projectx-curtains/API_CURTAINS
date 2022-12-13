@@ -92,7 +92,7 @@
         /// <summary>
         ///  This property represents list of curtains with that fabric.
         /// </summary>
-        public virtual ICollection<CurtainModel> Curtains { get; set; }
+        public virtual ICollection<CurtainsModel> Curtains { get; set; }
         /// <summary>
         ///  This property represents list of bedspreads with that fabric.
         /// </summary>

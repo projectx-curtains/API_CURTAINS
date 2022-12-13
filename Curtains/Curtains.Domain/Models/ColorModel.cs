@@ -25,7 +25,7 @@
         /// <summary>
         ///  This property represents list of Curtains with that color.
         /// </summary>
-        public virtual ICollection<CurtainModel> Curtains { get; }
+        public virtual ICollection<CurtainsModel> Curtains { get; }
         #endregion
     }
 }

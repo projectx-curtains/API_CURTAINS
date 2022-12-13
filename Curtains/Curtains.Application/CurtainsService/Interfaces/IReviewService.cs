@@ -1,7 +1,7 @@
 ﻿using Curtains.Application.DTO;
 using Curtains.Domain.Models;
 
-namespace Curtains.Application.Interfaces
+namespace Curtains.Application.CurtainsServices.Interfaces
 {
     /// <summary>
     /// This interface describes the interaction model of the data transfer object to the database.

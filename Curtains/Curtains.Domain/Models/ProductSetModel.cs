@@ -32,7 +32,7 @@
         /// <summary>
         ///  This property represents curtains in that product set.
         /// </summary>
-        public virtual CurtainModel? Curtains { get; set; }
+        public virtual CurtainsModel? Curtains { get; set; }
         /// <summary>
         ///  This property represents pillows in that product set.
         /// </summary>

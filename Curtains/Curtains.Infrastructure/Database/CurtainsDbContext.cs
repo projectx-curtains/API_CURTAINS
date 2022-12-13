@@ -14,7 +14,7 @@ namespace Curtains.Infrastructure.Database
         #region DbSetsRegion
         public virtual DbSet<AccessoriesModel> Accessories { get; set; }
         public virtual DbSet<ColorModel> Colors { get; set; }
-        public virtual DbSet<CurtainModel> Curtains { get; set; }
+        public virtual DbSet<CurtainsModel> Curtains { get; set; }
         public virtual DbSet<FabricModel> Fabrics { get; set; }
         public virtual DbSet<DecorationsModel> Decorations { get; set; }
         public virtual DbSet<MetaDataModel> MetaDatas { get; set; }

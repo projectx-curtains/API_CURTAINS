@@ -1,6 +1,6 @@
 ﻿namespace Curtains.Domain.Models
 {
-    public class CurtainModel : ExtendedBaseEntity
+    public class CurtainsModel : ExtendedBaseEntity
     {
         #region PropertiesRegion
         /// <summary>
