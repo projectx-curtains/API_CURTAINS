@@ -23,7 +23,7 @@ namespace Curtains.Infrastructure
             services
                 .AddDbContext<CurtainsDbContext>(opt =>
                 {
-                    opt.UseSqlServer("Server=localhost,1433;Database=Curtains;User=sa;Password=<YourStrong@Passw0rd>", opt =>
+                    opt.UseSqlServer(connectionString, opt =>
                     {
                         opt.MigrationsAssembly(typeof(CurtainsDbContext).Assembly.FullName);
                     });
