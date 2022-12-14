@@ -1,5 +1,4 @@
 using Microsoft.AspNetCore.Mvc;
-using Curtains.Application.DTO;
 using Curtains.Application.CurtainsService.Interfaces;
 
 namespace Curtains.Api.Controllers
@@ -18,8 +17,13 @@ namespace Curtains.Api.Controllers
             _notifyService = notifyService;
         }
 
+        /// <summary>
+        /// Notifies the customer of a new order.
+        /// </summary>
+        /// <param name="entity">Order about which we must notify customer.</param>
+        /// <returns>Http code 200.</returns>
         [HttpPost]
-        public async Task<ActionResult> Notify(ConstructorDTO entity)
+        public async Task<ActionResult> Notify(object entity)
         {
             await _notifyService.NotifyAsync(entity);
             return Ok();

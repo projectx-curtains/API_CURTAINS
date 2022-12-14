@@ -1,4 +1,5 @@
 using AutoMapper;
+using Bogus;
 using Curtains.Application.ConstructorObjects;
 using Curtains.Application.ConstructorObjects.Interfaces;
 using Curtains.Application.CurtainsService.Interfaces;
@@ -6,6 +7,8 @@ using Curtains.Application.DTO;
 using Curtains.Infrastructure.Shared.Exceptions;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace Curtains.Application.CurtainsService
 {
@@ -43,17 +46,21 @@ namespace Curtains.Application.CurtainsService
         public async Task NotifyAsync(object order)
         {
             string message;
-            switch (order)
+            var deserializedOrder = JsonSerializer.Deserialize<OrderDTO>(order.ToString());
+
+            // TODO: Make this switch cleaner
+            switch (deserializedOrder.Comment)
             {
-                case OrderDTO orderFromCatalog:
-                    message = GetMessageFromCatalog(orderFromCatalog);
-                    break;
-                case ConstructorDTO orderFromConstructor:
-                    message = GetMessageFromConstructor(orderFromConstructor);
-                    break;
-                default:
+                case null:
                     _logger.LogError("Wrong type of order");
                     throw new WrongTypeOfOrderException(nameof(order));
+                default:
+                    message = deserializedOrder.ProductIds switch
+                    {
+                        null => GetMessageFromConstructor((ConstructorDTO)order),
+                        _ => GetMessageFromCatalog((OrderDTO)order),
+                    };
+                    break;
             }
 
             await _messageSender.SendAsync(_subject, message, _config["EmailSettings:CustomerEmail"]);
