@@ -1,7 +1,7 @@
 using AutoMapper;
 using Curtains.Application.ConstructorObjects;
 using Curtains.Application.ConstructorObjects.Interfaces;
-using Curtains.Application.CurtainsServices.Interfaces;
+using Curtains.Application.CurtainsService.Interfaces;
 using Curtains.Application.DTO;
 using Curtains.Infrastructure.Shared.Exceptions;
 using Microsoft.Extensions.Configuration;
@@ -18,6 +18,7 @@ namespace Curtains.Application.CurtainsService
         private readonly IMessageSender _messageSender;
         private readonly IMessageConstructor _messageBuilder;
         private readonly IProductImageService _productImageService;
+        private readonly IImageToProductConversionService _converter;
         private readonly IMapper _mapper;
         private readonly IConfiguration _config;
         private readonly ILogger _logger;
@@ -25,6 +26,7 @@ namespace Curtains.Application.CurtainsService
         public NotifyService(IMessageSender messageSender,
                              IMessageConstructor messageConstructor,
                              IProductImageService productImageService,
+                             IImageToProductConversionService converter,
                              IMapper mapper,
                              IConfiguration config,
                              ILogger logger)
@@ -32,6 +34,7 @@ namespace Curtains.Application.CurtainsService
             _messageSender = messageSender;
             _messageBuilder = messageConstructor;
             _productImageService = productImageService;
+            _converter = converter;
             _mapper = mapper;
             _config = config;
             _logger = logger;
@@ -43,7 +46,7 @@ namespace Curtains.Application.CurtainsService
             switch (order)
             {
                 case OrderDTO orderFromCatalog:
-                    message = await GetMessageFromCatalogAsync(orderFromCatalog);
+                    message = GetMessageFromCatalog(orderFromCatalog);
                     break;
                 case ConstructorDTO orderFromConstructor:
                     message = GetMessageFromConstructor(orderFromConstructor);
@@ -61,23 +64,14 @@ namespace Curtains.Application.CurtainsService
         /// </summary>
         /// <param name="order">Order information and item numbers</param>
         /// <exception cref="ArgumentNullException">Throws an error if the argument is null</exception>
-        private async Task<string> GetMessageFromCatalogAsync(OrderDTO order)
+        private string GetMessageFromCatalog(OrderDTO order)
         {
-            List<IProduct> products = new();
+            var productImages = _productImageService.GetAll();
+            var products = new List<IProduct>();
+
             foreach (var id in order.ProductIds)
             {
-                var productImage = await _productImageService.GetByIdAsync(id);
-
-                IProduct product = productImage switch
-                {
-                    { Bedspreads: not null} => _mapper.Map<BedspreadsProduct>(productImage.Bedspreads),
-                    { Curtains: not null} => _mapper.Map<CurtainProduct>(productImage.Curtains),
-                    { Pillows: not null} => _mapper.Map<PillowProduct>(productImage.Pillows),
-                    { Sets: not null} => _mapper.Map<SetProduct>(productImage.Sets),
-                    { Fabrics: not null} => _mapper.Map<FabricProduct>(productImage.Fabrics),
-                };
-
-                products.Add(product);
+                products.Add(_converter.Convert(productImages.FirstOrDefault(x => x.Id == id)));
             }
 
             return _messageBuilder.Construct(new Order()

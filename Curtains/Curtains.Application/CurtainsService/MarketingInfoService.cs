@@ -3,7 +3,7 @@ using Curtains.Infrastructure.Interfaces;
 using AutoMapper;
 using Microsoft.Extensions.Logging;
 using Curtains.Infrastructure.Shared.Exceptions;
-using Curtains.Application.CurtainsServices.Interfaces;
+using Curtains.Application.CurtainsService.Interfaces;
 
 namespace Curtains.Application.CurtainsService
 {

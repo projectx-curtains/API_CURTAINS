@@ -1,5 +1,5 @@
 using Curtains.Application.ConstructorObjects;
-using Curtains.Application.CurtainsServices.Interfaces;
+using Curtains.Application.CurtainsService.Interfaces;
 using System.Text;
 
 namespace Curtains.Application.CurtainsService

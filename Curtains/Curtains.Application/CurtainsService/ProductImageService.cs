@@ -1,11 +1,11 @@
 ﻿using AutoMapper;
-using Curtains.Application.CurtainsServices.Interfaces;
+using Curtains.Application.CurtainsService.Interfaces;
 using Curtains.Application.DTO;
 using Curtains.Domain.Models;
 using Curtains.Infrastructure.Interfaces;
 using Microsoft.Extensions.Logging;
 
-namespace Curtains.Application.CurtainsServices
+namespace Curtains.Application.CurtainsService
 {
     /// <summary>
     /// Class <c> ProductImageService </c> describes the interaction model of the data transfer object to the database.
