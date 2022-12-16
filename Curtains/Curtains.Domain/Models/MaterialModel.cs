@@ -9,7 +9,7 @@
         /// <summary>
         ///  This property represents list of curtains with that material.
         /// </summary>
-        public virtual ICollection<CurtainModel> Curtains { get; }
+        public virtual ICollection<CurtainsModel> Curtains { get; }
         /// <summary>
         ///  This property represents list of fabrics with that material.
         /// </summary>

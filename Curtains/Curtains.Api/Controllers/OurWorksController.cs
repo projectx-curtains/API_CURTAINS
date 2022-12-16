@@ -1,5 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
-using Curtains.Application.Interfaces;
+using Curtains.Application.CurtainsServices.Interfaces;
 using Curtains.Application.DTO;
 
 namespace Curtains.Api.Controllers

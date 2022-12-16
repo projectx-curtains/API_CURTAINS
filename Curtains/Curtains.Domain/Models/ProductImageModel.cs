@@ -37,7 +37,7 @@
         /// <summary>
         ///  This property represents curtains, which image is presented.
         /// </summary>
-        public virtual CurtainModel? Curtains { get; set; }
+        public virtual CurtainsModel? Curtains { get; set; }
         /// <summary>
         ///  This property represents pillows, which image is presented.
         /// </summary>

@@ -4,13 +4,8 @@ using Curtains.Application.DTO;
 using Curtains.Domain.Models;
 using Curtains.Infrastructure.Interfaces;
 using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Curtains.Application.CurtainsServices
+namespace Curtains.Application.CurtainsService
 {
     /// <summary>
     /// Class <c> ProductImageService </c> describes the interaction model of the data transfer object to the database.

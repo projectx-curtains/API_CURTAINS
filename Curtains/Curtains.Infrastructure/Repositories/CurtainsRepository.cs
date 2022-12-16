@@ -16,7 +16,7 @@ namespace Curtains.Infrastructure.Repositories
         #region FieldsRegion
         private readonly ILogger _logger;
         private readonly CurtainsDbContext _curtainsContext;
-        private IQueryable<CurtainModel> Query => _curtainsContext.Curtains;
+        private IQueryable<CurtainsModel> Query => _curtainsContext.Curtains;
         #endregion
 
         public CurtainsRepository(CurtainsDbContext curtainsContext, ILogger logger)
@@ -30,7 +30,7 @@ namespace Curtains.Infrastructure.Repositories
         /// This method get all<c> CurtainsModel <c> entities from database with includes tabels by entity Id
         /// </summary>
         /// <returns>Collection of CurtainsModel entities in List type</return>
-        public IEnumerable<CurtainModel> GetAll()
+        public IEnumerable<CurtainsModel> GetAll()
         {
             if (!_curtainsContext.Curtains.Any())
             {
@@ -46,7 +46,7 @@ namespace Curtains.Infrastructure.Repositories
         /// </summary>
         /// <param name = "Id" > Guid types entity idetifier</param>
         /// <returns>Curtains model</return>
-        public async Task<CurtainModel> GetByIdAsync(int Id)
+        public async Task<CurtainsModel> GetByIdAsync(int Id)
         {
             var result = await Query.AsNoTracking().SingleOrDefaultAsync(a => a.Id == Id);
 
@@ -64,7 +64,7 @@ namespace Curtains.Infrastructure.Repositories
         /// </summary>
         /// <param name = "entity" > CurtainsModel type</param>
         /// <returns>EntityEntry<CurtainsModel></return>
-        public async Task<EntityEntry<CurtainModel>> InsertAsync(CurtainModel entity, CancellationToken cancelationToken)
+        public async Task<EntityEntry<CurtainsModel>> InsertAsync(CurtainsModel entity, CancellationToken cancelationToken)
         {
             if (entity == null)
             {
@@ -83,7 +83,7 @@ namespace Curtains.Infrastructure.Repositories
         /// This method update <c> CurtainsModel <c> entity in database
         /// </summary>
         /// <param name = "entity" > CurtainsModel type</param>
-        public async Task UpdateAsync(CurtainModel entity)
+        public async Task UpdateAsync(CurtainsModel entity)
         {
             foreach (var entry in _curtainsContext.ChangeTracker.Entries())
             {
@@ -103,7 +103,7 @@ namespace Curtains.Infrastructure.Repositories
         /// This method remove <c> CurtainsModel <c> entity from database
         /// </summary>
         /// <param name = "entity" > CurtainsModel type</param>
-        public async Task RemoveAsync(CurtainModel entity)
+        public async Task RemoveAsync(CurtainsModel entity)
         {
             if (entity == null)
             {
