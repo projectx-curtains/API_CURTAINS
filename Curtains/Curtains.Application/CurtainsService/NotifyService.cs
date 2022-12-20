@@ -1,5 +1,4 @@
 using AutoMapper;
-using Bogus;
 using Curtains.Application.ConstructorObjects;
 using Curtains.Application.ConstructorObjects.Interfaces;
 using Curtains.Application.CurtainsService.Interfaces;
@@ -8,7 +7,6 @@ using Curtains.Infrastructure.Shared.Exceptions;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using System.Text.Json;
-using System.Text.Json.Serialization;
 
 namespace Curtains.Application.CurtainsService
 {
@@ -57,8 +55,8 @@ namespace Curtains.Application.CurtainsService
                 default:
                     message = deserializedOrder.ProductIds switch
                     {
-                        null => GetMessageFromConstructor((ConstructorDTO)order),
-                        _ => GetMessageFromCatalog((OrderDTO)order),
+                        null => GetMessageFromConstructor(JsonSerializer.Deserialize<ConstructorDTO>(order.ToString())),
+                        _ => GetMessageFromCatalog(deserializedOrder),
                     };
                     break;
             }
@@ -98,9 +96,9 @@ namespace Curtains.Application.CurtainsService
         {
             return _messageBuilder.Construct(new Order()
             {
-                PhoneNumber = constructorData.PhoneNumber,
                 Comment = constructorData.Comment,
-                Products = _mapper.Map<IEnumerable<CurtainProduct>>(constructorData.Curtains),
+                PhoneNumber = constructorData.PhoneNumber,
+                Products = _mapper.Map<IEnumerable<CurtainProduct>>(constructorData.Curtains)
             });
         }
     }
