@@ -4,7 +4,7 @@ using Curtains.Infrastructure.Interfaces;
 using AutoMapper;
 using Curtains.Application.CurtainsService.Interfaces;
 
-namespace Curtains.Application.CurtainsService
+namespace Curtains.Application.CurtainsServices
 {
     /// <summary>
     /// Class <c> ReviewService </c> a default implementetion of <c> IReviewService </c>
