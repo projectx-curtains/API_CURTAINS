@@ -1,5 +1,4 @@
 ﻿using Curtains.Application.DTO;
-using Curtains.Domain.Models;
 
 namespace Curtains.Application.CurtainsService.Interfaces
 {

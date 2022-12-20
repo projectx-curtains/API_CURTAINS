@@ -7,7 +7,6 @@ namespace Curtains.Application.CurtainsService
 {
     public class EmailSender : IMessageSender
     {
-        private const string _systemName = "Zashtorim";
         private const string _smtpClient = "smtp.gmail.com";
         private const int _port = 587;
         private readonly IConfiguration _config;
@@ -23,7 +22,7 @@ namespace Curtains.Application.CurtainsService
         /// <param name="customerEmail">The mail to which the message is sent</param>
         public async Task SendAsync(string subject, string body, string customerEmail)
         {
-            var systemAddress = new MailAddress(_config["EmailSettings:SystemEmail"], _systemName);
+            var systemAddress = new MailAddress(_config["EmailSettings:SystemEmail"], _config["EmailSettings:SystemName"]);
             var customerAddress = new MailAddress(customerEmail);
             using var message = new MailMessage(systemAddress, customerAddress)
             {

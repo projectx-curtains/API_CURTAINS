@@ -1,5 +1,6 @@
 using Curtains.Application.ConstructorObjects;
 using Curtains.Application.CurtainsService.Interfaces;
+using Microsoft.Extensions.Configuration;
 using System.Text;
 
 namespace Curtains.Application.CurtainsService
@@ -9,7 +10,12 @@ namespace Curtains.Application.CurtainsService
     /// </summary>
     class MessageConstructor : IMessageConstructor
     {
-        private const string customerName = "Раиса Леонидовна";
+        private readonly IConfiguration _config;
+
+        public MessageConstructor(IConfiguration config)
+        {
+            _config = config;
+        }
 
         /// <summary>
         /// Constructs order messages based on the order
@@ -37,7 +43,7 @@ namespace Curtains.Application.CurtainsService
 
         private StringBuilder BeginConstruct()
         {
-            return new StringBuilder().Append($"Добрый день, {customerName}<br><br>К вам поступил заказ:<br>");
+            return new StringBuilder().Append($"Добрый день, {_config["EmailSettings:CustomerName"]}<br><br>К вам поступил заказ:<br>");
         }
 
         private string Build(StringBuilder sb, string phoneNumber, string comment)
