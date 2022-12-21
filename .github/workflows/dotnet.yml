@@ -2,9 +2,9 @@ name: .NET Core code analyze
 
 on:
   push:
-    branches: [ "master", "dev", "init_github_actions" ]
+    branches: [ "master", "dev", "init_github_actions", "stage" ]
   pull_request:
-    branches: [ "master", "dev", "init_github_actions" ]
+    branches: [ "master", "dev", "init_github_actions", "stage" ]
   schedule:
     - cron: '21 2 * * 6'
 
