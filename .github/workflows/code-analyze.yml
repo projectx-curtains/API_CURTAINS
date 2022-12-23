@@ -13,10 +13,10 @@ name: "Code analyze with CodeQL"
 
 on:
   push:
-    branches: [ "master", "develop", "initial-ci" ]
+    branches: [ "master", "dev", "stage", "init_ci" ]
   pull_request:
     # The branches below must be a subset of the branches above
-    branches: [ "master", "develop", "initial-ci" ]
+    branches: [ "master", "develop", "stage", "init_ci" ]
   schedule:
     - cron: '21 2 * * 6'
 
@@ -49,9 +49,9 @@ jobs:
         # If you wish to specify custom queries, you can do so here or in a config file.
         # By default, queries listed here will override any specified in a config file.
         # Prefix the list here with "+" to use these queries and those in the config file.
-        
+
         # Details on CodeQL's query packs refer to : https://docs.github.com/en/code-security/code-scanning/automatically-scanning-your-code-for-vulnerabilities-and-errors/configuring-code-scanning#using-queries-in-ql-packs
-        # queries: security-extended,security-and-quality 
+        # queries: security-extended,security-and-quality
     - name: Setup dotnet
       uses: actions/setup-dotnet@v2
       with:

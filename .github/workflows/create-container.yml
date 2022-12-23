@@ -2,7 +2,7 @@ name: Create docker image and push
 
 on:
   push:
-    branches: [ "master", "develop" ]
+    branches: [ "master", "dev", "stage" ]
 
 
 jobs:
@@ -31,10 +31,10 @@ jobs:
         ECR_REPOSITORY: ${{ secrets.REPOSITORY_NAME }}
         IMAGE_TAG: ${{ github.ref_name }}
       run: |
-        docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG -f ./Dockerfile . 
+        docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG -f ./Dockerfile .
         docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
         echo "::set-output name=image::$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG"
-    
+
     - name: Scan Docker image
       id: docker-scan
       uses: alexjurkiewicz/ecr-scan-image@v1.7.0
