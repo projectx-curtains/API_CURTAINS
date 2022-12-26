@@ -9,10 +9,10 @@ namespace Curtains.Application.AutoMapping
     {
         public OrderProfile()
         {
-            CreateMap<ConstructorDTO, Order>()
-                .ForMember(x => x.Products, o => o.MapFrom(x => x.Curtains)).ReverseMap();
+            CreateMap<Order, ConstructorDTO>()
+                .ForMember(x => x.Curtains, o => o.Ignore()).ReverseMap();
             CreateMap<Order, OrderDTO>()
-                .ForMember(x => x.ProductIds, o => o.Ignore());
+                .ForMember(x => x.ProductIds, o => o.Ignore()).ReverseMap();
         }
     }
 }

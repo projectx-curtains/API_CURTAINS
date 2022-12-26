@@ -54,7 +54,10 @@ namespace Curtains.Application.CurtainsService
                 default:
                     if (deserializedOrder.ProductIds is null)
                     {
-                        message = _messageConstructor.Construct(_mapper.Map<Order>(JsonSerializer.Deserialize<ConstructorDTO>(order.ToString())));
+                        var deserializedOrderFromConstructor = JsonSerializer.Deserialize<ConstructorDTO>(order.ToString());
+                        var mappedOrder = _mapper.Map<Order>(deserializedOrderFromConstructor);
+                        mappedOrder.Products = _mapper.Map<IEnumerable<CurtainProduct>>(deserializedOrderFromConstructor.Curtains);
+                        message = _messageConstructor.Construct(mappedOrder);
                     }
                     else
                     {
