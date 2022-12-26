@@ -73,6 +73,11 @@ namespace Curtains.Application.CurtainsService
             return productImageDTO;
         }
 
+        /// <summary>
+        /// This method get <c> ProductImageModel <c> entity from database by entity Ids and mapping to <c> ProductImageDTO </c>
+        /// </summary>
+        /// <param name="Id"> Guid ProductImage entity idetifiers </param>
+        /// <returns> List of ProductImageDTO </returns>
         public async Task<IEnumerable<ProductImageDTO>> GetAllByIdAsync(int[] Ids)
         {
             var productImages = new List<ProductImageDTO>();

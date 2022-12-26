@@ -39,6 +39,10 @@ namespace Curtains.Application.CurtainsService
             return marketingInfos;
         }
 
+         /// <summary>
+        /// This method return <c> MarketingInfo <c> entitie by id from database
+        /// </summary>
+        /// <returns>Marketing info</returns>
         public async Task<MarketingInfoDTO> GetByIdAsync(int Id)
         {
             var marketingInfo = await _marketingInfoRepository.GetByIdAsync(Id);

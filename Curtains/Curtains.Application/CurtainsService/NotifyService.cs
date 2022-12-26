@@ -1,10 +1,8 @@
 using AutoMapper;
 using Curtains.Application.ConstructorObjects;
-using Curtains.Application.ConstructorObjects.Interfaces;
 using Curtains.Application.CurtainsService.Interfaces;
 using Curtains.Application.DTO;
 using Curtains.Infrastructure.Shared.Exceptions;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using System.Text.Json;
 
@@ -39,6 +37,9 @@ namespace Curtains.Application.CurtainsService
             _logger = logger;
         }
 
+        /// <summary>
+        /// Notifies the client about the receipt of the order, depending on where the order is made from
+        /// </summary>
         public async Task NotifyAsync(object order)
         {
             string message;

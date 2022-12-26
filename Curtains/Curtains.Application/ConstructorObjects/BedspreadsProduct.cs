@@ -5,7 +5,7 @@ namespace Curtains.Application.ConstructorObjects
     public class BedspreadsProduct : IProduct
     {
         /// <summary>
-        ///  This property represents Title of pillows.
+        ///  This property represents Title of bedspreads.
         /// </summary>
         public string Title { get; set; }
 
