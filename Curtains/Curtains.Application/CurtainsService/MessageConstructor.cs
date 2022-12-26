@@ -10,6 +10,7 @@ namespace Curtains.Application.CurtainsService
     /// </summary>
     class MessageConstructor : IMessageConstructor
     {
+        private const string _customerName = "Раиса Леонидовна";
         private readonly IConfiguration _config;
 
         public MessageConstructor(IConfiguration config)
@@ -43,7 +44,7 @@ namespace Curtains.Application.CurtainsService
 
         private StringBuilder BeginConstruct()
         {
-            return new StringBuilder().Append($"Добрый день, {_config["EmailSettings:CustomerName"]}<br><br>К вам поступил заказ:<br>");
+            return new StringBuilder().Append($"Добрый день, {_customerName}<br><br>К вам поступил заказ:<br>");
         }
 
         private string Build(StringBuilder sb, string phoneNumber, string comment)

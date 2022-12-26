@@ -5,10 +5,13 @@ namespace Curtains.Application.ConstructorObjects
     public class BedspreadsProduct : IProduct
     {
         /// <summary>
-        ///  This property represents size of pillows.
+        ///  This property represents Title of pillows.
         /// </summary>
         public string Title { get; set; }
 
+        /// <summary>
+        ///  Method returning a message about the bedspreads product required for the order
+        /// </summary>
         public string ToOrderMessage()
         {
             return $"<b>Покрывало</b><br>Название: {Title}<br>";

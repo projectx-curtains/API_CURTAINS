@@ -7,8 +7,8 @@ namespace Curtains.Application.CurtainsService
 {
     public class EmailSender : IMessageSender
     {
-        private const string _smtpClient = "smtp.gmail.com";
-        private const int _port = 587;
+        private const string _systemEmail = "zashtorim.noreply@gmail.com";
+        private const string _systemName = "Zashtorim";
         private readonly IConfiguration _config;
 
         public EmailSender(IConfiguration config)
@@ -17,12 +17,12 @@ namespace Curtains.Application.CurtainsService
         }
 
         /// <summary>
-        /// Sends a message to a specific address to an email address
+        /// Sends a message to a specific email address
         /// </summary>
         /// <param name="customerEmail">The mail to which the message is sent</param>
-        public async Task SendAsync(string subject, string body, string customerEmail)
+        public async Task SendMessageToCustomerAsync(string subject, string body, string customerEmail)
         {
-            var systemAddress = new MailAddress(_config["EmailSettings:SystemEmail"], _config["EmailSettings:SystemName"]);
+            var systemAddress = new MailAddress(_systemEmail, _systemName);
             var customerAddress = new MailAddress(customerEmail);
             using var message = new MailMessage(systemAddress, customerAddress)
             {
@@ -31,10 +31,10 @@ namespace Curtains.Application.CurtainsService
                 IsBodyHtml = true
             };
 
-            using var smtp = new SmtpClient(_smtpClient, _port)
+            using var smtp = new SmtpClient(_config["EmailSettings:SmtpClient"], int.Parse(_config["EmailSettings:Port"]))
             {
                 EnableSsl = true,
-                Credentials = new NetworkCredential(_config["EmailSettings:SystemEmail"], _config["EmailSettings:SystemPassword"])
+                Credentials = new NetworkCredential(_systemEmail, _config["EmailSettings:SystemPassword"])
             };
 
             await smtp.SendMailAsync(message);

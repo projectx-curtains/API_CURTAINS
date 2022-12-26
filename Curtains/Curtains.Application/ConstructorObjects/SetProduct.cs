@@ -10,6 +10,10 @@ namespace Curtains.Application.ConstructorObjects
         /// </summary>
         public string Title {get; set; }
 
+
+        /// <summary>
+        ///  Method returning a message about the set product required for the order
+        /// </summary>
         public string ToOrderMessage()
         {
             return $"<b>Комплект</b><br>Название: {Title}<br>";

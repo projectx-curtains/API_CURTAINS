@@ -73,6 +73,17 @@ namespace Curtains.Application.CurtainsService
             return productImageDTO;
         }
 
+        public async Task<IEnumerable<ProductImageDTO>> GetAllByIdAsync(int[] Ids)
+        {
+            var productImages = new List<ProductImageDTO>();
+            foreach (int id in Ids)
+            {
+                productImages.Add(await GetByIdAsync(id));
+            }
+
+            return productImages;
+        }
+
         /// <summary>
         /// This method accepts <c> ProductImageDTO </c> entity and mapping to <c> ProductImageModel </c> then pushed to ProductImage repository for add to database
         /// </summary>

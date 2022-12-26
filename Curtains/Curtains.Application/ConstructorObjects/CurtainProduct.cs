@@ -37,6 +37,10 @@ namespace Curtains.Application.ConstructorObjects
         /// </summary>
         public string Color { get; set; }
 
+
+        /// <summary>
+        ///  Method returning a message about the curtian product required for the order
+        /// </summary>
         public string ToOrderMessage()
         {
             return Title switch

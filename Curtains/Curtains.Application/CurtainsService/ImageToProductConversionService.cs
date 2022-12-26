@@ -15,6 +15,10 @@ namespace Curtains.Application.CurtainsService
             _mapper = mapper;
         }
 
+        /// <summary>
+        /// Convert single image into IProduct
+        /// </summary>
+        /// <param name="productImage">Product image that should be converted</param>
         public IProduct Convert(ProductImageDTO productImage)
         {
             return productImage switch
@@ -27,6 +31,10 @@ namespace Curtains.Application.CurtainsService
             };
         }
 
+        /// <summary>
+        /// Convert several images into IProducts
+        /// </summary>
+        /// <param name="productImages">List of product images</param>
         public IEnumerable<IProduct> ConvertAll(IEnumerable<ProductImageDTO> productImages)
         {
             foreach (var productImage in productImages)

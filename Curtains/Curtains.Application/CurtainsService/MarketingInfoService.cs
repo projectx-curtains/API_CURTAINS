@@ -8,7 +8,7 @@ using Curtains.Application.CurtainsService.Interfaces;
 namespace Curtains.Application.CurtainsService
 {
     /// <summary>
-    /// Class <c> OurWorksService </c> describes the interaction model of the data transfer object to the database.
+    /// Class <c> MarketingInfoService </c> describes the interaction model of the data transfer object to the database.
     /// </summary>
     public class MarketingInfoService : IMarketingInfoService
     {
