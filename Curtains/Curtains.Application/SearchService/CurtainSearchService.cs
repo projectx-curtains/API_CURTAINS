@@ -5,6 +5,7 @@ using Microsoft.Extensions.Logging;
 using Curtains.Domain.Projections;
 using Curtains.Application.DTO;
 using Curtains.Infrastructure.SearchQueries;
+using MediatR;
 
 namespace Curtains.Application.SearchService
 {
@@ -15,18 +16,21 @@ namespace Curtains.Application.SearchService
         private readonly IElasticCurtainsIndexRepository _elasticIndexRepository;
         private readonly ICurtainsSearchRepository _curtainsSearchRepository;
         private readonly IMapper _mapper;
+        private readonly IMediator _mediator;
         #endregion
 
         public CurtainSearchService(ILogger logger,
             ICurtainsRepository curtainsRepository,
             IMapper mapper,
             IElasticCurtainsIndexRepository elasticIndexRepository,
-            ICurtainsSearchRepository curtainsSearchRepository)
+            ICurtainsSearchRepository curtainsSearchRepository,
+            IMediator mediator)
         {
             _curtainsRepository = curtainsRepository;
             _elasticIndexRepository = elasticIndexRepository;
             _mapper = mapper;
             _curtainsSearchRepository = curtainsSearchRepository;
+            _mediator = mediator;
         }
 
         #region MethodsRegion
@@ -42,8 +46,8 @@ namespace Curtains.Application.SearchService
         }
 
         public async Task<List<CurtainsProjection>> CurtainsSearch(ElasticSearchQuery<CurtainSearchDTO> model)
-        {   
-            var modelProjection  = _mapper.Map<ElasticSearchQuery<CurtainsProjection>>(model);
+        {
+            var modelProjection = _mapper.Map<ElasticSearchQuery<CurtainsProjection>>(model);
             var response = await _curtainsSearchRepository.GetCurtains(modelProjection);
             return response;
         }

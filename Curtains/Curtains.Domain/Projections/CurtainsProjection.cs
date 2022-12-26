@@ -15,6 +15,6 @@
         public string Color { get; set; }  
         public string Material { get; set; }  
         public string CurtainsType { get; set; } 
-        public string CurtainsKind { get; set; }  
+        public string CurtainsKind { get; set; }
     }
 }

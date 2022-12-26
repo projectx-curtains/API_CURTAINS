@@ -5,6 +5,7 @@ using Curtains.Domain.Projections;
 using Curtains.Application.DTO;
 using Curtains.Application.SearchService.Interfaces;
 using Curtains.Infrastructure.SearchQueries;
+using MediatR;
 
 namespace Curtains.Api.Controllers
 {
@@ -14,11 +15,16 @@ namespace Curtains.Api.Controllers
     {
         private readonly IElasticCurtainsIndexRepository _elastic;
         private readonly ICurtainSearchService _searchService;
+        private readonly IMediator _mediator;
+        private readonly ICurtainsSearchRepository _repository;
 
-        public FiltersCurtainsController(IElasticCurtainsIndexRepository elastic, ICurtainSearchService searchService)
+        public FiltersCurtainsController(IElasticCurtainsIndexRepository elastic,
+            ICurtainSearchService searchService,
+            IMediator mediator)
         {
             _elastic = elastic;
             _searchService = searchService;
+            _mediator = mediator;
         }
 
         [HttpGet]
@@ -46,6 +52,8 @@ namespace Curtains.Api.Controllers
         [HttpPost]
         public async Task<ActionResult<List<CurtainsProjection>>> CurtainSearch([FromQuery] ElasticSearchQuery<CurtainSearchDTO> request)
         {
+            // var response = await _searchService.CurtainsSearch(request);
+
             var response = await _searchService.CurtainsSearch(request);
             return Ok(response);
         }

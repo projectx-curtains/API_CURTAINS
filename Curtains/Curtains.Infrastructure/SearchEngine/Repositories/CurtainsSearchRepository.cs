@@ -17,27 +17,29 @@ namespace Curtains.Infrastructure.SearchEngine
 
         public async Task<List<CurtainsProjection>> GetCurtains(ElasticSearchQuery<CurtainsProjection> model)
         {
+
+            string[] searchFields = SearchRules.CurtainsSearchFields;
+
             var response = await _elasticClient.SearchAsync<CurtainsProjection>(s => s
-                    .Query(q => q
-                        .Terms(t => t
-                            .Field(f => f.Color)
-                            .Terms(model.Filters.Colors)
-
-                            .Field(f => f.Material)
-                            .Terms(model.Filters.Materials)
-
-                            .Field(f => f.CurtainsType)
-                            .Terms(model.Filters.CurtainsTypes)
+                .Take(model.Take)
+                .Skip(model.Skip)
+                .Query(q => q
+                    .QueryString(qs => qs
+                        .Fields(searchFields.Select(x => new Field(x)).ToArray())
                         )
                     )
-                    .Take(model.Take)
-                    .Skip(model.Skip)
-                );
-
+                
+            /*.Highlight(h => h
+                .Fields(searchFields
+                    .Select<string, Func<HighlightFieldDescriptor<CurtainsProjection>, IHighlightField>>(s =>
+                        hf => hf
+                            .Field(s)).ToArray())));*/
+            );
             if (!response.IsValid)
             {
                 throw new Exception(response.DebugInformation);
             }
+
             var list = response.Hits.Select(x => new CurtainsProjection()
             {
                 Id = x.Source.Id,
