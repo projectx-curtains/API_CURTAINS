@@ -1,10 +1,12 @@
 using AutoMapper;
 using Curtains.Application.ConstructorObjects;
 using Curtains.Application.DTO;
-using Curtains.Domain.Models;
 
 namespace Curtains.Application.AutoMapping
 {
+    /// <summary>
+    /// This class describes the behavior of automapping when working with order
+    /// </summary>
     public class OrderProfile : Profile
     {
         public OrderProfile()

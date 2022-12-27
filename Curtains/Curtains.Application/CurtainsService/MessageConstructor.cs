@@ -10,12 +10,11 @@ namespace Curtains.Application.CurtainsService
     /// </summary>
     class MessageConstructor : IMessageConstructor
     {
-        private const string _customerName = "Раиса Леонидовна";
-        private readonly IConfiguration _config;
+        private readonly string _customerName;
 
         public MessageConstructor(IConfiguration config)
         {
-            _config = config;
+            _customerName = config["EmailSettings:CustomerName"];
         }
 
         /// <summary>

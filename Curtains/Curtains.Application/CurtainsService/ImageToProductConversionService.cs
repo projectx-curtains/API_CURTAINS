@@ -16,7 +16,7 @@ namespace Curtains.Application.CurtainsService
         }
 
         /// <summary>
-        /// Convert single image into IProduct
+        /// Convert single image into product that can return information required for an order
         /// </summary>
         /// <param name="productImage">Product image that should be converted</param>
         public IProduct Convert(ProductImageDTO productImage)
@@ -32,7 +32,7 @@ namespace Curtains.Application.CurtainsService
         }
 
         /// <summary>
-        /// Convert several images into IProducts
+        /// Convert several images into product that can return information required for an order
         /// </summary>
         /// <param name="productImages">List of product images</param>
         public IEnumerable<IProduct> ConvertAll(IEnumerable<ProductImageDTO> productImages)

@@ -7,13 +7,15 @@ namespace Curtains.Application.CurtainsService
 {
     public class EmailSender : IMessageSender
     {
-        private const string _systemEmail = "zashtorim.noreply@gmail.com";
-        private const string _systemName = "Zashtorim";
+        private readonly string _systemEmail;
+        private readonly string _systemName;
         private readonly IConfiguration _config;
 
         public EmailSender(IConfiguration config)
         {
             _config = config;
+            _systemEmail = config["EmailSettings:SystemEmail"];
+            _systemName = config["EmailSettings:SystemName"];
         }
 
         /// <summary>
