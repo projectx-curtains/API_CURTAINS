@@ -16,7 +16,6 @@ namespace Curtains.Api.Controllers
         private readonly IElasticCurtainsIndexRepository _elastic;
         private readonly ICurtainSearchService _searchService;
         private readonly IMediator _mediator;
-        private readonly ICurtainsSearchRepository _repository;
 
         public FiltersCurtainsController(IElasticCurtainsIndexRepository elastic,
             ICurtainSearchService searchService,

@@ -24,8 +24,8 @@ namespace Curtains.Infrastructure.SearchEngine
                 .Take(model.Take)
                 .Skip(model.Skip)
                 .Query(q => q
-                    .QueryString(qs => qs
-                        .Fields(searchFields.Select(x => new Field(x)).ToArray())
+                        .QueryString(qs => qs
+                        .Fields(searchFields.Select(x => new Field(x)).ToArray()).Query("Для кухни")
                         )
                     )
                 
@@ -40,7 +40,11 @@ namespace Curtains.Infrastructure.SearchEngine
                 throw new Exception(response.DebugInformation);
             }
 
-            var list = response.Hits.Select(x => new CurtainsProjection()
+            var project = response.Documents.ToList();
+
+            // var project = response.HitsMetadata.Hits.Select(h => h.Source).ToList();
+            
+            /*var list = response.Hits.Select(x => new CurtainsProjection()
             {
                 Id = x.Source.Id,
                 Title = x.Source.Title,
@@ -56,9 +60,9 @@ namespace Curtains.Infrastructure.SearchEngine
                 Material = x.Source.Material,
                 CurtainsType = x.Source.CurtainsType,
                 CurtainsKind = x.Source.CurtainsKind
-            }).ToList();
+            }).ToList();*/
 
-            return list;
+            return project;
         }
     }
 }
