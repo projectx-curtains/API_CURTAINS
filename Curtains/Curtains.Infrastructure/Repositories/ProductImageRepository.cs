@@ -3,12 +3,8 @@ using Curtains.Infrastructure.Database;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Curtains.Infrastructure.Interfaces;
+using Curtains.Infrastructure.Shared.Exceptions;
 
 namespace Curtains.Infrastructure.Repositories
 {
@@ -21,7 +17,7 @@ namespace Curtains.Infrastructure.Repositories
         private readonly ILogger _logger;
         private readonly CurtainsDbContext _curtainsContext;
         private IQueryable<ProductImageModel> Query => _curtainsContext.ProductImages.Include(x => x.Curtains).Include(x => x.Pillows)
-                    .Include(x => x.Bedspreads).Include(x => x.Sets).Include(x => x.Fabric).Include(x => x.MarketingInfo);
+                    .Include(x => x.Bedspreads).Include(x => x.Sets).Include(x => x.Fabrics).Include(x => x.MarketingInfo);
         #endregion
 
         public ProductImageRepository(CurtainsDbContext curtainsContext, ILogger logger)
@@ -37,7 +33,13 @@ namespace Curtains.Infrastructure.Repositories
         /// <returns>Collection of ProductImageModel entities in List ProductImage</return>
         public IEnumerable<ProductImageModel> GetAll()
         {
-            return Query.AsNoTracking().AsEnumerable();
+            if (!_curtainsContext.ProductImages.Any())
+            {
+                _logger.LogError("Product images table is empty");
+                throw new ResourceNotFoundException();
+            }
+
+            return _curtainsContext.ProductImages.AsNoTracking().AsEnumerable();
         }
 
         /// <summary>
@@ -79,7 +81,7 @@ namespace Curtains.Infrastructure.Repositories
         }
 
         /// <summary>
-        /// This method update <c> ProductImageModel <c> entity in database 
+        /// This method update <c> ProductImageModel <c> entity in database
         /// </summary>
         /// <param name = "entity" > ProductImageModel ProductImage</param>
         public async Task UpdateAsync(ProductImageModel entity)
@@ -99,7 +101,7 @@ namespace Curtains.Infrastructure.Repositories
         }
 
         /// <summary>
-        /// This method remove <c> ProductImageModel <c> entity from database 
+        /// This method remove <c> ProductImageModel <c> entity from database
         /// </summary>
         /// <param name = "entity" > ProductImageModel ProductImage</param>
         public async Task RemoveAsync(ProductImageModel entity)
@@ -115,7 +117,7 @@ namespace Curtains.Infrastructure.Repositories
         }
 
         /// <summary>
-        /// This method save changes in database 
+        /// This method save changes in database
         /// </summary>
         public async void SaveChangesAsync()
         {

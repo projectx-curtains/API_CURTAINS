@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Curtains.Domain.Models
+﻿namespace Curtains.Domain.Models
 {
     /// <summary>
     ///  This class describes model of set of products.
@@ -25,6 +19,10 @@ namespace Curtains.Domain.Models
         /// </summary>
         public int? BedspreadsId { get; set; }
         /// <summary>
+        ///  This property represents LabmvrequinsId column.
+        /// </summary>
+        public int? LambrequinsId { get; set; }
+        /// <summary>
         ///  This property represents price of product set.
         /// </summary>
         public decimal Price { get; set; }
@@ -34,15 +32,23 @@ namespace Curtains.Domain.Models
         /// <summary>
         ///  This property represents curtains in that product set.
         /// </summary>
-        public virtual CurtainsModel Curtains { get; set; }
+        public virtual CurtainsModel? Curtains { get; set; }
         /// <summary>
         ///  This property represents pillows in that product set.
         /// </summary>
-        public virtual PillowsModel Pillows { get; set; }
+        public virtual PillowsModel? Pillows { get; set; }
         /// <summary>
         ///  This property represents bedspreads in that product set.
         /// </summary>
-        public virtual BedspreadsModel Bedspreads { get; set; }
+        public virtual BedspreadsModel? Bedspreads { get; set; }
+        /// <summary>
+        ///  This property represents lambrequin in that set.
+        /// </summary>
+        public virtual LambrequinsModel? Lambrequins { get; set; }
+        /// <summary>
+        ///  This property represents product images with this sets.
+        /// </summary>
+        public virtual ICollection<ProductImageModel> ProductImages { get; }
         #endregion
     }
 }

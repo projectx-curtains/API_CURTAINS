@@ -1,18 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Curtains.Application.CurtainsServices.Interfaces;
 using Curtains.Application.DTO;
 using Curtains.Domain.Models;
 using Curtains.Infrastructure.Interfaces;
-using Curtains.Infrastructure.Database;
-using Microsoft.EntityFrameworkCore.ChangeTracking;
 using AutoMapper;
-using Microsoft.EntityFrameworkCore;
-using Curtains.Application.CurtainsServices.Interfaces;
 
-namespace Curtains.Application.CurtainsService
+namespace Curtains.Application.CurtainsServices
 {
     /// <summary>
     /// Class <c> ReviewService </c> a default implementetion of <c> IReviewService </c>

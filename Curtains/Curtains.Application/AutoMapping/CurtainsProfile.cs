@@ -13,7 +13,7 @@ namespace Curtains.Application.AutoMapping
             CreateMap<CurtainsModel, CurtainsDTO>()
                 .ReverseMap();
 
-            CreateMap<CurtainsDTO, CurtainsProjection>()
+            /*CreateMap<CurtainsDTO, CurtainsProjection>()
                 .ForMember(dst => dst.Fabric, opt => opt
                     .MapFrom(src => src.Fabric.Title))
                 .ForMember(dst => dst.Color, opt => opt
@@ -24,7 +24,7 @@ namespace Curtains.Application.AutoMapping
                     .MapFrom(src => src.CurtainsType.Title))
                 .ForMember(dst => dst.CurtainsKind, opt => opt
                     .MapFrom(src => src.CurtainsKind.Title))
-                .ReverseMap();
+                .ReverseMap();*/
 
             CreateMap<CurtainSearchDTO, CurtainsProjection>()
                 .ReverseMap();

@@ -48,7 +48,8 @@ namespace Curtains.Application
 
             var interfaceTypes = types
                 .Where(type => type.IsInterface
-                            && (type.Namespace == typeof(IOurWorksService).Namespace) || type.Namespace == typeof(ICurtainSearchService).Namespace)
+                            && type.Namespace == typeof(IOurWorksService).Namespace || type.Namespace == typeof(IProductImageService).Namespace || 
+                            type.Namespace == typeof(ICurtainSearchService).Namespace)
             .ToArray();
 
             foreach (var interfaceType in interfaceTypes)

@@ -25,7 +25,7 @@ namespace Curtains.Infrastructure.SearchEngine
                 .Skip(model.Skip)
                 .Query(q => q
                         .QueryString(qs => qs
-                        .Fields(searchFields.Select(x => new Field(x)).ToArray()).Query("Для кухни")
+                        .Fields(searchFields.Select(x => new Field(x)).ToArray()) /*.Query("Для кухни")*/
                         )
                     )
                 

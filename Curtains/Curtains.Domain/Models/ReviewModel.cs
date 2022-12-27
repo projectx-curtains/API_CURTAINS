@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Curtains.Domain.Models
+﻿namespace Curtains.Domain.Models
 {
     /// <summary>
     ///  This class describes review model.
@@ -31,7 +25,7 @@ namespace Curtains.Domain.Models
         /// <summary>
         ///  This property represents path to image of review.
         /// </summary>
-        public string ImagePath { get; set; }  
+        public string ImagePath { get; set; }
         #endregion
     }
 }

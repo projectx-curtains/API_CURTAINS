@@ -3,12 +3,8 @@ using Curtains.Infrastructure.Database;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Curtains.Infrastructure.Interfaces;
+using Curtains.Infrastructure.Shared.Exceptions;
 
 namespace Curtains.Infrastructure.Repositories
 {
@@ -36,6 +32,12 @@ namespace Curtains.Infrastructure.Repositories
         /// <returns>Collection of ReviewModel entities in List Review</return>
         public IEnumerable<ReviewModel> GetAll()
         {
+            if (!_curtainsContext.Reviews.Any())
+            {
+                _logger.LogError("Reviews table is empty");
+                throw new ResourceNotFoundException();
+            }
+
             return _curtainsContext.Reviews.AsNoTracking().AsEnumerable();
         }
 
@@ -78,7 +80,7 @@ namespace Curtains.Infrastructure.Repositories
         }
 
         /// <summary>
-        /// This method update <c> ReviewModel <c> entity in database 
+        /// This method update <c> ReviewModel <c> entity in database
         /// </summary>
         /// <param name = "entity" > ReviewModel Review</param>
         public async Task UpdateAsync(ReviewModel entity)
@@ -98,7 +100,7 @@ namespace Curtains.Infrastructure.Repositories
         }
 
         /// <summary>
-        /// This method remove <c> ReviewModel <c> entity from database 
+        /// This method remove <c> ReviewModel <c> entity from database
         /// </summary>
         /// <param name = "entity" > ReviewModel Review</param>
         public async Task RemoveAsync(ReviewModel entity)
@@ -114,7 +116,7 @@ namespace Curtains.Infrastructure.Repositories
         }
 
         /// <summary>
-        /// This method save changes in database 
+        /// This method save changes in database
         /// </summary>
         public async void SaveChangesAsync()
         {

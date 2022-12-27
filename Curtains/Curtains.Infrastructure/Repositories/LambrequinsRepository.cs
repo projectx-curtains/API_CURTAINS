@@ -3,12 +3,8 @@ using Curtains.Infrastructure.Database;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Curtains.Infrastructure.Interfaces;
+using Curtains.Infrastructure.Shared.Exceptions;
 
 namespace Curtains.Infrastructure.Repositories
 {
@@ -20,7 +16,7 @@ namespace Curtains.Infrastructure.Repositories
         #region FieldsRegion
         private readonly ILogger _logger;
         private readonly CurtainsDbContext _curtainsContext;
-        private IQueryable<LambrequinsModel> Query => _curtainsContext.Lambrequins.Include(x => x.UserOrders);
+        private IQueryable<LambrequinsModel> Query => _curtainsContext.Lambrequins;
         #endregion
 
         public LambrequinsRepository(CurtainsDbContext curtainsContext, ILogger logger)
@@ -36,6 +32,12 @@ namespace Curtains.Infrastructure.Repositories
         /// <returns>Collection of LambrequinsModel entities in List Lambrequins</return>
         public IEnumerable<LambrequinsModel> GetAll()
         {
+            if (!_curtainsContext.Lambrequins.Any())
+            {
+                _logger.LogError("Lambrequins table is empty");
+                throw new ResourceNotFoundException();
+            }
+
             return _curtainsContext.Lambrequins.AsNoTracking().AsEnumerable();
         }
 
@@ -78,7 +80,7 @@ namespace Curtains.Infrastructure.Repositories
         }
 
         /// <summary>
-        /// This method update <c> LambrequinsModel <c> entity in database 
+        /// This method update <c> LambrequinsModel <c> entity in database
         /// </summary>
         /// <param name = "entity" > LambrequinsModel Lambrequins</param>
         public async Task UpdateAsync(LambrequinsModel entity)
@@ -98,7 +100,7 @@ namespace Curtains.Infrastructure.Repositories
         }
 
         /// <summary>
-        /// This method remove <c> LambrequinsModel <c> entity from database 
+        /// This method remove <c> LambrequinsModel <c> entity from database
         /// </summary>
         /// <param name = "entity" > LambrequinsModel Lambrequins</param>
         public async Task RemoveAsync(LambrequinsModel entity)
@@ -114,7 +116,7 @@ namespace Curtains.Infrastructure.Repositories
         }
 
         /// <summary>
-        /// This method save changes in database 
+        /// This method save changes in database
         /// </summary>
         public async void SaveChangesAsync()
         {

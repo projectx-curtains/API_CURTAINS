@@ -32,7 +32,7 @@ namespace Curtains.Domain.Models
 
         #region NavigationProperties
         /// <summary>
-        ///  This property represents products, which marketing information is presented.
+        ///  This property represents ProductImage.
         /// </summary>
         public virtual ProductImageModel ProductImage { get; set; }
         #endregion

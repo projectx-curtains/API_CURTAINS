@@ -1,17 +1,10 @@
 ﻿using Curtains.Domain.Models;
 using Curtains.Infrastructure.Database;
 using Curtains.Infrastructure.Interfaces;
+using Curtains.Infrastructure.Shared.Exceptions;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 using Microsoft.Extensions.Logging;
-using Microsoft.VisualBasic;
-using Nest;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 
 namespace Curtains.Infrastructure.Repositories
 {
@@ -23,7 +16,7 @@ namespace Curtains.Infrastructure.Repositories
         #region FieldsRegion
         private readonly ILogger _logger;
         private readonly CurtainsDbContext _curtainsContext;
-        private IQueryable<AccessoriesModel> Query => _curtainsContext.Accessories.Include(x => x.Curtains).Include(x => x.UserOrders);
+        private IQueryable<AccessoriesModel> Query => _curtainsContext.Accessories.Include(x => x.Curtains);
         #endregion
 
         public AccessoriesRepository(CurtainsDbContext curtainsContext, ILogger logger)
@@ -39,6 +32,12 @@ namespace Curtains.Infrastructure.Repositories
         /// <returns>Collection of AccessoriesModel entities in List type</return>
         public IEnumerable<AccessoriesModel> GetAll()
         {
+            if (!_curtainsContext.Accessories.Any())
+            {
+                _logger.LogError("Accessories table is empty");
+                throw new ResourceNotFoundException();
+            }
+
             return _curtainsContext.Accessories.AsNoTracking().AsEnumerable();
         }
 
@@ -81,18 +80,18 @@ namespace Curtains.Infrastructure.Repositories
         }
 
         /// <summary>
-        /// This method update <c> AccessoriesModel <c> entity in database 
+        /// This method update <c> AccessoriesModel <c> entity in database
         /// </summary>
         /// <param name = "entity" > AccessoriesModel type</param>
         public async Task UpdateAsync(AccessoriesModel entity)
         {
-            foreach (var entry in _curtainsContext.ChangeTracker.Entries()) 
-            { 
-                var entryEntity = (Entity)entry.Entity; 
-                if (entryEntity.IsNew) 
+            foreach (var entry in _curtainsContext.ChangeTracker.Entries())
+            {
+                var entryEntity = (Entity)entry.Entity;
+                if (entryEntity.IsNew)
                 {
-                    entryEntity.State = EntityState.Added; 
-                } 
+                    entryEntity.State = EntityState.Added;
+                }
             }
 
             _curtainsContext.Accessories.Update(entity);
@@ -101,7 +100,7 @@ namespace Curtains.Infrastructure.Repositories
         }
 
         /// <summary>
-        /// This method remove <c> AccessoriesModel <c> entity from database 
+        /// This method remove <c> AccessoriesModel <c> entity from database
         /// </summary>
         /// <param name = "entity" > AccessoriesModel type</param>
         public async Task RemoveAsync(AccessoriesModel entity)
@@ -117,7 +116,7 @@ namespace Curtains.Infrastructure.Repositories
         }
 
         /// <summary>
-        /// This method save changes in database 
+        /// This method save changes in database
         /// </summary>
         public async void SaveChangesAsync()
         {

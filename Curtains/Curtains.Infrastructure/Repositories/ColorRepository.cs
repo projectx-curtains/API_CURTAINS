@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Curtains.Infrastructure.Interfaces;
+using Curtains.Infrastructure.Shared.Exceptions;
 
 namespace Curtains.Infrastructure.Repositories
 {
@@ -20,7 +21,7 @@ namespace Curtains.Infrastructure.Repositories
         #region FieldsRegion
         private readonly ILogger _logger;
         private readonly CurtainsDbContext _curtainsContext;
-        private IQueryable<ColorModel> Query => _curtainsContext.Colors.Include(x => x.Fabrics).Include(x => x.Accessories).Include(x => x.Lambrequins);
+        private IQueryable<ColorModel> Query => _curtainsContext.Colors.Include(x => x.Fabrics).Include(x => x.Accessories);
         #endregion
 
         public ColorRepository(CurtainsDbContext curtainsContext, ILogger logger)
@@ -36,6 +37,12 @@ namespace Curtains.Infrastructure.Repositories
         /// <returns>Collection of ColorModel entities in List type</return>
         public IEnumerable<ColorModel> GetAll()
         {
+            if (!_curtainsContext.Colors.Any())
+            {
+                _logger.LogError("Colors table is empty");
+                throw new ResourceNotFoundException();
+            }
+
             return _curtainsContext.Colors.AsNoTracking().AsEnumerable();
         }
 
@@ -78,7 +85,7 @@ namespace Curtains.Infrastructure.Repositories
         }
 
         /// <summary>
-        /// This method update <c> ColorModel <c> entity in database 
+        /// This method update <c> ColorModel <c> entity in database
         /// </summary>
         /// <param name = "entity" > ColorModel type</param>
         public async Task UpdateAsync(ColorModel entity)
@@ -98,7 +105,7 @@ namespace Curtains.Infrastructure.Repositories
         }
 
         /// <summary>
-        /// This method remove <c> ColorModel <c> entity from database 
+        /// This method remove <c> ColorModel <c> entity from database
         /// </summary>
         /// <param name = "entity" > ColorModel type</param>
         public async Task RemoveAsync(ColorModel entity)
@@ -114,7 +121,7 @@ namespace Curtains.Infrastructure.Repositories
         }
 
         /// <summary>
-        /// This method save changes in database 
+        /// This method save changes in database
         /// </summary>
         public async void SaveChangesAsync()
         {
