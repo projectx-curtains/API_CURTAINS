@@ -24,7 +24,7 @@ namespace Curtains.Infrastructure.Database
         public virtual DbSet<BedspreadsModel> Bedspreads { get; set; }
         public virtual DbSet<PillowsModel> Pillows { get; set; }
         public virtual DbSet<MarketingInfoModel> MarketingInfos { get; set; }
-        public virtual DbSet<ProductSetModel> Sets { get; set; }
+        public virtual DbSet<ProductSetModel> ProductSets { get; set; }
         public virtual DbSet<MaterialModel> Materials { get; set; }
         public virtual DbSet<CurtainsTypeModel> CurtainsTypes { get; set; }
         public virtual DbSet<CurtainsKindModel> CurtainsKinds { get; set; }
@@ -42,11 +42,6 @@ namespace Curtains.Infrastructure.Database
         protected override void OnModelCreating(ModelBuilder builder)
         {
             builder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
-
-            builder
-            .Entity<ProductImageModel>()
-            .HasOne(u => u.MarketingInfo)
-            .WithOne(p => p.ProductImage);
         }
 
         public bool HasActiveTransaction => _currentTransaction != null;

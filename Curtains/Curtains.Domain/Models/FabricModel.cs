@@ -21,7 +21,7 @@
         /// <summary>
         ///  This property represents DecorationId column.
         /// </summary>
-        public int DecorationsId { get; set; }        
+        public int DecorationsId { get; set; }
         /// <summary>
         ///  This property represents ManufacturerId column.
         /// </summary>

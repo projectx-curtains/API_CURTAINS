@@ -1,6 +1,8 @@
-namespace Curtains.Application.DTO
+using Curtains.Application.ConstructorObjects.Interfaces;
+
+namespace Curtains.Application.ConstructorObjects
 {
-    public class CurtainsDTO
+    public class CurtainProduct : IProduct
     {
         /// <summary>
         /// Curtain title
@@ -34,5 +36,24 @@ namespace Curtains.Application.DTO
         /// Curtain color
         /// </summary>
         public string Color { get; set; }
+
+
+        /// <summary>
+        ///  Method returning a message about the curtian product required for the order
+        /// </summary>
+        public string ToOrderMessage()
+        {
+            return Title switch
+            {
+                null => "<b>Шторы</b><br>" +
+                        $"Размеры - {Height}x{Width}<br>" +
+                        $"Количество - {Count}<br>" +
+                        $"Вид штор - {CurtainsType}<br>" +
+                        $"Вид Ткани - {FabricType}<br>" +
+                        $"Дизайн - {Design}<br>" +
+                        $"Цвет - {Color}<br>",
+                _ => $"<b>Шторы</b><br>Название - {Title}<br>"
+            };
+        }
     }
 }
