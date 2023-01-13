@@ -1,7 +1,9 @@
 ﻿using System;
+using Curtains.Application.DTO.Interfaces;
+
 namespace Curtains.Application.DTO
 {
-    public class BaseExtendedDTO : BaseExtendedByTitleDTO
+    public class BaseExtendedDTO : BaseExtendedByTitleDTO, IBaseExtendedDto
     {
         #region PropertiesRegion
         /// <summary>

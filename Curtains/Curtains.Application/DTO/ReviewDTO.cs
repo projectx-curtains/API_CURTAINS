@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using AutoMapper.Configuration.Annotations;
+using Curtains.Application.DTO.Interfaces;
 using Curtains.Domain.Models;
 
 namespace Curtains.Application.DTO
@@ -8,7 +9,7 @@ namespace Curtains.Application.DTO
     /// <summary>
     /// Class <c> ReviewDTO </c> describes interaction model for ReviewController and database.
     /// </summary>
-    public class ReviewDTO : BaseDTO
+    public class ReviewDTO : BaseDTO, IReviewDto
     {
         #region PropertiesRegion
 

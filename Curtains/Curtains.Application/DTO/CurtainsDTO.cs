@@ -1,6 +1,8 @@
+using Curtains.Application.DTO.Interfaces;
+
 namespace Curtains.Application.DTO
 {
-    public class CurtainsDTO
+    public class CurtainsDTO : ICrutainsDto
     {
         /// <summary>
         /// Curtain title
