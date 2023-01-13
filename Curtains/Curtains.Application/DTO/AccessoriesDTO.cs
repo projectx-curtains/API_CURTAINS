@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Curtains.Application.DTO.Interfaces;
 
 namespace Curtains.Application.DTO
 {
     /// <summary>
     /// Class <c> AccessoriesDTO </c> describes interaction model for NewItemsController and database.
     /// </summary>
-    public class AccessoriesDTO : BaseExtendedDTO
+    public class AccessoriesDTO : BaseExtendedDTO, IAccessoriesDto
     {
         #region PropertiesRegion
         /// <summary>

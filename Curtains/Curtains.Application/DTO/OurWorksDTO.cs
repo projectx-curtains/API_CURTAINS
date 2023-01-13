@@ -1,10 +1,12 @@
+using Curtains.Application.DTO.Interfaces;
+
 namespace Curtains.Application.DTO
 {
 
     /// <summary>
     /// Class <c> OurWorksDTO </c> describes interaction model for ReviewController and database.
     /// </summary>
-    public class OurWorksDTO
+    public class OurWorksDTO : IOurWorksDto
     {
         #region PropertiesRegion
         /// <summary>

@@ -1,6 +1,8 @@
+using Curtains.Application.DTO.Interfaces;
+
 namespace Curtains.Application.DTO
 {
-    public class ConstructorDTO
+    public class ConstructorDTO : IConstructorDto
     {
         /// <summary>
         /// Curtains designed by the user

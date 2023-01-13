@@ -1,7 +1,9 @@
 ﻿using System;
+using Curtains.Application.DTO.Interfaces;
+
 namespace Curtains.Application.DTO
 {
-    public abstract class BaseDTO
+    public abstract class BaseDTO : IBaseDto
     {
         #region PropertiesRegion
         /// <summary>

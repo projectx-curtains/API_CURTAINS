@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Curtains.Application.DTO.Interfaces;
 
 namespace Curtains.Application.DTO
 {
     /// <summary>
     /// Class <c> ProductImageDTO </c> describes interaction model for NewItemsController and database.
     /// </summary>
-    public class ProductImageDTO : BaseDTO
+    public class ProductImageDTO : BaseDTO, IProductImageDto
     {
         #region PropertiesRegion
         /// <summary>

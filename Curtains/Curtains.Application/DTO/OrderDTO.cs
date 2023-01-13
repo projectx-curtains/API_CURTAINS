@@ -1,6 +1,8 @@
-﻿namespace Curtains.Application.DTO
+﻿using Curtains.Application.DTO.Interfaces;
+
+namespace Curtains.Application.DTO
 {
-    public class OrderDTO
+    public class OrderDTO : IOrderDto
     {
         #region PropertiesRegion
         /// <summary>
