@@ -15,7 +15,7 @@ namespace Curtains.Application.DTO
         /// <summary>
         ///  This property represents situation, if curtains are dense or not.
         /// </summary>
-        public bool Density { get; set; }
+        // public bool Density { get; set; }
         /// <summary>
         ///  This property represents situation, if curtains are sun-protected or not.
         /// </summary>
@@ -57,6 +57,14 @@ namespace Curtains.Application.DTO
         /// </summary>
         public int CurtainsKindId { get; set; }
         /// <summary>
+        ///  This property represents ColorId column.
+        /// </summary>
+        public int ColorId { get; set; }
+        /// <summary>
+        ///  This property represents BrasingId column.
+        /// </summary>
+        public int BracingId { get; set; }
+        /// <summary>
         ///  This property represents fabric of curtains.
         /// </summary>
         public FabricDTO Fabric { get; set; }
@@ -76,6 +84,10 @@ namespace Curtains.Application.DTO
         ///  This property represents kind of curtains.
         /// </summary>
         public CurtainsKindDTO CurtainsKind { get; set; }
+        /// <summary>
+        ///  This property represents of Color.
+        /// </summary>
+        public ColorDTO Color { get; set; }
         #endregion
     }
 }

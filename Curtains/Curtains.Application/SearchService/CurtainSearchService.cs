@@ -6,6 +6,7 @@ using Curtains.Domain.Projections;
 using Curtains.Application.DTO;
 using Curtains.Infrastructure.SearchQueries;
 using MediatR;
+using Curtains.Domain.Models;
 
 namespace Curtains.Application.SearchService
 {
@@ -45,6 +46,11 @@ namespace Curtains.Application.SearchService
             }
         }
 
+        public IEnumerable<CurtainsModel> GetAllCurtains() 
+        {
+            return _curtainsRepository.GetAll();
+        }
+
         public async Task<List<CurtainsProjection>> CurtainsSearch(ElasticSearchQuery<CurtainSearchDTO> model)
         {
             var modelProjection = _mapper.Map<ElasticSearchQuery<CurtainsProjection>>(model);
@@ -52,5 +58,10 @@ namespace Curtains.Application.SearchService
             return response;
         }
         #endregion
+
+        public async Task<List<CurtainsProjection>> GetTestService(string purpose)
+        {
+            return await _curtainsSearchRepository.GetTestCurtains(purpose);
+        }
     }
 }

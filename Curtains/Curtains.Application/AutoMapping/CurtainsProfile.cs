@@ -26,6 +26,9 @@ namespace Curtains.Application.AutoMapping
                     .MapFrom(src => src.CurtainsKind.Title))
                 .ReverseMap();*/
 
+            CreateMap<CurtainsDTO, CurtainsProjection>()
+                .ReverseMap();
+
             CreateMap<CurtainSearchDTO, CurtainsProjection>()
                 .ReverseMap();
 

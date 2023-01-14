@@ -32,6 +32,14 @@ namespace Curtains.Api.Controllers
             await _searchService.AddAllCurtains(indexName);
             return Ok();
         }
+
+        [Route("index")]
+        [HttpGet]
+        public ActionResult GetCurtains()
+        {
+            var x = _searchService.GetAllCurtains();
+            return Ok(x);
+        }
         
         [HttpPost]
         public ActionResult<IEnumerable<CurtainsModel>> AddIndex(CurtainsProjection model, string indexName)
@@ -55,6 +63,14 @@ namespace Curtains.Api.Controllers
 
             var response = await _searchService.CurtainsSearch(request);
             return Ok(response);
+        }
+
+        [Route("TEST")]
+        [HttpPost]
+        public async Task<ActionResult<List<CurtainsProjection>>> GetTest(string purpose)
+        {
+            var serviceResponce = await _searchService.GetTestService(purpose);
+            return Ok(serviceResponce);
         }
     }
 }
