@@ -1,38 +1,58 @@
+﻿using System.Security.AccessControl;
+
 namespace Curtains.Application.DTO
 {
-    public class CurtainsDTO
+    public class CurtainsDTO : BaseExtendedDTO
     {
+        #region PropertiesRegion
         /// <summary>
-        /// Curtain title
+        ///  This property represents situation, if curtains are sun-protected or not.
         /// </summary>
-        public string Title { get; set; }
+        public bool SunProtection { get; set; }
         /// <summary>
-        /// Curtain height
+        ///  This property represents height of curtains.
         /// </summary>
         public int Height { get; set; }
         /// <summary>
-        /// Curtain width
+        ///  This property represents width of curtains.
         /// </summary>
         public int Width { get; set; }
         /// <summary>
-        /// The number of such curtains in the order
+        ///  This property represents price of curtains.
         /// </summary>
-        public int Count { get; set; }
+        public decimal Price { get; set; }
         /// <summary>
-        /// Type of curtains
+        ///  This property represents purpose of curtains.
         /// </summary>
-        public string CurtainsType { get; set; }
+        public string Purpose { get; set; }
         /// <summary>
-        /// Curtain fabric design
+        ///  This property represents fabric of curtains.
         /// </summary>
-        public string Design { get; set; }
+        public virtual FabricDTO Fabric { get; set; }
         /// <summary>
-        /// Fabric type
+        ///  This property represents material of curtains.
         /// </summary>
-        public string FabricType { get; set; }
+        public virtual MaterialDTO Material { get; set; }
         /// <summary>
-        /// Curtain color
+        ///  This property represents accessories of curtains.
         /// </summary>
-        public string Color { get; set; }
+        public virtual AceEnumerator Accessories { get; set; }
+        /// <summary>
+        ///  This property represents type of curtains.
+        /// </summary>
+        public virtual CurtainsTypeDTO CurtainsType { get; set; }
+        /// <summary>
+        ///  This property represents kind of curtains.
+        /// </summary>
+        public virtual CurtainsKindDTO CurtainsKind { get; set; }
+        /// <summary>
+        ///  This property represents of Bracing.
+        /// </summary>
+        public virtual BracingDTO Bracing { get; set; }
+        /// <summary>
+        ///  This property represents of Color.
+        /// </summary>
+        public virtual ColorDTO Color { get; set; }
+        #endregion
     }
 }
