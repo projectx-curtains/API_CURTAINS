@@ -5,6 +5,7 @@ using Curtains.Domain.Models;
 using Curtains.Infrastructure.Interfaces;
 using Curtains.Infrastructure.Repositories;
 using Curtains.Infrastructure.Shared.Exceptions;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,11 +21,13 @@ namespace Curtains.Application.CurtainsService
     {
         private readonly IManufacturerRepository _manufacturerRepository;
         private readonly IMapper _mapper;
+        private readonly ILogger _logger;
 
-        public ManufacturerService(IManufacturerRepository manufacturerRepository, IMapper mapper)
+        public ManufacturerService(IManufacturerRepository manufacturerRepository, IMapper mapper, ILogger logger)
         {
             _manufacturerRepository = manufacturerRepository;
             _mapper = mapper;
+            _logger = logger;
         }
         public IEnumerable<ManufacturerDTO> GetAll()
         {

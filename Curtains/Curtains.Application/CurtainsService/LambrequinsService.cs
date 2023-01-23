@@ -5,6 +5,7 @@ using Curtains.Domain.Models;
 using Curtains.Infrastructure.Interfaces;
 using Curtains.Infrastructure.Repositories;
 using Curtains.Infrastructure.Shared.Exceptions;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,11 +21,13 @@ namespace Curtains.Application.CurtainsService
     {
         private readonly ILambrequinsRepository _lamberquinsRepository;
         private readonly IMapper _mapper;
+        private readonly ILogger _logger;
 
-        public LambrequinsService(ILambrequinsRepository lambrequinsRepository, IMapper mapper)
+        public LambrequinsService(ILambrequinsRepository lambrequinsRepository, IMapper mapper, ILogger logger)
         {
             _lamberquinsRepository = lambrequinsRepository;
             _mapper = mapper;
+            _logger = logger;
         }
 
         public IEnumerable<LambrequinsDTO> GetAll()

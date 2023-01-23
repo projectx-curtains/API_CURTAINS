@@ -4,6 +4,7 @@ using Curtains.Infrastructure.Interfaces;
 using AutoMapper;
 using Curtains.Application.CurtainsService.Interfaces;
 using Curtains.Infrastructure.Shared.Exceptions;
+using Microsoft.Extensions.Logging;
 
 namespace Curtains.Application.CurtainsServices
 {
@@ -15,12 +16,14 @@ namespace Curtains.Application.CurtainsServices
         #region FieldsRegion
         private readonly IReviewRepository _reviewRepository;
         private readonly IMapper _mapper;
+        private readonly ILogger _logger;
         #endregion
 
-        public ReviewService(IReviewRepository reviewRepository, IMapper mapper)
+        public ReviewService(IReviewRepository reviewRepository, IMapper mapper, ILogger logger)
         {
             _reviewRepository = reviewRepository;
             _mapper = mapper;
+            _logger = logger;
         }
 
         #region MethodsRegion

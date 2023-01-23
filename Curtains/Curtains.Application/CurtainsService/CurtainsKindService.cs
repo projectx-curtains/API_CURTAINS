@@ -4,6 +4,8 @@ using Curtains.Application.DTO;
 using Curtains.Domain.Models;
 using Curtains.Infrastructure.Interfaces;
 using Curtains.Infrastructure.Repositories;
+using Curtains.Infrastructure.Shared.Exceptions;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,11 +21,13 @@ namespace Curtains.Application.CurtainsService
     {
         private readonly ICurtainsKindRepository _curtainsKindRepostiory;
         private readonly IMapper _mapper;
+        private readonly ILogger _logger;
 
-        public CurtainsKindService(ICurtainsKindRepository curtainsKindRepository, IMapper mapper)
+        public CurtainsKindService(ICurtainsKindRepository curtainsKindRepository, IMapper mapper, ILogger logger)
         {
             _curtainsKindRepostiory = curtainsKindRepository;
             _mapper = mapper;
+            _logger = logger;
         }
 
         public IEnumerable<CurtainsKindDTO> GetAll()
@@ -34,26 +38,46 @@ namespace Curtains.Application.CurtainsService
 
         public async Task<CurtainsKindDTO> GetByIdAsync(int Id)
         {
-            var curtiansKind = await _curtainsKindRepostiory.GetByIdAsync(Id);
-            var curtainsKindDTO = _mapper.Map<CurtainsKindDTO>(curtiansKind);
+            var curtainsKind = await _curtainsKindRepostiory.GetByIdAsync(Id);
+            if (curtainsKind == null)
+            {
+                _logger.LogError("Сurtians Kind model is null");
+                throw new ResourceNotFoundException("Сurtians Kind model is null");
+            }
+            var curtainsKindDTO = _mapper.Map<CurtainsKindDTO>(curtainsKind);
             return curtainsKindDTO;
         }
 
         public async Task InsertAsync(CurtainsKindDTO entity, CancellationToken cancelationToken)
         {
             var curtainsKind = _mapper.Map<CurtainsKindModel>(entity);
+            if (curtainsKind == null)
+            {
+                _logger.LogError("Сurtians Kind model is null");
+                throw new ResourceNotFoundException("Сurtians Kind model is null");
+            }
             await _curtainsKindRepostiory.InsertAsync(curtainsKind, cancelationToken);
         }
 
         public async Task RemoveAsync(CurtainsKindDTO entity)
         {
             var curtainsKind = _mapper.Map<CurtainsKindModel>(entity);
+            if (curtainsKind == null)
+            {
+                _logger.LogError("Сurtians Kind model is null");
+                throw new ResourceNotFoundException("Сurtians Kind model is null");
+            }
             await _curtainsKindRepostiory.RemoveAsync(curtainsKind);
         }
 
         public async Task UpdateAsync(CurtainsKindDTO entity)
         {
             var curtainsKind = _mapper.Map<CurtainsKindModel>(entity);
+            if (curtainsKind == null)
+            {
+                _logger.LogError("Сurtians Kind model is null");
+                throw new ResourceNotFoundException("Сurtians Kind model is null");
+            }
             await _curtainsKindRepostiory.UpdateAsync(curtainsKind);
         }
     }

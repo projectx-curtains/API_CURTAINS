@@ -5,6 +5,7 @@ using Curtains.Domain.Models;
 using Curtains.Infrastructure.Interfaces;
 using Curtains.Infrastructure.Repositories;
 using Curtains.Infrastructure.Shared.Exceptions;
+using Microsoft.Extensions.Logging;
 
 namespace Curtains.Application.CurtainsService
 {
@@ -15,11 +16,13 @@ namespace Curtains.Application.CurtainsService
     {
         private readonly IMetaDataRepository _metaDataRepository;
         private readonly IMapper _mapper;
+        private readonly ILogger _logger;
 
-        public MetaDataService(IMetaDataRepository metaDataRepository, IMapper mapper)
+        public MetaDataService(IMetaDataRepository metaDataRepository, IMapper mapper, ILogger logger)
         {
             _metaDataRepository = metaDataRepository;
             _mapper = mapper;
+            _logger = logger;
         }
 
         public IEnumerable<MetaDataDTO> GetAll()

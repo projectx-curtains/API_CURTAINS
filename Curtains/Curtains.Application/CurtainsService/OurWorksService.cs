@@ -5,6 +5,7 @@ using Curtains.Application.CurtainsService.Interfaces;
 using Curtains.Infrastructure.Repositories;
 using Curtains.Domain.Models;
 using Curtains.Infrastructure.Shared.Exceptions;
+using Microsoft.Extensions.Logging;
 
 namespace Curtains.Application.CurtainsService
 {
@@ -16,12 +17,14 @@ namespace Curtains.Application.CurtainsService
         #region FieldsRegion
         private readonly IOurWorksRepository _ourWorksRepository;
         private readonly IMapper _mapper;
+        private readonly ILogger _logger;
         #endregion
 
-        public OurWorksService(IOurWorksRepository ourWorksRepository, IMapper mapper)
+        public OurWorksService(IOurWorksRepository ourWorksRepository, IMapper mapper, ILogger logger)
         {
             _ourWorksRepository = ourWorksRepository;
             _mapper = mapper;
+            _logger = logger;
         }
 
         #region MethodsRegion
@@ -73,7 +76,7 @@ namespace Curtains.Application.CurtainsService
         public async Task UpdateAsync(OurWorksDTO entity)
         {
             var ourWork = _mapper.Map<OurWorksModel>(entity);
-            if (ourWorks == null)
+            if (ourWork == null)
             {
                 _logger.LogError("Our work model is null");
                 throw new ResourceNotFoundException("Our work model is null");

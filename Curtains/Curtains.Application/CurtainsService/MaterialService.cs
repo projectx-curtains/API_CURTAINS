@@ -5,6 +5,7 @@ using Curtains.Domain.Models;
 using Curtains.Infrastructure.Interfaces;
 using Curtains.Infrastructure.Repositories;
 using Curtains.Infrastructure.Shared.Exceptions;
+using Microsoft.Extensions.Logging;
 
 namespace Curtains.Application.CurtainsService
 {
@@ -15,11 +16,13 @@ namespace Curtains.Application.CurtainsService
     {
         private readonly IMaterialRepository _materialRepository;
         private readonly IMapper _mapper;
+        private readonly ILogger _logger;
 
-        public MaterialService(IMaterialRepository materialRepository, IMapper mapper)
+        public MaterialService(IMaterialRepository materialRepository, IMapper mapper, ILogger logger)
         {
             _materialRepository = materialRepository;
             _mapper = mapper;
+            _logger = logger;
         }
 
         public IEnumerable<MaterialDTO> GetAll()

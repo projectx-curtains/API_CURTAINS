@@ -5,6 +5,7 @@ using Curtains.Domain.Models;
 using Curtains.Infrastructure.Interfaces;
 using Curtains.Infrastructure.Repositories;
 using Curtains.Infrastructure.Shared.Exceptions;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,11 +21,13 @@ namespace Curtains.Application.CurtainsService
     {
         private readonly IFabricKindRepository _fabricKindRepository;
         private readonly IMapper _mapper;
+        private readonly ILogger _logger;
 
-        public FabricKindService(IFabricKindRepository fabricKindRepository, IMapper mapper)
+        public FabricKindService(IFabricKindRepository fabricKindRepository, IMapper mapper, ILogger logger)
         {
             _fabricKindRepository = fabricKindRepository;
             _mapper = mapper;
+            _logger = logger;
         }
 
         public IEnumerable<FabricKindDTO> GetAll()
