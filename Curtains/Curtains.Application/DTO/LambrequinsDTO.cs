@@ -21,15 +21,15 @@ namespace Curtains.Application.DTO
         /// <summary>
         ///  This property represents color of lambrequins.
         /// </summary>
-        public virtual ColorDTO Color { get; set; }
+        public ColorDTO Color { get; set; }
         /// <summary>
         ///  This property represents bracing of lambrequins.
         /// </summary>
-        public virtual BracingDTO Bracing { get; set; }
+        public BracingDTO Bracing { get; set; }
         /// <summary>
         ///  This property represents fabricKind of lambrequins.
         /// </summary>
-        public virtual FabricKindDTO FabricKind { get; set; }
+        public FabricKindDTO FabricKind { get; set; }
         #endregion
     }
 }

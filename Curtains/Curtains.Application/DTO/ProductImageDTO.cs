@@ -31,7 +31,7 @@ namespace Curtains.Application.DTO
         /// <summary>
         ///  This property represents product sets data transfer object.
         /// </summary>
-        public ProductSetDTO Sets { get; set; }
+        public ProductSetDTO ProductSets { get; set; }
         /// <summary>
         ///  This property represents fabrics data transfer object.
         /// </summary>

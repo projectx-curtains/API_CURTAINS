@@ -28,31 +28,31 @@ namespace Curtains.Application.DTO
         /// <summary>
         ///  This property represents fabric of curtains.
         /// </summary>
-        public virtual FabricDTO Fabric { get; set; }
+        public FabricDTO Fabric { get; set; }
         /// <summary>
         ///  This property represents material of curtains.
         /// </summary>
-        public virtual MaterialDTO Material { get; set; }
+        public MaterialDTO Material { get; set; }
         /// <summary>
         ///  This property represents accessories of curtains.
         /// </summary>
-        public virtual AceEnumerator Accessories { get; set; }
+        public AccessoriesDTO Accessories { get; set; }
         /// <summary>
         ///  This property represents type of curtains.
         /// </summary>
-        public virtual CurtainsTypeDTO CurtainsType { get; set; }
+        public CurtainsTypeDTO CurtainsType { get; set; }
         /// <summary>
         ///  This property represents kind of curtains.
         /// </summary>
-        public virtual CurtainsKindDTO CurtainsKind { get; set; }
+        public CurtainsKindDTO CurtainsKind { get; set; }
         /// <summary>
         ///  This property represents of Bracing.
         /// </summary>
-        public virtual BracingDTO Bracing { get; set; }
+        public BracingDTO Bracing { get; set; }
         /// <summary>
         ///  This property represents of Color.
         /// </summary>
-        public virtual ColorDTO Color { get; set; }
+        public ColorDTO Color { get; set; }
         #endregion
     }
 }

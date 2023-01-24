@@ -11,7 +11,7 @@ namespace Curtains.Application.AutoMapping
     {
         public FabricKindProfile()
         {
-            CreateMap<FabricKindProfile, FabricKindModel>().ReverseMap();
+            CreateMap<FabricKindDTO, FabricKindModel>().ReverseMap();
         }
     }
 }
