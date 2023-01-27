@@ -31,6 +31,7 @@ namespace Curtains.Infrastructure.SearchEngine
 							.QueryString(qs => qs
 							.Query(model.Search)
 							.Fields(searchFields.Select(x => new Field(x)).ToArray())))
+
 						.Must(mu => mu
                             .Terms(t => t.Field(f => f.Color).Terms(model.Filters?.Colors)),
                             mu => mu
@@ -46,6 +47,7 @@ namespace Curtains.Infrastructure.SearchEngine
 							mu => mu
                             .Range(r => r.Field(f => f.Price).GreaterThanOrEquals(model.MinPrice).LessThanOrEquals(model.MaxPrice)
                             .Relation(RangeRelation.Within)))))
+
                 .Highlight(h => h
 					.Fields(searchFields.Select<string, Func<HighlightFieldDescriptor<CurtainsProjection>, IHighlightField>>(s =>
 							hf => hf
