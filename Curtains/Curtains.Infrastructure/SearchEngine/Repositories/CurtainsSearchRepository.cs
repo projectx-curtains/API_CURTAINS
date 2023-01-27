@@ -23,6 +23,8 @@ namespace Curtains.Infrastructure.SearchEngine
             var searchFields = SearchRules.CurtainsSearchFields;
 
             var response = await _elasticClient.SearchAsync<CurtainsProjection>(s => s
+                .Take(model.Take)
+                .Skip(model.Skip)
                 .Query(q => q
                     .Bool(b => b
                         .Should(mu => mu
