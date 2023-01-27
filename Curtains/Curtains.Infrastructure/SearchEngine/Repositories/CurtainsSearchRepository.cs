@@ -40,7 +40,10 @@ namespace Curtains.Infrastructure.SearchEngine
 							mu => mu
 							.Terms(t => t.Field(f => f.Fabric).Terms(model.Filters?.Fabric)),
 							mu => mu
-							.Terms(t => t.Field(f => f.Purpose).Terms(model.Filters?.Purpose)))))
+							.Terms(t => t.Field(f => f.Purpose).Terms(model.Filters?.Purpose)),
+							mu => mu
+                            .Range(r => r.Field(f => f.Price).GreaterThanOrEquals(model.MinPrice).LessThanOrEquals(model.MaxPrice)
+                            .Relation(RangeRelation.Within)))))
                 .Highlight(h => h
 					.Fields(searchFields.Select<string, Func<HighlightFieldDescriptor<CurtainsProjection>, IHighlightField>>(s =>
 							hf => hf
