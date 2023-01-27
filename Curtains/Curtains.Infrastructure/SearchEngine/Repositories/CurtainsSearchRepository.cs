@@ -30,7 +30,17 @@ namespace Curtains.Infrastructure.SearchEngine
 							.Query(model.Search)
 							.Fields(searchFields.Select(x => new Field(x)).ToArray())))
 						.Must(mu => mu
-                            .Terms(t => t.Field(f => f.Color).Terms(model.Filters?.Colors)))))
+                            .Terms(t => t.Field(f => f.Color).Terms(model.Filters?.Colors)),
+                            mu => mu
+							.Terms(t => t.Field(f => f.CurtainsType).Terms(model.Filters?.CurtainsTypes)), 
+                            mu => mu
+							.Terms(t => t.Field(f => f.CurtainsKind).Terms(model.Filters?.CurtainsKind)), 
+                            mu => mu
+							.Terms(t => t.Field(f => f.Material).Terms(model.Filters?.Materials)),
+							mu => mu
+							.Terms(t => t.Field(f => f.Fabric).Terms(model.Filters?.Fabric)),
+							mu => mu
+							.Terms(t => t.Field(f => f.Purpose).Terms(model.Filters?.Purpose)))))
                 .Highlight(h => h
 					.Fields(searchFields.Select<string, Func<HighlightFieldDescriptor<CurtainsProjection>, IHighlightField>>(s =>
 							hf => hf
