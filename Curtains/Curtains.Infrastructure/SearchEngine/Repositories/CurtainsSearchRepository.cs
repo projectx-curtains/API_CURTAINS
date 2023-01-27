@@ -25,12 +25,12 @@ namespace Curtains.Infrastructure.SearchEngine
             var response = await _elasticClient.SearchAsync<CurtainsProjection>(s => s
                 .Query(q => q
                     .Bool(b => b
-                        .Must(mu => mu
+                        .Should(mu => mu
 							.QueryString(qs => qs
 							.Query(model.Search)
 							.Fields(searchFields.Select(x => new Field(x)).ToArray())))
 						.Must(mu => mu
-                            .Terms(t => t.Field(f => f.Color).Terms(model.Filters.Colors)))))
+                            .Terms(t => t.Field(f => f.Color).Terms(model.Filters?.Colors)))))
                 .Highlight(h => h
 					.Fields(searchFields.Select<string, Func<HighlightFieldDescriptor<CurtainsProjection>, IHighlightField>>(s =>
 							hf => hf
