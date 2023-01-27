@@ -13,27 +13,26 @@ namespace Curtains.Api.Controllers
     [ApiController]
     public class FiltersCurtainsController : ControllerBase
     {
-        private readonly IElasticCurtainsIndexRepository _elastic;
         private readonly ICurtainSearchService _searchService;
         private readonly IMediator _mediator;
 
-        public FiltersCurtainsController(IElasticCurtainsIndexRepository elastic,
+        public FiltersCurtainsController(
             ICurtainSearchService searchService,
             IMediator mediator)
         {
-            _elastic = elastic;
             _searchService = searchService;
             _mediator = mediator;
         }
 
-        [HttpGet]
-        public async Task<ActionResult> AddAllIndexes(string indexName)
+		[Route("IndexForElastic")]
+		[HttpGet]
+        public async Task<ActionResult> AddAllIndexes()
         {
-            await _searchService.AddAllCurtains(indexName);
+            await _searchService.AddAllCurtains();
             return Ok();
         }
 
-        [Route("index")]
+        [Route("GetCurtainsFromDB")]
         [HttpGet]
         public ActionResult GetCurtains()
         {
@@ -41,36 +40,12 @@ namespace Curtains.Api.Controllers
             return Ok(x);
         }
         
-        [HttpPost]
-        public ActionResult<IEnumerable<CurtainsModel>> AddIndex(CurtainsProjection model, string indexName)
-        {
-            _elastic.Index(model, indexName);
-            return Ok();
-        }
-
-        [HttpDelete]
-        public ActionResult DeleteIndex(string id, string indexName)
-        {
-            _elastic.Deleted(id, indexName);
-            return Ok();
-        }
-        
         [Route("CurtainsSearch")]
         [HttpPost]
-        public async Task<ActionResult<List<CurtainsProjection>>> CurtainSearch([FromQuery] ElasticSearchQuery<CurtainSearchDTO> request)
+        public async Task<ActionResult<List<SearchResults<CurtainsProjection>>>> CurtainSearch([FromQuery] ElasticSearchQuery<CurtainSearchDTO> request)
         {
-            // var response = await _searchService.CurtainsSearch(request);
-
             var response = await _searchService.CurtainsSearch(request);
             return Ok(response);
-        }
-
-        [Route("TEST")]
-        [HttpPost]
-        public async Task<ActionResult<List<CurtainsProjection>>> GetTest(string purpose)
-        {
-            var serviceResponce = await _searchService.GetTestService(purpose);
-            return Ok(serviceResponce);
         }
     }
 }

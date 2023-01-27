@@ -1,12 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Curtains.Domain.Projections;
-using Curtains.Infrastructure.Shared.Converters;
-using System.Text.Json;
-using System.Text.Json.Serialization;
+﻿using Curtains.Domain.Projections;
 
 namespace Curtains.Infrastructure.SearchQueries
 {

@@ -14,35 +14,29 @@ namespace Curtains.Application.SearchService
     {
         #region FieldsRegion       
         private readonly ICurtainsRepository _curtainsRepository;
-        private readonly IElasticCurtainsIndexRepository _elasticIndexRepository;
         private readonly ICurtainsSearchRepository _curtainsSearchRepository;
         private readonly IMapper _mapper;
-        private readonly IMediator _mediator;
         #endregion
 
         public CurtainSearchService(ILogger logger,
             ICurtainsRepository curtainsRepository,
             IMapper mapper,
-            IElasticCurtainsIndexRepository elasticIndexRepository,
-            ICurtainsSearchRepository curtainsSearchRepository,
-            IMediator mediator)
+            ICurtainsSearchRepository curtainsSearchRepository)
         {
             _curtainsRepository = curtainsRepository;
-            _elasticIndexRepository = elasticIndexRepository;
             _mapper = mapper;
             _curtainsSearchRepository = curtainsSearchRepository;
-            _mediator = mediator;
         }
 
         #region MethodsRegion
-        public async Task AddAllCurtains(string indexName)
+        public async Task AddAllCurtains()
         {
             var ListModelsDTO = _mapper.Map<IEnumerable<CurtainsDTO>>(_curtainsRepository.GetAll());
 
             foreach (var modelDTO in ListModelsDTO)
             {
                 var projectionModel = _mapper.Map<CurtainsProjection>(modelDTO);
-                await _elasticIndexRepository.Index(projectionModel, indexName);
+                await _curtainsSearchRepository.Index(projectionModel);
             }
         }
 
@@ -51,17 +45,12 @@ namespace Curtains.Application.SearchService
             return _curtainsRepository.GetAll();
         }
 
-        public async Task<List<CurtainsProjection>> CurtainsSearch(ElasticSearchQuery<CurtainSearchDTO> model)
+        public async Task<List<SearchResults<CurtainsProjection>>> CurtainsSearch(ElasticSearchQuery<CurtainSearchDTO> model)
         {
             var modelProjection = _mapper.Map<ElasticSearchQuery<CurtainsProjection>>(model);
             var response = await _curtainsSearchRepository.GetCurtains(modelProjection);
             return response;
         }
         #endregion
-
-        public async Task<List<CurtainsProjection>> GetTestService(string purpose)
-        {
-            return await _curtainsSearchRepository.GetTestCurtains(purpose);
-        }
     }
 }
