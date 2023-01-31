@@ -3,28 +3,23 @@
     /// <summary>
     ///  This class describes accessories model.
     /// </summary>
-    public class AccessoriesModel : ExtendedBaseEntity
+    public class AccessoriesModel : BaseEntity
     {
         #region PropertiesRegion
+        public int FurnitureId { get; set; }
+        public int BracingId { get; set; }
         /// <summary>
-        ///  This property represents the ColorId column.
+        ///  This property represents the color group id column.
         /// </summary>
-        public int ColorId { get; set; }
-        /// <summary>
-        ///  This property represents price of accessories.
-        /// </summary>
-        public decimal Price { get; set; }
+        public int ColorGroupId { get; set; }
+        public int ManufacturerId { get; set; }
         #endregion
 
         #region NavigationProperties
-        /// <summary>
-        ///  This property represents color of accessories.
-        /// </summary>
-        public virtual ColorModel Color { get; set; }
-        /// <summary>
-        ///  This property represents list of curtains in which there are accessories.
-        /// </summary>
-        public virtual ICollection<CurtainsModel>?   Curtains { get; }
+        public virtual FurnitureModel Furniture { get; }
+        public virtual BracingModel Bracing { get; }
+        public virtual ColorGroupModel ColorGroup { get; }
+        public virtual ManufacturerModel Manufacturer { get; }
         #endregion
     }
 }

@@ -15,20 +15,14 @@
         /// </summary>
         public string Size { get; set; }
         /// <summary>
-        ///  This property represents filler of pillows.
-        /// </summary>
-        public string Filler { get; set; }
-        /// <summary>
-        ///  This property represents situation, if cover of pillows is removable.
-        /// </summary>
-        public bool RemovableCover { get; set; }
-        /// <summary>
         ///  This property represents price of pillows.
         /// </summary>
         public decimal Price { get; set; }
+        public int DesignId { get; set; }
         #endregion
 
         #region NavigationProperties
+        public DesignModel Design { get; set; }
         /// <summary>
         ///  This property represents fabric of pillows.
         /// </summary>

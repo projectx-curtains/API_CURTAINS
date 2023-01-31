@@ -3,7 +3,7 @@
     /// <summary>
     ///  This class describes decorations model.
     /// </summary>
-    public class DecorationsModel : ExtendedBaseEntity
+    public class DecorationsModel : ExtendedByTitleBaseEntity
     {
         #region PropertiesRegion
         /// <summary>

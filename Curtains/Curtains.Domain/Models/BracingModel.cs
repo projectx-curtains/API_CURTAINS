@@ -7,8 +7,6 @@ namespace Curtains.Domain.Models
     {
         #region NavigationProperties
         public virtual ICollection<CurtainsModel> Curtains { get; }
-
-        public virtual ICollection<LambrequinsModel> Lambrequins { get; }
         #endregion
     }
 }
