@@ -14,6 +14,9 @@
         ///  This property represents price of lambrequins.
         /// </summary>
         public decimal Price { get; set; }
+        /// <summary>
+        ///  This property represents design id column.
+        /// </summary>
         public int DesignId { get; set; }
         #endregion
 
@@ -22,6 +25,9 @@
         ///  This property represents color group of lambrequins.
         /// </summary>
         public virtual ColorModel ColorGroup { get; set; }
+        /// <summary>
+        ///  This property represents design of lambrequins.
+        /// </summary>
         public virtual DesignModel Design { get; set; }
         /// <summary>
         ///  This property represents product sets with this lambrequin.

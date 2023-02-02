@@ -6,7 +6,10 @@ namespace Curtains.Domain.Models
     public class BracingModel : ExtendedBaseEntity
     {
         #region NavigationProperties
-        public virtual ICollection<CurtainsModel> Curtains { get; }
+        /// <summary>
+        ///  This property represents accessories with that bracing.
+        /// </summary>
+        public virtual ICollection<AccessoriesModel> Accessories { get; }
         #endregion
     }
 }

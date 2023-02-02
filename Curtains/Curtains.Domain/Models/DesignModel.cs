@@ -3,6 +3,9 @@
     public class DesignModel : ExtendedByTitleBaseEntity
     {
         #region PropertiesRegion
+        /// <summary>
+        ///  This property represents presence of design.
+        /// </summary>
         public bool Presence { get; set; }
         #endregion
         #region NavigationPropertiesRegion

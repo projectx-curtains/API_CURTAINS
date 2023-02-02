@@ -7,7 +7,7 @@
     {
         #region PropertiesRegion
         /// <summary>
-        ///  This property represents size of bedspreads.
+        ///  This property represents size id column.
         /// </summary>
         public int SizeId { get; set; }
         /// <summary>
@@ -25,6 +25,9 @@
         #endregion
 
         #region NavigationProperties
+        /// <summary>
+        ///  This property represents size of bedspreads.
+        /// </summary>
         public virtual BedspreadsSizeModel Size { get; set; }
         /// <summary>
         ///  This property represents fabric of bedspreads.

@@ -18,10 +18,16 @@
         ///  This property represents price of pillows.
         /// </summary>
         public decimal Price { get; set; }
+        /// <summary>
+        ///  This property represents Design id column.
+        /// </summary>
         public int DesignId { get; set; }
         #endregion
 
         #region NavigationProperties
+        /// <summary>
+        ///  This property represents design of pullow.
+        /// </summary>
         public DesignModel Design { get; set; }
         /// <summary>
         ///  This property represents fabric of pillows.

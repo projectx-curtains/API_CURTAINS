@@ -8,11 +8,11 @@ namespace Curtains.Domain.Models
 {
     public class ColorGroupModel : ExtendedByTitleBaseEntity
     {
-        #region Properties
-        public int ColorId { get; set; }
-        #endregion
         #region NavigationProperties
-        public virtual ColorModel Color { get; set; }
+        /// <summary>
+        ///  This property represents color of that color.
+        /// </summary>
+        public virtual ICollection<ColorModel> Colors { get; set; }
         #endregion
     }
 }

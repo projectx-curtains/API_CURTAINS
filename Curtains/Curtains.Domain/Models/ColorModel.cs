@@ -7,6 +7,10 @@
         ///  This property represents code of color.
         /// </summary>
         public string Code { get; set; }
+        /// <summary>
+        ///  This property represents Color group id column.
+        /// </summary>
+        public int ColorGroupId { get; set; }
         #endregion
 
         #region NavigationProperties

@@ -67,6 +67,9 @@
         ///  This property represents kind of curtains.
         /// </summary>
         public virtual CurtainsKindModel CurtainsKind { get; set; }
+        /// <summary>
+        ///  This property represents purpose of curtians.
+        /// </summary>
         public virtual PurposeModel Purpose { get; set; }
         /// <summary>
         ///  This property represents sets with that curtains.
