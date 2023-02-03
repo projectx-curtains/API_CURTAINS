@@ -11,13 +11,9 @@
         /// </summary>
         public bool Density { get; set; }
         /// <summary>
-        ///  This property represents ConsistencyId column.
+        ///  This property represents ColorGroupId column.
         /// </summary>
-        public int ConsistencyId { get; set; }
-        /// <summary>
-        ///  This property represents ColorId column.
-        /// </summary>
-        public int ColorId { get; set; }
+        public int ColorGroup { get; set; }
         /// <summary>
         ///  This property represents DecorationId column.
         /// </summary>
@@ -43,14 +39,6 @@
         /// </summary>
         public int DesignId { get; set; }
         /// <summary>
-        ///  This property represents FabricTypeId of fabric.
-        /// </summary>
-        public int FabricTypeId { get; set; }
-        /// <summary>
-        ///  This property represents FabricKindId of fabric.
-        /// </summary>
-        public int FabricKindId { get; set; }
-        /// <summary>
         ///  This property represents MaterialId of fabric.
         /// </summary>
         public int MaterialId { get; set; }
@@ -58,13 +46,9 @@
 
         #region NavigationProperties
         /// <summary>
-        ///  This property represents consistency of fabric.
+        ///  This property represents color group of fabric.
         /// </summary>
-        public virtual ConsistencyModel Consistency { get; set; }
-        /// <summary>
-        ///  This property represents color of fabric.
-        /// </summary>
-        public virtual ColorModel Color { get; set; }
+        public virtual ColorGroupModel ColorGroupId { get; set; }
         /// <summary>
         ///  This property represents decoration of fabric.
         /// </summary>
@@ -73,14 +57,6 @@
         ///  This property represents design of fabric.
         /// </summary>
         public virtual DesignModel Design { get; set; }
-        /// <summary>
-        ///  This property represents kind of fabric.
-        /// </summary>
-        public virtual FabricKindModel FabricKind { get; set; }
-        /// <summary>
-        ///  This property represents type of fabric.
-        /// </summary>
-        public virtual FabricTypeModel FabricType { get; set; }
         /// <summary>
         ///  This property represents material of fabric.
         /// </summary>

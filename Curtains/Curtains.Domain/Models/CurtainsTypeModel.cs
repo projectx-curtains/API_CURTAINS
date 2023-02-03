@@ -3,7 +3,7 @@
     /// <summary>
     ///  This class describes curtains type model.
     /// </summary>
-    public class CurtainsTypeModel : ExtendedBaseEntity
+    public class CurtainsTypeModel : ExtendedByTitleBaseEntity
     {
         #region NavigationPropertiesRegion
         /// <summary>

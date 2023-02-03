@@ -4,6 +4,7 @@ using Curtains.Infrastructure.Database;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Curtains.Infrastructure.Migrations
 {
     [DbContext(typeof(CurtainsDbContext))]
-    partial class CurtainsDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230131145952_UpdateSomeTablesRemoveFabricTypeAndKind")]
+    partial class UpdateSomeTablesRemoveFabricTypeAndKind
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -33,9 +35,6 @@ namespace Curtains.Infrastructure.Migrations
                     b.Property<int>("BracingId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("BracingModelId")
-                        .HasColumnType("int");
-
                     b.Property<int>("ColorGroupId")
                         .HasColumnType("int");
 
@@ -46,8 +45,6 @@ namespace Curtains.Infrastructure.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("BracingModelId");
 
                     b.ToTable("Accessories");
                 });
@@ -137,13 +134,18 @@ namespace Curtains.Infrastructure.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
+                    b.Property<int>("ColorId")
+                        .HasColumnType("int");
+
                     b.Property<string>("Title")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
-                    b.ToTable("ColorGroups");
+                    b.HasIndex("ColorId");
+
+                    b.ToTable("ColorGroupModel");
                 });
 
             modelBuilder.Entity("Curtains.Domain.Models.ColorModel", b =>
@@ -158,19 +160,11 @@ namespace Curtains.Infrastructure.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("ColorGroupId")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("ColorGroupModelId")
-                        .HasColumnType("int");
-
                     b.Property<string>("Title")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("ColorGroupModelId");
 
                     b.ToTable("Colors");
                 });
@@ -204,6 +198,9 @@ namespace Curtains.Infrastructure.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<int>("AccessoriesId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("BracingModelId")
                         .HasColumnType("int");
 
                     b.Property<int>("CurtainsKindId")
@@ -246,6 +243,8 @@ namespace Curtains.Infrastructure.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("AccessoriesId");
+
+                    b.HasIndex("BracingModelId");
 
                     b.HasIndex("CurtainsKindId");
 
@@ -375,26 +374,6 @@ namespace Curtains.Infrastructure.Migrations
                     b.HasIndex("MaterialId");
 
                     b.ToTable("Fabrics");
-                });
-
-            modelBuilder.Entity("Curtains.Domain.Models.FurnitureModel", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<string>("Description")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Title")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Furnitures");
                 });
 
             modelBuilder.Entity("Curtains.Domain.Models.LambrequinsModel", b =>
@@ -680,7 +659,7 @@ namespace Curtains.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Purposes");
+                    b.ToTable("PurposeModel");
                 });
 
             modelBuilder.Entity("Curtains.Domain.Models.ReviewModel", b =>
@@ -716,13 +695,6 @@ namespace Curtains.Infrastructure.Migrations
                     b.ToTable("Reviews");
                 });
 
-            modelBuilder.Entity("Curtains.Domain.Models.AccessoriesModel", b =>
-                {
-                    b.HasOne("Curtains.Domain.Models.BracingModel", null)
-                        .WithMany("Accessories")
-                        .HasForeignKey("BracingModelId");
-                });
-
             modelBuilder.Entity("Curtains.Domain.Models.BedspreadsModel", b =>
                 {
                     b.HasOne("Curtains.Domain.Models.FabricModel", null)
@@ -738,11 +710,15 @@ namespace Curtains.Infrastructure.Migrations
                     b.Navigation("Size");
                 });
 
-            modelBuilder.Entity("Curtains.Domain.Models.ColorModel", b =>
+            modelBuilder.Entity("Curtains.Domain.Models.ColorGroupModel", b =>
                 {
-                    b.HasOne("Curtains.Domain.Models.ColorGroupModel", null)
-                        .WithMany("Colors")
-                        .HasForeignKey("ColorGroupModelId");
+                    b.HasOne("Curtains.Domain.Models.ColorModel", "Color")
+                        .WithMany()
+                        .HasForeignKey("ColorId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Color");
                 });
 
             modelBuilder.Entity("Curtains.Domain.Models.CurtainsModel", b =>
@@ -752,6 +728,10 @@ namespace Curtains.Infrastructure.Migrations
                         .HasForeignKey("AccessoriesId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.HasOne("Curtains.Domain.Models.BracingModel", null)
+                        .WithMany("Curtains")
+                        .HasForeignKey("BracingModelId");
 
                     b.HasOne("Curtains.Domain.Models.CurtainsKindModel", "CurtainsKind")
                         .WithMany("Curtains")
@@ -957,12 +937,7 @@ namespace Curtains.Infrastructure.Migrations
 
             modelBuilder.Entity("Curtains.Domain.Models.BracingModel", b =>
                 {
-                    b.Navigation("Accessories");
-                });
-
-            modelBuilder.Entity("Curtains.Domain.Models.ColorGroupModel", b =>
-                {
-                    b.Navigation("Colors");
+                    b.Navigation("Curtains");
                 });
 
             modelBuilder.Entity("Curtains.Domain.Models.CurtainsKindModel", b =>

@@ -21,7 +21,7 @@ namespace Curtains.Infrastructure.Repositories
         #region FieldsRegion
         private readonly ILogger _logger;
         private readonly CurtainsDbContext _curtainsContext;
-        private IQueryable<ColorModel> Query => _curtainsContext.Colors.Include(x => x.Fabrics).Include(x => x.Accessories);
+        private IQueryable<ColorModel> Query => _curtainsContext.Colors;
         #endregion
 
         public ColorRepository(CurtainsDbContext curtainsContext, ILogger logger)
