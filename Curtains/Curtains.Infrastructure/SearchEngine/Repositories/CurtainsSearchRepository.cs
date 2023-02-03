@@ -35,25 +35,21 @@ namespace Curtains.Infrastructure.SearchEngine
 							.Fields(searchFields.Select(x => new Field(x)).ToArray())))
 
 						.Must(mu => mu
-                            .Terms(t => t.Field(f => f.Color).Terms(model.Filters?.Colors)),
-                            mu => mu
-							.Terms(t => t.Field(f => f.CurtainsType).Terms(model.Filters?.CurtainsTypes)), 
-                            mu => mu
-							.Terms(t => t.Field(f => f.CurtainsKind).Terms(model.Filters?.CurtainsKind)), 
-                            mu => mu
-							.Terms(t => t.Field(f => f.Material).Terms(model.Filters?.Materials)),
-							mu => mu
-							.Terms(t => t.Field(f => f.Fabric).Terms(model.Filters?.Fabric)),
-							mu => mu
-							.Terms(t => t.Field(f => f.Purpose).Terms(model.Filters?.Purpose)))
-
-						.Should(sh => sh
 							.Range(r => r.Field(f => f.Price).GreaterThanOrEquals(model.MinPrice).LessThanOrEquals(model.MaxPrice)
-							.Relation(RangeRelation.Within)))))
+							.Relation(RangeRelation.Within)),
 
-                .Highlight(h => h
+							mu => mu.Terms(t => t.Field(f => f.Color).Terms(model.Filters?.Colors)),
+							mu => mu.Terms(t => t.Field(f => f.CurtainsType).Terms(model.Filters?.CurtainsTypes)),
+							mu => mu.Terms(t => t.Field(f => f.CurtainsKind).Terms(model.Filters?.CurtainsKind)),
+							mu => mu.Terms(t => t.Field(f => f.Material).Terms(model.Filters?.Materials)),
+							mu => mu.Terms(t => t.Field(f => f.Fabric).Terms(model.Filters?.Fabric)),
+							mu => mu.Terms(t => t.Field(f => f.Purpose).Terms(model.Filters?.Purpose)))))
+
+					.Sort(ss => (model.Order == OrderBy.Desc) ? ss.Descending(f => f.Price) : ss.Ascending(f => f.Price))
+
+				.Highlight(h => h
 					.Fields(searchFields.Select<string, Func<HighlightFieldDescriptor<CurtainsProjection>, IHighlightField>>(s =>
-							hf => hf
+						 	hf => hf
 								.Field(s)).ToArray())));
 
 			if (!response.IsValid)

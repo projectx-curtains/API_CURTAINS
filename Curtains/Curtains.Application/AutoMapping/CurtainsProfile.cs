@@ -3,6 +3,7 @@ using Curtains.Application.DTO;
 using Curtains.Domain.Models;
 using Curtains.Domain.Projections;
 using Curtains.Infrastructure.SearchQueries;
+using System.Linq;
 
 namespace Curtains.Application.AutoMapping
 {
