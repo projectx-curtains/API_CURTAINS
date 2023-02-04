@@ -5,12 +5,15 @@ using Microsoft.Extensions.Logging;
 using Curtains.Domain.Projections;
 using Curtains.Application.DTO;
 using Curtains.Infrastructure.SearchQueries;
-using MediatR;
 using Curtains.Domain.Models;
 
 namespace Curtains.Application.SearchService
 {
-    public class CurtainSearchService : ICurtainSearchService
+	/// <summary>
+	/// Class <c> CurtainSearchService </c> describes the interaction model 
+    /// of the data transfer object to the database and ElasticSearch
+	/// </summary>
+	public class CurtainSearchService : ICurtainSearchService
     {
         #region FieldsRegion       
         private readonly ICurtainsRepository _curtainsRepository;
@@ -29,6 +32,11 @@ namespace Curtains.Application.SearchService
         }
 
         #region MethodsRegion
+        /// <summary>
+        /// This method get all <c> CurtainModels </c> entities from database
+        /// and mapping to <c> CurtainsProjection </c> and indexes data into ElasticSearch
+        /// </summary>
+        /// <returns></returns>
         public async Task AddAllCurtains()
         {
             var ListModelsDTO = _mapper.Map<IEnumerable<CurtainsDTO>>(_curtainsRepository.GetAll());
@@ -40,12 +48,22 @@ namespace Curtains.Application.SearchService
             }
         }
 
+        /// <summary>
+        /// This method gel all <c> CurtainsModel </c> entities from database
+        /// </summary>
+        /// <returns> Collection of <c> CurtainsModel </c></returns>
         public IEnumerable<CurtainsModel> GetAllCurtains() 
         {
             return _curtainsRepository.GetAll();
         }
 
-        public async Task<List<SearchResults<CurtainsProjection>>> CurtainsSearch(ElasticSearchQuery<CurtainSearchDTO> model)
+		/// <summary>
+		/// This method mapping <c> ElasticSearchQuery<CurtainSearchDTO> </c> to <c> ElasticSearchQuery<CurtainProjection> </c>
+        /// and get all <c> SearchResults<CurtainsProjection> </c> entities from ElasticSearch
+		/// </summary>
+		/// <param name="model"> Model of search query </param>
+		/// <returns> List of <c> SearchResults<CurtainsProjection> </c> </returns>
+		public async Task<List<SearchResults<CurtainsProjection>>> CurtainsSearch(ElasticSearchQuery<CurtainSearchDTO> model)
         {
             var modelProjection = _mapper.Map<ElasticSearchQuery<CurtainsProjection>>(model);
             var response = await _curtainsSearchRepository.GetCurtains(modelProjection);

@@ -19,6 +19,13 @@ namespace Curtains.Infrastructure.SearchEngine
         }
 
 		#region MethodsRegion
+		/// <summary>
+		/// This method get all <c> CurtainsProjection </c> satisfying 
+		/// the <paramref name="model"/> request 
+		/// </summary>
+		/// <param name="model"> Search request </param>
+		/// <returns> Collection of <c> SearchResults</c> </returns>
+		/// <exception cref="Exception"></exception>
 		public async Task<List<SearchResults<CurtainsProjection>>> GetCurtains(ElasticSearchQuery<CurtainsProjection> model)
         {
 
@@ -67,6 +74,12 @@ namespace Curtains.Infrastructure.SearchEngine
 			return list;
 		}
 
+		/// <summary>
+		/// This method indexes <c> CurtainsProjection </c> model into ElasticSearch
+		/// </summary>
+		/// <param name="model"> ElasticSearch Object </param>
+		/// <returns> True if <paramref name="model"/> successfully added </returns>
+		/// <exception cref="Exception"></exception>
 		public async Task<bool> Index(CurtainsProjection model)
 		{
 			var response = await _elasticClient.IndexAsync(model, i => i
@@ -83,6 +96,12 @@ namespace Curtains.Infrastructure.SearchEngine
 				return true;
 		}
 
+		/// <summary>
+		/// This method deleted object by <paramref name="id"/> from ElasticSearch
+		/// </summary>
+		/// <param name="id"></param>
+		/// <returns> True if object successfully deleted</returns>
+		/// <exception cref="Exception"></exception>
 		public async Task<bool> Deleted(string id)
 		{
 			var response = await _elasticClient.DeleteAsync(new DeleteRequest("_Option.DefaultIndex",id.Trim()));
