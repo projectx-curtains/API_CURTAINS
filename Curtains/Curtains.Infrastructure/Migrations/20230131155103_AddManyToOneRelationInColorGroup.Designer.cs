@@ -4,6 +4,7 @@ using Curtains.Infrastructure.Database;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Curtains.Infrastructure.Migrations
 {
     [DbContext(typeof(CurtainsDbContext))]
-    partial class CurtainsDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230131155103_AddManyToOneRelationInColorGroup")]
+    partial class AddManyToOneRelationInColorGroup
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -404,7 +406,7 @@ namespace Curtains.Infrastructure.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-                    
+
                     b.Property<int>("ColorGroupId")
                         .HasColumnType("int");
 
@@ -605,7 +607,7 @@ namespace Curtains.Infrastructure.Migrations
                     b.Property<int?>("PillowsId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("ProductSetsId")
+                    b.Property<int?>("SetsId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
@@ -618,7 +620,7 @@ namespace Curtains.Infrastructure.Migrations
 
                     b.HasIndex("PillowsId");
 
-                    b.HasIndex("ProductSetsId");
+                    b.HasIndex("SetsId");
 
                     b.ToTable("ProductImages");
                 });
@@ -906,9 +908,9 @@ namespace Curtains.Infrastructure.Migrations
                         .WithMany("ProductImages")
                         .HasForeignKey("PillowsId");
 
-                    b.HasOne("Curtains.Domain.Models.ProductSetModel", "ProductSets")
+                    b.HasOne("Curtains.Domain.Models.ProductSetModel", "Sets")
                         .WithMany("ProductImages")
-                        .HasForeignKey("ProductSetsId");
+                        .HasForeignKey("SetsId");
 
                     b.Navigation("Bedspreads");
 
@@ -918,7 +920,7 @@ namespace Curtains.Infrastructure.Migrations
 
                     b.Navigation("Pillows");
 
-                    b.Navigation("ProductSets");
+                    b.Navigation("Sets");
                 });
 
             modelBuilder.Entity("Curtains.Domain.Models.ProductSetModel", b =>

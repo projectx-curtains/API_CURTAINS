@@ -14,12 +14,14 @@ namespace Curtains.Infrastructure.Database
         #region DbSetsRegion
         public virtual DbSet<AccessoriesModel> Accessories { get; set; }
         public virtual DbSet<ColorModel> Colors { get; set; }
+        public virtual DbSet<ColorGroupModel> ColorGroups { get; set; }
         public virtual DbSet<CurtainsModel> Curtains { get; set; }
         public virtual DbSet<FabricModel> Fabrics { get; set; }
+        public virtual DbSet<FurnitureModel> Furnitures { get; set; }
         public virtual DbSet<DecorationsModel> Decorations { get; set; }
+        public virtual DbSet<PurposeModel> Purposes { get; set; }
         public virtual DbSet<MetaDataModel> MetaDatas { get; set; }
         public virtual DbSet<LambrequinsModel> Lambrequins { get; set; }
-        public virtual DbSet<ConsistencyModel> Consistencies { get; set; }
         public virtual DbSet<ManufacturerModel> Manufacturers { get; set; }
         public virtual DbSet<BedspreadsModel> Bedspreads { get; set; }
         public virtual DbSet<PillowsModel> Pillows { get; set; }
@@ -28,8 +30,6 @@ namespace Curtains.Infrastructure.Database
         public virtual DbSet<MaterialModel> Materials { get; set; }
         public virtual DbSet<CurtainsTypeModel> CurtainsTypes { get; set; }
         public virtual DbSet<CurtainsKindModel> CurtainsKinds { get; set; }
-        public virtual DbSet<FabricKindModel> FabricKinds { get; set; }
-        public virtual DbSet<FabricTypeModel> FabricTypes { get; set; }
         public virtual DbSet<DesignModel> Designs { get; set; }
         public virtual DbSet<BracingModel> Bracings { get; set; }
         public virtual DbSet<OurWorksModel> OurWorks { get; set; }
