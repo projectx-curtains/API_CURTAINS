@@ -27,7 +27,7 @@ namespace Curtains.Domain.Models
         /// <summary>
         ///  This property represents SetsId.
         /// </summary>
-        public int? ProductSetsId { get; set; }
+        public int? ProductSetId { get; set; }
         /// <summary>
         ///  This property represents FabricId.
         /// </summary>
@@ -51,7 +51,7 @@ namespace Curtains.Domain.Models
         /// <summary>
         ///  This property represents product sets, which image is presented.
         /// </summary>
-        public virtual ProductSetModel? ProductSets { get; set; }
+        public virtual ProductSetModel? ProductSet { get; set; }
         /// <summary>
         ///  This property represents fabrics, which image is presented.
         /// </summary>

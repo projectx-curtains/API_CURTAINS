@@ -28,7 +28,7 @@ namespace Curtains.Api
 
             services
                 .AddApplication()
-                .AddInfrastructure("Server=localhost,1433;Database=Curtains;User=sa;Password=<YourStrong@Passw0rd>", _configuration);
+                .AddInfrastructure(connectionString, _configuration);
 
             services
                 .AddOpenApi(_environment.ApplicationName)
