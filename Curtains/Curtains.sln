@@ -1,12 +1,17 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Curtains.Api", "Curtains.Api\Curtains.Api.csproj", "{04B8520F-1200-48FE-B935-0BAD699BBB5D}"
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33103.184
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Curtains.Api", "Curtains.Api\Curtains.Api.csproj", "{04B8520F-1200-48FE-B935-0BAD699BBB5D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Curtains.Application", "Curtains.Application\Curtains.Application.csproj", "{68AB9D65-E96D-437D-9856-835DDDAEB5A1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Curtains.Application", "Curtains.Application\Curtains.Application.csproj", "{68AB9D65-E96D-437D-9856-835DDDAEB5A1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Curtains.Infrastructure", "Curtains.Infrastructure\Curtains.Infrastructure.csproj", "{7A6CFA06-AAF2-46CF-97CD-05F402E28EAE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Curtains.Infrastructure", "Curtains.Infrastructure\Curtains.Infrastructure.csproj", "{7A6CFA06-AAF2-46CF-97CD-05F402E28EAE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Curtains.Domain", "Curtains.Domain\Curtains.Domain.csproj", "{6BD3A90B-D007-4D73-AE8B-8D12B7ACCE2C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Curtains.Domain", "Curtains.Domain\Curtains.Domain.csproj", "{6BD3A90B-D007-4D73-AE8B-8D12B7ACCE2C}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{ABB38CC7-032E-4BCE-A06C-792F76A0095D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -30,5 +35,15 @@ Global
 		{6BD3A90B-D007-4D73-AE8B-8D12B7ACCE2C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6BD3A90B-D007-4D73-AE8B-8D12B7ACCE2C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6BD3A90B-D007-4D73-AE8B-8D12B7ACCE2C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ABB38CC7-032E-4BCE-A06C-792F76A0095D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ABB38CC7-032E-4BCE-A06C-792F76A0095D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ABB38CC7-032E-4BCE-A06C-792F76A0095D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ABB38CC7-032E-4BCE-A06C-792F76A0095D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F4A87BF9-BCBC-4134-8617-E4C5B6F7D861}
 	EndGlobalSection
 EndGlobal
