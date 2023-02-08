@@ -9,7 +9,7 @@
         /// <summary>
         ///  This property represents ColorId column.
         /// </summary>
-        public int ColorId { get; set; }
+        public int? ColorId { get; set; }
         /// <summary>
         ///  This property represents price of lambrequins.
         /// </summary>
@@ -17,11 +17,11 @@
         /// <summary>
         ///  This property represents bracingId of lambrequins.
         /// </summary>
-        public int BracingId { get; set; }
+        public int? BracingId { get; set; }
         /// <summary>
         ///  This property represents kind of lambrequins.
         /// </summary>
-        public int FabricKindId { get; set; }
+        public int? FabricKindId { get; set; }
         /// <summary>
         ///  This property represents height of lambrequins.
         /// </summary>

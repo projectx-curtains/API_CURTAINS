@@ -14,10 +14,10 @@ COPY ["Curtains.Infrastructure/Curtains.Infrastructure.csproj", "Curtains.Infras
 RUN dotnet restore "Curtains.Api/Curtains.Api.csproj"
 COPY . .
 WORKDIR "/src/Curtains.Api"
-RUN dotnet build "Curtains.Api.csproj" -c Release -o /app/build
+RUN dotnet build "Curtains.Api.csproj" -c Development -o /app/build
 
 FROM build AS publish
-RUN dotnet publish "Curtains.Api.csproj" -c Release -o /app/publish /p:UseAppHost=false
+RUN dotnet publish "Curtains.Api.csproj" -c Development -o /app/publish /p:UseAppHost=false
 
 FROM base AS final
 WORKDIR /app

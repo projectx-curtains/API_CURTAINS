@@ -18,23 +18,23 @@
         /// <summary>
         ///  This property represents FabricId column.
         /// </summary>
-        public int FabricId { get; set; }
+        public int? FabricId { get; set; }
         /// <summary>
         ///  This property represents MaterialId column.
         /// </summary>
-        public int MaterialId { get; set; }
+        public int? MaterialId { get; set; }
         /// <summary>
         ///  This property represents AccessoriesId column.
         /// </summary>
-        public int AccessoriesId { get; set; }
+        public int? AccessoriesId { get; set; }
         /// <summary>
         ///  This property represents CurtainsTypeId column.
         /// </summary>
-        public int CurtainsTypeId { get; set; }
+        public int? CurtainsTypeId { get; set; }
         /// <summary>
         ///  This property represents CurtainsKindId column.
         /// </summary>
-        public int CurtainsKindId { get; set; }
+        public int? CurtainsKindId { get; set; }
         /// <summary>
         ///  This property represents price of curtains.
         /// </summary>

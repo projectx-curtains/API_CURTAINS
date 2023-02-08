@@ -22,10 +22,6 @@
         ///  This property represents list of accessories with that color.
         /// </summary>
         public virtual ICollection<AccessoriesModel> Accessories { get; }
-        /// <summary>
-        ///  This property represents list of Curtains with that color.
-        /// </summary>
-        public virtual ICollection<CurtainsModel> Curtains { get; }
         #endregion
     }
 }

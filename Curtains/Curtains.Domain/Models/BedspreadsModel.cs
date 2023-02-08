@@ -21,7 +21,7 @@
         /// <summary>
         ///  This property represents FabricId column.
         /// </summary>
-        public int FabricId { get; set; }
+        public int? FabricId { get; set; }
         #endregion
 
         #region NavigationProperties

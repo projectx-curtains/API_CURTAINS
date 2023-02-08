@@ -9,7 +9,7 @@
         /// <summary>
         ///  This property represents the ColorId column.
         /// </summary>
-        public int ColorId { get; set; }
+        public int? ColorId { get; set; }
         /// <summary>
         ///  This property represents price of accessories.
         /// </summary>
