@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using Curtains.Application.CurtainsServices.Interfaces;
+using Curtains.Application.CurtainsService.Interfaces;
 using Curtains.Application.DTO;
 using Curtains.Domain.Models;
 using Curtains.Infrastructure.Interfaces;
@@ -71,6 +71,22 @@ namespace Curtains.Application.CurtainsService
             }
             var productImageDTO = _mapper.Map<ProductImageDTO>(productImage);
             return productImageDTO;
+        }
+
+        /// <summary>
+        /// This method get <c> ProductImageModel <c> entity from database by entity Ids and mapping to <c> ProductImageDTO </c>
+        /// </summary>
+        /// <param name="Id"> Guid ProductImage entity idetifiers </param>
+        /// <returns> List of ProductImageDTO </returns>
+        public async Task<IEnumerable<ProductImageDTO>> GetAllByIdAsync(int[] Ids)
+        {
+            var productImages = new List<ProductImageDTO>();
+            foreach (int id in Ids)
+            {
+                productImages.Add(await GetByIdAsync(id));
+            }
+
+            return productImages;
         }
 
         /// <summary>

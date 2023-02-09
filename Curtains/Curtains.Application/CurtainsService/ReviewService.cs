@@ -1,8 +1,8 @@
-﻿using Curtains.Application.CurtainsServices.Interfaces;
-using Curtains.Application.DTO;
+﻿using Curtains.Application.DTO;
 using Curtains.Domain.Models;
 using Curtains.Infrastructure.Interfaces;
 using AutoMapper;
+using Curtains.Application.CurtainsService.Interfaces;
 
 namespace Curtains.Application.CurtainsServices
 {

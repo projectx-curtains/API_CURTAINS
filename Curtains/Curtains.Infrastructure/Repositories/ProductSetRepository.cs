@@ -16,7 +16,7 @@ namespace Curtains.Infrastructure.Repositories
         #region FieldsRegion
         private readonly ILogger _logger;
         private readonly CurtainsDbContext _curtainsContext;
-        private IQueryable<ProductSetModel> Query => _curtainsContext.Sets;
+        private IQueryable<ProductSetModel> Query => _curtainsContext.ProductSets;
         #endregion
 
         public ProductSetRepository(CurtainsDbContext curtainsContext, ILogger logger)
@@ -32,13 +32,13 @@ namespace Curtains.Infrastructure.Repositories
         /// <returns>Collection of ProductSetModel entities in List ProductSet</return>
         public IEnumerable<ProductSetModel> GetAll()
         {
-            if (!_curtainsContext.Sets.Any())
+            if (!_curtainsContext.ProductSets.Any())
             {
                 _logger.LogError("Product set table is empty");
                 throw new ResourceNotFoundException();
             }
 
-            return _curtainsContext.Sets.AsNoTracking().AsEnumerable();
+            return _curtainsContext.ProductSets.AsNoTracking().AsEnumerable();
         }
 
         /// <summary>
@@ -72,7 +72,7 @@ namespace Curtains.Infrastructure.Repositories
                 throw new ArgumentNullException("ProductSet model is null");
             }
 
-            var result = await _curtainsContext.Sets.AddAsync(entity, cancelationToken);
+            var result = await _curtainsContext.ProductSets.AddAsync(entity, cancelationToken);
 
             await _curtainsContext.SaveChangesAsync();
 
@@ -94,7 +94,7 @@ namespace Curtains.Infrastructure.Repositories
                 }
             }
 
-            _curtainsContext.Sets.Update(entity);
+            _curtainsContext.ProductSets.Update(entity);
 
             await _curtainsContext.SaveChangesAsync();
         }
@@ -111,7 +111,7 @@ namespace Curtains.Infrastructure.Repositories
                 throw new ArgumentNullException("ProductSet model is null");
             }
 
-            _curtainsContext.Sets.Remove(entity);
+            _curtainsContext.ProductSets.Remove(entity);
             await _curtainsContext.SaveChangesAsync();
         }
 

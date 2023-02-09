@@ -3,28 +3,44 @@
     /// <summary>
     ///  This class describes accessories model.
     /// </summary>
-    public class AccessoriesModel : ExtendedBaseEntity
+    public class AccessoriesModel : BaseEntity
     {
         #region PropertiesRegion
         /// <summary>
-        ///  This property represents the ColorId column.
+        ///  This property represents the furniture id column.
         /// </summary>
-        public int ColorId { get; set; }
+        public int FurnitureId { get; set; }
         /// <summary>
-        ///  This property represents price of accessories.
+        ///  This property represents the bracing id column.
         /// </summary>
-        public decimal Price { get; set; }
+        public int BracingId { get; set; }
+        /// <summary>
+        ///  This property represents the color group id column.
+        /// </summary>
+        public int ColorGroupId { get; set; }
+        /// <summary>
+        ///  This property represents the manufacturer id column.
+        /// </summary>
+        public int ManufacturerId { get; set; }
         #endregion
 
         #region NavigationProperties
         /// <summary>
-        ///  This property represents color of accessories.
+        ///  This property represents the furniture of accessories.
         /// </summary>
-        public virtual ColorModel Color { get; set; }
+        public virtual FurnitureModel Furniture { get; }
         /// <summary>
-        ///  This property represents list of curtains in which there are accessories.
+        ///  This property represents the bracing of accessories.
         /// </summary>
-        public virtual ICollection<CurtainsModel>?   Curtains { get; }
+        public virtual BracingModel Bracing { get; }
+        /// <summary>
+        ///  This property represents the color group of accessories.
+        /// </summary>
+        public virtual ColorGroupModel ColorGroup { get; }
+        /// <summary>
+        ///  This property represents the manufacturer of accessories.
+        /// </summary>
+        public virtual ManufacturerModel Manufacturer { get; }
         #endregion
     }
 }

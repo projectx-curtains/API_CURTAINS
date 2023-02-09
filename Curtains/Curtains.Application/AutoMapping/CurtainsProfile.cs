@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Curtains.Application.ConstructorObjects;
 using Curtains.Application.DTO;
 using Curtains.Domain.Models;
 using Curtains.Domain.Projections;
@@ -7,6 +8,9 @@ using System.Linq;
 
 namespace Curtains.Application.AutoMapping
 {
+    /// <summary>
+    /// This class describes the behavior of automapping when working with curtains
+    /// </summary>
     public class CurtainsProfile : Profile
     {
         public CurtainsProfile()
@@ -35,6 +39,8 @@ namespace Curtains.Application.AutoMapping
 
             CreateMap<ElasticSearchQuery<CurtainSearchDTO>, ElasticSearchQuery<CurtainsProjection>>()
                 .ReverseMap();
+            CreateMap<CurtainsModel, CurtainsDTO>().ReverseMap();
+            CreateMap<CurtainProduct, CurtainsDTO>().ReverseMap();
         }
     }
 }

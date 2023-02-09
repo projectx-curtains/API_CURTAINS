@@ -1,35 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace Curtains.Application.DTO
 {
-    /// <summary>
-    /// Class <c> CurtainsDTO </c> describes interaction model for NewItemsController and database.
-    /// </summary>
-    public class CurtainsDTO : BaseExtendedDTO
+    public class CurtainsDTO
     {
-        #region PropertiesRegion
         /// <summary>
-        ///  This property represents situation, if curtains are dense or not.
+        /// Curtain title
         /// </summary>
-        // public bool Density { get; set; }
+        public string Title { get; set; }
         /// <summary>
-        ///  This property represents situation, if curtains are sun-protected or not.
-        /// </summary>
-        public bool SunProtection { get; set; }
-        /// <summary>
-        ///  This property represents height of curtains.
+        /// Curtain height
         /// </summary>
         public int Height { get; set; }
         /// <summary>
-        ///  This property represents width of curtains.
+        /// Curtain width
         /// </summary>
         public int Width { get; set; }
         /// <summary>
-        ///  This property represents price of curtains.
+        /// The number of such curtains in the order
         /// </summary>
         public decimal Price { get; set; }
         /// <summary>
@@ -68,26 +54,22 @@ namespace Curtains.Application.DTO
         ///  This property represents fabric of curtains.
         /// </summary>
         public FabricDTO Fabric { get; set; }
+        public int Count { get; set; }
         /// <summary>
-        ///  This property represents material of curtains.
+        /// Type of curtains
         /// </summary>
-        public MaterialDTO Material { get; set; }
+        public string CurtainsType { get; set; }
         /// <summary>
-        ///  This property represents accessories of curtains.
+        /// Curtain fabric design
         /// </summary>
-        public AccessoriesDTO Accessories { get; set; }
+        public string Design { get; set; }
         /// <summary>
-        ///  This property represents type of curtains.
+        /// Fabric type
         /// </summary>
-        public CurtainsTypeDTO CurtainsType { get; set; }
+        public string FabricType { get; set; }
         /// <summary>
-        ///  This property represents kind of curtains.
+        /// Curtain color
         /// </summary>
-        public CurtainsKindDTO CurtainsKind { get; set; }
-        /// <summary>
-        ///  This property represents of Color.
-        /// </summary>
-        public ColorDTO Color { get; set; }
-        #endregion
+        public string Color { get; set; }
     }
 }

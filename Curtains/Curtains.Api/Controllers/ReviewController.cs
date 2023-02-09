@@ -1,8 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Curtains.Application.CurtainsServices.Interfaces;
 using Curtains.Application.DTO;
-using Curtains.Domain.Models;
-using Microsoft.EntityFrameworkCore.ChangeTracking;
+using Curtains.Application.CurtainsService.Interfaces;
 
 namespace Curtains.Api.Controllers
 {

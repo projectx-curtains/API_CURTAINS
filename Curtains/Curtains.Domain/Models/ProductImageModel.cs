@@ -1,4 +1,6 @@
-﻿namespace Curtains.Domain.Models
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace Curtains.Domain.Models
 {
     /// <summary>
     ///  This class describes model of image product.
@@ -29,7 +31,7 @@
         /// <summary>
         ///  This property represents FabricId.
         /// </summary>
-        public int? FabricId { get; set; }
+        public int? FabricsId { get; set; }
 
         #endregion
 

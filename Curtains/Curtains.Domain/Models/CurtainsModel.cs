@@ -3,6 +3,7 @@
     public class CurtainsModel : ExtendedBaseEntity
     {
         #region PropertiesRegion
+        public bool Density { get; set; }
         /// <summary>
         ///  This property represents situation, if curtains are sun-protected or not.
         /// </summary>
@@ -42,15 +43,7 @@
         /// <summary>
         ///  This property represents purpose of curtains.
         /// </summary>
-        public string Purpose { get; set; }
-        /// <summary>
-        ///  This property represents ColorId column.
-        /// </summary>
-        public int ColorId { get; set; }
-        /// <summary>
-        ///  This property represents BrasingId column.
-        /// </summary>
-        public int BracingId { get; set; }
+        public int PurposeId { get; set; }
         #endregion
 
         #region NavigationProperties
@@ -75,21 +68,13 @@
         /// </summary>
         public virtual CurtainsKindModel CurtainsKind { get; set; }
         /// <summary>
-        ///  This property represents of Bracing.
+        ///  This property represents purpose of curtians.
         /// </summary>
-        public virtual BracingModel Bracing { get; set; }
-        /// <summary>
-        ///  This property represents of Color.
-        /// </summary>
-        public virtual ColorModel Color { get; set; }
+        public virtual PurposeModel Purpose { get; set; }
         /// <summary>
         ///  This property represents sets with that curtains.
         /// </summary>
         public virtual ICollection<ProductSetModel> ProductSets { get; }
-        /// <summary>
-        ///  This property represents Lambrequins with that curtains.
-        /// </summary>
-        public virtual ICollection<LambrequinsModel> Lambrequins { get; }
         /// <summary>
         ///  This property represents product images with that curtains.
         /// </summary>

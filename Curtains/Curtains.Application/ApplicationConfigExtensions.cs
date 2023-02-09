@@ -1,5 +1,6 @@
 ﻿using System.Reflection;
 using AutoMapper;
+using Curtains.Application.CurtainsService.Interfaces;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
 using Curtains.Application.CurtainsServices.Interfaces;

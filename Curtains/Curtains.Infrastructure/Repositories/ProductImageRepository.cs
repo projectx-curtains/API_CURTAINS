@@ -16,8 +16,7 @@ namespace Curtains.Infrastructure.Repositories
         #region FieldsRegion
         private readonly ILogger _logger;
         private readonly CurtainsDbContext _curtainsContext;
-        private IQueryable<ProductImageModel> Query => _curtainsContext.ProductImages.Include(x => x.Curtains).Include(x => x.Pillows)
-                    .Include(x => x.Bedspreads).Include(x => x.Sets).Include(x => x.Fabrics).Include(x => x.MarketingInfo);
+        private IQueryable<ProductImageModel> Query => _curtainsContext.ProductImages.Include(x => x.Curtains).Include(x => x.Pillows).Include(x => x.Bedspreads).Include(x => x.Sets).Include(x => x.Fabrics);
         #endregion
 
         public ProductImageRepository(CurtainsDbContext curtainsContext, ILogger logger)
@@ -39,7 +38,7 @@ namespace Curtains.Infrastructure.Repositories
                 throw new ResourceNotFoundException();
             }
 
-            return _curtainsContext.ProductImages.AsNoTracking().AsEnumerable();
+            return Query.AsNoTracking().AsEnumerable();
         }
 
         /// <summary>
@@ -49,7 +48,7 @@ namespace Curtains.Infrastructure.Repositories
         /// <returns>ProductImage model</return>
         public async Task<ProductImageModel> GetByIdAsync(int Id)
         {
-            var result = await Query.AsNoTracking().SingleOrDefaultAsync(a => a.Id == Id);
+            var result = await Query.AsNoTracking().FirstOrDefaultAsync(x => x.Id == Id);
 
             if (result == null)
             {

@@ -1,11 +1,6 @@
-﻿using Curtains.Application.CurtainsServices.Interfaces;
+﻿using Curtains.Application.CurtainsService.Interfaces;
 using Curtains.Application.DTO;
 using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Curtains.Api.Controllers
 {

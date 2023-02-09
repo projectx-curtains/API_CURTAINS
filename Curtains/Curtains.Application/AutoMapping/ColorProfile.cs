@@ -4,6 +4,9 @@ using Curtains.Domain.Models;
 
 namespace Curtains.Application.AutoMapping
 {
+    /// <summary>
+    /// This class describes the behavior of automapping when working with color
+    /// </summary>
     public class ColorProfile : Profile
     {
         public ColorProfile()
