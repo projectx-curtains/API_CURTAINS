@@ -27,7 +27,7 @@ namespace Curtains.Domain.Models
         /// <summary>
         ///  This property represents Id field for ProductImage.
         /// </summary>
-        public int ProductImageId { get; set; }
+        public int? ProductImageId { get; set; }
         #endregion
 
         #region NavigationProperties

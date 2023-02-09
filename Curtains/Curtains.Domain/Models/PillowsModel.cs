@@ -9,7 +9,7 @@
         /// <summary>
         ///  This property represents FabricId column.
         /// </summary>
-        public int FabricId { get; set; }
+        public int? FabricId { get; set; }
         /// <summary>
         ///  This property represents size of pillows.
         /// </summary>
@@ -21,7 +21,7 @@
         /// <summary>
         ///  This property represents Design id column.
         /// </summary>
-        public int DesignId { get; set; }
+        public int? DesignId { get; set; }
         #endregion
 
         #region NavigationProperties
