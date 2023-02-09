@@ -4,6 +4,8 @@ using AutoMapper;
 using Microsoft.Extensions.Logging;
 using Curtains.Infrastructure.Shared.Exceptions;
 using Curtains.Application.CurtainsService.Interfaces;
+using Curtains.Domain.Models;
+using Curtains.Infrastructure.Repositories;
 
 namespace Curtains.Application.CurtainsService
 {
@@ -48,11 +50,44 @@ namespace Curtains.Application.CurtainsService
             var marketingInfo = await _marketingInfoRepository.GetByIdAsync(Id);
             if (marketingInfo == null)
             {
-                _logger.LogError("ProductImage model is null");
-                throw new ResourceNotFoundException("ProductImage model is null");
+                _logger.LogError("Marketing info model is null");
+                throw new ResourceNotFoundException("Marketing info model is null");
             }
             var marketingInfoDTO = _mapper.Map<MarketingInfoDTO>(marketingInfo);
             return marketingInfoDTO;
+        }
+
+        public async Task InsertAsync(MarketingInfoDTO entity, CancellationToken cancelationToken)
+        {
+            var marketingInfo = _mapper.Map<MarketingInfoModel>(entity);
+            if (marketingInfo == null)
+            {
+                _logger.LogError("Marketing info model is null");
+                throw new ResourceNotFoundException("Marketing info model is null");
+            }
+            await _marketingInfoRepository.InsertAsync(marketingInfo, cancelationToken);
+        }
+
+        public async Task RemoveAsync(MarketingInfoDTO entity)
+        {
+            var marketingInfo = _mapper.Map<MarketingInfoModel>(entity);
+            if (marketingInfo == null)
+            {
+                _logger.LogError("Marketing info model is null");
+                throw new ResourceNotFoundException("Marketing info model is null");
+            }
+            await _marketingInfoRepository.RemoveAsync(marketingInfo);
+        }
+
+        public async Task UpdateAsync(MarketingInfoDTO entity)
+        {
+            var marketingInfo = _mapper.Map<MarketingInfoModel>(entity);
+            if (marketingInfo == null)
+            {
+                _logger.LogError("Marketing info model is null");
+                throw new ResourceNotFoundException("Marketing info model is null");
+            }
+            await _marketingInfoRepository.UpdateAsync(marketingInfo);
         }
         #endregion
     }

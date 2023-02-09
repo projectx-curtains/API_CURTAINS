@@ -13,7 +13,7 @@ namespace Curtains.Application.AutoMapping
         public CurtainsProfile()
         {
             CreateMap<CurtainsModel, CurtainsDTO>().ReverseMap();
-            CreateMap<CurtainProduct, CurtainsDTO>().ReverseMap();
+            CreateMap<CurtainProduct, CurtainsInfoDTO>().ReverseMap();
         }
     }
 }
