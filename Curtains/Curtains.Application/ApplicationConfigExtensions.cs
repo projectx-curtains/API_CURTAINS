@@ -3,7 +3,6 @@ using AutoMapper;
 using Curtains.Application.CurtainsService.Interfaces;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
-using Curtains.Application.CurtainsServices.Interfaces;
 using Curtains.Application.SearchService.Interfaces;
 
 namespace Curtains.Application
