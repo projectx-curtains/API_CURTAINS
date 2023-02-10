@@ -20,7 +20,7 @@ namespace Curtains.Infrastructure.Repositories
             .Include(x => x.Fabric)
             .Include(x => x.CurtainsKind)
             .Include(x => x.CurtainsType)
-            .Include(x => x.Fabric.Color)
+            .Include(x => x.Fabric.Color.Title)
             .Include(x => x.Purpose)
             .Include(x => x.Material);
         #endregion
