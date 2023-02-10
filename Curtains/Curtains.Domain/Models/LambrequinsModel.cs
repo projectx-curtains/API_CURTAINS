@@ -7,9 +7,9 @@
     {
         #region PropertiesRegion
         /// <summary>
-        ///  This property represents ColorGroupId column.
+        ///  This property represents ColorId column.
         /// </summary>
-        public int ColorGroupId { get; set; }
+        public int? ColorId { get; set; }
         /// <summary>
         ///  This property represents price of lambrequins.
         /// </summary>
@@ -17,14 +17,14 @@
         /// <summary>
         ///  This property represents design id column.
         /// </summary>
-        public int DesignId { get; set; }
+        public int? DesignId { get; set; }
         #endregion
 
         #region NavigationProperties
         /// <summary>
         ///  This property represents color group of lambrequins.
         /// </summary>
-        public virtual ColorModel ColorGroup { get; set; }
+        public virtual ColorModel Color { get; set; }
         /// <summary>
         ///  This property represents design of lambrequins.
         /// </summary>

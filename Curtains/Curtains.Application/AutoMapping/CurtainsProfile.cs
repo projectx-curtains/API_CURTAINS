@@ -40,7 +40,7 @@ namespace Curtains.Application.AutoMapping
             CreateMap<ElasticSearchQuery<CurtainSearchDTO>, ElasticSearchQuery<CurtainsProjection>>()
                 .ReverseMap();
             CreateMap<CurtainsModel, CurtainsDTO>().ReverseMap();
-            CreateMap<CurtainProduct, CurtainsDTO>().ReverseMap();
+            CreateMap<CurtainProduct, CurtainsInfoDTO>().ReverseMap();
         }
     }
 }

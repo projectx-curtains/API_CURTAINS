@@ -404,7 +404,7 @@ namespace Curtains.Infrastructure.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
+                    
                     b.Property<int>("ColorGroupId")
                         .HasColumnType("int");
 
@@ -605,7 +605,7 @@ namespace Curtains.Infrastructure.Migrations
                     b.Property<int?>("PillowsId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("SetsId")
+                    b.Property<int?>("ProductSetsId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
@@ -618,7 +618,7 @@ namespace Curtains.Infrastructure.Migrations
 
                     b.HasIndex("PillowsId");
 
-                    b.HasIndex("SetsId");
+                    b.HasIndex("ProductSetsId");
 
                     b.ToTable("ProductImages");
                 });
@@ -906,9 +906,9 @@ namespace Curtains.Infrastructure.Migrations
                         .WithMany("ProductImages")
                         .HasForeignKey("PillowsId");
 
-                    b.HasOne("Curtains.Domain.Models.ProductSetModel", "Sets")
+                    b.HasOne("Curtains.Domain.Models.ProductSetModel", "ProductSets")
                         .WithMany("ProductImages")
-                        .HasForeignKey("SetsId");
+                        .HasForeignKey("ProductSetsId");
 
                     b.Navigation("Bedspreads");
 
@@ -918,7 +918,7 @@ namespace Curtains.Infrastructure.Migrations
 
                     b.Navigation("Pillows");
 
-                    b.Navigation("Sets");
+                    b.Navigation("ProductSets");
                 });
 
             modelBuilder.Entity("Curtains.Domain.Models.ProductSetModel", b =>

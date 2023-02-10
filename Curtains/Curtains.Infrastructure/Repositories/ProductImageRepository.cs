@@ -16,7 +16,7 @@ namespace Curtains.Infrastructure.Repositories
         #region FieldsRegion
         private readonly ILogger _logger;
         private readonly CurtainsDbContext _curtainsContext;
-        private IQueryable<ProductImageModel> Query => _curtainsContext.ProductImages.Include(x => x.Curtains).Include(x => x.Pillows).Include(x => x.Bedspreads).Include(x => x.Sets).Include(x => x.Fabrics);
+        private IQueryable<ProductImageModel> Query => _curtainsContext.ProductImages.Include(x => x.Curtains).Include(x => x.Pillows).Include(x => x.Bedspreads).Include(x => x.ProductSet).Include(x => x.Fabrics);
         #endregion
 
         public ProductImageRepository(CurtainsDbContext curtainsContext, ILogger logger)
