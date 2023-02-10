@@ -10,7 +10,7 @@
         /// <summary>
         ///  This property represents Color group id column.
         /// </summary>
-        public int ColorGroupId { get; set; }
+        public int? ColorGroupId { get; set; }
         #endregion
 
         #region NavigationProperties

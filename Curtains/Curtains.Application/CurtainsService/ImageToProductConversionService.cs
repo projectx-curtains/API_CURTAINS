@@ -26,7 +26,7 @@ namespace Curtains.Application.CurtainsService
                 { Bedspreads: not null } => _mapper.Map<BedspreadsProduct>(productImage.Bedspreads),
                 { Curtains: not null } => _mapper.Map<CurtainProduct>(productImage.Curtains),
                 { Pillows: not null } => _mapper.Map<PillowProduct>(productImage.Pillows),
-                { ProductSets: not null } => _mapper.Map<SetProduct>(productImage.ProductSets),
+                { ProductSet: not null } => _mapper.Map<SetProduct>(productImage.ProductSet),
                 { Fabrics: not null } => _mapper.Map<FabricProduct>(productImage.Fabrics),
             };
         }

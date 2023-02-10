@@ -9,7 +9,7 @@
         /// <summary>
         ///  This property represents size id column.
         /// </summary>
-        public int SizeId { get; set; }
+        public int? SizeId { get; set; }
         /// <summary>
         ///  This property represents purpose of bedspreads.
         /// </summary>
@@ -21,7 +21,7 @@
         /// <summary>
         ///  This property represents FabricId column.
         /// </summary>
-        public int FabricId { get; set; }
+        public int? FabricId { get; set; }
         #endregion
 
         #region NavigationProperties
