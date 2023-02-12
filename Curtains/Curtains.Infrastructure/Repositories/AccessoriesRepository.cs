@@ -16,7 +16,7 @@ namespace Curtains.Infrastructure.Repositories
         #region FieldsRegion
         private readonly ILogger _logger;
         private readonly CurtainsDbContext _curtainsContext;
-        private IQueryable<AccessoriesModel> Query => _curtainsContext.Accessories.Include(x => x.Curtains);
+        private IQueryable<AccessoriesModel> Query => _curtainsContext.Accessories;
         #endregion
 
         public AccessoriesRepository(CurtainsDbContext curtainsContext, ILogger logger)

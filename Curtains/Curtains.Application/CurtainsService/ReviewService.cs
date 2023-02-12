@@ -3,6 +3,8 @@ using Curtains.Domain.Models;
 using Curtains.Infrastructure.Interfaces;
 using AutoMapper;
 using Curtains.Application.CurtainsService.Interfaces;
+using Curtains.Infrastructure.Shared.Exceptions;
+using Microsoft.Extensions.Logging;
 
 namespace Curtains.Application.CurtainsServices
 {
@@ -14,12 +16,14 @@ namespace Curtains.Application.CurtainsServices
         #region FieldsRegion
         private readonly IReviewRepository _reviewRepository;
         private readonly IMapper _mapper;
+        private readonly ILogger _logger;
         #endregion
 
-        public ReviewService(IReviewRepository reviewRepository, IMapper mapper)
+        public ReviewService(IReviewRepository reviewRepository, IMapper mapper, ILogger logger)
         {
             _reviewRepository = reviewRepository;
             _mapper = mapper;
+            _logger = logger;
         }
 
         #region MethodsRegion
@@ -44,6 +48,11 @@ namespace Curtains.Application.CurtainsServices
         public async Task<ReviewDTO> GetByIdAsync(int Id)
         {
             var review = await _reviewRepository.GetByIdAsync(Id);
+            if (review == null)
+            {
+                _logger.LogError("Review model is null");
+                throw new ResourceNotFoundException("Review model is null");
+            }
             var reviewDTO = _mapper.Map<ReviewDTO>(review);
             return reviewDTO;
         }
@@ -58,6 +67,11 @@ namespace Curtains.Application.CurtainsServices
         public async Task InsertAsync(ReviewDTO entity, CancellationToken cancelationToken)
         {
             var review = MapToModel(entity);
+            if (review == null)
+            {
+                _logger.LogError("Review model is null");
+                throw new ResourceNotFoundException("Review model is null");
+            }
             await _reviewRepository.InsertAsync(review, cancelationToken);
         }
 
@@ -70,6 +84,11 @@ namespace Curtains.Application.CurtainsServices
         public async Task UpdateAsync(ReviewDTO entity)
         {
             var review = MapToModel(entity);
+            if (review == null)
+            {
+                _logger.LogError("Review model is null");
+                throw new ResourceNotFoundException("Review model is null");
+            }
             await _reviewRepository.UpdateAsync(review);
         }
 
@@ -82,6 +101,11 @@ namespace Curtains.Application.CurtainsServices
         public async Task RemoveAsync(ReviewDTO entity)
         {
             var review = MapToModel(entity);
+            if (review == null)
+            {
+                _logger.LogError("Review model is null");
+                throw new ResourceNotFoundException("Review model is null");
+            }
             await _reviewRepository.RemoveAsync(review);
         }
 

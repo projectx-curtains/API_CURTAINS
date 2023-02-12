@@ -3,6 +3,7 @@ using Curtains.Application.CurtainsService.Interfaces;
 using Curtains.Application.DTO;
 using Curtains.Domain.Models;
 using Curtains.Infrastructure.Interfaces;
+using Curtains.Infrastructure.Shared.Exceptions;
 using Microsoft.Extensions.Logging;
 
 namespace Curtains.Application.CurtainsService
@@ -67,7 +68,7 @@ namespace Curtains.Application.CurtainsService
             if (productImage == null)
             {
                 _logger.LogError("ProductImage model is null");
-                throw new ArgumentNullException("ProductImage model is null");
+                throw new ResourceNotFoundException("ProductImage model is null");
             }
             var productImageDTO = _mapper.Map<ProductImageDTO>(productImage);
             return productImageDTO;
@@ -101,7 +102,7 @@ namespace Curtains.Application.CurtainsService
             if (productImage == null)
             {
                 _logger.LogError("ProductImage model is null");
-                throw new ArgumentNullException("ProductImage model is null");
+                throw new ResourceNotFoundException("ProductImage model is null");
             }
             await _productImageRepository.InsertAsync(productImage, cancelationToken);
         }
@@ -117,7 +118,7 @@ namespace Curtains.Application.CurtainsService
             if (productImage == null)
             {
                 _logger.LogError("ProductImage model is null");
-                throw new ArgumentNullException("ProductImage model is null");
+                throw new ResourceNotFoundException("ProductImage model is null");
             }
             await _productImageRepository.UpdateAsync(productImage);
         }
@@ -133,7 +134,7 @@ namespace Curtains.Application.CurtainsService
             if (productImage == null)
             {
                 _logger.LogError("ProductImage model is null");
-                throw new ArgumentNullException("ProductImage model is null");
+                throw new ResourceNotFoundException("ProductImage model is null");
             }
             await _productImageRepository.RemoveAsync(productImage);
         }

@@ -9,5 +9,8 @@ namespace Curtains.Application.CurtainsService.Interfaces
     {
         public IEnumerable<MarketingInfoDTO> GetAll();
         public Task<MarketingInfoDTO> GetByIdAsync(int Id);
+        public Task InsertAsync(MarketingInfoDTO entity, CancellationToken cancelationToken);
+        public Task UpdateAsync(MarketingInfoDTO entity);
+        public Task RemoveAsync(MarketingInfoDTO entity);
     }
 }

@@ -5,7 +5,7 @@ namespace Curtains.Application.DTO
         /// <summary>
         /// Curtains designed by the user
         /// </summary>
-        public IEnumerable<CurtainsDTO> Curtains { get; set; }
+        public IEnumerable<CurtainsInfoDTO> Curtains { get; set; }
         /// <summary>
         /// User phone number
         /// </summary>
