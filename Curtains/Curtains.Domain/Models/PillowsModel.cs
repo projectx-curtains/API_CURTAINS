@@ -13,7 +13,7 @@
         /// <summary>
         ///  This property represents size of pillows.
         /// </summary>
-        public string Size { get; set; }
+        public int? SizeId { get; set; }
         /// <summary>
         ///  This property represents price of pillows.
         /// </summary>
@@ -33,6 +33,10 @@
         ///  This property represents fabric of pillows.
         /// </summary>
         public virtual FabricModel Fabric { get; set; }
+        /// <summary>
+        ///  This property represents size of pillows.
+        /// </summary>
+        public virtual PillowsSizeModel Size { get; set; }
         /// <summary>
         ///  This property represents product image about pillows.
         /// </summary>
