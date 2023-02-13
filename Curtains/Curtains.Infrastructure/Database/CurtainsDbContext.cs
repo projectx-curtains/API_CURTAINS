@@ -24,7 +24,9 @@ namespace Curtains.Infrastructure.Database
         public virtual DbSet<LambrequinsModel> Lambrequins { get; set; }
         public virtual DbSet<ManufacturerModel> Manufacturers { get; set; }
         public virtual DbSet<BedspreadsModel> Bedspreads { get; set; }
+        public virtual DbSet<BedspreadsSizeModel> BedspreadSizes { get; set; }
         public virtual DbSet<PillowsModel> Pillows { get; set; }
+        public virtual DbSet<PillowsModel> PillowSizes { get; set; }
         public virtual DbSet<MarketingInfoModel> MarketingInfos { get; set; }
         public virtual DbSet<ProductSetModel> ProductSets { get; set; }
         public virtual DbSet<MaterialModel> Materials { get; set; }
