@@ -25,24 +25,18 @@ namespace Curtains.Api.Controllers
         /// This method handles requests and indexes data to ElastiSearch from database
         /// </summary>
         /// <returns></returns>
-        [Route("IndexForElastic")]
-		[HttpGet]
-        public async Task<ActionResult> AddAllIndexes()
+		[HttpGet("Index")]
+        public async Task<ActionResult> AddAllCurtains()
         {
-            await _searchService.AddAllCurtains();
+            await _searchService.IndexesCurtains();
             return Ok();
         }
 
-		/// <summary>
-		/// This method handles requests and get all curtains from database
-		/// </summary>
-		/// <returns></returns>
-		[Route("GetCurtainsFromDB")]
-        [HttpGet]
-        public ActionResult GetCurtains()
+        [HttpGet("Delete")]
+        public async Task<ActionResult> DeleteCurtain(string id)
         {
-            var x = _searchService.GetAllCurtains();
-            return Ok(x);
+            await _searchService.DeleteCurtain(id);
+            return Ok();
         }
 
 		/// <summary>

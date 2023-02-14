@@ -37,7 +37,7 @@ namespace Curtains.Application.SearchService
         /// and mapping to <c> CurtainsProjection </c> and indexes data into ElasticSearch
         /// </summary>
         /// <returns></returns>
-        public async Task AddAllCurtains()
+        public async Task IndexesCurtains()
         {
             var ListModelsDTO = _mapper.Map<IEnumerable<CurtainsDTO>>(_curtainsRepository.GetAll());
 
@@ -47,14 +47,13 @@ namespace Curtains.Application.SearchService
                 await _curtainsSearchRepository.Index(projectionModel);
             }
         }
-
         /// <summary>
-        /// This method gel all <c> CurtainsModel </c> entities from database
+        /// 
         /// </summary>
-        /// <returns> Collection of <c> CurtainsModel </c></returns>
-        public IEnumerable<CurtainsModel> GetAllCurtains() 
+        /// <returns></returns>
+        public async Task DeleteCurtain(string id)
         {
-            return _curtainsRepository.GetAll();
+            await _curtainsSearchRepository.Deleted(id);
         }
 
 		/// <summary>

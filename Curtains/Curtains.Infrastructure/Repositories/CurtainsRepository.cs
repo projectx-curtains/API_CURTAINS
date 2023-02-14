@@ -18,11 +18,15 @@ namespace Curtains.Infrastructure.Repositories
         private readonly CurtainsDbContext _curtainsContext;
         private IQueryable<CurtainsModel> Query => _curtainsContext.Curtains
             .Include(x => x.Fabric)
-            .Include(x => x.CurtainsKind)
+                .ThenInclude(ti => ti.Color)
+			.Include(x => x.Fabric)
+				.ThenInclude(ti => ti.Design)
+			.Include(x => x.CurtainsKind)
             .Include(x => x.CurtainsType)
-            .Include(x => x.Fabric.Color.Title)
-            .Include(x => x.Purpose)
-            .Include(x => x.Material);
+            .Include(x => x.Accessories)
+                .ThenInclude(y => y.Bracing)
+			.Include(x => x.Purpose)
+			.Include(x => x.Material);
         #endregion
 
         public CurtainsRepository(CurtainsDbContext curtainsContext, ILogger logger)

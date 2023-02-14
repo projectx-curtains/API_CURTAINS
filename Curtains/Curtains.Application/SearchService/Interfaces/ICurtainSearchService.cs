@@ -7,9 +7,9 @@ namespace Curtains.Application.SearchService.Interfaces
 {
     public interface ICurtainSearchService
     {
-        public Task AddAllCurtains();
+        public Task IndexesCurtains();
         public Task<List<SearchResults<CurtainsProjection>>> CurtainsSearch(ElasticSearchQuery<CurtainSearchDTO> model);
+        public Task DeleteCurtain(string id);
 
-        public IEnumerable<CurtainsModel> GetAllCurtains();
-    }
+	}
 }

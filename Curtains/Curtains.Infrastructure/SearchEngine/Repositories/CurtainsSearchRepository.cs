@@ -45,12 +45,15 @@ namespace Curtains.Infrastructure.SearchEngine
 							.Range(r => r.Field(f => f.Price).GreaterThanOrEquals(model.MinPrice).LessThanOrEquals(model.MaxPrice)
 							.Relation(RangeRelation.Within)),
 
-							mu => mu.Terms(t => t.Field(f => f.Color).Terms(model.Filters?.Colors)),
+							mu => mu.Terms(t => t.Field(f => f.Fabric).Terms(model.Filters?.Fabric)),
 							mu => mu.Terms(t => t.Field(f => f.CurtainsType).Terms(model.Filters?.CurtainsTypes)),
 							mu => mu.Terms(t => t.Field(f => f.CurtainsKind).Terms(model.Filters?.CurtainsKind)),
+							mu => mu.Terms(t => t.Field(f => f.Purpose).Terms(model.Filters?.Purpose)),
 							mu => mu.Terms(t => t.Field(f => f.Material).Terms(model.Filters?.Materials)),
-							mu => mu.Terms(t => t.Field(f => f.Fabric).Terms(model.Filters?.Fabric)),
-							mu => mu.Terms(t => t.Field(f => f.Purpose).Terms(model.Filters?.Purpose)))))
+							mu => mu.Terms(t => t.Field(f => f.FabricStructure).Terms(model.Filters?.FabricStructure)),
+							mu => mu.Terms(t => t.Field(f => f.Color).Terms(model.Filters?.Colors)),
+							mu => mu.Terms(t => t.Field(f => f.Desing).Terms(model.Filters?.Design)),
+							mu => mu.Terms(t => t.Field(f => f.Bracing).Terms(model.Filters?.Bracing)))))
 
 					.Sort(ss => (model.Order == OrderBy.Desc) ? ss.Descending(f => f.Price) : ss.Ascending(f => f.Price))
 
@@ -83,7 +86,7 @@ namespace Curtains.Infrastructure.SearchEngine
 		public async Task<bool> Index(CurtainsProjection model)
 		{
 			var response = await _elasticClient.IndexAsync(model, i => i
-				.Index("_Option.DefaultIndex")
+				.Index("curtains")
 				.Id(model.Id)
 				.Refresh(Refresh.True)
 			);
@@ -104,7 +107,7 @@ namespace Curtains.Infrastructure.SearchEngine
 		/// <exception cref="Exception"></exception>
 		public async Task<bool> Deleted(string id)
 		{
-			var response = await _elasticClient.DeleteAsync(new DeleteRequest("_Option.DefaultIndex",id.Trim()));
+			var response = await _elasticClient.DeleteAsync(new DeleteRequest("curtains", id.Trim()));
 
 			if (!response.IsValid)
 			{
