@@ -25,7 +25,7 @@ namespace Curtains.Api
 
         public void ConfigureServices(IServiceCollection services)
         {
-            var connectionString = _configuration.GetConnectionString("CurtainsDataBase");
+            var connectionString = "Server=sql-server-db,1433;User=sa;Password=<YourStrong@Passw0rd>";
 
             services
                 .AddApplication()
