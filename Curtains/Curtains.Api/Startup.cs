@@ -1,6 +1,7 @@
 ﻿using Curtains.Application;
 using Curtains.Infrastructure;
 using Curtains.Infrastructure.Correlation;
+using Curtains.Infrastructure.Database;
 using Curtains.Infrastructure.Shared;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -39,12 +40,14 @@ namespace Curtains.Api
                 .AddJsonSerializer();
         }
 
-        public void Configure(IApplicationBuilder app)
+        public void Configure(IApplicationBuilder app, CurtainsDbContext context)
         {
             if (_environment.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            context.Database.EnsureCreated();
 
             app
                 .UseRouting()

@@ -1,5 +1,3 @@
-#See https://aka.ms/containerfastmode to understand how Visual Studio uses this Dockerfile to build your images for faster debugging.
-
 FROM mcr.microsoft.com/dotnet/aspnet:6.0 AS base
 WORKDIR /app
 EXPOSE 80
@@ -14,10 +12,10 @@ COPY ["Curtains.Infrastructure/Curtains.Infrastructure.csproj", "Curtains.Infras
 RUN dotnet restore "Curtains.Api/Curtains.Api.csproj"
 COPY . .
 WORKDIR "/src/Curtains.Api"
-RUN dotnet build "Curtains.Api.csproj" -c Release -o /app/build
+RUN dotnet build "Curtains.Api.csproj" -o /app/build /p:UseAppHost=false
 
 FROM build AS publish
-RUN dotnet publish "Curtains.Api.csproj" -c Release -o /app/publish /p:UseAppHost=false
+RUN dotnet publish "Curtains.Api.csproj" -o /app/publish /p:UseAppHost=false
 
 FROM base AS final
 WORKDIR /app
