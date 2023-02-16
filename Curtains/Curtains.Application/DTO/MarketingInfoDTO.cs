@@ -25,13 +25,6 @@ namespace Curtains.Application.DTO
         /// </summary>
         public bool IsPopular { get; set; }
         /// <summary>
-        ///  This property represents Id field for ProductImage.
-        /// </summary>
-        public int? ProductImageId { get; set; }
-        #endregion
-
-        #region NavigationProperties
-        /// <summary>
         ///  This property represents products, which marketing information is presented.
         /// </summary>
         public ProductImageDTO ProductImage { get; set; }

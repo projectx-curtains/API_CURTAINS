@@ -17,30 +17,6 @@ namespace Curtains.Application.DTO
         /// </summary>
         public string ImagePath { get; set; }
         /// <summary>
-        ///  This property represents CurtainsId.
-        /// </summary>
-        public int? CurtainsId { get; set; }
-        /// <summary>
-        ///  This property represents PillowsId.
-        /// </summary>
-        public int? PillowsId { get; set; }
-        /// <summary>
-        ///  This property represents BedspreadsId.
-        /// </summary>
-        public int? BedspreadsId { get; set; }
-        /// <summary>
-        ///  This property represents SetsId.
-        /// </summary>
-        public int? ProductSetId { get; set; }
-        /// <summary>
-        ///  This property represents FabricId.
-        /// </summary>
-        public int? FabricsId { get; set; }
-
-        #endregion
-
-        #region NavigationProperties
-        /// <summary>
         ///  This property represents curtains, which image is presented.
         /// </summary>
         public CurtainsDTO? Curtains { get; set; }

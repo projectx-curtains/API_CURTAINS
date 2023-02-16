@@ -4,20 +4,9 @@
     {
        #region PropertiesRegion
         /// <summary>
-        ///  This property represents ColorId column.
-        /// </summary>
-        public int? ColorId { get; set; }
-        /// <summary>
         ///  This property represents price of lambrequins.
         /// </summary>
         public decimal Price { get; set; }
-        /// <summary>
-        ///  This property represents design id column.
-        /// </summary>
-        public int? DesignId { get; set; }
-        #endregion
-
-        #region NavigationProperties
         /// <summary>
         ///  This property represents color group of lambrequins.
         /// </summary>

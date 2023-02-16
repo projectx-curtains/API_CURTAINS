@@ -7,10 +7,6 @@
     {
        #region PropertiesRegion
         /// <summary>
-        ///  This property represents size id column.
-        /// </summary>
-        public int? SizeId { get; set; }
-        /// <summary>
         ///  This property represents purpose of bedspreads.
         /// </summary>
         public string Purpose { get; set; }
@@ -18,13 +14,6 @@
         ///  This property represents price of bedspreads.
         /// </summary>
         public decimal Price { get; set; }
-        /// <summary>
-        ///  This property represents FabricId column.
-        /// </summary>
-        public int? FabricId { get; set; }
-        #endregion
-
-        #region NavigationProperties
         /// <summary>
         ///  This property represents size of bedspreads.
         /// </summary>

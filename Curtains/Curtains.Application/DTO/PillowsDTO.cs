@@ -13,24 +13,9 @@ namespace Curtains.Application.DTO
     {
         #region PropertiesRegion
         /// <summary>
-        ///  This property represents FabricId column.
-        /// </summary>
-        public int? FabricId { get; set; }
-        /// <summary>
-        ///  This property represents size of pillows.
-        /// </summary>
-        public int? SizeId { get; set; }
-        /// <summary>
         ///  This property represents price of pillows.
         /// </summary>
         public decimal Price { get; set; }
-        /// <summary>
-        ///  This property represents Design id column.
-        /// </summary>
-        public int? DesignId { get; set; }
-        #endregion
-
-        #region NavigationProperties
         /// <summary>
         ///  This property represents design of pullow.
         /// </summary>

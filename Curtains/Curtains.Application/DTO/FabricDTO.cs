@@ -11,18 +11,6 @@
         /// </summary>
         public bool Density { get; set; }
         /// <summary>
-        ///  This property represents ColorId column.
-        /// </summary>
-        public int? ColorId { get; set; }
-        /// <summary>
-        ///  This property represents DecorationId column.
-        /// </summary>
-        public int? DecorationsId { get; set; }
-        /// <summary>
-        ///  This property represents ManufacturerId column.
-        /// </summary>
-        public int? ManufacturerId { get; set; }
-        /// <summary>
         ///  This property represents price of fabric.
         /// </summary>
         public decimal Price { get; set; }
@@ -34,17 +22,6 @@
         ///  This property represents wifth of fabric.
         /// </summary>
         public int Width { get; set; }
-        /// <summary>
-        ///  This property represents designId of fabric.
-        /// </summary>
-        public int? DesignId { get; set; }
-        /// <summary>
-        ///  This property represents MaterialId of fabric.
-        /// </summary>
-        public int? MaterialId { get; set; }
-        #endregion
-
-        #region NavigationProperties
         /// <summary>
         ///  This property represents color of fabric.
         /// </summary>
