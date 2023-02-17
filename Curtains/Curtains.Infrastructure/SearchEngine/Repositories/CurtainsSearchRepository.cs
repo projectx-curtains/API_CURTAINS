@@ -10,7 +10,6 @@ namespace Curtains.Infrastructure.SearchEngine
     {
 		#region FieldsRegion
 		private readonly IElasticClient _elasticClient;
-		// private readonly ElasticSearchOptions _options;
 		#endregion
 
 		public CurtainsSearchRepository(IElasticClient elasticsearchClient)
@@ -42,8 +41,20 @@ namespace Curtains.Infrastructure.SearchEngine
 							.Fields(searchFields.Select(x => new Field(x)).ToArray())))
 
 						.Must(mu => mu
-							.Range(r => r.Field(f => f.Price).GreaterThanOrEquals(model.MinPrice).LessThanOrEquals(model.MaxPrice)
+							.Range(r => r.Field(f => f.Price)
+							.GreaterThanOrEquals(model.MinPrice)
+							.LessThanOrEquals(model.MaxPrice)
 							.Relation(RangeRelation.Within)),
+
+							mu => mu
+							.Range(r => r.Field(f => f.Width)
+							.GreaterThanOrEquals(model.MinWidth)
+							.LessThanOrEquals(model.MaxWidth)),
+
+							mu => mu
+							.Range(r => r.Field(f => f.Height)
+							.GreaterThanOrEquals(model.MinHeight)
+							.LessThanOrEquals(model.MaxHeight)),
 
 							mu => mu.Terms(t => t.Field(f => f.Fabric).Terms(model.Filters?.Fabric)),
 							mu => mu.Terms(t => t.Field(f => f.CurtainsType).Terms(model.Filters?.CurtainsTypes)),
@@ -55,7 +66,7 @@ namespace Curtains.Infrastructure.SearchEngine
 							mu => mu.Terms(t => t.Field(f => f.Desing).Terms(model.Filters?.Design)),
 							mu => mu.Terms(t => t.Field(f => f.Bracing).Terms(model.Filters?.Bracing)))))
 
-					.Sort(ss => (model.Order == OrderBy.Desc) ? ss.Descending(f => f.Price) : ss.Ascending(f => f.Price))
+					.Sort(ss => (model.Order != null) ? (model.Order == OrderBy.Desc) ? ss.Descending(f => f.Price) : ss.Ascending(f => f.Price) : null)
 
 				.Highlight(h => h
 					.Fields(searchFields.Select<string, Func<HighlightFieldDescriptor<CurtainsProjection>, IHighlightField>>(s =>
@@ -105,7 +116,7 @@ namespace Curtains.Infrastructure.SearchEngine
 		/// <param name="id"></param>
 		/// <returns> True if object successfully deleted</returns>
 		/// <exception cref="Exception"></exception>
-		public async Task<bool> Deleted(string id)
+		public async Task<bool> Delete(string id)
 		{
 			var response = await _elasticClient.DeleteAsync(new DeleteRequest("curtains", id.Trim()));
 

@@ -53,7 +53,7 @@ namespace Curtains.Application.SearchService
         /// <returns></returns>
         public async Task DeleteCurtain(string id)
         {
-            await _curtainsSearchRepository.Deleted(id);
+            await _curtainsSearchRepository.Delete(id);
         }
 
 		/// <summary>

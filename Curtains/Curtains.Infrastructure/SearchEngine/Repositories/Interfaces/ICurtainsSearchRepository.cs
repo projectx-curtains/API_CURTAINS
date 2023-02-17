@@ -7,6 +7,6 @@ namespace Curtains.Infrastructure.Interfaces
     {
         public Task<List<SearchResults<CurtainsProjection>>> GetCurtains(ElasticSearchQuery<CurtainsProjection> model);
 		public Task<bool> Index(CurtainsProjection model);
-		public Task<bool> Deleted(string id);
+		public Task<bool> Delete(string id);
 	}
 }
