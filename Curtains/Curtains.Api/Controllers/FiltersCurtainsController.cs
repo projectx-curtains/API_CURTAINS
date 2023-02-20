@@ -22,17 +22,24 @@ namespace Curtains.Api.Controllers
         }
 
 		/// <summary>
-        /// This method handles requests and indexes data to ElastiSearch from database
-        /// </summary>
-        /// <returns></returns>
-		[HttpGet("Index")]
+		/// This method handles requests and indexes data to ElastiSearch from database
+		/// </summary>
+		/// <returns></returns>
+		[Route("Index")]
+		[HttpGet]
         public async Task<ActionResult> AddAllCurtains()
         {
             await _searchService.IndexesCurtains();
             return Ok();
         }
 
-        [HttpGet("Delete")]
+		/// <summary>
+		/// This method handles requests and delete curtain from ElasticSearch by entity Id.
+		/// </summary>
+		/// <param name="id"> Id curtain identifier </param>
+		/// <returns></returns>
+		[Route("Delete")]
+		[HttpGet]
         public async Task<ActionResult> DeleteCurtain(string id)
         {
             await _searchService.DeleteCurtain(id);
