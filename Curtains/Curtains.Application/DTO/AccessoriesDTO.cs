@@ -20,10 +20,10 @@ namespace Curtains.Application.DTO
         ///  This property represents color of accessories.
         /// </summary>
         public ColorDTO Color { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public BracingDTO Bracing { get; set; }
+		/// <summary>
+		/// This property represents brasing of accessories.
+		/// </summary>
+		public BracingDTO Bracing { get; set; }
         #endregion
     }
 }

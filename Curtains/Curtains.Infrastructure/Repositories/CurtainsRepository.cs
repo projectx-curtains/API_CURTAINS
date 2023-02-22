@@ -42,7 +42,12 @@ namespace Curtains.Infrastructure.Repositories
         /// <returns>Collection of CurtainsModel entities in List type</return>
         public IEnumerable<CurtainsModel> GetAll()
         {
-            return Query.AsNoTracking().AsEnumerable();
+			if (!_curtainsContext.Curtains.Any())
+            {
+				_logger.LogError("Curtains table is empty");
+				throw new ResourceNotFoundException();
+			}
+			return Query.AsNoTracking().AsEnumerable();
         }
 
         /// <summary>
