@@ -48,7 +48,7 @@ namespace Curtains.Application.SearchService
             }
         }
         /// <summary>
-        /// 
+        /// This method delete shard of ElasticSearch by <paramref name="id" />
         /// </summary>
         /// <returns></returns>
         public async Task DeleteCurtain(string id)
