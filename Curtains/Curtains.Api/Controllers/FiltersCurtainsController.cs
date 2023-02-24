@@ -6,10 +6,10 @@ using Curtains.Infrastructure.SearchQueries;
 
 namespace Curtains.Api.Controllers
 {
-	/// <summary>
-	/// This controller <c> FiltersCurtainsController </c> for indexes 
+    /// <summary>
+    /// This controller <c> FiltersCurtainsController </c> for indexes 
     /// and searchind data from ElastiSearch 
-	/// </summary>
+    /// </summary>
 	[Route("api/[controller]")]
     [ApiController]
     public class FiltersCurtainsController : ControllerBase
@@ -21,10 +21,10 @@ namespace Curtains.Api.Controllers
             _searchService = searchService;
         }
 
-		/// <summary>
-		/// This method handles requests and indexes data to ElastiSearch from database
-		/// </summary>
-		/// <returns></returns>
+        /// <summary>
+        /// This method handles requests and indexes data to ElastiSearch from database
+        /// </summary>
+        /// <returns></returns>
 		[Route("Index")]
 		[HttpGet]
         public async Task<ActionResult> AddAllCurtains()
