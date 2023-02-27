@@ -9,6 +9,19 @@ namespace Curtains.Infrastructure.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
+                name: "BedspreadSizes",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Title = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_BedspreadSizes", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Bracings",
                 columns: table => new
                 {
@@ -23,33 +36,16 @@ namespace Curtains.Infrastructure.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Colors",
+                name: "ColorGroups",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Code = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    ColorGroup = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Title = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Description = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    Title = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Colors", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Consistencies",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Title = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Description = table.Column<string>(type: "nvarchar(max)", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Consistencies", x => x.Id);
+                    table.PrimaryKey("PK_ColorGroups", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -72,8 +68,7 @@ namespace Curtains.Infrastructure.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Title = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Description = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    Title = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -87,8 +82,7 @@ namespace Curtains.Infrastructure.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Presence = table.Column<bool>(type: "bit", nullable: false),
-                    Title = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Description = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    Title = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -101,6 +95,7 @@ namespace Curtains.Infrastructure.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
+                    Presence = table.Column<bool>(type: "bit", nullable: false),
                     Title = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
@@ -109,29 +104,17 @@ namespace Curtains.Infrastructure.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "FabricKinds",
+                name: "Furnitures",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Title = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    Title = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Description = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_FabricKinds", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "FabricTypes",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Title = table.Column<string>(type: "nvarchar(max)", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_FabricTypes", x => x.Id);
+                    table.PrimaryKey("PK_Furnitures", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -192,6 +175,34 @@ namespace Curtains.Infrastructure.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "PillowsSizeModel",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Length = table.Column<int>(type: "int", nullable: false),
+                    Width = table.Column<int>(type: "int", nullable: false),
+                    Title = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_PillowsSizeModel", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Purposes",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Title = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Purposes", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Reviews",
                 columns: table => new
                 {
@@ -214,20 +225,41 @@ namespace Curtains.Infrastructure.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    ColorId = table.Column<int>(type: "int", nullable: false),
-                    Price = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    Title = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Description = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    FurnitureId = table.Column<int>(type: "int", nullable: true),
+                    BracingId = table.Column<int>(type: "int", nullable: true),
+                    ColorGroupId = table.Column<int>(type: "int", nullable: true),
+                    ManufacturerId = table.Column<int>(type: "int", nullable: true),
+                    BracingModelId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Accessories", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Accessories_Colors_ColorId",
-                        column: x => x.ColorId,
-                        principalTable: "Colors",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        name: "FK_Accessories_Bracings_BracingModelId",
+                        column: x => x.BracingModelId,
+                        principalTable: "Bracings",
+                        principalColumn: "Id");
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Colors",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Code = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    ColorGroupId = table.Column<int>(type: "int", nullable: true),
+                    ColorGroupModelId = table.Column<int>(type: "int", nullable: true),
+                    Title = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Colors", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Colors_ColorGroups_ColorGroupModelId",
+                        column: x => x.ColorGroupModelId,
+                        principalTable: "ColorGroups",
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
@@ -237,17 +269,14 @@ namespace Curtains.Infrastructure.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Density = table.Column<bool>(type: "bit", nullable: false),
-                    ConsistencyId = table.Column<int>(type: "int", nullable: false),
-                    ColorId = table.Column<int>(type: "int", nullable: false),
-                    DecorationsId = table.Column<int>(type: "int", nullable: false),
-                    ManufacturerId = table.Column<int>(type: "int", nullable: false),
+                    ColorId = table.Column<int>(type: "int", nullable: true),
+                    DecorationsId = table.Column<int>(type: "int", nullable: true),
+                    ManufacturerId = table.Column<int>(type: "int", nullable: true),
                     Price = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     Length = table.Column<int>(type: "int", nullable: false),
                     Width = table.Column<int>(type: "int", nullable: false),
-                    DesignId = table.Column<int>(type: "int", nullable: false),
-                    FabricTypeId = table.Column<int>(type: "int", nullable: false),
-                    FabricKindId = table.Column<int>(type: "int", nullable: false),
-                    MaterialId = table.Column<int>(type: "int", nullable: false),
+                    DesignId = table.Column<int>(type: "int", nullable: true),
+                    MaterialId = table.Column<int>(type: "int", nullable: true),
                     Title = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
@@ -258,50 +287,54 @@ namespace Curtains.Infrastructure.Migrations
                         name: "FK_Fabrics_Colors_ColorId",
                         column: x => x.ColorId,
                         principalTable: "Colors",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_Fabrics_Consistencies_ConsistencyId",
-                        column: x => x.ConsistencyId,
-                        principalTable: "Consistencies",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                     table.ForeignKey(
                         name: "FK_Fabrics_Decorations_DecorationsId",
                         column: x => x.DecorationsId,
                         principalTable: "Decorations",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                     table.ForeignKey(
                         name: "FK_Fabrics_Designs_DesignId",
                         column: x => x.DesignId,
                         principalTable: "Designs",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_Fabrics_FabricKinds_FabricKindId",
-                        column: x => x.FabricKindId,
-                        principalTable: "FabricKinds",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_Fabrics_FabricTypes_FabricTypeId",
-                        column: x => x.FabricTypeId,
-                        principalTable: "FabricTypes",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                     table.ForeignKey(
                         name: "FK_Fabrics_Manufacturers_ManufacturerId",
                         column: x => x.ManufacturerId,
                         principalTable: "Manufacturers",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                     table.ForeignKey(
                         name: "FK_Fabrics_Materials_MaterialId",
                         column: x => x.MaterialId,
                         principalTable: "Materials",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Lambrequins",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    ColorId = table.Column<int>(type: "int", nullable: true),
+                    Price = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    DesignId = table.Column<int>(type: "int", nullable: true),
+                    Title = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Description = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Lambrequins", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Lambrequins_Colors_ColorId",
+                        column: x => x.ColorId,
+                        principalTable: "Colors",
+                        principalColumn: "Id");
+                    table.ForeignKey(
+                        name: "FK_Lambrequins_Designs_DesignId",
+                        column: x => x.DesignId,
+                        principalTable: "Designs",
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
@@ -310,10 +343,11 @@ namespace Curtains.Infrastructure.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Size = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    SizeId = table.Column<int>(type: "int", nullable: true),
                     Purpose = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Price = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    FabricId = table.Column<int>(type: "int", nullable: false),
+                    FabricId = table.Column<int>(type: "int", nullable: true),
+                    FabricModelId = table.Column<int>(type: "int", nullable: true),
                     Title = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
@@ -321,11 +355,15 @@ namespace Curtains.Infrastructure.Migrations
                 {
                     table.PrimaryKey("PK_Bedspreads", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Bedspreads_Fabrics_FabricId",
-                        column: x => x.FabricId,
+                        name: "FK_Bedspreads_BedspreadSizes_SizeId",
+                        column: x => x.SizeId,
+                        principalTable: "BedspreadSizes",
+                        principalColumn: "Id");
+                    table.ForeignKey(
+                        name: "FK_Bedspreads_Fabrics_FabricModelId",
+                        column: x => x.FabricModelId,
                         principalTable: "Fabrics",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
@@ -334,18 +372,17 @@ namespace Curtains.Infrastructure.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
+                    Density = table.Column<bool>(type: "bit", nullable: false),
                     SunProtection = table.Column<bool>(type: "bit", nullable: false),
                     Height = table.Column<int>(type: "int", nullable: false),
                     Width = table.Column<int>(type: "int", nullable: false),
-                    FabricId = table.Column<int>(type: "int", nullable: false),
-                    MaterialId = table.Column<int>(type: "int", nullable: false),
-                    AccessoriesId = table.Column<int>(type: "int", nullable: false),
-                    CurtainsTypeId = table.Column<int>(type: "int", nullable: false),
-                    CurtainsKindId = table.Column<int>(type: "int", nullable: false),
+                    FabricId = table.Column<int>(type: "int", nullable: true),
+                    MaterialId = table.Column<int>(type: "int", nullable: true),
+                    AccessoriesId = table.Column<int>(type: "int", nullable: true),
+                    CurtainsTypeId = table.Column<int>(type: "int", nullable: true),
+                    CurtainsKindId = table.Column<int>(type: "int", nullable: true),
                     Price = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    Purpose = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    ColorId = table.Column<int>(type: "int", nullable: false),
-                    BracingId = table.Column<int>(type: "int", nullable: false),
+                    PurposeId = table.Column<int>(type: "int", nullable: true),
                     Title = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
@@ -356,117 +393,69 @@ namespace Curtains.Infrastructure.Migrations
                         name: "FK_Curtains_Accessories_AccessoriesId",
                         column: x => x.AccessoriesId,
                         principalTable: "Accessories",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_Curtains_Bracings_BracingId",
-                        column: x => x.BracingId,
-                        principalTable: "Bracings",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_Curtains_Colors_ColorId",
-                        column: x => x.ColorId,
-                        principalTable: "Colors",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.NoAction);
+                        principalColumn: "Id");
                     table.ForeignKey(
                         name: "FK_Curtains_CurtainsKinds_CurtainsKindId",
                         column: x => x.CurtainsKindId,
                         principalTable: "CurtainsKinds",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                     table.ForeignKey(
                         name: "FK_Curtains_CurtainsTypes_CurtainsTypeId",
                         column: x => x.CurtainsTypeId,
                         principalTable: "CurtainsTypes",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                     table.ForeignKey(
                         name: "FK_Curtains_Fabrics_FabricId",
                         column: x => x.FabricId,
                         principalTable: "Fabrics",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.NoAction);
+                        principalColumn: "Id");
                     table.ForeignKey(
                         name: "FK_Curtains_Materials_MaterialId",
                         column: x => x.MaterialId,
                         principalTable: "Materials",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Pillows",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    FabricId = table.Column<int>(type: "int", nullable: false),
-                    Size = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Filler = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    RemovableCover = table.Column<bool>(type: "bit", nullable: false),
-                    Price = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    Title = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Description = table.Column<string>(type: "nvarchar(max)", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Pillows", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Pillows_Fabrics_FabricId",
-                        column: x => x.FabricId,
-                        principalTable: "Fabrics",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Lambrequins",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    ColorId = table.Column<int>(type: "int", nullable: false),
-                    Price = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    BracingId = table.Column<int>(type: "int", nullable: false),
-                    FabricKindId = table.Column<int>(type: "int", nullable: false),
-                    Height = table.Column<int>(type: "int", nullable: false),
-                    Width = table.Column<int>(type: "int", nullable: false),
-                    CurtainsModelId = table.Column<int>(type: "int", nullable: true),
-                    Title = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Description = table.Column<string>(type: "nvarchar(max)", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Lambrequins", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Lambrequins_Bracings_BracingId",
-                        column: x => x.BracingId,
-                        principalTable: "Bracings",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_Lambrequins_Colors_ColorId",
-                        column: x => x.ColorId,
-                        principalTable: "Colors",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_Lambrequins_Curtains_CurtainsModelId",
-                        column: x => x.CurtainsModelId,
-                        principalTable: "Curtains",
                         principalColumn: "Id");
                     table.ForeignKey(
-                        name: "FK_Lambrequins_FabricKinds_FabricKindId",
-                        column: x => x.FabricKindId,
-                        principalTable: "FabricKinds",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        name: "FK_Curtains_Purposes_PurposeId",
+                        column: x => x.PurposeId,
+                        principalTable: "Purposes",
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
-                name: "Sets",
+                name: "PillowsModel",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    FabricId = table.Column<int>(type: "int", nullable: true),
+                    SizeId = table.Column<int>(type: "int", nullable: true),
+                    Price = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    DesignId = table.Column<int>(type: "int", nullable: true),
+                    Title = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Description = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_PillowsModel", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_PillowsModel_Designs_DesignId",
+                        column: x => x.DesignId,
+                        principalTable: "Designs",
+                        principalColumn: "Id");
+                    table.ForeignKey(
+                        name: "FK_PillowsModel_Fabrics_FabricId",
+                        column: x => x.FabricId,
+                        principalTable: "Fabrics",
+                        principalColumn: "Id");
+                    table.ForeignKey(
+                        name: "FK_PillowsModel_PillowsSizeModel_SizeId",
+                        column: x => x.SizeId,
+                        principalTable: "PillowsSizeModel",
+                        principalColumn: "Id");
+                });
+
+            migrationBuilder.CreateTable(
+                name: "ProductSets",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -481,26 +470,26 @@ namespace Curtains.Infrastructure.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Sets", x => x.Id);
+                    table.PrimaryKey("PK_ProductSets", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Sets_Bedspreads_BedspreadsId",
+                        name: "FK_ProductSets_Bedspreads_BedspreadsId",
                         column: x => x.BedspreadsId,
                         principalTable: "Bedspreads",
                         principalColumn: "Id");
                     table.ForeignKey(
-                        name: "FK_Sets_Curtains_CurtainsId",
+                        name: "FK_ProductSets_Curtains_CurtainsId",
                         column: x => x.CurtainsId,
                         principalTable: "Curtains",
                         principalColumn: "Id");
                     table.ForeignKey(
-                        name: "FK_Sets_Lambrequins_LambrequinsId",
+                        name: "FK_ProductSets_Lambrequins_LambrequinsId",
                         column: x => x.LambrequinsId,
                         principalTable: "Lambrequins",
                         principalColumn: "Id");
                     table.ForeignKey(
-                        name: "FK_Sets_Pillows_PillowsId",
+                        name: "FK_ProductSets_PillowsModel_PillowsId",
                         column: x => x.PillowsId,
-                        principalTable: "Pillows",
+                        principalTable: "PillowsModel",
                         principalColumn: "Id");
                 });
 
@@ -514,8 +503,7 @@ namespace Curtains.Infrastructure.Migrations
                     CurtainsId = table.Column<int>(type: "int", nullable: true),
                     PillowsId = table.Column<int>(type: "int", nullable: true),
                     BedspreadsId = table.Column<int>(type: "int", nullable: true),
-                    SetsId = table.Column<int>(type: "int", nullable: true),
-                    FabricId = table.Column<int>(type: "int", nullable: true),
+                    ProductSetId = table.Column<int>(type: "int", nullable: true),
                     FabricsId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
@@ -537,14 +525,14 @@ namespace Curtains.Infrastructure.Migrations
                         principalTable: "Fabrics",
                         principalColumn: "Id");
                     table.ForeignKey(
-                        name: "FK_ProductImages_Pillows_PillowsId",
+                        name: "FK_ProductImages_PillowsModel_PillowsId",
                         column: x => x.PillowsId,
-                        principalTable: "Pillows",
+                        principalTable: "PillowsModel",
                         principalColumn: "Id");
                     table.ForeignKey(
-                        name: "FK_ProductImages_Sets_SetsId",
-                        column: x => x.SetsId,
-                        principalTable: "Sets",
+                        name: "FK_ProductImages_ProductSets_ProductSetId",
+                        column: x => x.ProductSetId,
+                        principalTable: "ProductSets",
                         principalColumn: "Id");
                 });
 
@@ -557,7 +545,7 @@ namespace Curtains.Infrastructure.Migrations
                     IsNew = table.Column<bool>(type: "bit", nullable: false),
                     IsSale = table.Column<bool>(type: "bit", nullable: false),
                     IsPopular = table.Column<bool>(type: "bit", nullable: false),
-                    ProductImageId = table.Column<int>(type: "int", nullable: false)
+                    ProductImageId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -566,34 +554,33 @@ namespace Curtains.Infrastructure.Migrations
                         name: "FK_MarketingInfos_ProductImages_ProductImageId",
                         column: x => x.ProductImageId,
                         principalTable: "ProductImages",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Accessories_ColorId",
+                name: "IX_Accessories_BracingModelId",
                 table: "Accessories",
-                column: "ColorId");
+                column: "BracingModelId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Bedspreads_FabricId",
+                name: "IX_Bedspreads_FabricModelId",
                 table: "Bedspreads",
-                column: "FabricId");
+                column: "FabricModelId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Bedspreads_SizeId",
+                table: "Bedspreads",
+                column: "SizeId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Colors_ColorGroupModelId",
+                table: "Colors",
+                column: "ColorGroupModelId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Curtains_AccessoriesId",
                 table: "Curtains",
                 column: "AccessoriesId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Curtains_BracingId",
-                table: "Curtains",
-                column: "BracingId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Curtains_ColorId",
-                table: "Curtains",
-                column: "ColorId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Curtains_CurtainsKindId",
@@ -616,14 +603,14 @@ namespace Curtains.Infrastructure.Migrations
                 column: "MaterialId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Curtains_PurposeId",
+                table: "Curtains",
+                column: "PurposeId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Fabrics_ColorId",
                 table: "Fabrics",
                 column: "ColorId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Fabrics_ConsistencyId",
-                table: "Fabrics",
-                column: "ConsistencyId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Fabrics_DecorationsId",
@@ -636,16 +623,6 @@ namespace Curtains.Infrastructure.Migrations
                 column: "DesignId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Fabrics_FabricKindId",
-                table: "Fabrics",
-                column: "FabricKindId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Fabrics_FabricTypeId",
-                table: "Fabrics",
-                column: "FabricTypeId");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_Fabrics_ManufacturerId",
                 table: "Fabrics",
                 column: "ManufacturerId");
@@ -656,35 +633,36 @@ namespace Curtains.Infrastructure.Migrations
                 column: "MaterialId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Lambrequins_BracingId",
-                table: "Lambrequins",
-                column: "BracingId");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_Lambrequins_ColorId",
                 table: "Lambrequins",
                 column: "ColorId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Lambrequins_CurtainsModelId",
+                name: "IX_Lambrequins_DesignId",
                 table: "Lambrequins",
-                column: "CurtainsModelId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Lambrequins_FabricKindId",
-                table: "Lambrequins",
-                column: "FabricKindId");
+                column: "DesignId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_MarketingInfos_ProductImageId",
                 table: "MarketingInfos",
                 column: "ProductImageId",
-                unique: true);
+                unique: true,
+                filter: "[ProductImageId] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Pillows_FabricId",
-                table: "Pillows",
+                name: "IX_PillowsModel_DesignId",
+                table: "PillowsModel",
+                column: "DesignId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_PillowsModel_FabricId",
+                table: "PillowsModel",
                 column: "FabricId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_PillowsModel_SizeId",
+                table: "PillowsModel",
+                column: "SizeId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_ProductImages_BedspreadsId",
@@ -707,33 +685,36 @@ namespace Curtains.Infrastructure.Migrations
                 column: "PillowsId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_ProductImages_SetsId",
+                name: "IX_ProductImages_ProductSetId",
                 table: "ProductImages",
-                column: "SetsId");
+                column: "ProductSetId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Sets_BedspreadsId",
-                table: "Sets",
+                name: "IX_ProductSets_BedspreadsId",
+                table: "ProductSets",
                 column: "BedspreadsId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Sets_CurtainsId",
-                table: "Sets",
+                name: "IX_ProductSets_CurtainsId",
+                table: "ProductSets",
                 column: "CurtainsId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Sets_LambrequinsId",
-                table: "Sets",
+                name: "IX_ProductSets_LambrequinsId",
+                table: "ProductSets",
                 column: "LambrequinsId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Sets_PillowsId",
-                table: "Sets",
+                name: "IX_ProductSets_PillowsId",
+                table: "ProductSets",
                 column: "PillowsId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.DropTable(
+                name: "Furnitures");
+
             migrationBuilder.DropTable(
                 name: "MarketingInfos");
 
@@ -750,25 +731,25 @@ namespace Curtains.Infrastructure.Migrations
                 name: "ProductImages");
 
             migrationBuilder.DropTable(
-                name: "Sets");
+                name: "ProductSets");
 
             migrationBuilder.DropTable(
                 name: "Bedspreads");
 
             migrationBuilder.DropTable(
-                name: "Lambrequins");
-
-            migrationBuilder.DropTable(
-                name: "Pillows");
-
-            migrationBuilder.DropTable(
                 name: "Curtains");
 
             migrationBuilder.DropTable(
-                name: "Accessories");
+                name: "Lambrequins");
 
             migrationBuilder.DropTable(
-                name: "Bracings");
+                name: "PillowsModel");
+
+            migrationBuilder.DropTable(
+                name: "BedspreadSizes");
+
+            migrationBuilder.DropTable(
+                name: "Accessories");
 
             migrationBuilder.DropTable(
                 name: "CurtainsKinds");
@@ -777,13 +758,19 @@ namespace Curtains.Infrastructure.Migrations
                 name: "CurtainsTypes");
 
             migrationBuilder.DropTable(
+                name: "Purposes");
+
+            migrationBuilder.DropTable(
                 name: "Fabrics");
 
             migrationBuilder.DropTable(
-                name: "Colors");
+                name: "PillowsSizeModel");
 
             migrationBuilder.DropTable(
-                name: "Consistencies");
+                name: "Bracings");
+
+            migrationBuilder.DropTable(
+                name: "Colors");
 
             migrationBuilder.DropTable(
                 name: "Decorations");
@@ -792,16 +779,13 @@ namespace Curtains.Infrastructure.Migrations
                 name: "Designs");
 
             migrationBuilder.DropTable(
-                name: "FabricKinds");
-
-            migrationBuilder.DropTable(
-                name: "FabricTypes");
-
-            migrationBuilder.DropTable(
                 name: "Manufacturers");
 
             migrationBuilder.DropTable(
                 name: "Materials");
+
+            migrationBuilder.DropTable(
+                name: "ColorGroups");
         }
     }
 }

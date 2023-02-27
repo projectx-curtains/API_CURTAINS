@@ -19,25 +19,25 @@ namespace Curtains.Application.DTO
         /// <summary>
         ///  This property represents curtains, which image is presented.
         /// </summary>
-        public CurtainsDTO Curtains { get; set; }
+        public CurtainsDTO? Curtains { get; set; }
         /// <summary>
-        ///  This property represents pillows data transfer object.
+        ///  This property represents pillows, which image is presented.
         /// </summary>
-        public PillowsDTO Pillows { get; set; }
+        public PillowsDTO? Pillows { get; set; }
         /// <summary>
-        ///  This property represents bedspreads data transfer object.
+        ///  This property represents bedspreads, which image is presented.
         /// </summary>
-        public BedspreadsDTO Bedspreads { get; set; }
+        public BedspreadsDTO? Bedspreads { get; set; }
         /// <summary>
-        ///  This property represents product sets data transfer object.
+        ///  This property represents product sets, which image is presented.
         /// </summary>
-        public ProductSetDTO ProductSet { get; set; }
+        public ProductSetDTO? ProductSet { get; set; }
         /// <summary>
-        ///  This property represents fabrics data transfer object.
+        ///  This property represents fabrics, which image is presented.
         /// </summary>
-        public FabricDTO Fabrics { get; set; }
+        public FabricDTO? Fabrics { get; set; }
         /// <summary>
-        ///  This property represents marketing information data transfer object.
+        ///  This property represents marketing info of this product.
         /// </summary>
         public MarketingInfoDTO MarketingInfo { get; set; }
         #endregion

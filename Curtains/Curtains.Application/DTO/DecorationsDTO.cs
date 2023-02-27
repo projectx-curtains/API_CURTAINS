@@ -9,7 +9,7 @@ namespace Curtains.Application.DTO
     /// <summary>
     /// Class <c> DecorationsDTO </c> describes interaction model for NewItemsController and database.
     /// </summary>
-    public class DecorationsDTO : BaseExtendedDTO
+    public class DecorationsDTO : BaseExtendedByTitleDTO
     {
         #region PropertiesRegion
         /// <summary>

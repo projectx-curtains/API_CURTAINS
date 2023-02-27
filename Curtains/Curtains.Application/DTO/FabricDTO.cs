@@ -1,11 +1,4 @@
-﻿using Curtains.Domain.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Curtains.Application.DTO
+﻿namespace Curtains.Application.DTO
 {
     /// <summary>
     /// Class <c> FabricDTO </c> describes interaction model for NewItemsController and database.
@@ -30,33 +23,21 @@ namespace Curtains.Application.DTO
         /// </summary>
         public int Width { get; set; }
         /// <summary>
-        ///  This property represents situation, if there is design on fabric or not.
-        /// </summary>
-        public DesignDTO Design { get; set; }
-        /// <summary>
-        ///  This property represents consistency of fabric.
-        /// </summary>
-        public ConsistencyDTO Consistency { get; set; }
-        /// <summary>
         ///  This property represents color of fabric.
         /// </summary>
         public ColorDTO Color { get; set; }
         /// <summary>
-        ///  This property represents decorations of fabric.
+        ///  This property represents decoration of fabric.
         /// </summary>
         public DecorationsDTO Decorations { get; set; }
         /// <summary>
-        ///  This property represents kind of fabric.
+        ///  This property represents design of fabric.
         /// </summary>
-        public virtual FabricKindDTO FabricKind { get; set; }
-        /// <summary>
-        ///  This property represents type of fabric.
-        /// </summary>
-        public virtual FabricTypeDTO FabricType { get; set; }
+        public DesignDTO Design { get; set; }
         /// <summary>
         ///  This property represents material of fabric.
         /// </summary>
-        public virtual MaterialDTO Material { get; set; }
+        public MaterialDTO Material { get; set; }
         /// <summary>
         ///  This property represents manufacturer of fabric.
         /// </summary>
