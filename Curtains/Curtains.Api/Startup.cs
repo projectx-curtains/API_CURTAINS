@@ -24,9 +24,11 @@ namespace Curtains.Api
 
         public void ConfigureServices(IServiceCollection services)
         {
-            var connectionString = _configuration.GetConnectionString("CurtainsDataBase");
+			// var connectionString = _configuration.GetConnectionString("CurtainsDataBase");
+			var connectionString = "Server=localhost,1433;Database=Curtains;User=sa;Password=<YourStrong@Passw0rd>";
 
-            services
+
+			services
                 .AddApplication()
                 .AddInfrastructure(connectionString, _configuration);
 
