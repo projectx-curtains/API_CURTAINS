@@ -6,12 +6,12 @@ using Curtains.Infrastructure.SearchQueries;
 
 namespace Curtains.Api.Controllers
 {
-    /// <summary>
-    /// This controller <c> FiltersCurtainsController </c> for indexes 
-    /// and searchind data from ElastiSearch 
-    /// </summary>
+	/// <summary>
+	/// This controller <c> FiltersCurtainsController </c> for indexes 
+	/// and searchind data from ElastiSearch 
+	/// </summary>
 	[Route("api/[controller]")]
-    [ApiController]
+	[ApiController]
     public class FiltersCurtainsController : ControllerBase
     {
         private readonly ICurtainSearchService _searchService;
@@ -21,10 +21,10 @@ namespace Curtains.Api.Controllers
             _searchService = searchService;
         }
 
-        /// <summary>
-        /// This method handles requests and indexes data to ElastiSearch from database
-        /// </summary>
-        /// <returns></returns>
+		/// <summary>
+		/// This method handles requests and indexes data to ElastiSearch from database
+		/// </summary>
+		/// <returns></returns>
 		[Route("Index")]
 		[HttpGet]
         public async Task<ActionResult> AddAllCurtains()
@@ -52,7 +52,7 @@ namespace Curtains.Api.Controllers
 		/// <param name="request"> Seatch query </param>
 		/// <returns> Http status code 200 </returns>
 		[Route("CurtainsSearch")]
-        [HttpPost]
+		[HttpPost]
         public async Task<ActionResult<List<SearchResults<CurtainsProjection>>>> CurtainSearch([FromQuery] ElasticSearchQuery<CurtainSearchDTO> request)
         {
             var response = await _searchService.CurtainsSearch(request);
