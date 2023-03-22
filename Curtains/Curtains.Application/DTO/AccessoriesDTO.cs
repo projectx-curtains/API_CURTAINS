@@ -9,21 +9,25 @@ namespace Curtains.Application.DTO
     /// <summary>
     /// Class <c> AccessoriesDTO </c> describes interaction model for NewItemsController and database.
     /// </summary>
-    public class AccessoriesDTO : BaseExtendedDTO
+    public class AccessoriesDTO : BaseDTO
     {
         #region PropertiesRegion
         /// <summary>
-        ///  This property represents price of accessories.
+        ///  This property represents the furniture of accessories.
         /// </summary>
-        public decimal Price { get; set; }
+        public FurnitureDTO Furniture { get; set;}
         /// <summary>
-        ///  This property represents color of accessories.
+        ///  This property represents the bracing of accessories.
         /// </summary>
-        public ColorDTO Color { get; set; }
-		/// <summary>
-		/// This property represents brasing of accessories.
-		/// </summary>
-		public BracingDTO Bracing { get; set; }
+        public BracingDTO Bracing { get; set;}
+        /// <summary>
+        ///  This property represents the color group of accessories.
+        /// </summary>
+        public ColorGroupDTO ColorGroup { get; set;}
+        /// <summary>
+        ///  This property represents the manufacturer of accessories.
+        /// </summary>
+        public ManufacturerDTO Manufacturer { get; set;}
         #endregion
     }
 }

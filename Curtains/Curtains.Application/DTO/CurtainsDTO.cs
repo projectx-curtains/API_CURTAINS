@@ -4,12 +4,12 @@ namespace Curtains.Application.DTO
 {
     public class CurtainsDTO : BaseExtendedDTO
     {
-		#region PropertiesRegion
+        #region PropertiesRegion
         public bool Density { get; set; }
-		/// <summary>
-		///  This property represents situation, if curtains are sun-protected or not.
-		/// </summary>
-		public bool SunProtection { get; set; }
+        /// <summary>
+        ///  This property represents situation, if curtains are sun-protected or not.
+        /// </summary>
+        public bool SunProtection { get; set; }
         /// <summary>
         ///  This property represents height of curtains.
         /// </summary>
@@ -42,10 +42,10 @@ namespace Curtains.Application.DTO
         ///  This property represents kind of curtains.
         /// </summary>
         public CurtainsKindDTO CurtainsKind { get; set; }
-		/// <summary>
-		///  This property represents purpose of curtians.
-		/// </summary>
-		public PurposeDTO Purpose { get; set; }
+        /// <summary>
+        ///  This property represents purpose of curtians.
+        /// </summary>
+        public PurposeDTO Purpose { get; set; }
         #endregion
     }
 }

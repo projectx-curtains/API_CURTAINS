@@ -19,11 +19,15 @@ namespace Curtains.Application.DTO
         /// <summary>
         ///  This property represents situation, if product is on sale or not.
         /// </summary>
-        public bool IsOnSale { get; set; }
+        public bool IsSale { get; set; }
         /// <summary>
         ///  This property represents situation, if product is popular or not.
         /// </summary>
         public bool IsPopular { get; set; }
+        /// <summary>
+        ///  This property represents products, which marketing information is presented.
+        /// </summary>
+        public ProductImageDTO ProductImage { get; set; }
         #endregion
     }
 }

@@ -19,15 +19,19 @@ namespace Curtains.Application.DTO
         /// <summary>
         ///  This property represents curtains in that product set.
         /// </summary>
-        public CurtainsDTO Curtains { get; set; }
+        public CurtainsDTO? Curtains { get; set; }
         /// <summary>
         ///  This property represents pillows in that product set.
         /// </summary>
-        public PillowsDTO Pillows { get; set; }
+        public PillowsDTO? Pillows { get; set; }
         /// <summary>
         ///  This property represents bedspreads in that product set.
         /// </summary>
-        public BedspreadsDTO Bedspreads { get; set; }
+        public BedspreadsDTO? Bedspreads { get; set; }
+        /// <summary>
+        ///  This property represents lambrequin in that set.
+        /// </summary>
+        public LambrequinsDTO? Lambrequins { get; set; }
         #endregion
     }
 }

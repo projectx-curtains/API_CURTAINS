@@ -17,9 +17,9 @@ namespace Curtains.Application.DTO
         /// </summary>
         public string Code { get; set; }
         /// <summary>
-        ///  This property represents code of color group.
+        ///  This property represents color group of that color.
         /// </summary>
-        public string ColorGroup { get; set; }
+        public ColorGroupDTO ColorGroup { get; set; }
         #endregion
     }
 }
