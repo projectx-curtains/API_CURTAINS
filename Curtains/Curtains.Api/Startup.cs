@@ -25,7 +25,6 @@ namespace Curtains.Api
         public void ConfigureServices(IServiceCollection services)
         {
             var connectionString = _configuration.GetConnectionString("CurtainsDataBase");
-
             services
                 .AddApplication()
                 .AddInfrastructure(connectionString, _configuration);
@@ -53,6 +52,5 @@ namespace Curtains.Api
                 .UseOpenApi(_environment.ApplicationName)
                 .UseEndpoints(endpoints => endpoints.MapControllers());
         }
-
     }
 }

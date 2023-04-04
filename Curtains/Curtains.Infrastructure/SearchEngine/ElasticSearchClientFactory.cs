@@ -27,4 +27,3 @@ namespace Curtains.Infrastructure.SearchEngine
         }
     }
 }
-

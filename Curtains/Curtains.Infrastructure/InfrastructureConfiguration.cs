@@ -1,5 +1,4 @@
-﻿using Curtains.Domain.Search;
-using Curtains.Infrastructure.Correlation;
+﻿using Curtains.Infrastructure.Correlation;
 using Curtains.Infrastructure.Database;
 using Curtains.Infrastructure.SearchEngine;
 using Microsoft.EntityFrameworkCore;
@@ -18,7 +17,7 @@ namespace Curtains.Infrastructure
             string connectionString,
             IConfiguration configuration)
         {
-            var elasticSearchOptions = configuration.GetSection(ElasticSearchOptions.Name).Get<ElasticSearchOptions>();
+            var elasticSearchOptions = configuration.GetSection("ElasticSearchOptions").Get<ElasticSearchOptions>();
 
             services
                 .AddDbContext<CurtainsDbContext>(opt =>
@@ -31,11 +30,11 @@ namespace Curtains.Infrastructure
 
             services
                 .AddSingleton(provider => ElasticSearchClientFactory.Create(elasticSearchOptions))
-                .AddSingleton<ICurtainsSearchRepository, CurtainsSearchRepository>()
                 .AddSingleton<CorrelationMiddleware>();
 
             services
                 .AddRepositories();
+
 
             var serviceProvider = services.BuildServiceProvider();
             var logger = serviceProvider.GetService<ILogger<CurtainsDbContext>>();
@@ -52,7 +51,7 @@ namespace Curtains.Infrastructure
 
             var interfaceTypes = types
                 .Where(type => type.IsInterface
-                            && (type.Namespace == typeof(ICurtainsRepository).Namespace))
+                            && (type.Namespace == typeof(ICurtainsRepository).Namespace) || type.Namespace == typeof(ICurtainsSearchRepository).Namespace)
             .ToArray();
 
             foreach (var interfaceType in interfaceTypes)

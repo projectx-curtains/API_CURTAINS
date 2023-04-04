@@ -2,8 +2,9 @@
 using Curtains.Application.CurtainsService.Interfaces;
 using Curtains.Application.DTO;
 using Curtains.Domain.Models;
+using Curtains.Domain.Projections;
 using Curtains.Infrastructure.Interfaces;
-using Curtains.Infrastructure.Repositories;
+using Curtains.Infrastructure.SearchEngine;
 using Curtains.Infrastructure.Shared.Exceptions;
 using Microsoft.Extensions.Logging;
 using System;
@@ -22,12 +23,16 @@ namespace Curtains.Application.CurtainsService
         private readonly ICurtainsRepository _curtainsRepository;
         private readonly IMapper _mapper;
         private readonly ILogger _logger;
+        private readonly ICurtainsSearchRepository _searchRepository;
 
-        public CurtainsService(ICurtainsRepository curtainsRepository, IMapper mapper, ILogger logger)
+        public CurtainsService(ICurtainsRepository curtainsRepository, IMapper mapper, 
+            ILogger logger,
+			ICurtainsSearchRepository searchRepository)
         {
             _curtainsRepository = curtainsRepository;
             _mapper = mapper;
             _logger = logger;
+            _searchRepository = searchRepository;
         }
 
         public IEnumerable<CurtainsDTO> GetAll()
@@ -57,6 +62,9 @@ namespace Curtains.Application.CurtainsService
                 throw new ResourceNotFoundException("Сurtians model is null");
             }
             await _curtainsRepository.InsertAsync(curtains, cancelationToken);
+
+            var projection = _mapper.Map<CurtainsProjection>(entity);
+            await _searchRepository.Index(projection);
         }
 
         public async Task RemoveAsync(CurtainsDTO entity)
@@ -68,7 +76,9 @@ namespace Curtains.Application.CurtainsService
                 throw new ResourceNotFoundException("Сurtians model is null");
             }
             await _curtainsRepository.RemoveAsync(curtains);
-        }
+
+            await _searchRepository.Delete(entity.Id.ToString());
+		}
 
         public async Task UpdateAsync(CurtainsDTO entity)
         {
@@ -79,6 +89,9 @@ namespace Curtains.Application.CurtainsService
                 throw new ResourceNotFoundException("Сurtians model is null");
             }
             await _curtainsRepository.UpdateAsync(curtains);
-        }
+
+			var projection = _mapper.Map<CurtainsProjection>(entity);
+			await _searchRepository.Index(projection);
+		}
     }
 }

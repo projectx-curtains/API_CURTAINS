@@ -3,6 +3,7 @@ using AutoMapper;
 using Curtains.Application.CurtainsService.Interfaces;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
+using Curtains.Application.SearchService.Interfaces;
 
 namespace Curtains.Application
 {
@@ -47,7 +48,8 @@ namespace Curtains.Application
 
             var interfaceTypes = types
                 .Where(type => type.IsInterface
-                            && type.Namespace == typeof(IOurWorksService).Namespace)
+                            && type.Namespace == typeof(IOurWorksService).Namespace || type.Namespace == typeof(IProductImageService).Namespace || 
+                            type.Namespace == typeof(ICurtainSearchService).Namespace)
             .ToArray();
 
             foreach (var interfaceType in interfaceTypes)

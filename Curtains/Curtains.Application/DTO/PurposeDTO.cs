@@ -1,3 +1,5 @@
+﻿
+
 namespace Curtains.Application.DTO
 {
     /// <summary>

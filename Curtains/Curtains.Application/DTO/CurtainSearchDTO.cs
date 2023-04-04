@@ -1,6 +1,6 @@
-﻿namespace Curtains.Domain.Projections
+﻿namespace Curtains.Application.DTO
 {
-    public class CurtainsProjection
+    public class CurtainSearchDTO
     {
         /// <summary>
         /// This property is an identifier for data tranfer object.

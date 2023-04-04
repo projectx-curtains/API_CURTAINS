@@ -16,7 +16,17 @@ namespace Curtains.Infrastructure.Repositories
         #region FieldsRegion
         private readonly ILogger _logger;
         private readonly CurtainsDbContext _curtainsContext;
-        private IQueryable<CurtainsModel> Query => _curtainsContext.Curtains;
+        private IQueryable<CurtainsModel> Query => _curtainsContext.Curtains
+            .Include(x => x.Fabric)
+                .ThenInclude(ti => ti.Color)
+			.Include(x => x.Fabric)
+				.ThenInclude(ti => ti.Design)
+			.Include(x => x.CurtainsKind)
+            .Include(x => x.CurtainsType)
+            .Include(x => x.Accessories)
+                .ThenInclude(y => y.Bracing)
+			.Include(x => x.Purpose)
+			.Include(x => x.Material);
         #endregion
 
         public CurtainsRepository(CurtainsDbContext curtainsContext, ILogger logger)
@@ -32,13 +42,12 @@ namespace Curtains.Infrastructure.Repositories
         /// <returns>Collection of CurtainsModel entities in List type</return>
         public IEnumerable<CurtainsModel> GetAll()
         {
-            if (!_curtainsContext.Curtains.Any())
+			if (!_curtainsContext.Curtains.Any())
             {
-                _logger.LogError("Curtains table is empty");
-                throw new ResourceNotFoundException();
-            }
-
-            return _curtainsContext.Curtains.AsNoTracking().AsEnumerable();
+				_logger.LogError("Curtains table is empty");
+				throw new ResourceNotFoundException();
+			}
+			return Query.AsNoTracking().AsEnumerable();
         }
 
         /// <summary>
